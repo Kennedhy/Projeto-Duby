@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide-icons@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+    <div class="bl">
+        <aside class="barraLateral">
+            <div class="logo">
+                <img src="/Assets/imgs/Murilo_Logo_tipografia 1.svg" alt="duby">
+            </div>
+            <nav class="menuNav">
+                <ul>
+                    <li class="itemMenu ativo">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="itemMenu">
+                        <i data-lucide="users"></i>
+                        <span>Usuários</span>
+                    </li>
+                    <li class="itemMenu">
+                        <i data-lucide="file-text"></i>
+                        <span>Relatórios</span>
+                    </li>
+                    <li class="itemMenu">
+                        <i data-lucide="pie-chart"></i>
+                        <span>Gráficos</span>
+                    </li>
+                    <li class="itemMenu">
+                        <i data-lucide="building-2"></i>
+                        <span>Contas Bancárias</span>
+                    </li>
+                    <li class="itemMenu">
+                        <i data-lucide="credit-card"></i>
+                        <span>Adquirentes</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="rodapeBarra">
+                <div class="itemMenu">
+                    <i data-lucide="settings"></i>
+                    <span>Configurações</span>
+                </div>
+                <div class="itemMenu">
+                    <i data-lucide="help-circle"></i>
+                    <span>Ajuda</span>
+                </div>
+            </div>
+        </aside>
+    </div>    
+        <main class="conteudoPrincipal">
+            <header class="cabecalho">
+                <h1>Dashboard</h1>
+            </header>
+
+            <div class="cardsResumo">
+                <div class="card verde" data-tab="recebimentos">
+                    <div class="iconeCard">
+                        <img src="/Assets/imgs/recebimentos.png" alt="">
+                    </div>
+                    <div class="conteudoCard">
+                        <h3>Recebimentos</h3>
+                        <p class="valor">R$ 64.600</p>
+                        <p class="subTexto">225 Lançamentos</p>
+                    </div>
+                </div>
+                <div class="card vermelho" data-tab="pagamentos">
+                    <div class="iconeCard">
+                        <img src="/Assets/imgs/pamentos.png" alt="">
+                    </div>
+                    <div class="conteudoCard">
+                        <h3>Pagamentos</h3>
+                        <p class="valor">R$ 48.300</p>
+                        <p class="subTexto">87 Pagamentos</p>
+                    </div>
+                </div>
+                <div class="card azul" data-tab="taxas">
+                    <div class="iconeCard">
+                        <img src="/Assets/imgs/taxas.png" alt="">
+                    </div>
+                    <div class="conteudoCard">
+                        <h3>Taxas</h3>
+                        <p class="valor">3,42%</p>
+                        <p class="subTexto">Média mensal</p>
+                    </div>
+                </div>
+                <div class="card amarelo" data-tab="divergencias">
+                    <div class="iconeCard">
+                        <img src="/Assets/imgs/divergencias.png" alt="">
+                    </div>
+                    <div class="conteudoCard">
+                        <h3>Divergências</h3>
+                        <p class="valor">R$ 26.700</p>
+                        <p class="subTexto">42 Divergências</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudoAbas">
+                <div class="aba ativo" id="recebimentos">
+                    <section class="secaoGraficos">
+                        <h2>Gráficos De Recebimentos</h2>
+                        <div class="containerGraficos">
+                            <div class="cartaoGrafico">
+                                <div class="cabecalhoGrafico">
+                                    <h3>Recebimentos por Mês</h3>
+                                    <p>Distribuição dos valores recebidos por mês</p>
+                                </div>
+                                <div class="grafico">
+                                    <canvas id="graficoRecebimentosMes"></canvas>
+                                </div>
+                            </div>
+                            <div class="cartaoGrafico">
+                                <div class="cabecalhoGrafico">
+                                    <h3>Métodos De Pagamento</h3>
+                                    <p>Distribuição dos valores recebidos por método de pagamento</p>
+                                </div>
+                                <div class="grafico">
+                                    <canvas id="graficoMetodosPagamento"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cartaoGrafico larguraTotal">
+                            <div class="cabecalhoGrafico">
+                                <h3>Recebimentos Bruto X Líquido</h3>
+                                <p>Comparação entre valores brutos e líquidos por mês</p>
+                            </div>
+                            <div class="grafico">
+                                <canvas id="graficoBrutoLiquido"></canvas>
+                            </div>
+                        </div>
+                        <div class="cartaoGrafico larguraTotal">
+                            <div class="cabecalhoGrafico">
+                                <h3>Recebimentos por Bandeira</h3>
+                                <p>Distribuição dos recebimentos por bandeira de cartão</p>
+                            </div>
+                            <div class="grafico">
+                                <canvas id="graficoBandeiras"></canvas>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="secaoRelatorios">
+                        <h2>Relatórios De Recebimentos</h2>
+                        <div class="abasRelatorio">
+                            <button class="botaoAba ativo" data-relatorio="resumo">Resumo de Vendas</button>
+                            <button class="botaoAba" data-relatorio="metodo">Vendas por Método de Pagamento</button>
+                            <button class="botaoAba" data-relatorio="comparativo">Comparativo de Vendas</button>
+                        </div>
+                        <div class="conteudoRelatorio ativo" id="resumo">
+                            <div class="cabecalhoRelatorio">
+                                <div>
+                                    <h3>Resumo de Vendas</h3>
+                                    <p>Período: Março 2025</p>
+                                </div>
+                                <div class="acoesRelatorio">
+                                    <button class="botaoAcao primario">
+                                        <i data-lucide="share-2"></i>
+                                        Enviar
+                                    </button>
+                                    <button class="botaoAcao secundario">
+                                        <i data-lucide="file-plus"></i>
+                                        Exportar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="tabelaContainer">
+                                <table class="tabela">
+                                    <thead>
+                                        <tr>
+                                            <th>Data</th>
+                                            <th>Transações</th>
+                                            <th>Total</th>
+                                            <th>Crédito</th>
+                                            <th>Débito</th>
+                                            <th>Outros</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01/03/2025</td>
+                                            <td>45</td>
+                                            <td>R$ 12.500,00</td>
+                                            <td>R$ 8.750,00</td>
+                                            <td>R$ 2.500,00</td>
+                                            <td>R$ 1.250,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>02/03/2025</td>
+                                            <td>38</td>
+                                            <td>R$ 10.800,00</td>
+                                            <td>R$ 7.560,00</td>
+                                            <td>R$ 2.160,00</td>
+                                            <td>R$ 1.080,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>03/03/2025</td>
+                                            <td>52</td>
+                                            <td>R$ 15.800,00</td>
+                                            <td>R$ 11.060,00</td>
+                                            <td>R$ 3.160,00</td>
+                                            <td>R$ 1.580,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>04/03/2025</td>
+                                            <td>41</td>
+                                            <td>R$ 11.300,00</td>
+                                            <td>R$ 7.910,00</td>
+                                            <td>R$ 2.260,00</td>
+                                            <td>R$ 1.130,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>05/03/2025</td>
+                                            <td>49</td>
+                                            <td>R$ 14.200,00</td>
+                                            <td>R$ 9.940,00</td>
+                                            <td>R$ 2.840,00</td>
+                                            <td>R$ 1.420,00</td>
+                                        </tr>
+                                        <tr class="linhaTotal">
+                                            <td>Total</td>
+                                            <td>225</td>
+                                            <td>R$ 64.600,00</td>
+                                            <td>R$ 45.220,00</td>
+                                            <td>R$ 12.920,00</td>
+                                            <td>R$ 6.460,00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="conteudoRelatorio" id="metodo">
+                            <div class="cabecalhoRelatorio">
+                                <div>
+                                    <h3>Vendas por Método de Pagamento</h3>
+                                    <p>Período: Março 2025</p>
+                                </div>
+                                <div class="acoesRelatorio">
+                                    <button class="botaoAcao primario">
+                                        <i data-lucide="share-2"></i>
+                                        Enviar
+                                    </button>
+                                    <button class="botaoAcao secundario">
+                                        <i data-lucide="file-plus"></i>
+                                        Exportar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="tabelaContainer">
+                                <table class="tabela">
+                                    <thead>
+                                        <tr>
+                                            <th>Método</th>
+                                            <th>Transações</th>
+                                            <th>Valor Bruto</th>
+                                            <th>Taxa Média</th>
+                                            <th>Valor Taxa</th>
+                                            <th>Valor Líquido</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Crédito</td>
+                                            <td>145</td>
+                                            <td>R$ 45.220,00</td>
+                                            <td>3,8%</td>
+                                            <td>R$ 1.718,36</td>
+                                            <td>R$ 43.501,64</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Débito</td>
+                                            <td>65</td>
+                                            <td>R$ 12.920,00</td>
+                                            <td>2,2%</td>
+                                            <td>R$ 284,24</td>
+                                            <td>R$ 12.635,76</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pix</td>
+                                            <td>12</td>
+                                            <td>R$ 5.460,00</td>
+                                            <td>1,0%</td>
+                                            <td>R$ 54,60</td>
+                                            <td>R$ 5.405,40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Outros</td>
+                                            <td>3</td>
+                                            <td>R$ 1.000,00</td>
+                                            <td>2,5%</td>
+                                            <td>R$ 25,00</td>
+                                            <td>R$ 975,00</td>
+                                        </tr>
+                                        <tr class="linhaTotal">
+                                            <td>Total</td>
+                                            <td>225</td>
+                                            <td>R$ 64.600,00</td>
+                                            <td>3,2%</td>
+                                            <td>R$ 2.082,20</td>
+                                            <td>R$ 62.517,80</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="conteudoRelatorio" id="comparativo">
+                            <div class="cabecalhoRelatorio">
+                                <div>
+                                    <h3>Comparativo de Vendas</h3>
+                                    <p>Comparação: Fevereiro vs Março 2025</p>
+                                </div>
+                                <div class="acoesRelatorio">
+                                    <button class="botaoAcao primario">
+                                        <i data-lucide="share-2"></i>
+                                        Enviar
+                                    </button>
+                                    <button class="botaoAcao secundario">
+                                        <i data-lucide="file-plus"></i>
+                                        Exportar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="tabelaContainer">
+                                <table class="tabela">
+                                    <thead>
+                                        <tr>
+                                            <th>Métrica</th>
+                                            <th>Fevereiro</th>
+                                            <th>Março</th>
+                                            <th>Variação</th>
+                                            <th>Variação %</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Total de Vendas</td>
+                                            <td>R$ 58.200,00</td>
+                                            <td>R$ 64.600,00</td>
+                                            <td>R$ 6.400,00</td>
+                                            <td class="texto-verde">+11,0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Número de Transações</td>
+                                            <td>205</td>
+                                            <td>225</td>
+                                            <td>20</td>
+                                            <td class="texto-verde">+9,8%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ticket Médio</td>
+                                            <td>R$ 283,90</td>
+                                            <td>R$ 287,11</td>
+                                            <td>R$ 3,21</td>
+                                            <td class="texto-verde">+1,1%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Taxa Média</td>
+                                            <td>3,5%</td>
+                                            <td>3,2%</td>
+                                            <td>-0,3%</td>
+                                            <td class="texto-verde">-8,6%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Valor Líquido</td>
+                                            <td>R$ 56.163,00</td>
+                                            <td>R$ 62.517,80</td>
+                                            <td>R$ 6.354,80</td>
+                                            <td class="texto-verde">+11,3%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="secaoTransacoes">
+                        <h2>Lançamentos De Recebimentos</h2>
+                        <div class="cartaoTabela">
+                            <div class="cabecalhoTabela">
+                                <div>
+                                    <h3>Lançamentos</h3>
+                                    <p>Últimos lançamentos de recebimentos </p>
+                                </div>
+                                <button class="botaoAdicionar" id="openOverlay">
+                                    <i data-lucide="plus"></i>
+                                    Adicionar Lançamento
+                                </button>
+                            </div>
+                            <div class="tabelaContainer">
+                                <table class="tabela">
+                                    <thead>
+                                        <tr>
+                                            <th>Código</th>
+                                            <th>Data de Venda</th>
+                                            <th>Valor da Venda</th>
+                                            <th>Tipo</th>
+                                            <th>Parcelas</th>
+                                            <th>Taxa</th>
+                                            <th>Valor Líquido</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>VD-2025</td>
+                                            <td>03/03/2025</td>
+                                            <td>R$ 1.200,00</td>
+                                            <td>Crédito</td>
+                                            <td>1x</td>
+                                            <td>3,42%</td>
+                                            <td>R$ 1.158,96</td>
+                                            <td><span class="badge completo">Completo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>VD-2024</td>
+                                            <td>03/03/2025</td>
+                                            <td>R$ 2.450,00</td>
+                                            <td>Crédito</td>
+                                            <td>2x</td>
+                                            <td>4,15%</td>
+                                            <td>R$ 2.348,33</td>
+                                            <td><span class="badge completo">Completo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>VD-2023</td>
+                                            <td>02/03/2025</td>
+                                            <td>R$ 850,00</td>
+                                            <td>Débito</td>
+                                            <td>1x</td>
+                                            <td>1,98%</td>
+                                            <td>R$ 833,17</td>
+                                            <td><span class="badge completo">Completo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>VD-2022</td>
+                                            <td>02/03/2025</td>
+                                            <td>R$ 3.200,00</td>
+                                            <td>Crédito</td>
+                                            <td>3x</td>
+                                            <td>4,89%</td>
+                                            <td>R$ 3.043,52</td>
+                                            <td><span class="badge pendente">Pendente</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>VD-2021</td>
+                                            <td>01/03/2025</td>
+                                            <td>R$ 1.750,00</td>
+                                            <td>Pix</td>
+                                            <td>1x</td>
+                                            <td>0,99%</td>
+                                            <td>R$ 1.732,68</td>
+                                            <td><span class="badge completo">Completo</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="aba" id="pagamentos">
+                </div>
+
+                <div class="aba" id="taxas">
+                </div>
+
+                <div class="aba" id="divergencias">
+                </div>
+            </div>
+        </main>
+
+        <aside class="barraLateralDireita">
+            <div class="perfilUsuario">
+                <div class="avatarPerfil">
+                    <i data-lucide="user"></i>
+                </div>
+                <div class="infoPerfil">
+                    <h3>João Silva</h3>
+                    <p>Administrador</p>
+                </div>
+                <button class="botaoConfig" title="Configurações">
+                    <i data-lucide="settings"></i>
+                </button>
+            </div>
+
+            <div class="barraPesquisa">
+                <i data-lucide="search"></i>
+                <input type="text" placeholder="Pesquisar">
+            </div>
+
+            <div class="relatorioMensal">
+                <h3>Relatório Mensal</h3>
+                <div class="cardsRelatorio">
+                    <div class="cardRelatorio">
+                        <div class="labelRelatorio">Entrada</div>
+                        <div class="valorRelatorio">R$ 49.300</div>
+                    </div>
+                    <div class="cardRelatorio">
+                        <div class="labelRelatorio">Recebimentos Futuros</div>
+                        <div class="valorRelatorio">R$ 9.300</div>
+                    </div>
+                    <div class="cardRelatorio">
+                        <div class="labelRelatorio">Saída</div>
+                        <div class="valorRelatorio">R$ 28.300</div>
+                    </div>
+                    <div class="cardRelatorio">
+                        <div class="labelRelatorio">Pagamentos Futuros</div>
+                        <div class="valorRelatorio">R$ 9.300</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notificacoes">
+                <h3>Notificações</h3>
+                <div class="listaNotificacoes">
+                    <div class="itemNotificacao critico">
+                        <div class="conteudoNotificacao">
+                            <h4>Divergência Crítica</h4>
+                            <p>Venda #12345 de R$ 5.200,00 não encontrada no extrato da Cielo.</p>
+                        </div>
+                    </div>
+                    <div class="itemNotificacao alerta">
+                        <div class="conteudoNotificacao">
+                            <h4>Taxas Acima do Esperado</h4>
+                            <p>As taxas da Stone estão 0,5% acima do contratado neste mês.</p>
+                        </div>
+                    </div>
+                    <div class="itemNotificacao info">
+                        <div class="conteudoNotificacao">
+                            <h4>Novo Relatório Disponível</h4>
+                            <p>O relatório mensal de Março/2025 já está disponível.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proximoVencimento">
+                <h3>Próximo Vencimento</h3>
+                <div class="cardVencimento">
+                    <div class="iconeVencimento">
+                        <i data-lucide="calendar"></i>
+                    </div>
+                    <div class="infoVencimento">
+                        <p class="tituloVencimento">Pagamento Fornecedor</p>
+                        <p class="detalhesVencimento">Amanhã • R$ 3.450,00</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div id="overlay" class="overlay">
+            <div class="conteudoOverlay">
+                <h1>Lancamentos</h1>
+                <div class="botaoOverlay">
+                    <button>Adicionar lançamentos de adquirentes</button>
+                    <button>Adicionar lançamentos de contas bancarias</button>
+                    <button>Adicionar lançamentos manualmente</button>
+                </div>
+                <button id="closeOverlay">Fechar</button>
+            </div>
+        </div>    
+    <script src="script.js"></script>
+</body>
+</html>

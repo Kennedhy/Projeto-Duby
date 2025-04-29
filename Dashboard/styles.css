@@ -1,0 +1,712 @@
+:root {
+    --primario: #412884;
+    --primario-escuro: #312E81;
+    --primario-claro: #818CF8;
+    --primario-muito-claro: #C7D2FE;
+    --sucesso: #4ADE80;
+    --alerta: #FBBF24;
+    --perigo: #F87171;
+    --cinza-100: #F3F4F6;
+    --cinza-200: #E5E7EB;
+    --cinza-300: #D1D5DB;
+    --cinza-500: #6B7280;
+    --cinza-700: #374151;
+    --cinza-800: #1F2937;
+    --largura-barra: 220px;
+    --largura-barra-direita: 310px;
+}
+
+
+@font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Thin.otf') format('opentype');
+    font-weight: 100;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ ExtraLight.otf') format('opentype');
+    font-weight: 200;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Light.otf') format('opentype');
+    font-weight: 300;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Regular.otf') format('opentype');
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Medium.otf') format('opentype');
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ DemiBold.otf') format('opentype');
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Bold.otf') format('opentype');
+    font-weight: 700;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ ExtraBold.otf') format('opentype');
+    font-weight: 800;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Black.otf') format('opentype');
+    font-weight: 900;
+  }
+  
+
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'TT Commons', sans-serif;
+    font-weight: 400;
+    background-color: #F6F6F6;
+    color: var(--cinza-800);
+    line-height: 1.5;
+}
+.bl {
+    display: flex;
+    position: fixed;
+    justify-content: baseline;
+    align-items: center;
+    height: 100vh;
+    width: var(--largura-barra);
+    overflow: hidden;
+}
+
+.barraLateral {
+    background-color: var(--primario);
+    color: white;
+    padding: 1.5rem 1rem;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    height: 98%;
+    margin: 10px;
+    width: var(--largura-barra);
+    border-radius: 16px;
+}
+
+.logo {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.logo img {
+    width: 160px;
+    height: 45px;
+}
+
+.menuNav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.itemMenu {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.itemMenu:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.itemMenu.ativo {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.itemMenu span {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.rodapeBarra {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.conteudoPrincipal {
+    padding: 1.5rem;
+    margin-left: var(--largura-barra);
+    margin-right: var(--largura-barra-direita);
+    overflow: hidden;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.cabecalho h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cardsResumo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    border-radius: 16px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card.verde {
+    background-color: rgba(74, 222, 128, 0.1);
+}
+
+.card.vermelho {
+    background-color: rgba(248, 113, 113, 0.1);
+}
+
+.card.azul {
+    background-color: rgba(96, 165, 250, 0.1);
+}
+
+.card.amarelo {
+    background-color: rgba(251, 191, 36, 0.1);
+}
+
+.card.ativo {
+    box-shadow: 0 0 0 2px var(--primario);
+}
+
+.iconeCard {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconeCard img {
+    width: 50px;
+}
+
+.card.verde  {
+    background-color: rgba(74, 222, 128, 0.2);
+    color: #16A34A;
+}
+
+.card.vermelho  {
+    background-color: rgba(248, 113, 113, 0.2);
+    color: #DC2626;
+}
+
+.card.azul  {
+    background-color: rgba(96, 165, 250, 0.2);
+    color: #2563EB;
+}
+
+.card.amarelo  {
+    background-color: rgba(251, 191, 36, 0.2);
+    color: #D97706;
+}
+
+.conteudoCard {
+    flex: 1;
+}
+
+.conteudoCard h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--cinza-700);
+    margin-bottom: 0.25rem;
+}
+
+.valor {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.subTexto {
+    font-size: 0.75rem;
+    color: var(--cinza-500);
+}
+
+.conteudoAbas {
+    margin-bottom: 2rem;
+}
+
+.aba {
+    display: none;
+}
+
+.aba.ativo {
+    display: block;
+}
+
+.secaoGraficos, .secaoRelatorios, .secaoTransacoes {
+    margin-bottom: 2rem;
+}
+
+.secaoGraficos h2, .secaoRelatorios h2, .secaoTransacoes h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.containerGraficos {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.containerGraficos .cartaoGrafico {
+    width: 50%;
+}
+
+.cartaoGrafico {
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cartaoGrafico.larguraTotal {
+    grid-column: span 2;
+    margin-bottom: 1rem;
+}
+
+.cabecalhoGrafico h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.cabecalhoGrafico p {
+    font-size: 0.75rem;
+    color: var(--cinza-500);
+    margin-bottom: 1rem;
+}
+
+.grafico {
+    height: 250px;
+    position: relative;
+}
+
+.abasRelatorio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: var(--cinza-200);
+    border-radius: 16px;
+
+}
+
+.botaoAba {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--cinza-700);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.botaoAba:hover {
+    background-color: var(--cinza-100);
+}
+
+.botaoAba.ativo {
+    background-color: var(--primario);
+    color: white;
+    padding: 0.7rem;
+}
+
+.conteudoRelatorio {
+    display: none;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.conteudoRelatorio.ativo {
+    display: block;
+}
+
+.cabecalhoRelatorio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--cinza-200);
+}
+
+.cabecalhoRelatorio h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cabecalhoRelatorio p {
+    font-size: 0.875rem;
+    color: var(--cinza-500);
+}
+
+.acoesRelatorio {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.botaoAcao {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.botaoAcao.primario {
+    background-color: var(--primario);
+    color: white;
+}
+
+.botaoAcao.secundario {
+    background-color: white;
+    color: var(--primario);
+    border: 1px solid var(--primario);
+}
+
+.tabelaContainer {
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th, .tabela td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+}
+
+.tabela th {
+    background-color: var(--cinza-100);
+    font-weight: 500;
+    color: var(--cinza-700);
+}
+
+.tabela tr {
+    border-bottom: 1px solid var(--cinza-200);
+}
+
+.tabela .linhaTotal {
+    font-weight: 600;
+    background-color: var(--cinza-100);
+}
+
+.cartaoTabela {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cabecalhoTabela {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--cinza-200);
+}
+
+.cabecalhoTabela h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.botaoAdicionar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--primario);
+    color: white;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.badge.completo {
+    background-color: rgba(74, 222, 128, 0.2);
+    color: #065F46;
+}
+
+.badge.pendente {
+    background-color: rgba(96, 165, 250, 0.2);
+    color: #1E40AF;
+}
+
+.barraLateralDireita {
+    background-color: #F2F2F2;
+    padding: 1rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--largura-barra-direita);
+    
+}
+
+.perfilUsuario {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.avatarPerfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #E9D5FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primario);
+}
+
+.infoPerfil {
+    margin-left: 0.75rem;
+}
+
+.infoPerfil h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.infoPerfil p {
+    font-size: 0.75rem;
+    color: var(--cinza-500);
+}
+
+.barraPesquisa {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.barraPesquisa input {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 0.5rem;
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+.relatorioMensal, .notificacoes, .proximoVencimento {
+    margin-bottom: 1.5rem;
+}
+
+.relatorioMensal h3, .notificacoes h3, .proximoVencimento h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.cardsRelatorio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.cardRelatorio {
+    background-color: var(--cinza-200);
+    border-radius: 12px;
+    padding: 0.5rem;
+}
+
+.labelRelatorio {
+    font-size: 0.75rem;
+    color: var(--cinza-700);
+    margin-bottom: 0.25rem;
+}
+
+.valorRelatorio {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.listaNotificacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.itemNotificacao {
+    background-color: var(--cinza-200);
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    border-left: 4px solid transparent;
+}
+
+.itemNotificacao.critico {
+    border-left-color: var(--perigo);
+}
+
+.itemNotificacao.alerta {
+    border-left-color: var(--alerta);
+}
+
+.itemNotificacao.info {
+    border-left-color: var(--primario);
+}
+
+.conteudoNotificacao h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.conteudoNotificacao p {
+    font-size: 0.75rem;
+    color: var(--cinza-700);
+}
+
+.cardVencimento {
+    background-color: var(--cinza-200);
+    border-radius: 8px;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.iconeVencimento {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(248, 113, 113, 0.2);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: var(--perigo);
+}
+
+.tituloVencimento {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.detalhesVencimento {
+    font-size: 0.75rem;
+    color: var(--cinza-500);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.conteudoOverlay {
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.botaoOverlay {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.botaoOverlay button {
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--cinza-700);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
