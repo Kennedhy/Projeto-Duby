@@ -4,56 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide-icons@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="bl">
-        <aside class="barraLateral">
-            <div class="logo">
-                <img src="/Assets/imgs/Murilo_Logo_tipografia 1.svg" alt="duby">
-            </div>
-            <nav class="menuNav">
-                <ul>
-                    <li class="itemMenu ativo">
-                        <i data-lucide="layout-dashboard"></i>
-                        <span>Dashboard</span>
-                    </li>
-                    <li class="itemMenu">
-                        <i data-lucide="users"></i>
-                        <span>Usuários</span>
-                    </li>
-                    <li class="itemMenu">
-                        <i data-lucide="file-text"></i>
-                        <span>Relatórios</span>
-                    </li>
-                    <li class="itemMenu">
-                        <i data-lucide="pie-chart"></i>
-                        <span>Gráficos</span>
-                    </li>
-                    <li class="itemMenu">
-                        <i data-lucide="building-2"></i>
-                        <span>Contas Bancárias</span>
-                    </li>
-                    <li class="itemMenu">
-                        <i data-lucide="credit-card"></i>
-                        <span>Adquirentes</span>
-                    </li>
-                </ul>
-            </nav>
-            <div class="rodapeBarra">
-                <div class="itemMenu">
-                    <i data-lucide="settings"></i>
-                    <span>Configurações</span>
-                </div>
-                <div class="itemMenu">
-                    <i data-lucide="help-circle"></i>
-                    <span>Ajuda</span>
-                </div>
-            </div>
-        </aside>
-    </div>    
         <main class="conteudoPrincipal">
             <header class="cabecalho">
                 <h1>Dashboard</h1>
@@ -564,6 +520,14 @@
                 <button id="closeOverlay">Fechar</button>
             </div>
         </div>    
-    <script src="script.js"></script>
+
+    <script src="dashboard.js"></script>
+
+    <script src="../Assets/sidebar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>

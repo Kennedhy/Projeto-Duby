@@ -12,7 +12,6 @@
     --cinza-500: #6B7280;
     --cinza-700: #374151;
     --cinza-800: #1F2937;
-    --largura-barra: 220px;
     --largura-barra-direita: 310px;
 }
 
@@ -86,78 +85,9 @@ body {
     color: var(--cinza-800);
     line-height: 1.5;
 }
-.bl {
-    display: flex;
-    position: fixed;
-    justify-content: baseline;
-    align-items: center;
-    height: 100vh;
-    width: var(--largura-barra);
-    overflow: hidden;
-}
-
-.barraLateral {
-    background-color: var(--primario);
-    color: white;
-    padding: 1.5rem 1rem;
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    height: 98%;
-    margin: 10px;
-    width: var(--largura-barra);
-    border-radius: 16px;
-}
-
-.logo {
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-}
-.logo img {
-    width: 160px;
-    height: 45px;
-}
-
-.menuNav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.itemMenu {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.itemMenu:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.itemMenu.ativo {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.itemMenu span {
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.rodapeBarra {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
 
 .conteudoPrincipal {
     padding: 1.5rem;
-    margin-left: var(--largura-barra);
     margin-right: var(--largura-barra-direita);
     overflow: hidden;
 }
