@@ -432,7 +432,7 @@ body {
 }
 
 .barraLateralDireita {
-    background-color: #F2F2F2;
+    background: rgba(202, 202, 202, 0.15);
     padding: 1rem;
     position: fixed;
     right: 0;
@@ -446,11 +446,12 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 .avatarPerfil {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: #E9D5FF;
     display: flex;
@@ -474,7 +475,7 @@ body {
 }
 
 .barraPesquisa {
-    display: flex;
+    display: none;
     align-items: center;
     background-color: white;
     border-radius: 9999px;
@@ -491,11 +492,11 @@ body {
     font-size: 0.875rem;
 }
 
-.relatorioMensal, .notificacoes, .proximoVencimento {
+.relatorioMensal, .notificacoes, .proximoVencimento, .atalhos {
     margin-bottom: 1.5rem;
 }
 
-.relatorioMensal h3, .notificacoes h3, .proximoVencimento h3 {
+.relatorioMensal h3, .notificacoes h3, .proximoVencimento h3, .atalhos h3 {
     font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
@@ -510,7 +511,7 @@ body {
 .cardRelatorio {
     background-color: var(--cinza-200);
     border-radius: 12px;
-    padding: 0.5rem;
+    padding: 0.7rem;
 }
 
 .labelRelatorio {
@@ -577,7 +578,7 @@ body {
     height: 32px;
     border-radius: 50%;
     background-color: rgba(248, 113, 113, 0.2);
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     color: var(--perigo);
@@ -639,4 +640,45 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  .slides::-webkit-scrollbar {
+    display: none;
+  }
+  .slides > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    margin-right: 50px;
+    border-radius: 10px;
+    background: #eee;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+  }
+
+.cardsAtalhos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.cardAtalhos {
+    background-color: var(--cinza-200);
+    border-radius: 12px;
+    padding: 1rem;
 }
