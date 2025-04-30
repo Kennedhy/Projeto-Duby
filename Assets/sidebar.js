@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     sidebar.innerHTML = `
         <div class="logo">
-            <img src="../Assets/imgs/Murilo_Logo_tipografia 1.svg" alt="duby">
+            <img src="../Assets/imgs/logo-duby.svg" alt="duby">
         </div>
         <nav class="menuNav">
             <ul>
