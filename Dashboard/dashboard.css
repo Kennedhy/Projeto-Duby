@@ -356,7 +356,8 @@ body {
 
 .tabela {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0px 0.3rem;
 }
 
 .tabela th, .tabela td {
@@ -366,18 +367,38 @@ body {
 }
 
 .tabela th {
-    background-color: var(--cinza-100);
+    background-color: var(--cinza-200);
     font-weight: 500;
-    color: var(--cinza-700);
+    color: var(--cinza-700);]
 }
 
 .tabela tr {
-    border-bottom: 1px solid var(--cinza-200);
+    background-color: var(--cinza-100);
+}
+
+tr td:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+tr td:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+thead tr th:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  thead tr th:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .tabela .linhaTotal {
     font-weight: 600;
-    background-color: var(--cinza-100);
+    background-color: var(--cinza-200);
 }
 
 .cartaoTabela {
@@ -446,7 +467,6 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
 }
 
 .avatarPerfil {
@@ -489,7 +509,7 @@ body {
     background: transparent;
     margin-left: 0.5rem;
     width: 100%;
-    font-size: 0.875rem;
+    font-size: 0.875rem;+
 }
 
 .relatorioMensal, .notificacoes, .proximoVencimento, .atalhos {
@@ -509,19 +529,39 @@ body {
 }
 
 .cardRelatorio {
-    background-color: var(--cinza-200);
-    border-radius: 12px;
+    display: flex;
+    height: 75px;
+    gap: 0.3rem;
+    align-items: center;
+    background-color: var(--cinza-300);
+    border-radius: 10px;
     padding: 0.7rem;
+    box-shadow: 5.785px 5.785px 52.068px 0px rgba(0, 0, 0, 0.05);
+}
+
+.imgRelatorio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgRelatorio img {
+    height: 35px;
 }
 
 .labelRelatorio {
-    font-size: 0.75rem;
+    font-size: 12px;
+    font-weight: 500;
     color: var(--cinza-700);
-    margin-bottom: 0.25rem;
 }
 
 .valorRelatorio {
-    font-size: 0.875rem;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.porcentagemRelatorio {
+    font-size: 10px;
     font-weight: 600;
 }
 
@@ -532,7 +572,7 @@ body {
 }
 
 .itemNotificacao {
-    background-color: var(--cinza-200);
+    background-color: var(--cinza-300);
     border-radius: 8px;
     padding: 0.5rem;
     display: flex;
@@ -565,7 +605,7 @@ body {
 }
 
 .cardVencimento {
-    background-color: var(--cinza-200);
+    background-color: var(--cinza-300);
     border-radius: 8px;
     padding: 0.75rem;
     display: flex;
@@ -678,7 +718,7 @@ body {
 }
 
 .cardAtalhos {
-    background-color: var(--cinza-200);
+    background-color: var(--cinza-300);
     border-radius: 12px;
     padding: 1rem;
 }

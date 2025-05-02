@@ -8,40 +8,56 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <nav class="menuNav">
             <ul>
-                <li class="itemMenu" data-page="dashboard.html">
-                    <i data-lucide="layout-dashboard"></i>
-                    <span>Dashboard</span>
+                <li class="itemMenu">
+                    <a href="../Dashboard/dashboard.html" data-page="dashboard.html">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
                 </li>
-                <li class="itemMenu" data-page="usuarios.html">
-                    <i data-lucide="users"></i>
-                    <span>Usuários</span>
+                <li class="itemMenu">
+                    <a href="../Usuarios/usuarios.html" data-page="usuarios.html">
+                        <i data-lucide="users"></i>
+                        <span>Usuários</span>
+                    </a>
                 </li>
-                <li class="itemMenu" data-page="relatorios.html">
-                    <i data-lucide="file-text"></i>
-                    <span>Relatórios</span>
+                <li class="itemMenu">
+                    <a href="../Relatorios/relatorios.html" data-page="relatorios.html">
+                        <i data-lucide="file-text"></i>
+                        <span>Relatórios</span>
+                    </a>
                 </li>
-                <li class="itemMenu" data-page="graficos.html">
-                    <i data-lucide="pie-chart"></i>
-                    <span>Gráficos</span>
+                <li class="itemMenu">
+                    <a href="../Graficos/graficos.html" data-page="graficos.html">
+                        <i data-lucide="pie-chart"></i>
+                        <span>Gráficos</span>
+                    </a>
                 </li>
-                <li class="itemMenu" data-page="contas.html">
-                    <i data-lucide="building-2"></i>
-                    <span>Contas Bancárias</span>
+                <li class="itemMenu">
+                    <a href="../Contas/contas.html" data-page="contas.html">
+                        <i data-lucide="building-2"></i>
+                        <span>Contas Bancárias</span>
+                    </a>
                 </li>
-                <li class="itemMenu" data-page="adquirentes.html">
-                    <i data-lucide="credit-card"></i>
-                    <span>Adquirentes</span>
+                <li class="itemMenu">
+                    <a href="../Adquirentes/adquirentes.html" data-page="adquirentes.html">
+                        <i data-lucide="credit-card"></i>
+                        <span>Adquirentes</span>
+                    </a>
                 </li>
             </ul>
         </nav>
         <div class="rodapeBarra">
-            <div class="itemMenu" data-page="configuracoes.html">
-                <i data-lucide="settings"></i>
-                <span>Configurações</span>
+            <div class="itemMenu">
+                <a href="../Configuracoes/configuracoes.html" data-page="configuracoes.html">
+                    <i data-lucide="settings"></i>
+                    <span>Configurações</span>
+                </a>
             </div>
-            <div class="itemMenu" data-page="ajuda.html">
-                <i data-lucide="help-circle"></i>
-                <span>Ajuda</span>
+            <div class="itemMenu">
+                <a href="../Ajuda/ajuda.html" data-page="ajuda.html">
+                    <i data-lucide="help-circle"></i>
+                    <span>Ajuda</span>
+                </a>
             </div>
         </div>
     `;
@@ -50,27 +66,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function highlightActiveMenuItem() {
         const currentPage = window.location.pathname.split('/').pop();
-        const menuItems = document.querySelectorAll('.itemMenu');
+        const menuLinks = document.querySelectorAll('.itemMenu a');
         
-        menuItems.forEach(item => {
-            const page = item.getAttribute('data-page');
+        menuLinks.forEach(link => {
+            const page = link.getAttribute('data-page');
             if (page === currentPage) {
-                item.classList.add('ativo');
+                link.classList.add('ativo');
             } else {
-                item.classList.remove('ativo');
+                link.classList.remove('ativo');
             }
         });
     }
     
     highlightActiveMenuItem();
-    
-    const menuItems = document.querySelectorAll('.itemMenu');
-    menuItems.forEach(item => {
-        item.addEventListener('click', function() {
-            menuItems.forEach(i => i.classList.remove('ativo'));
-            this.classList.add('ativo');
-        });
-    });
     
     const style = document.createElement('style');
     style.textContent = `
@@ -101,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
             color: var(--cinza-800);
             line-height: 1.5;
             margin-left: calc(var(--largura-barra) + 8px);
-            
         }
         
         .barraLateral {
@@ -139,20 +146,22 @@ document.addEventListener('DOMContentLoaded', function() {
             margin-top: 1rem;
         }
         
-        .itemMenu {
+        .itemMenu a {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             padding: 0.75rem;
             border-radius: 8px;
-            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            width: 100%;
         }
         
-        .itemMenu:hover {
+        .itemMenu a:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
         
-        .itemMenu.ativo {
+        .itemMenu a.ativo {
             background-color: rgba(255, 255, 255, 0.2);
         }
         
@@ -170,4 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     
     document.head.appendChild(style);
+    
+    if (window.lucide) {
+        lucide.createIcons();
+    }
 });
