@@ -112,7 +112,7 @@ function preencherConteudoAbas() {
                         <div class="cabecalhoTabela">
                             <h3>Lançamentos de Pagamentos</h3>
                             <button class="botaoAdicionar">
-                                <i data-lucide="plus"></i>
+                                <i class="iconeTabela" data-lucide="plus"></i>
                                 Adicionar Pagamento
                             </button>
                         </div>
@@ -234,7 +234,7 @@ function preencherConteudoAbas() {
                         <div class="cabecalhoTabela">
                             <h3>Principais Taxas</h3>
                             <button class="botaoAdicionar">
-                                <i data-lucide="plus"></i>
+                                <i class="iconeTabela" data-lucide="plus"></i>
                                 Adicionar Taxa
                             </button>
                         </div>
@@ -408,7 +408,7 @@ function preencherConteudoAbas() {
                         <div class="cabecalhoTabela">
                             <h3>Últimas Divergências</h3>
                             <button class="botaoAdicionar">
-                                <i data-lucide="plus"></i>
+                                <i class="iconeTabela" data-lucide="plus"></i>
                                 Adicionar Divergência
                             </button>
                         </div>

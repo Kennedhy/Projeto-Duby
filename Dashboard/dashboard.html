@@ -17,8 +17,8 @@
 
             <div class="cardsResumo">
                 <div class="card verde" data-tab="recebimentos">
-                    <div class="iconeCard">
-                        <img src="/Assets/imgs/recebimentos.png" alt="">
+                    <div class="iconeCard verde">
+                        <i class="iconeResumo" data-lucide="banknote"></i>
                     </div>
                     <div class="conteudoCard">
                         <h3>Recebimentos</h3>
@@ -27,8 +27,8 @@
                     </div>
                 </div>
                 <div class="card vermelho" data-tab="pagamentos">
-                    <div class="iconeCard">
-                        <img src="/Assets/imgs/pamentos.png" alt="">
+                    <div class="iconeCard vermelho">
+                        <i class="iconeResumo" data-lucide="credit-card"></i>
                     </div>
                     <div class="conteudoCard">
                         <h3>Pagamentos</h3>
@@ -37,8 +37,8 @@
                     </div>
                 </div>
                 <div class="card azul" data-tab="taxas">
-                    <div class="iconeCard">
-                        <img src="/Assets/imgs/taxas.png" alt="">
+                    <div class="iconeCard azul">
+                        <i class="iconeResumo" data-lucide="percent"></i>
                     </div>
                     <div class="conteudoCard">
                         <h3>Taxas</h3>
@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 <div class="card amarelo" data-tab="divergencias">
-                    <div class="iconeCard">
-                        <img src="/Assets/imgs/divergencias.png" alt="">
+                    <div class="iconeCard amarelo">
+                        <i class="iconeResumo" data-lucide="triangle-alert"></i>
                     </div>
                     <div class="conteudoCard">
                         <h3>Divergências</h3>
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="acoesRelatorio">
                                     <button class="botaoAcao primario">
-                                        <i data-lucide="file-plus"></i>
+                                        <i class="iconeTabela" data-lucide="file-down"></i>
                                         Exportar
                                     </button>
                                 </div>
@@ -195,7 +195,7 @@
                                 </div>
                                 <div class="acoesRelatorio">
                                     <button class="botaoAcao primario">
-                                        <i data-lucide="file-plus"></i>
+                                        <i class="iconeTabela" data-lucide="file-down"></i>
                                         Exportar
                                     </button>
                                 </div>
@@ -265,7 +265,7 @@
                                 </div>
                                 <div class="acoesRelatorio">
                                     <button class="botaoAcao primario">
-                                        <i data-lucide="file-plus"></i>
+                                        <i class="iconeTabela" data-lucide="file-down"></i>
                                         Exportar
                                     </button>
                                 </div>
@@ -332,7 +332,7 @@
                                     <p>Últimos lançamentos de recebimentos </p>
                                 </div>
                                 <button class="botaoAdicionar" id="openOverlay">
-                                    <i data-lucide="plus"></i>
+                                    <i class="iconeTabela" data-lucide="plus"></i>
                                     Adicionar Lançamento
                                 </button>
                             </div>
@@ -439,7 +439,7 @@
                 <h3>Relatório Mensal</h3>
                 <div class="cardsRelatorio">
                     <div class="cardRelatorio">
-                        <div class="imgRelatorio"><img src="/Assets/imgs/entrada.png" alt=""></div>
+                        <div class="imgRelatorio verde"><i class="iconeMensal" data-lucide="arrow-up"></i></div>
                         <div class="txtRelatorio">
                         <div class="labelRelatorio">Entrada</div>
                         <div class="valorRelatorio">R$ 49.300</div>
@@ -447,7 +447,7 @@
                         </div>
                     </div> 
                         <div class="cardRelatorio">
-                        <div class="imgRelatorio"><img src="/Assets/imgs/saida.png" alt=""></div>
+                        <div class="imgRelatorio vermelho"><i class="iconeMensal" data-lucide="arrow-down"></i></div>
                         <div class="txtRelatorio">
                         <div class="labelRelatorio">Saída</div>
                         <div class="valorRelatorio">R$ 28.300</div>
@@ -455,7 +455,7 @@
                         </div>
                     </div>
                     <div class="cardRelatorio">
-                        <div class="imgRelatorio"><img src="/Assets/imgs/cartao.png" alt=""></div>
+                        <div class="imgRelatorio azul"><i class="iconeMensal" data-lucide="credit-card"></i></div>
                         <div class="txtRelatorio">
                         <div class="labelRelatorio">R. Futuros</div>
                         <div class="valorRelatorio">R$ 9.300</div>
@@ -464,7 +464,7 @@
                     </div>
 
                     <div class="cardRelatorio">
-                        <div class="imgRelatorio"><img src="/Assets/imgs/calendario.png" alt=""></div>
+                        <div class="imgRelatorio amarelo"><i class="iconeMensal" data-lucide="calendar"></i></div>
                         <div class="txtRelatorio">
                         <div class="labelRelatorio">P. Futuros</div>
                         <div class="valorRelatorio">R$ 9.300</div>
@@ -479,18 +479,27 @@
                 <h3>Notificações</h3>
                 <div class="listaNotificacoes">
                     <div class="itemNotificacao critico">
+                        <div class="iconeNotificacao critico">
+                            <i data-lucide="triangle-alert"></i>
+                        </div>
                         <div class="conteudoNotificacao">
                             <h4>Divergência Crítica</h4>
                             <p>Venda #12345 de R$ 5.200,00 não encontrada no extrato da Cielo.</p>
                         </div>
                     </div>
                     <div class="itemNotificacao alerta">
+                        <div class="iconeNotificacao alerta">
+                            <i data-lucide="percent"></i>
+                        </div>
                         <div class="conteudoNotificacao">
                             <h4>Taxas Acima do Esperado</h4>
                             <p>As taxas da Stone estão 0,5% acima do contratado neste mês.</p>
                         </div>
                     </div>
                     <div class="itemNotificacao info">
+                        <div class="iconeNotificacao info">
+                            <i data-lucide="file-text"></i>
+                        </div>
                         <div class="conteudoNotificacao">
                             <h4>Novo Relatório Disponível</h4>
                             <p>O relatório mensal de Março/2025 já está disponível.</p>
@@ -544,7 +553,7 @@
 
     <script src="dashboard.js"></script>
 
-    <script src="../Assets/sidebar.js"></script>
+    <script src="../Assets/sidebar-v2.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();
