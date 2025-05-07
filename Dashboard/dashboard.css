@@ -83,7 +83,6 @@ body {
     font-weight: 400;
     background-color: #F6F6F6;
     color: #343434;
-    color: var(--cinza-800);
     line-height: 1.5;
 }
 
