@@ -467,7 +467,7 @@ thead tr th:first-child {
 }
 
 .barraLateralDireita {
-    background: var(--cinza-100);
+    background: #fafafa;
     border: 1px solid #F0F0F0;
     padding: 0.8rem;
     position: fixed;
@@ -549,7 +549,7 @@ thead tr th:first-child {
     height: 75px;
     gap: 0.3rem;
     align-items: center;
-    background-color: #fafafa;
+    background-color: #f0f0f0;
     border-radius: 10px;
     padding: 0.7rem;
     box-shadow: 5.785px 5.785px 52.068px 0px rgba(0, 0, 0, 0.05);
@@ -699,6 +699,7 @@ thead tr th:first-child {
     padding: 1rem;
     
 }
+
 
 
 

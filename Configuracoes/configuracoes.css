@@ -1,0 +1,135 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 2rem;
+  }
+
+  .container {
+   max-width: 1800px;
+  }
+
+  h1 {
+  color: #2c2c6c;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  }
+  
+  .tabs {
+  background: #f0f0f0;
+  padding: 0.7rem;
+  width: 575px;
+  border-radius: 15px;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  }
+
+  .tab {
+  background: #e2e2e2;
+  padding: 0.8rem 1.5rem;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  }   
+
+  .tab.active {
+  background: #6b5cc2;
+  color: white;
+  }
+
+  .form-section {
+  background: #f0f0f0;
+  padding: 2rem;
+  border-radius: 15px;
+  }
+
+  .form-section h2 {
+  margin-top: 0;
+  color: #333;
+  }
+
+  .form-section p {
+  margin-top: 0.3rem;
+  margin-bottom: 2rem;
+  color: #666;
+  }
+
+  .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  column-gap: 8rem;
+  row-gap: 1rem;
+  padding-bottom: 1rem;
+  }
+
+  .middle-line {
+  border: none;
+  height: 2px;
+  background-color: #ddd;
+  margin: 2rem 0;
+  }
+
+  .form-middle {        
+  margin-top: 0.3rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  }
+
+  .form-middle input {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: #ddd;
+  }
+
+  .form-grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 1rem;
+  row-gap: 1rem;
+  }
+
+  .form-group {
+  display: flex;
+  flex-direction: column;
+  }
+
+  .form-group label {
+  margin-bottom: 0.3rem;
+  color: #444;
+  font-weight: 500;
+  }
+
+  .form-group input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: #ddd;
+  }
+
+  .save-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  }
+
+  .save-button button {
+  background: #3f2ca3;
+  color: white;
+  width: 150px;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  }
+
+  .save-button button:hover {
+  background: #2e1e90;
+  }
