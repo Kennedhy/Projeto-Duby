@@ -1,0 +1,360 @@
+@font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Thin.otf') format('opentype');
+    font-weight: 100;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ ExtraLight.otf') format('opentype');
+    font-weight: 200;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Light.otf') format('opentype');
+    font-weight: 300;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Regular.otf') format('opentype');
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Medium.otf') format('opentype');
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ DemiBold.otf') format('opentype');
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Bold.otf') format('opentype');
+    font-weight: 700;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ ExtraBold.otf') format('opentype');
+    font-weight: 800;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Black.otf') format('opentype');
+    font-weight: 900;
+  }
+  
+  :root {
+    --primario: #412884;
+    --primario-escuro: #312E81;
+    --primario-claro: #818CF8;
+    --primario-muito-claro: #C7D2FE;
+    --sucesso: #4ADE80;
+    --alerta: #FBBF24;
+    --perigo: #F87171;
+    --cinza-100: #F3F4F6;
+    --cinza-200: #E5E7EB;
+    --cinza-300: #D1D5DB;
+    --cinza-500: #6B7280;
+    --cinza-700: #374151;
+    --cinza-800: #1F2937;
+    --largura-barra-direita: 310px;
+}  
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'TT Commons', sans-serif;
+    font-weight: 400;
+    background-color: #F6F6F6;
+    color: var(--cinza-800);
+    line-height: 1.5;
+}
+
+h1{
+  padding-bottom: 16px;
+}
+
+.conteudoPrincipal {
+    padding: 1.5rem;
+    margin-right: var(--largura-barra-direita);
+    overflow: hidden;
+}
+   
+.listaUsuarios {
+  border-radius: 26.546px;
+  background: rgba(221, 221, 221, 0.40);
+  padding: 31px;
+  padding-top: 10px;
+  flex: 1 0 0;
+}
+
+.listaUsuariosHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .listaUsuarios button {
+    background-color: #3b2b7e;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+
+  .listaUsuarios button:hover {
+    background-color: #302565;
+  }
+  
+.tabelaUsuarios {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    margin-top: 15px;
+  }
+  
+  .tabelaUsuarios th,
+  .tabelaUsuarios td {
+    text-align: left;
+    padding: 12px;
+  }
+
+  .tabelaUsuarios tbody tr {
+    background: rgba(217, 217, 217, 0.50);
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+.tag {
+    padding: 4px 6px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.9em;
+  }
+  .admin {background: rgba(65, 40, 132, 0.30); color: #412884;}
+  .gerente { background: rgba(33, 150, 243, 0.30); color: #0061BE; }
+  .analista { background: rgba(76, 175, 80, 0.30); color: #197C1D;}
+  .operador { background: rgba(251, 140, 0, 0.30); color: #BA4B00;}
+
+.barraLateralDireita {
+    background: rgba(202, 202, 202, 0.15);
+    padding: 1rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--largura-barra-direita);
+    border-radius: 16px;
+}
+
+.perfilUsuario {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.avatarPerfil {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #E9D5FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primario);
+}
+
+.infoPerfil {
+    margin-left: 0.75rem;
+}
+
+.infoPerfil h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.infoPerfil p {
+    font-size: 0.75rem;
+    color: var(--cinza-500);
+}
+
+#funcao{
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16.5px;
+}
+
+#permissao{
+  font-size: 14px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#permissao h3{
+  padding-bottom: 14px;
+}
+.permissao {
+  background-color: #D9D9D9;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 12px;
+  display: inline-flex;
+  margin: 2px;
+}
+
+.listaNotificacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.notificacoes h3{
+  font-size: 16px;
+  padding-bottom: 14px;
+}
+
+.itemNotificacao {
+    background-color: var(--cinza-200);
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    border-left: 4px solid transparent;
+}
+
+.itemNotificacao.critico {
+    border-left-color: var(--perigo);
+}
+
+.itemNotificacao.alerta {
+    border-left-color: var(--alerta);
+}
+
+.itemNotificacao.info {
+    border-left-color: var(--primario);
+}
+
+.conteudoNotificacao h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.conteudoNotificacao p {
+    font-size: 0.75rem;
+    color: var(--cinza-700);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    
+}
+
+  .modal {
+    background: #F2F2F2;
+    padding: 30px;
+    width: 650px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    gap: 37px 45px;
+  }
+  
+  .modal h2 {
+    color: #3b2b7e;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.64px;
+    margin-bottom: 5px;
+  }
+  
+  .modal p {
+    color: #888484;
+    font-size: 16px;
+    line-height: 28px; 
+    margin-bottom: 20px;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  
+  .form-grid label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+    padding: 4px;
+  }
+  
+  .form-grid input,
+  .form-grid select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #D9D9D9;
+  }
+  
+  .form-actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .form-actions button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  #btnCancel {
+    background: #ddd;
+    
+  }
+  #btnCancel:hover {
+    background: #ccc;
+  }
+  
+  .form-actions button[type="submit"] {
+    background: #3b2b7e;
+    color: white;
+    box-shadow:   1px 2px 2px rgba(0,0,0,0.2);
+  }
+  .form-actions button[type="submit"]:hover {
+    background: #302565;
+  }

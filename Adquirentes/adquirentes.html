@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adquirentes</title>
+    <link rel="stylesheet" href="adquirentes.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <main class="conteudoPrincipal">
+        <header class="cabecalho">
+            <h1>Adquirentes</h1>
+        </header>
+
+             <div class="abasRelatorio">
+                    <button class="botaoAba ativo" data-relatorio="resumo">Adquirentes</button>
+                    <button class="botaoAba" data-relatorio="metodo">Lançamentos</button>
+                    <button class="botaoAba" data-relatorio="comparativo">Taxas</button>
+             </div>
+
+             <div class="conteudoRelatorio ativo" id="resumo">
+          
+        
+          <div class="conteudoRelatorio" id="metodo">
+            <section class="listaUsuarios">
+              <div class="listaUsuariosHeader">
+                <h2>Gerenciamento de Adquirentes</h2>
+                <button id="btnOpenForm">+ Adicionar Usuário</button>
+              </div>
+              <h3>Vizualize e gerencie todas as suas contas em um só lugar.</h3>
+              <table class="tabelaUsuarios">
+                <thead>
+                  <tr>
+                    <th>Adquirente</th>
+                    <th>Merchant ID</th>
+                    <th>Terminal</th>
+                    <th>Volume</th>
+                    <th>Transações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Stone</td>
+                    <td>123456789</td>
+                    <td>12345</td>
+                    <td>R$ 26.300.00</td>
+                    <td>156</td>
+                  </tr>
+                  <tr>
+                    <td>Cielo</td>
+                    <td>123456789</td>
+                    <td>12345</td>
+                    <td>R$ 26.300.00</td>
+                    <td>156</td>
+                  </tr>
+                  <tr>
+                    <td>Mercado Pago</td>
+                    <td>123456789</td>
+                    <td>12345</td>
+                    <td>R$ 26.300.00</td>
+                    <td>156</td>
+                  </tr>
+                  <tr>
+                    <td>Ton</td>
+                    <td>123456789</td>
+                    <td>12345</td>
+                    <td>R$ 26.300.00</td>
+                    <td>156</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+        </main>
+      </div>
+      
+      <div class="overlay" id="addUsuario">
+        <div class="modal">
+          <h2>Adicionar Novo Usuário</h2>
+          <p>Preencha os dados abaixo para criar um novo Usuário no sistema.</p>
+          <form class="form-grid">
+            <div>
+              <label>Nome Completo</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label>E-mail</label>
+              <input type="email" />
+            </div>
+            <div>
+              <label>Função</label>
+              <select>
+                <option>Selecione uma função</option>
+                <option>Administrador</option>
+                <option>Gerente</option>
+                <option>Analista</option>
+                <option>Operador</option>
+              </select>
+            </div>
+            <div>
+              <label>Permissões</label>
+              <select>
+                <option>Selecione uma função</option>
+                <option>Básico</option>
+                <option>Avançado</option>
+              </select>
+            </div>
+            <div>
+              <label>Senha</label>
+              <input type="password" />
+            </div>
+            <div>
+              <label>Confirmar Senha</label>
+              <input type="password" />
+            </div>
+            <div class="form-actions">
+              <button type="button" id="btnCancel">Cancelar</button>
+              <button type="submit">Adicionar Usuário</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    <aside class="barraLateralDireita">
+        <div class="perfilUsuario">
+            <div class="avatarPerfil">
+                <i data-lucide="user"></i>
+            </div>
+            <div class="infoPerfil">
+                <h3>João Silva</h3>
+                <p>Administrador</p>
+            </div>
+        </div>
+
+        <div class="barraPesquisa">
+            <i data-lucide="search"></i>
+            <input type="text" placeholder="Pesquisar">
+        </div>
+
+        <div class="relatorioMensal">
+            <h3>Relatório Mensal</h3>
+            <div class="cardsRelatorio">
+                <div class="cardRelatorio">
+                    <div class="labelRelatorio">Entrada</div>
+                    <div class="valorRelatorio">R$ 49.300</div>
+                </div>
+                <div class="cardRelatorio">
+                    <div class="labelRelatorio">Recebimentos Futuros</div>
+                    <div class="valorRelatorio">R$ 9.300</div>
+                </div>
+                <div class="cardRelatorio">
+                    <div class="labelRelatorio">Saída</div>
+                    <div class="valorRelatorio">R$ 28.300</div>
+                </div>
+                <div class="cardRelatorio">
+                    <div class="labelRelatorio">Pagamentos Futuros</div>
+                    <div class="valorRelatorio">R$ 9.300</div>
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+         <div class="slides">   
+         <div class="notificacoes">
+            <h3>Notificações</h3>
+            <div class="listaNotificacoes">
+                <div class="itemNotificacao critico">
+                    <div class="conteudoNotificacao">
+                        <h4>Divergência Crítica</h4>
+                        <p>Venda #12345 de R$ 5.200,00 não encontrada no extrato da Cielo.</p>
+                    </div>
+                </div>
+                <div class="itemNotificacao alerta">
+                    <div class="conteudoNotificacao">
+                        <h4>Taxas Acima do Esperado</h4>
+                        <p>As taxas da Stone estão 0,5% acima do contratado neste mês.</p>
+                    </div>
+                </div>
+                <div class="itemNotificacao info">
+                    <div class="conteudoNotificacao">
+                        <h4>Novo Relatório Disponível</h4>
+                        <p>O relatório mensal de Março/2025 já está disponível.</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+    <script src="../Assets/sidebar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
+    <script src="adquirentes.js"></script>
+</body>
+</html>
