@@ -4,12 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="consiliacao.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../Assets/sidebar.js"></script>
 </head>
 <body>
+    <main class="conteudoPrincipal">
+        <header class="cabecalho">
+            <h1>Conciliação</h1>
+        </header>
+
+        <div class="cardsResumo">
+
+            <div class="card">
+                <div class="conteudoCard">
+                    <h3>Total de Transações</h3>
+                    <p class="valor">1.258</p>
+                    <p class="subTexto">R$ 458.750,00</p>
+                </div>
+            </div>
+                        
+            <div class="card verde">
+                <div class="iconeCard verde">
+                    <i class="iconeResumo" data-lucide="check"></i>
+                </div>
+                <div class="conteudoCard">
+                    <h3>Conciliado</h3>
+                    <p class="valor">R$ 64.86%</p>
+                    <p class="subTexto">225 1.087 transações • R$ 392.350,00</p>
+                </div>
+            </div>
+
+            <div class="card azul">
+                <div class="iconeCard azul">
+                    <i class="iconeResumo" data-lucide="clock-4"></i>
+                </div>
+                <div class="conteudoCard">
+                    <h3>Pendente</h3>
+                    <p class="valor">8%</p>
+                    <p class="subTexto">98 transações • R$ 42.800,00</p>
+                </div>
+            </div>
+            <div class="card amarelo" data-tab="divergencias">
+                <div class="iconeCard amarelo">
+                    <i class="iconeResumo" data-lucide="triangle-alert"></i>
+                </div>
+                <div class="conteudoCard">
+                    <h3>Divergente</h3>
+                    <p class="valor">6%</p>
+                    <p class="subTexto">73 transações • R$ 23.600,00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="filtros">
+
+            <div class="barraPesquisa">
+                <input type="text">
+            </div>
+
+            <button>
+                Todos os Adquirentes
+                <i data-lucide="chevron-down"></i>
+            </button>
+
+            <button>
+                Todos os Bancos
+                <i data-lucide="chevron-down"></i>
+            </button>
+
+            <button>
+                Todos os Status
+                <i data-lucide="chevron-down"></i>
+            </button>
+
+            <button>
+                Filtrar
+            </button>
+
+        </div>
 
 
+    </main>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();
