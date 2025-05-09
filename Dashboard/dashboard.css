@@ -12,7 +12,7 @@
     --cinza-500: #6B7280;
     --cinza-700: #374151;
     --cinza-800: #1F2937;
-    --largura-barra-direita: 310px;
+    -largura-barra-direita: 310px;
 }
 
 
@@ -466,6 +466,7 @@ thead tr th:first-child {
 }
 
 .barraLateralDireita {
+    display: none;
     background: #fafafa;
     border: 1px solid #F0F0F0;
     padding: 0.8rem;
