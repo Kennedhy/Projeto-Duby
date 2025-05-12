@@ -9,12 +9,25 @@
 </head>
 <body>
 
-    <main class="conteudoPrincipal">
+  <main class="conteudoPrincipal">
         <header class="cabecalho">
             <h1>Usuários</h1>
+          <div class="cabecalhoDireita">
+            <div class="cabecalhoBusca">
+              <i data-lucide="search" class="cabecalhoIcone"></i>
+              <input type="search" placeholder="Buscar" class="cabecalhoInput">
+            </div>
+            <button class="cabecalhoBotao">
+              <i data-lucide="bell" class="cabecalhoIcones"></i>
+            </button>
+            <button class="cabecalhoBotao">
+              <i data-lucide="user" class="cabecalhoIcones"></i>
+            </button>
+          </div>
         </header>
+      <section class="conteudo">
 
-        <section class="listaUsuarios">
+        <div class="listaUsuarios">
             <div class="listaUsuariosHeader">
               <h2>Lista de Usuários</h2>
               <button id="btnOpenForm">+ Adicionar Usuário</button>
@@ -55,58 +68,11 @@
                 </tr>
               </tbody>
             </table>
-          </section>
-        </main>
-      </div>
-      
-      <div class="overlay" id="addUsuario">
-        <div class="modal">
-          <h2>Adicionar Novo Usuário</h2>
-          <p>Preencha os dados abaixo para criar um novo Usuário no sistema.</p>
-          <form class="form-grid">
-            <div>
-              <label>Nome Completo</label>
-              <input type="text" />
-            </div>
-            <div>
-              <label>E-mail</label>
-              <input type="email" />
-            </div>
-            <div>
-              <label>Função</label>
-              <select>
-                <option>Selecione uma função</option>
-                <option>Administrador</option>
-                <option>Gerente</option>
-                <option>Analista</option>
-                <option>Operador</option>
-              </select>
-            </div>
-            <div>
-              <label>Permissões</label>
-              <select>
-                <option>Selecione o nível de permissão</option>
-                <option>Básico</option>
-                <option>Avançado</option>
-              </select>
-            </div>
-            <div>
-              <label>Senha</label>
-              <input type="password" />
-            </div>
-            <div>
-              <label>Confirmar Senha</label>
-              <input type="password" />
-            </div>
-            <div class="form-actions">
-              <button type="button" id="btnCancel">Cancelar</button>
-              <button type="submit">Adicionar Usuário</button>
-            </div>
-          </form>
-        </div>
-      </div>
+          </div>
+        
 
-    <aside class="barraLateralDireita">
+
+       <div class="barraLateralDireita">
         <div class="perfilUsuario">
             <div class="avatarPerfil">
                 <i data-lucide="user"></i>
@@ -154,6 +120,56 @@
                 </div>
             </div>
          </div>
+        </div>
+      </section>    
+  </main>
+    
+          <div class="overlay" id="addUsuario">
+        <div class="modal">
+          <h2>Adicionar Novo Usuário</h2>
+          <p>Preencha os dados abaixo para criar um novo Usuário no sistema.</p>
+          <form class="form-grid">
+            <div>
+              <label>Nome Completo</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label>E-mail</label>
+              <input type="email" />
+            </div>
+            <div>
+              <label>Função</label>
+              <select>
+                <option>Selecione uma função</option>
+                <option>Administrador</option>
+                <option>Gerente</option>
+                <option>Analista</option>
+                <option>Operador</option>
+              </select>
+            </div>
+            <div>
+              <label>Permissões</label>
+              <select>
+                <option>Selecione o nível de permissão</option>
+                <option>Básico</option>
+                <option>Avançado</option>
+              </select>
+            </div>
+            <div>
+              <label>Senha</label>
+              <input type="password" />
+            </div>
+            <div>
+              <label>Confirmar Senha</label>
+              <input type="password" />
+            </div>
+            <div class="form-actions">
+              <button type="button" id="btnCancel">Cancelar</button>
+              <button type="submit">Adicionar Usuário</button>
+            </div>
+          </form>
+        </div>
+      </div>
 
     <script src="../Assets/sidebar.js"></script>
     <script>

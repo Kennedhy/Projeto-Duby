@@ -53,7 +53,8 @@ body {
 
 .cabecalhoDireita {
     padding: 0.5rem;
-    background-color: #d9d9d9;
+    background-color: #fafafa;
+    box-shadow: 4px 4px 54px 0px rgba(65, 40, 132, 0.10);
     border-radius: 12px;
     margin-left: auto;
     display: flex;
@@ -75,10 +76,14 @@ body {
     height: 1rem;
 }
 
+.cabecalhoIcones {
+    width: 1.2rem;
+}
+
 .cabecalhoInput {
     width: 220px;
     padding: 0.5rem 0.75rem 0.5rem 2rem;
-    border: 1px solid var(--corBorda);
+    border: 1px solid #f0f0f0;
     border-radius: var(--raioBorda);
     outline: none;
 }
