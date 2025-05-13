@@ -92,15 +92,28 @@ body {
     overflow: hidden;
 }
 
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.cabecalho h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 .abasRelatorio {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
     background-color: var(--cinza-200);
     border-radius: 16px;
-    
+    width: 80%;
 }
 
 .botaoAba {
