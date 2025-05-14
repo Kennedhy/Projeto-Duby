@@ -9,75 +9,180 @@
 </head>
 <body>
 
-    <main class="conteudoPrincipal">
-        <header class="cabecalho">
-            <h1>Adquirentes</h1>
-        </header>
-
-             <div class="abasRelatorio">
-                    <button class="botaoAba ativo" data-relatorio="resumo">Adquirentes</button>
-                    <button class="botaoAba" data-relatorio="metodo">Lançamentos</button>
-                    <button class="botaoAba" data-relatorio="comparativo">Taxas</button>
-             </div>
-
-             <div class="conteudoRelatorio ativo" id="resumo">
+   
+  <div class="container">
+    <h1>Adquirentes</h1>
+    
+    
+    <input type="radio" name="tabs" id="tab-adquirentes" class="tab-input" checked>
+    <input type="radio" name="tabs" id="tab-lancamentos" class="tab-input">
+    <input type="radio" name="tabs" id="tab-taxas" class="tab-input">
+    
+    
+    <div class="tabs">
+        <label for="tab-adquirentes" class="tab-btn">Adquirentes</label>
+        <label for="tab-lancamentos" class="tab-btn">Lançamentos</label>
+        <label for="tab-taxas" class="tab-btn">Taxas</label>
+    </div>
+    
+    
+    <div id="content-adquirentes" class="tab-content">
+        <div class="listaUsuariosHeader">
+            <h2>Gerenciamento de Adquirentes</h2>
+            <button id="btnOpenForm">+ Adicionar Usuário</button>
+          </div>
           
+        <p class="info-text">Visualize e gerencie todas as suas contas em um só lugar</p>
         
-          <div class="conteudoRelatorio" id="metodo">
-            <section class="listaUsuarios">
-              <div class="listaUsuariosHeader">
-                <h2>Gerenciamento de Adquirentes</h2>
-                <button id="btnOpenForm">+ Adicionar Usuário</button>
-              </div>
-              <h3>Vizualize e gerencie todas as suas contas em um só lugar.</h3>
-              <table class="tabelaUsuarios">
-                <thead>
-                  <tr>
+        <table>
+            <thead>
+                <tr>
                     <th>Adquirente</th>
                     <th>Merchant ID</th>
                     <th>Terminal</th>
                     <th>Volume</th>
                     <th>Transações</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="circle"></span>Stone</td>
+                    <td>123456789</td>
+                    <td>12345</td>
+                    <td>R$ 23.600,00</td>
+                    <td>156</td>
+                </tr>
+                <tr>
+                    <td><span class="circle"></span>Mercado Pago</td>
+                    <td>123456789</td>
+                    <td>12345</td>
+                    <td>R$ 23.600,00</td>
+                    <td>156</td>
+                </tr>
+                <tr>
+                    <td><span class="circle"></span>Cielo</td>
+                    <td>123456789</td>
+                    <td>12345</td>
+                    <td>R$ 23.600,00</td>
+                    <td>156</td>
+                </tr>
+                <tr>
+                    <td><span class="circle"></span>Ton</td>
+                    <td>123456789</td>
+                    <td>12345</td>
+                    <td>R$ 23.600,00</td>
+                    <td>156</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <div id="content-lancamentos" class="tab-content">
+        <div class="lancamentosHeader">
+          <h2>Lançamentos Financeiros</h2>
+          <button id="lancamentos">+ Lançamentos</button>
+          <button id="hoje">Hoje</button>
+          <button id="filtros">Filtros</button>
+         </div>
+    
+        <p class="info-text">Visualize todos os lançamentos financeiros dos últimos 30 dias</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Adquirente</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>15/05/2023</td>
+                    <td>Pagamento recebido</td>
                     <td>Stone</td>
-                    <td>123456789</td>
-                    <td>12345</td>
-                    <td>R$ 26.300.00</td>
-                    <td>156</td>
-                  </tr>
-                  <tr>
+                    <td>R$ 1.250,00</td>
+                    <td>Concluído</td>
+                </tr>
+                <tr>
+                    <td>14/05/2023</td>
+                    <td>Taxa de serviço</td>
                     <td>Cielo</td>
-                    <td>123456789</td>
-                    <td>12345</td>
-                    <td>R$ 26.300.00</td>
-                    <td>156</td>
-                  </tr>
-                  <tr>
+                    <td>- R$ 45,00</td>
+                    <td>Concluído</td>
+                </tr>
+                <tr>
+                    <td>12/05/2023</td>
+                    <td>Pagamento recebido</td>
                     <td>Mercado Pago</td>
-                    <td>123456789</td>
-                    <td>12345</td>
-                    <td>R$ 26.300.00</td>
-                    <td>156</td>
-                  </tr>
-                  <tr>
+                    <td>R$ 890,00</td>
+                    <td>Concluído</td>
+                </tr>
+                <tr>
+                    <td>10/05/2023</td>
+                    <td>Estorno</td>
                     <td>Ton</td>
-                    <td>123456789</td>
-                    <td>12345</td>
-                    <td>R$ 26.300.00</td>
-                    <td>156</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-        </main>
-      </div>
-      
-      <div class="overlay" id="addUsuario">
+                    <td>- R$ 320,00</td>
+                    <td>Processando</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+   
+    <div id="content-taxas" class="tab-content">
+        <h2>Taxas e Tarifas</h2>
+        
+        <p class="info-text">Detalhes de todas as taxas aplicadas pelos adquirentes</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Adquirente</th>
+                    <th>Tipo de Taxa</th>
+                    <th>Valor (%)</th>
+                    <th>Valor Fixo</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Stone</td>
+                    <td>Taxa de Venda</td>
+                    <td>2,99%</td>
+                    <td>R$ 0,25</td>
+                    <td>Taxa por transação</td>
+                </tr>
+                <tr>
+                    <td>Cielo</td>
+                    <td>Taxa de Venda</td>
+                    <td>3,49%</td>
+                    <td>R$ 0,30</td>
+                    <td>Taxa por transação</td>
+                </tr>
+                <tr>
+                    <td>Mercado Pago</td>
+                    <td>Taxa de Boleto</td>
+                    <td>1,99%</td>
+                    <td>R$ 0,00</td>
+                    <td>Taxa para pagamentos com boleto</td>
+                </tr>
+                <tr>
+                    <td>Ton</td>
+                    <td>Taxa Mensal</td>
+                    <td>0,00%</td>
+                    <td>R$ 29,90</td>
+                    <td>Taxa de plano mensal</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="overlay" id="addUsuario">
         <div class="modal">
           <h2>Adicionar Novo Usuário</h2>
+          
           <p>Preencha os dados abaixo para criar um novo Usuário no sistema.</p>
           <form class="form-grid">
             <div>
@@ -121,70 +226,7 @@
           </form>
         </div>
       </div>
-
-    <aside class="barraLateralDireita">
-        <div class="perfilUsuario">
-            <div class="avatarPerfil">
-                <i data-lucide="user"></i>
-            </div>
-            <div class="infoPerfil">
-                <h3>João Silva</h3>
-                <p>Administrador</p>
-            </div>
-        </div>
-
-        <div class="barraPesquisa">
-            <i data-lucide="search"></i>
-            <input type="text" placeholder="Pesquisar">
-        </div>
-
-        <div class="relatorioMensal">
-            <h3>Relatório Mensal</h3>
-            <div class="cardsRelatorio">
-                <div class="cardRelatorio">
-                    <div class="labelRelatorio">Entrada</div>
-                    <div class="valorRelatorio">R$ 49.300</div>
-                </div>
-                <div class="cardRelatorio">
-                    <div class="labelRelatorio">Recebimentos Futuros</div>
-                    <div class="valorRelatorio">R$ 9.300</div>
-                </div>
-                <div class="cardRelatorio">
-                    <div class="labelRelatorio">Saída</div>
-                    <div class="valorRelatorio">R$ 28.300</div>
-                </div>
-                <div class="cardRelatorio">
-                    <div class="labelRelatorio">Pagamentos Futuros</div>
-                    <div class="valorRelatorio">R$ 9.300</div>
-                </div>
-            </div>
-        </div>
-        <div class="slider">
-         <div class="slides">   
-         <div class="notificacoes">
-            <h3>Notificações</h3>
-            <div class="listaNotificacoes">
-                <div class="itemNotificacao critico">
-                    <div class="conteudoNotificacao">
-                        <h4>Divergência Crítica</h4>
-                        <p>Venda #12345 de R$ 5.200,00 não encontrada no extrato da Cielo.</p>
-                    </div>
-                </div>
-                <div class="itemNotificacao alerta">
-                    <div class="conteudoNotificacao">
-                        <h4>Taxas Acima do Esperado</h4>
-                        <p>As taxas da Stone estão 0,5% acima do contratado neste mês.</p>
-                    </div>
-                </div>
-                <div class="itemNotificacao info">
-                    <div class="conteudoNotificacao">
-                        <h4>Novo Relatório Disponível</h4>
-                        <p>O relatório mensal de Março/2025 já está disponível.</p>
-                    </div>
-                </div>
-            </div>
-         </div>
-
+</div>
     <script src="../Assets/sidebar.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
