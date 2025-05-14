@@ -8,35 +8,77 @@
     <link rel="stylesheet" href="ajuda.css">
 </head>
 <body>
-    <div class="container">
-
-        <main class="content">
+        <main class="conteudoPrincipal">
           <header class="cabecalho">
             <h1>Ajuda</h1>
-            <div class="search-profile">
-              <input type="text" placeholder="🔍 Search">
-              <span class="bell">🔔</span>
-              <span class="avatar">👤</span>
-            </div>
           </header>
     
-          <div class="tabs">
-            <button class="tab active">Perguntas Frequentes</button>
-            <button class="tab">Entre em Contato</button>
+          <div class="abasRelatorio">
+              <button class="botaoAba ativo" data-relatorio="aba1">Perguntas Frequentes</button>
+              <button class="botaoAba" data-relatorio="aba2">Contato</button>
           </div>
     
-          <section class="faq">
+          <div class="conteudoAbas ativo" id="aba1">
+           <section class="faq">
             <h2>Perguntas Frequentes</h2>
-            <div class="faq-item">Como funciona a conciliação financeira?</div>
-            <div class="faq-item">Como importar dados bancários?</div>
-            <div class="faq-item">O que significam as discrepâncias no dashboard?</div>
-            <div class="faq-item">Como resolver uma discrepância?</div>
-            <div class="faq-item">Como adicionar um novo usuário ao sistema?</div>
-            <div class="faq-item">Como configurar uma nova adquirente?</div>
-          </section>
+
+            <details class="faq-item">
+              <summary>
+                Como funciona a conciliação financeira?
+              </summary>
+              <p>
+                A conciliação financeira é o processo de comparar transações financeiras registradas em diferentes sistemas para garantir que os valores estejam corretos. Nosso sistema automatiza esse processo, identificando discrepâncias e ajudando você a resolvê-las.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Como importar dados bancários?
+              </summary>
+              <p>
+                Para importar dados bancários, acesse a seção 'Contas' no menu lateral, selecione a conta desejada e clique no botão 'Importar Dados'. Você pode fazer upload de arquivos CSV, OFX ou extratos bancários em outros formatos.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                O que significam as discrepâncias no dashboard?
+              </summary>
+              <p>
+                Discrepâncias são diferenças encontradas entre os valores esperados e os valores reais nas transações. Elas podem indicar erros, fraudes ou problemas de processamento. No dashboard, você pode visualizar todas as discrepâncias identificadas e tomar ações para resolvê-las.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Como resolver uma discrepância?
+              </summary>
+              <p>
+                Para resolver uma discrepância, clique nela no dashboard para ver os detalhes. Você pode então escolher uma das ações recomendadas ou registrar uma justificativa para a diferença. Após resolver, a discrepância será marcada como resolvida e movida para o histórico.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Como adicionar um novo usuário ao sistema?
+              </summary>
+              <p>
+                Para adicionar um novo usuário, acesse a seção 'Usuários' no menu lateral e clique no botão 'Adicionar Usuário'. Preencha as informações necessárias, defina as permissões apropriadas e clique em 'Salvar'.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Como configurar uma nova adquirente?
+              </summary>
+              <p>
+                Para configurar uma nova adquirente, vá até a seção 'Contas', selecione a aba 'Adquirentes' e clique em 'Adicionar Adquirente'. Preencha os dados solicitados, incluindo as taxas e condições de pagamento, e clique em 'Salvar'.
+              </p>
+            </details>
+
+           </section>
+          </div>
+
+
+
         </main>
-      </div>
       <script src="../Assets/sidebar.js"></script>
+      <script src="ajuda.js"></script>
       <script>
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();

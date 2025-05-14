@@ -20,3 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
         conteudosAbas[0].classList.add('ativo');
     }
 });
+
+      document.querySelectorAll('.toggle-switch').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('active');
+        });
+      });

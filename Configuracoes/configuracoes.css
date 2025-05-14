@@ -264,3 +264,59 @@ body {
   .save-button button:hover {
   background: #2e1e90;
   }
+
+
+
+      .notification-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: #ddd;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .notification-group label {
+      font-weight: bold;
+      color: #333;
+      display: block;
+    }
+
+    .notification-description {
+      margin: 0.3rem 0 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .toggle-switch {
+      width: 40px;
+      height: 22px;
+      background: #bbb;
+      border-radius: 15px;
+      position: relative;
+      cursor: pointer;
+      margin-left: 1rem;
+      flex-shrink: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-switch::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: 0.3s;
+    }
+
+    .toggle-switch.active {
+      background: #6b5cc2;
+    }
+
+    .toggle-switch.active::after {
+      left: 20px;
+    }
