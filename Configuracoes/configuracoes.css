@@ -158,6 +158,7 @@ body {
   padding: 10px;
   border-radius: 20px;
   box-shadow: 6px 6px 54px 0px rgba(0, 0, 0, 0.05);
+  margin-bottom: 18px;
 }
 
 .planos-container > p {
@@ -171,7 +172,7 @@ body {
   gap: 20px;
   justify-content: center;
   border-radius: 16px;
-  
+  margin-bottom: 6px;
 }
 
 .plano {
@@ -263,74 +264,8 @@ button.atual {
   box-shadow: 0px 4px 30px 0px rgba(54, 41, 183, 0.07);
   padding: 1re;
   flex: 1 0 0;
+  margin-bottom: 18px;
 }
-
-.listaUsuarios {
-  border-radius: 12px;
-  background: #fafafa;
-  border: 1px solid #F0F0F0;
-  box-shadow: 0px 4px 30px 0px rgba(54, 41, 183, 0.07);
-  padding: 1re;
-  flex: 1 0 0;
-}
-
-.listaUsuariosHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 1rem;
-    border-bottom: 1px solid #E5E7EB;
-}
-
-.listaUsuariosHeader h2 {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-  
-.tabelaUsuarios {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0px 0.3rem;
-    overflow: hidden;
-    padding: 0.75rem;
-  }
-
-th {
-    background-color: #e0e1e5;
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-weight: 500;
-}
-
-td {
-    padding: 0.75rem 1rem;
-    background-color: #eeeff1;
-    
-}
-
-tr td:first-child {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    
-}
-
-tr td:last-child {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-thead tr th:first-child {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-}
-
-thead tr th:last-child {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-
-
 
 
 .subsecao {
@@ -387,19 +322,26 @@ thead tr th:last-child {
 }
 
 .botao-adicionar {
-  background: #412884;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  float: right;
-  margin-bottom: 10px;
+  background-color: #3b2b7e;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .detalhes-pagamento {
-  padding: 20px;
+  padding: 14px;
+}
+.detalhes-pagamentoHeader {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4.091px 3.273px 4.091px 8.999px;
+    margin-top: -4px;
+    margin-bottom: 8px;
+    
 }
 
 .cartao {
@@ -415,6 +357,71 @@ thead tr th:last-child {
   margin-bottom: 10px;
 }
 
+.listaUsuarios {
+  border-radius: 12px;
+  background: #fafafa;
+  border: 1px solid #F0F0F0;
+  box-shadow: 0px 4px 30px 0px rgba(54, 41, 183, 0.07);
+  padding: 1re;
+  flex: 1 0 0;
+}
+
+.listaUsuariosHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4.091px 3.273px 4.091px 8.999px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    
+}
+
+.listaUsuariosHeader h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+  
+.tabelaUsuarios {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px 0.3rem;
+    overflow: hidden;
+    padding: 0.75rem;
+  }
+
+th {
+    background-color: #e0e1e5;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+td {
+    padding: 0.75rem 1rem;
+    background-color: #eeeff1;
+    
+}
+
+tr td:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    
+}
+
+tr td:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+thead tr th:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+thead tr th:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
 
 .tag {
     padding: 4px 6px;

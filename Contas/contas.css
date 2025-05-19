@@ -158,9 +158,10 @@ body {
 }
 
 .cabecalhoRelatorio h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 600;
 }
+
 
 .cabecalhoRelatorio p {
     font-size: 0.875rem;
@@ -215,7 +216,9 @@ body {
     padding: 0.75rem 1rem;
     text-align: left;
     font-size: 0.875rem;
+    background-color: #eeeff1;
 }
+
 
 .tabela th {
     background-color: var(--cinza-200);
