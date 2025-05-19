@@ -503,7 +503,7 @@ function inicializarGraficos() {
                 datasets: [{
                     label: 'Valor (R$)',
                     data: [15800, 19200, 22500, 18700, 16300, 21400],
-                    backgroundColor: '#4338CA',
+                    backgroundColor: '#412884',
                     borderRadius: 4,
                     barThickness: 25
                 }]
@@ -553,7 +553,7 @@ function inicializarGraficos() {
                 labels: ['Crédito', 'Débito', 'Pix', 'Outros'],
                 datasets: [{
                     data: [55, 30, 10, 5],
-                    backgroundColor: ['#4338CA', '#60A5FA', '#4ADE80', '#FBBF24'],
+                    backgroundColor: ['#322871', '#4CAF50','#FFC107', '#c20c6f',  ],
                     borderWidth: 0
                 }]
             },
@@ -598,14 +598,14 @@ function inicializarGraficos() {
                     {
                         label: 'Bruto',
                         data: [15800, 19200, 22500, 18700, 16300, 21400, 23800, 25100, 20700, 19500, 22800, 27500],
-                        backgroundColor: '#4338CA',
+                        backgroundColor: '#412884',
                         borderRadius: 4,
                         barThickness: 15
                     },
                     {
                         label: 'Líquido',
                         data: [15200, 18500, 21700, 18000, 15700, 20600, 22900, 24200, 19900, 18800, 22000, 26500],
-                        backgroundColor: '#4ADE80',
+                        backgroundColor: '#4CAF50',
                         borderRadius: 4,
                         barThickness: 15
                     }
@@ -668,7 +668,7 @@ function inicializarGraficos() {
                     {
                         label: 'Visa',
                         data: [7500, 9200, 10500, 8700, 7300, 9400, 11800, 12100, 9700, 8500, 10800, 13500],
-                        backgroundColor: '#312E81',
+                        backgroundColor: '#322871',
                         borderRadius: {
                             topLeft: 4,
                             topRight: 4,
@@ -680,14 +680,14 @@ function inicializarGraficos() {
                     {
                         label: 'Mastercard',
                         data: [5300, 6400, 7300, 6000, 5300, 7200, 7300, 8400, 7300, 7000, 7300, 8400],
-                        backgroundColor: '#818CF8',
+                        backgroundColor: '#4CAF50',
                         borderRadius: 0,
                         barPercentage: 0.6
                     },
                     {
                         label: 'Outras',
                         data: [3000, 3600, 4700, 4000, 3700, 4800, 4700, 4600, 3700, 4000, 4700, 5600],
-                        backgroundColor: '#C7D2FE',
+                        backgroundColor: '#FBC02D',
                         borderRadius: {
                             topLeft: 0,
                             topRight: 0,
@@ -758,7 +758,7 @@ function inicializarGraficosPagamentos() {
                 datasets: [{
                     label: 'Valor (R$)',
                     data: [8500, 9200, 10500, 9700, 8300, 9400],
-                    backgroundColor: '#4338CA',
+                    backgroundColor: '#322871',
                     borderRadius: 4,
                     barThickness: 25
                 }]
@@ -808,7 +808,7 @@ function inicializarGraficosPagamentos() {
                 labels: ['Fornecedores', 'Funcionários', 'Impostos', 'Outros'],
                 datasets: [{
                     data: [45, 30, 20, 5],
-                    backgroundColor: ['#4338CA', '#60A5FA', '#F87171', '#FBBF24'],
+                    backgroundColor: ['#322871', '#4CAF50', '#ffcb00','#4338CA' ],
                     borderWidth: 0
                 }]
             },
@@ -857,21 +857,21 @@ function inicializarOutrosGraficosPagamentos() {
                     {
                         label: 'Fornecedores',
                         data: [4200, 4800, 5300, 4900, 4100, 4700, 5200, 5500, 5000, 4800, 5100, 5800],
-                        backgroundColor: '#4338CA',
+                        backgroundColor: '#322871',
                         borderRadius: 4,
                         barThickness: 15
                     },
                     {
                         label: 'Funcionários',
                         data: [2800, 2800, 2800, 2800, 2800, 2800, 3000, 3000, 3000, 3000, 3000, 3200],
-                        backgroundColor: '#4ADE80',
+                        backgroundColor: '#73ba60',
                         borderRadius: 4,
                         barThickness: 15
                     },
                     {
                         label: 'Impostos',
                         data: [1500, 1600, 2400, 2000, 1400, 1900, 2000, 2200, 2100, 1900, 2000, 2500],
-                        backgroundColor: '#F87171',
+                        backgroundColor: '#ffcb00',
                         borderRadius: 4,
                         barThickness: 15
                     }
@@ -1319,7 +1319,7 @@ function inicializarGraficosDivergencias() {
                 datasets: [{
                     label: 'Quantidade',
                     data: [32, 28, 42, 35, 26, 38],
-                    backgroundColor: '#4338CA',
+                    backgroundColor: '#412884',
                     borderRadius: 4,
                     barThickness: 25
                 }]
@@ -1367,7 +1367,7 @@ function inicializarGraficosDivergencias() {
                 labels: ['Não Recebido', 'Taxa Incorreta', 'Valor Incorreto', 'Duplicidade'],
                 datasets: [{
                     data: [45, 30, 15, 10],
-                    backgroundColor: ['#F87171', '#FBBF24', '#60A5FA', '#4338CA'],
+                    backgroundColor: ['#322871', '#E53935','#4CAF50',  '#4338CA'],
                     borderWidth: 0
                 }]
             },
@@ -1415,7 +1415,7 @@ function inicializarOutrosGraficosDivergencias() {
                 datasets: [{
                     label: 'Valor (R$)',
                     data: [18500, 15800, 26700, 22300, 16800, 24500, 19800, 17500, 21200, 18900, 23500, 27800],
-                    backgroundColor: '#F87171',
+                    backgroundColor: '#322871',
                     borderRadius: 4,
                     barThickness: 25
                 }]
@@ -1467,19 +1467,19 @@ function inicializarOutrosGraficosDivergencias() {
                     {
                         label: 'Não Recebido',
                         data: [18, 15, 12, 10, 14],
-                        backgroundColor: '#F87171',
+                        backgroundColor: '#322871',
                         barPercentage: 0.7
                     },
                     {
                         label: 'Taxa Incorreta',
                         data: [12, 10, 8, 7, 9],
-                        backgroundColor: '#FBBF24',
+                        backgroundColor: '#E53935',
                         barPercentage: 0.7
                     },
                     {
                         label: 'Valor Incorreto',
                         data: [6, 5, 4, 3, 5],
-                        backgroundColor: '#60A5FA',
+                        backgroundColor: '#4CAF50',
                         barPercentage: 0.7
                     },
                     {

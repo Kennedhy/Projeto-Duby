@@ -381,7 +381,7 @@ body {
 .tabela th {
     background-color: var(--cinza-200);
     font-weight: 500;
-    color: var(--cinza-700);]
+    color: var(--cinza-700);
 }
 
 .tabela tr {
@@ -525,7 +525,7 @@ thead tr th:first-child {
     background: transparent;
     margin-left: 0.5rem;
     width: 100%;
-    font-size: 0.875rem;+
+    font-size: 0.875rem;
 }
 
 .relatorioMensal, .notificacoes, .proximoVencimento, .atalhos {
@@ -582,10 +582,6 @@ thead tr th:first-child {
 .imgRelatorio.amarelo  {
     background-color: rgba(251, 191, 36, 0.2);
     color: #D97706;
-}
-
-.iconeMensal {
-
 }
 
 .labelRelatorio {

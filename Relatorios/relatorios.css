@@ -1,3 +1,57 @@
+@font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Thin.otf') format('opentype');
+    font-weight: 100;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ ExtraLight.otf') format('opentype');
+    font-weight: 200;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Light.otf') format('opentype');
+    font-weight: 300;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Regular.otf') format('opentype');
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Medium.otf') format('opentype');
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ DemiBold.otf') format('opentype');
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Bold.otf') format('opentype');
+    font-weight: 700;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ ExtraBold.otf') format('opentype');
+    font-weight: 800;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Black.otf') format('opentype');
+    font-weight: 900;
+  }
+
 :root {
     --corPrimaria: #4b2d83;
     --corPrimariaClara: #6a4ba5;

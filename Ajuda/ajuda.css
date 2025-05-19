@@ -105,6 +105,12 @@ body {
     font-weight: 700;
 }
 
+p {
+    font-size: 1rem;
+    color: var(--cinza-700);
+    padding-top: 0.5rem;
+}
+
 .abasRelatorio {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
