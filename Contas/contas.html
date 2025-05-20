@@ -234,22 +234,26 @@
                         </div>
 
                         <div class="conteudoRelatorio" id="importar">
+
                             <div class="cabecalhoRelatorio">
                                 <div>
                                     <h3>Dados Importados</h3>
                                     <p>Visualize e gerencie seus dados</p>
                                 </div>
-                                <div class="acoesRelatorio">
-                                    <button class="botaoAcao primario">
-                                        <i class="iconeTabela" data-lucide="file-down"></i>
-                                        Exportar
-                                    </button>
+                                <div class="acoesImportar">
+                                    <button class="botaoDados ativo" data-relatorio="importa" >Importar</button>
+                                    <button class="botaoDados" data-relatorio="historico">Historico</button>
                                 </div>
                             </div>
-                            <div class="importarContainer">
-                                <div class="dadosContainer">
+                            <div class="conteudoImportar ativo" id="importa">
+                                <div class="importarContainer">
+                                     <div class="dadosContainer">
+
+                                    </div>
 
                                 </div>
+                            </div>
+                            <div class="conteudoImportar" id="historico">
 
                             </div>
                         </div>

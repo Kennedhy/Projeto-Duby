@@ -296,6 +296,44 @@ thead tr th:first-child {
     border-radius: 10px;
 }
 
+.acoesImportar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: var(--cinza-200);
+    border-radius: 10px;
+}
+
+.botaoDados {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--cinza-700);
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.botaoDados:hover {
+    background-color: var(--cinza-100);
+}
+
+.botaoDados.ativo {
+    background-color: var(--primario);
+    color: white;
+    padding: 0.7rem;
+}
+
+.conteudoImportar {
+    display: none;
+}
+
+.conteudoImportar.ativo {
+    display: block;
+}
+
 .dadosContainer {
 
 
