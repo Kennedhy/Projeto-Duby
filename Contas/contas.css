@@ -289,13 +289,6 @@ thead tr th:first-child {
     color: white;
 }
 
-.importarContainer {
-    background-color: var(--cinza-200);
-    margin: 1rem;
-    height: 50vh;
-    border-radius: 10px;
-}
-
 .acoesImportar {
     display: flex;
     gap: 1rem;
@@ -328,13 +321,26 @@ thead tr th:first-child {
 
 .conteudoImportar {
     display: none;
+
 }
 
 .conteudoImportar.ativo {
     display: block;
 }
 
+.importarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cinza-200);
+    margin: 1rem;
+    height: 50vh;
+    border-radius: 10px;
+}
+
 .dadosContainer {
-
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
