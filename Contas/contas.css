@@ -288,3 +288,15 @@ thead tr th:first-child {
     background-color: var(--primario);
     color: white;
 }
+
+.importarContainer {
+    background-color: var(--cinza-200);
+    margin: 1rem;
+    height: 50vh;
+    border-radius: 10px;
+}
+
+.dadosContainer {
+
+
+}
