@@ -107,7 +107,7 @@ body {
 
 .abasRelatorio {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
@@ -212,23 +212,6 @@ body {
   font-size: 14px;
   color: #5b5b5b;
   margin-bottom: 16px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 20px;
-}
-
-ul li {
-  margin-bottom: 8px;
-  font-size: 14px;
-  display: flex;
-flex-direction: column;
-justify-content: center;
-flex-shrink: 1;
-color: #000;
-font-size: 14px;
 }
 
 button {
