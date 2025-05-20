@@ -1,11 +1,28 @@
-const btnOpen = document.getElementById('btnOpenForm');
-const overlay = document.getElementById('addUsuario');
-const btnCancel = document.getElementById('btnCancel');
+document.addEventListener('DOMContentLoaded', function() {
 
-btnOpen.addEventListener('click', () => {
-  overlay.style.display = 'flex';
+    const botoesAbas = document.querySelectorAll('.botaoAba[data-relatorio]');
+    const conteudosAbas = document.querySelectorAll('.conteudoAbas');
+
+    botoesAbas.forEach(botao => {
+        botao.addEventListener('click', function() {
+            const abasId = this.getAttribute('data-relatorio');
+            
+            botoesAbas.forEach(b => b.classList.remove('ativo'));
+            conteudosAbas.forEach(c => c.classList.remove('ativo'));
+            
+            this.classList.add('ativo');
+            document.getElementById(abasId).classList.add('ativo');
+        });
+    });
+
+    if (!document.querySelector('.botaoAba.ativo')) {
+        botoesAbas[0].classList.add('ativo');
+        conteudosAbas[0].classList.add('ativo');
+    }
 });
 
-btnCancel.addEventListener('click', () => {
-  overlay.style.display = 'none';
-});
+      document.querySelectorAll('.toggle-switch').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('active');
+        });
+      });

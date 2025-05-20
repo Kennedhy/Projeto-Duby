@@ -1,87 +1,103 @@
-.listaUsuarios {
-  border-radius: 12px;
-  background: #fafafa;
-  border: 1px solid #F0F0F0;
-  box-shadow: 0px 4px 30px 0px rgba(54, 41, 183, 0.07);
-  padding: 1re;
-  flex: 1 0 0;
+:root {
+    --primario: #412884;
+    --primario-escuro: #312E81;
+    --primario-claro: #818CF8;
+    --primario-muito-claro: #C7D2FE;
+    --sucesso: #4ADE80;
+    --alerta: #FBBF24;
+    --perigo: #F87171;
+    --cinza-100: #F3F4F6;
+    --cinza-200: #E5E7EB;
+    --cinza-300: #D1D5DB;
+    --cinza-500: #6B7280;
+    --cinza-700: #374151;
+    --cinza-800: #1F2937;
 }
 
-.listaUsuariosHeader {
+
+@font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Thin.otf') format('opentype');
+    font-weight: 100;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ ExtraLight.otf') format('opentype');
+    font-weight: 200;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Light.otf') format('opentype');
+    font-weight: 300;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Regular.otf') format('opentype');
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Medium.otf') format('opentype');
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ DemiBold.otf') format('opentype');
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Bold.otf') format('opentype');
+    font-weight: 700;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ ExtraBold.otf') format('opentype');
+    font-weight: 800;
+  }
+  
+  @font-face {
+    font-family: 'TT Commons';
+    src: url('/Assets/fonts/TT\ Commons\ Black.otf') format('opentype');
+    font-weight: 900;
+  }
+  
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'TT Commons', sans-serif;
+    font-weight: 400;
+    background-color: #F6F6F6;
+    color: #343434;
+    line-height: 1.5;
+}
+
+.conteudoPrincipal {
+    padding: 1.5rem;
+    margin-right: var(--largura-barra-direita);
+    overflow: hidden;
+}
+
+.cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 1rem;
-    border-bottom: 1px solid #E5E7EB;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
-.listaUsuariosHeader h2 {
-  font-size: 1.3rem;
-  font-weight: 600;
+.cabecalho h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
-
-.listaUsuarios button {
-    background-color: #3b2b7e;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-  }
-
-.listaUsuarios button:hover {
-    background-color: #302565;
-  }
-  
-.tabelaUsuarios {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0px 0.3rem;
-    overflow: hidden;
-    padding: 0.75rem;
-  }
-  
-
-th {
-    background-color: #e0e1e5;
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-weight: 500;
-}
-
-td {
-    padding: 0.75rem 1rem;
-    background-color: #eeeff1;
-}
-
-tr td:first-child {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-}
-
-tr td:last-child {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-thead tr th:first-child {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-}
-
-thead tr th:last-child {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-.tag {
-    padding: 4px 6px;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 0.9em;
-  }
-  .admin {background: rgba(65, 40, 132, 0.30); color: #412884;}
-  .gerente { background: rgba(33, 150, 243, 0.30); color: #0061BE; }
-  .analista { background: rgba(76, 175, 80, 0.30); color: #197C1D;}
-  .operador { background: rgba(251, 140, 0, 0.30); color: #BA4B00;}
