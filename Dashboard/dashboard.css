@@ -135,6 +135,8 @@ body {
 .card.azul {
     background-color: rgba(96, 165, 250, 0.1);
     color: #2563EB;
+
+    display: none;
 }
 
 .card.amarelo {
