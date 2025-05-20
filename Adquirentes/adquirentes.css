@@ -253,4 +253,8 @@ thead tr th:first-child {
     font-weight: 600;
     background-color: var(--cinza-200);
 }
+
+.containerRelatorio.taxas {
+  margin-bottom: 1rem;
+}
   
