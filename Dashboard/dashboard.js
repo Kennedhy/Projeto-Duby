@@ -548,12 +548,12 @@ function inicializarGraficos() {
     const ctxMetodosPagamento = document.getElementById('graficoMetodosPagamento');
     if (ctxMetodosPagamento) {
         new Chart(ctxMetodosPagamento.getContext('2d'), {
-            type: 'doughnut',
+            type: 'pie',
             data: {
                 labels: ['Crédito', 'Débito', 'Pix', 'Outros'],
                 datasets: [{
-                    data: [55, 30, 10, 5],
-                    backgroundColor: ['#322871', '#4CAF50','#FFC107', '#c20c6f',  ],
+                    data: [35, 35, 22, 8],
+                    backgroundColor: ['#12283F', '#322871','#89eb88', '#ddede0',  ],
                     borderWidth: 0
                 }]
             },
@@ -562,12 +562,12 @@ function inicializarGraficos() {
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'right',
+                        position:'left',
                         labels: {
-                            boxWidth: 10,
-                            padding: 15,
+                            boxWidth: 12,
+                            padding: 16,
                             font: {
-                                size: 11
+                                size: 12
                             }
                         }
                     },
@@ -583,7 +583,6 @@ function inicializarGraficos() {
                         }
                     }
                 },
-                cutout: '70%'
             }
         });
     }
@@ -598,16 +597,16 @@ function inicializarGraficos() {
                     {
                         label: 'Bruto',
                         data: [15800, 19200, 22500, 18700, 16300, 21400, 23800, 25100, 20700, 19500, 22800, 27500],
-                        backgroundColor: '#412884',
+                        backgroundColor: '#322871',
                         borderRadius: 4,
-                        barThickness: 15
+                        barThickness: 16
                     },
                     {
                         label: 'Líquido',
                         data: [15200, 18500, 21700, 18000, 15700, 20600, 22900, 24200, 19900, 18800, 22000, 26500],
-                        backgroundColor: '#4CAF50',
+                        backgroundColor: '#89eb88',
                         borderRadius: 4,
-                        barThickness: 15
+                        barThickness: 16
                     }
                 ]
             },
@@ -619,12 +618,10 @@ function inicializarGraficos() {
                         display: true,
                         position: 'bottom',
                         labels: {
-                            boxWidth: 8,
-                            usePointStyle: true,
-                            pointStyle: 'circle',
-                            padding: 15,
+                            boxWidth: 12,
+                            padding: 16,
                             font: {
-                                size: 11
+                                size: 12
                             }
                         }
                     },
@@ -670,8 +667,8 @@ function inicializarGraficos() {
                         data: [7500, 9200, 10500, 8700, 7300, 9400, 11800, 12100, 9700, 8500, 10800, 13500],
                         backgroundColor: '#322871',
                         borderRadius: {
-                            topLeft: 4,
-                            topRight: 4,
+                            topLeft: 1,
+                            topRight: 1,
                             bottomLeft: 0,
                             bottomRight: 0
                         },
@@ -680,14 +677,14 @@ function inicializarGraficos() {
                     {
                         label: 'Mastercard',
                         data: [5300, 6400, 7300, 6000, 5300, 7200, 7300, 8400, 7300, 7000, 7300, 8400],
-                        backgroundColor: '#4CAF50',
+                        backgroundColor: '#262756',
                         borderRadius: 0,
                         barPercentage: 0.6
                     },
                     {
                         label: 'Outras',
                         data: [3000, 3600, 4700, 4000, 3700, 4800, 4700, 4600, 3700, 4000, 4700, 5600],
-                        backgroundColor: '#FBC02D',
+                        backgroundColor: '#89eb88',
                         borderRadius: {
                             topLeft: 0,
                             topRight: 0,
@@ -706,12 +703,10 @@ function inicializarGraficos() {
                         display: true,
                         position: 'bottom',
                         labels: {
-                            boxWidth: 8,
-                            usePointStyle: true,
-                            pointStyle: 'circle',
-                            padding: 15,
+                            boxWidth: 12,
+                            padding: 16,
                             font: {
-                                size: 11
+                                size: 12
                             }
                         }
                     },
