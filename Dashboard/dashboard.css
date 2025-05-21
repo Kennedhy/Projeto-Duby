@@ -73,6 +73,7 @@
     --borda: #F0F0F0 ;
     --texto: #343434 ;
     --texto-p: #6B7280 ;
+    --sombra : 0px 4px 30px 0px rgba(54, 41, 183, 0.07) ;
 }
 
 * { 
@@ -246,7 +247,7 @@ body {
     border-radius: 16px;
     padding: 1.25rem;
     border: 1px solid var(--borda);
-    box-shadow: 0px 4px 30px 0px rgba(54, 41, 183, 0.07);
+    box-shadow: var(--sombra);
 }
 
 .cartaoGrafico.larguraTotal {
@@ -306,9 +307,9 @@ body {
 .conteudoRelatorio {
     display: none;
     border-radius: 16px;
-    background-color: #fafafa;
-    border: 1px solid #F0F0F0;
-    box-shadow: 0px 4px 30px 0px rgba(54, 41, 183, 0.07);
+    background-color: var(--cartoes);
+    border: var(--borda);
+    box-shadow: var(--sombra);
 }
 
 .conteudoRelatorio.ativo {
@@ -420,9 +421,9 @@ thead tr th:first-child {
 
 .cartaoTabela {
     border-radius: 16px;
-    background-color: #fafafa;
-    border: 1px solid #F0F0F0;
-    box-shadow: 0px 4px 30px 0px rgba(54, 41, 183, 0.07);
+    background-color: var(--cartoes);
+    border: var(--borda);
+    box-shadow: var(--sombra);
 }
 
 .cabecalhoTabela {
