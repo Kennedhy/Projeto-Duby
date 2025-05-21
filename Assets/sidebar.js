@@ -100,7 +100,6 @@ body {
 }
 
 .barraLateral {
-    background-color: #3A1F7D;
     color: white;
     padding: 1.5rem 0.75rem;
     display: flex;

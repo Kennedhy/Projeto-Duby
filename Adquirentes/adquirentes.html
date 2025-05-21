@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adquirentes</title>
+    <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="adquirentes.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
@@ -21,7 +22,7 @@
       </div>
 
       <div class="conteudoAbas ativo" id="aba1">
-        <div class="containerRelatorio">
+        <div class="conteudoRelatorio ativo">
                                     <div class="cabecalhoRelatorio">
                                 <div>
                                     <h3>Gerenciamento de Adquirentes</h3>
@@ -83,7 +84,7 @@
       </div>
 
     <div class="conteudoAbas" id="aba2">
-        <div class="containerRelatorio taxas">
+        <div class="conteudoRelatorio ativo taxas">
 
                                     <div class="cabecalhoRelatorio">
                                 <div>
@@ -135,7 +136,7 @@
                             </div>
         </div>
 
-                <div class="containerRelatorio taxas">
+                <div class="conteudoRelatorio ativo taxas">
 
                                     <div class="cabecalhoRelatorio">
                                 <div>
@@ -188,7 +189,7 @@
         </div>
 
 
-                <div class="containerRelatorio taxas">
+                <div class="conteudoRelatorio ativo taxas">
 
                                     <div class="cabecalhoRelatorio">
                                 <div>
@@ -244,7 +245,7 @@
     </div>
 
     <div class="conteudoAbas" id="aba3">
-        <div class="containerRelatorio">
+        <div class="conteudoRelatorio ativo">
 
                                     <div class="cabecalhoRelatorio">
                                 <div>
@@ -306,7 +307,76 @@
     </div>
 
     <div class="conteudoAbas" id="aba4">
-        <div class="containerRelatorio">
+        <div class="conteudoRelatorio ativo">
+
+                                        <div class="cabecalhoRelatorio">
+                                <div>
+                                    <h3>Dados Importados</h3>
+                                    <p>Visualize e gerencie seus dados</p>
+                                </div>
+                                <div class="acoesImportar">
+                                    <button class="botaoDados ativo" data-relatorio="importa" >Importar</button>
+                                    <button class="botaoDados" data-relatorio="historico">Historico</button>
+                                </div>
+                            </div>
+                            <div class="conteudoImportar ativo" id="importa">
+                                <div class="importarContainer">
+                                    <div class="dadosContainer">
+                                        <i data-lucide="upload"></i>
+                                        <h2>Arraste e solte seu arquivo aqui</h2>
+                                        <p>ou clique para selecionar um arquivo</p>
+                                        <button class="botaoAcao primario">Selecionar Arquivo</button>
+                                        <p>Formatos suportados: CSV, OFX, XLS, XLSX (máx. 10MB)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="conteudoImportar" id="historico">
+
+                            <div class="tabelaContainer">
+                                <table class="tabela">
+                                    <thead>
+                                        <tr>
+                                            <th>Conta</th>
+                                            <th>Data de inicio</th>
+                                            <th>Data de Fim</th>
+                                            <th>Importado em</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Caixa</td>
+                                            <td>28/08/2024</td>
+                                            <td>03/03/2025</td>
+                                            <td>04/03/2025</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Caixa</td>
+                                            <td>28/08/2024</td>
+                                            <td>03/03/2025</td>
+                                            <td>04/03/2025</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Caixa</td>
+                                            <td>28/08/2024</td>
+                                            <td>03/03/2025</td>
+                                            <td>04/03/2025</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Caixa</td>
+                                            <td>28/08/2024</td>
+                                            <td>03/03/2025</td>
+                                            <td>04/03/2025</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Caixa</td>
+                                            <td>28/08/2024</td>
+                                            <td>03/03/2025</td>
+                                            <td>04/03/2025</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
         </div>
     </div>

@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios Financeiros</title>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="relatorios.css"> 
 </head>
 <body>
 
-    <div class="container">
+    <main class="conteudoPrincipal">
         <header class="cabecalho">
-          <h1 class="cabecalhoTitulo">Relatórios</h1>
+          <h1>Relatórios</h1>
           <div class="cabecalhoDireita">
             <div class="cabecalhoBusca">
               <i data-lucide="search" class="cabecalhoIcone"></i>
@@ -26,7 +27,6 @@
           </div>
         </header>
     
-        <main class="conteudo">
           <div class="relatorios">
             <div class="relatoriosColuna relatoriosColunaLateral">
                 <div class="seletor">
@@ -43,14 +43,14 @@
                     </div>
                   </div>
               <div class="relatoriosCabecalho">
-                <h2 class="relatoriosTitulo">Relatórios Disponíveis</h2>
+                <h3>Relatórios Disponíveis</h3>
               </div>
     
               <div class="cartoes cartoesRecebimentos">
                 <div class="cartao cartaoAtivo" data-relatorio="resumo-vendas">
                   <div class="cartaoCabecalho">
-                    <h3 class="cartaoTitulo">Resumo de Vendas</h3>
-                    <p class="cartaoDescricao">Resumo geral de todas as vendas no período selecionado</p>
+                    <h3>Resumo de Vendas</h3>
+                    <p>Resumo geral de todas as vendas no período selecionado</p>
                   </div>
                   <div class="cartaoRodape">
                     <button class="cartaoBotao">Resumo</button>
@@ -59,8 +59,8 @@
     
                 <div class="cartao" data-relatorio="vendas-metodo">
                   <div class="cartaoCabecalho">
-                    <h3 class="cartaoTitulo">Vendas por Método de Pagamento</h3>
-                    <p class="cartaoDescricao">Detalhamento das vendas por método de pagamento</p>
+                    <h3>Vendas por Método de Pagamento</h3>
+                    <p>Detalhamento das vendas por método de pagamento</p>
                   </div>
                   <div class="cartaoRodape">
                     <button class="cartaoBotao">Resumo</button>
@@ -69,8 +69,8 @@
     
                 <div class="cartao" data-relatorio="comparativo-vendas">
                   <div class="cartaoCabecalho">
-                    <h3 class="cartaoTitulo">Comparativo de Vendas</h3>
-                    <p class="cartaoDescricao">Comparação de vendas entre períodos</p>
+                    <h3>Comparativo de Vendas</h3>
+                    <p>Comparação de vendas entre períodos</p>
                   </div>
                   <div class="cartaoRodape">
                     <button class="cartaoBotao">Resumo</button>
@@ -81,8 +81,8 @@
               <div class="cartoes cartoesDivergencias oculto">
                 <div class="cartao cartaoAtivo" data-relatorio="resumo-divergencias">
                   <div class="cartaoCabecalho">
-                    <h3 class="cartaoTitulo">Resumo de Divergências</h3>
-                    <p class="cartaoDescricao">Resumo geral de todas as divergências no período</p>
+                    <h3>Resumo de Divergências</h3>
+                    <p>Resumo geral de todas as divergências no período</p>
                   </div>
                   <div class="cartaoRodape">
                     <button class="cartaoBotao">Resumo</button>
@@ -93,8 +93,8 @@
               <div class="cartoes cartoesTaxas oculto">
                 <div class="cartao cartaoAtivo" data-relatorio="resumo-taxas">
                   <div class="cartaoCabecalho">
-                    <h3 class="cartaoTitulo">Resumo de Taxas</h3>
-                    <p class="cartaoDescricao">Resumo geral de todas as taxas no período</p>
+                    <h3>Resumo de Taxas</h3>
+                    <p>Resumo geral de todas as taxas no período</p>
                   </div>
                   <div class="cartaoRodape">
                     <button class="cartaoBotao">Resumo</button>
@@ -105,8 +105,8 @@
               <div class="cartoes cartoesFinanceiro oculto">
                 <div class="cartao cartaoAtivo" data-relatorio="fluxo-caixa">
                   <div class="cartaoCabecalho">
-                    <h3 class="cartaoTitulo">Fluxo de Caixa</h3>
-                    <p class="cartaoDescricao">Relatório detalhado de entradas e saídas financeiras</p>
+                    <h3>Fluxo de Caixa</h3>
+                    <p>Relatório detalhado de entradas e saídas financeiras</p>
                   </div>
                   <div class="cartaoRodape">
                     <button class="cartaoBotao">Resumo</button>
@@ -115,8 +115,8 @@
     
                 <div class="cartao" data-relatorio="resumo-financeiro">
                   <div class="cartaoCabecalho">
-                    <h3 class="cartaoTitulo">Resumo Financeiro</h3>
-                    <p class="cartaoDescricao">Visão geral da situação financeira da empresa</p>
+                    <h3>Resumo Financeiro</h3>
+                    <p>Visão geral da situação financeira da empresa</p>
                   </div>
                   <div class="cartaoRodape">
                     <button class="cartaoBotao">Resumo</button>
@@ -127,8 +127,8 @@
               <div class="cartoes cartoesConciliacao oculto">
                 <div class="cartao cartaoAtivo" data-relatorio="conciliacao-bancaria">
                   <div class="cartaoCabecalho">
-                    <h3 class="cartaoTitulo">Conciliação Bancária</h3>
-                    <p class="cartaoDescricao">Relatório de conciliação entre sistema e extrato bancário</p>
+                    <h3>Conciliação Bancária</h3>
+                    <p>Relatório de conciliação entre sistema e extrato bancário</p>
                   </div>
                   <div class="cartaoRodape">
                     <button class="cartaoBotao">Resumo</button>
@@ -138,26 +138,26 @@
             </div>
     
             <div class="relatoriosColuna relatoriosColunaPrincipal">
-              <div class="relatorio relatorioResumoVendas">
-                <div class="relatorioCabecalho">
+              <div class="conteudoRelatorioAtivo relatorio relatorioResumoVendas">
+                <div class="cabecalhoRelatorio">
                   <div>
-                    <h2 class="relatorioTitulo">Resumo de Vendas</h2>
-                    <p class="relatorioPeriodo">Período: Março 2025</p>
+                    <h3>Resumo de Vendas</h3>
+                    <p>Período: Março 2025</p>
                   </div>
-                  <div class="relatorioAcoes">
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="calendar"></i>
+                  <div class="acoesRelatorio">
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="calendar"></i>
                       Hoje
                     </button>
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="download"></i>
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="download"></i>
                       Baixar
                     </button>
                   </div>
                 </div>
-                
+                <div class="tabelaContainer">
                 <table class="tabela">
-                  <thead class="tabelaCabecalho">
+                  <thead>
                     <tr>
                       <th>Data</th>
                       <th>Transações</th>
@@ -167,7 +167,7 @@
                       <th>Outros</th>
                     </tr>
                   </thead>
-                  <tbody class="tabelaCorpo">
+                  <tbody>
                     <tr>
                       <td>01/03/2025</td>
                       <td>45</td>
@@ -208,7 +208,7 @@
                       <td>R$ 2.840,00</td>
                       <td>R$ 1.420,00</td>
                     </tr>
-                    <tr class="tabelaRodape">
+                    <tr class="linhaTotal">
                       <td>Total</td>
                       <td>215</td>
                       <td>R$ 64.400,00</td>
@@ -218,28 +218,29 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
     
-              <div class="relatorio relatorioVendasMetodo oculto">
-                <div class="relatorioCabecalho">
+              <div class="conteudoRelatorioAtivo relatorio relatorioVendasMetodo oculto">
+                <div class="cabecalhoRelatorio">
                   <div>
-                    <h2 class="relatorioTitulo">Vendas por Método de Pagamento</h2>
-                    <p class="relatorioPeriodo">Período: Março 2025</p>
+                    <h3>Vendas por Método de Pagamento</h3>
+                    <p>Período: Março 2025</p>
                   </div>
-                  <div class="relatorioAcoes">
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="calendar"></i>
+                  <div class="acoesRelatorio">
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="calendar"></i>
                       Hoje
                     </button>
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="download"></i>
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="download"></i>
                       Baixar
                     </button>
                   </div>
                 </div>
-                
+                <div class="tabelaContainer">
                 <table class="tabela">
-                  <thead class="tabelaCabecalho">
+                  <thead>
                     <tr>
                       <th>Método</th>
                       <th>Transações</th>
@@ -248,7 +249,7 @@
                       <th>T.M</th>
                     </tr>
                   </thead>
-                  <tbody class="tabelaCorpo">
+                  <tbody>
                     <tr>
                       <td>Crédito à Vista</td>
                       <td>87</td>
@@ -277,7 +278,7 @@
                       <td>10.0%</td>
                       <td>R$ 429,33</td>
                     </tr>
-                    <tr class="tabelaRodape">
+                    <tr class="linhaTotal">
                       <td>Total</td>
                       <td>225</td>
                       <td>R$ 64.400,00</td>
@@ -286,28 +287,29 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
     
-              <div class="relatorio relatorioComparativoVendas oculto">
-                <div class="relatorioCabecalho">
+              <div class="conteudoRelatorioAtivo relatorio relatorioComparativoVendas oculto">
+                <div class="cabecalhoRelatorio">
                   <div>
-                    <h2 class="relatorioTitulo">Comparativo de Vendas</h2>
-                    <p class="relatorioPeriodo">Período: Março 2025</p>
+                    <h3>Comparativo de Vendas</h3>
+                    <p>Período: Março 2025</p>
                   </div>
-                  <div class="relatorioAcoes">
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="calendar"></i>
+                  <div class="acoesRelatorio">
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="calendar"></i>
                       Hoje
                     </button>
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="download"></i>
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="download"></i>
                       Baixar
                     </button>
                   </div>
                 </div>
-                
+                <div class="tabelaContainer">
                 <table class="tabela">
-                  <thead class="tabelaCabecalho">
+                  <thead>
                     <tr>
                       <th>Período</th>
                       <th>Valor Atual</th>
@@ -316,7 +318,7 @@
                       <th>Variação</th>
                     </tr>
                   </thead>
-                  <tbody class="tabelaCorpo">
+                  <tbody>
                     <tr>
                       <td>Janeiro</td>
                       <td>R$ 58.200,00</td>
@@ -338,7 +340,7 @@
                       <td>R$ 2.300,00</td>
                       <td class="textoVerde">+3.9%</td>
                     </tr>
-                    <tr class="tabelaRodape">
+                    <tr class="linhaTotal">
                       <td>Total</td>
                       <td>R$ 184.400,00</td>
                       <td>R$ 168.600,00</td>
@@ -347,28 +349,29 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
     
-              <div class="relatorio relatorioResumoDivergencias oculto">
-                <div class="relatorioCabecalho">
+              <div class="conteudoRelatorioAtivo relatorio relatorioResumoDivergencias oculto">
+                <div class="cabecalhoRelatorio">
                   <div>
-                    <h2 class="relatorioTitulo">Resumo de Divergências</h2>
-                    <p class="relatorioPeriodo">Período: Março 2025</p>
+                    <h3>Resumo de Divergências</h3>
+                    <p>Período: Março 2025</p>
                   </div>
-                  <div class="relatorioAcoes">
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="calendar"></i>
+                  <div class="acoesRelatorio">
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="calendar"></i>
                       Hoje
                     </button>
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="download"></i>
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="download"></i>
                       Baixar
                     </button>
                   </div>
                 </div>
-                
+                <div class="tabelaContainer">
                 <table class="tabela">
-                  <thead class="tabelaCabecalho">
+                  <thead>
                     <tr>
                       <th>Data</th>
                       <th>Transação</th>
@@ -378,7 +381,7 @@
                       <th>Tipo</th>
                     </tr>
                   </thead>
-                  <tbody class="tabelaCorpo">
+                  <tbody>
                     <tr>
                       <td>01/03/2023</td>
                       <td>Venda #12345</td>
@@ -421,28 +424,29 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
     
-              <div class="relatorio relatorioFluxoCaixa oculto">
-                <div class="relatorioCabecalho">
+              <div class="conteudoRelatorioAtivo relatorio relatorioFluxoCaixa oculto">
+                <div class="cabecalhoRelatorio">
                   <div>
-                    <h2 class="relatorioTitulo">Fluxo de Caixa</h2>
-                    <p class="relatorioPeriodo">Período: Março 2025</p>
+                    <h3>Fluxo de Caixa</h3>
+                    <p>Período: Março 2025</p>
                   </div>
-                  <div class="relatorioAcoes">
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="calendar"></i>
+                  <div class="acoesRelatorio">
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="calendar"></i>
                       Hoje
                     </button>
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="download"></i>
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="download"></i>
                       Baixar
                     </button>
                   </div>
                 </div>
-                
+                <div class="tabelaContainer">
                 <table class="tabela">
-                  <thead class="tabelaCabecalho">
+                  <thead>
                     <tr>
                       <th>Data</th>
                       <th>Descrição</th>
@@ -451,7 +455,7 @@
                       <th>Saldo</th>
                     </tr>
                   </thead>
-                  <tbody class="tabelaCorpo">
+                  <tbody>
                     <tr>
                       <td>01/04/2023</td>
                       <td>Vendas do dia</td>
@@ -487,7 +491,7 @@
                       <td>R$ 0,00</td>
                       <td>R$ 12.500,00</td>
                     </tr>
-                    <tr class="tabelaRodape">
+                    <tr class="linhaTotal">
                       <td>Total</td>
                       <td></td>
                       <td>R$ 51.050,00</td>
@@ -496,28 +500,29 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
     
-              <div class="relatorio relatorioResumoFinanceiro oculto">
-                <div class="relatorioCabecalho">
+              <div class="conteudoRelatorioAtivo relatorio relatorioResumoFinanceiro oculto">
+                <div class="cabecalhoRelatorio">
                   <div>
-                    <h2 class="relatorioTitulo">Resumo Financeiro</h2>
-                    <p class="relatorioPeriodo">Período: Março 2025</p>
+                    <h3>Resumo Financeiro</h3>
+                    <p>Período: Março 2025</p>
                   </div>
-                  <div class="relatorioAcoes">
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="calendar"></i>
+                  <div class="acoesRelatorio">
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="calendar"></i>
                       Hoje
                     </button>
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="download"></i>
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="download"></i>
                       Baixar
                     </button>
                   </div>
                 </div>
-                
+                <div class="tabelaContainer">
                 <table class="tabela">
-                  <thead class="tabelaCabecalho">
+                  <thead>
                     <tr>
                       <th>Categoria</th>
                       <th>Valor Atual</th>
@@ -526,7 +531,7 @@
                       <th>Variação</th>
                     </tr>
                   </thead>
-                  <tbody class="tabelaCorpo">
+                  <tbody>
                     <tr>
                       <td>Receita Total</td>
                       <td>R$ 128.500,00</td>
@@ -564,28 +569,29 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
     
-              <div class="relatorio relatorioResumoTaxas oculto">
-                <div class="relatorioCabecalho">
+              <div class="conteudoRelatorioAtivo relatorio relatorioResumoTaxas oculto">
+                <div class="cabecalhoRelatorio">
                   <div>
-                    <h2 class="relatorioTitulo">Resumo de Taxas</h2>
-                    <p class="relatorioPeriodo">Período: Março 2025</p>
+                    <h3>Resumo de Taxas</h3>
+                    <p>Período: Março 2025</p>
                   </div>
-                  <div class="relatorioAcoes">
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="calendar"></i>
+                  <div class="acoesRelatorio">
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="calendar"></i>
                       Hoje
                     </button>
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="download"></i>
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="download"></i>
                       Baixar
                     </button>
                   </div>
                 </div>
-                
+                <div class="tabelaContainer">
                 <table class="tabela">
-                  <thead class="tabelaCabecalho">
+                  <thead>
                     <tr>
                       <th>Período</th>
                       <th>Valor</th>
@@ -593,7 +599,7 @@
                       <th>Percentual Taxa</th>
                     </tr>
                   </thead>
-                  <tbody class="tabelaCorpo">
+                  <tbody>
                     <tr>
                       <td>Janeiro</td>
                       <td>R$ 98.200,00</td>
@@ -618,7 +624,7 @@
                       <td>R$ 4.754,50</td>
                       <td>3.70%</td>
                     </tr>
-                    <tr class="tabelaRodape">
+                    <tr class="linhaTotal">
                       <td>Total</td>
                       <td>R$ 446.900,00</td>
                       <td>R$ 16.535,30</td>
@@ -626,28 +632,29 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
     
-              <div class="relatorio relatorioConciliacaoBancaria oculto">
-                <div class="relatorioCabecalho">
+              <div class="conteudoRelatorioAtivo relatorio relatorioConciliacaoBancaria oculto">
+                <div class="cabecalhoRelatorio">
                   <div>
-                    <h2 class="relatorioTitulo">Conciliação Bancária</h2>
-                    <p class="relatorioPeriodo">Período: Março 2025</p>
+                    <h3>Conciliação Bancária</h3>
+                    <p>Período: Março 2025</p>
                   </div>
-                  <div class="relatorioAcoes">
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="calendar"></i>
+                  <div class="acoesRelatorio">
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="calendar"></i>
                       Hoje
                     </button>
-                    <button class="relatorioBotao">
-                      <i class="iconeRelatorio" data-lucide="download"></i>
+                    <button class="botaoAcao primario">
+                      <i class="iconeTabela" data-lucide="download"></i>
                       Baixar
                     </button>
                   </div>
                 </div>
-                
+                <div class="tabelaContainer">
                 <table class="tabela">
-                  <thead class="tabelaCabecalho">
+                  <thead>
                     <tr>
                       <th>Data</th>
                       <th>Transações</th>
@@ -657,7 +664,7 @@
                       <th>Status</th>
                     </tr>
                   </thead>
-                  <tbody class="tabelaCorpo">
+                  <tbody>
                     <tr>
                       <td>01/03/2025</td>
                       <td>Venda #12345</td>
@@ -698,7 +705,7 @@
                       <td>R$ 0,00</td>
                       <td>Conciliado</td>
                     </tr>
-                    <tr class="tabelaRodape">
+                    <tr class="linhaTotal">
                       <td>Total</td>
                       <td></td>
                       <td>R$ 64.400,00</td>
@@ -708,14 +715,13 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
             </div>
-          </div>
-        </main>
-      </div>
+          </div>  
+      </main>
 
     <script src="relatorios.js"></script>
-
     <script src="../Assets/sidebar.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
