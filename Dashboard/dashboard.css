@@ -74,7 +74,25 @@
     --texto: #343434 ;
     --texto-p: #6B7280 ;
     --sombra : 0px 4px 30px 0px rgba(54, 41, 183, 0.07) ;
+    --th: #E5E7EB;
+    --tr: #F3F4F6;
+    --fundo-botao:#E5E7EB ;
 }
+/*
+:root {
+    --background: #121212 ;
+    --cartoes: #232323 ;
+    --borda: #000000 ;
+    --texto: #f2f2f2 ;
+    --texto-p: #e0e0e0 ;
+    --sombra : 0px 4px 30px 0px rgba(54, 41, 183, 0.07) ;
+    --tr: #363636 ;
+    --th: #454444;
+    --fundo-botao:#2c2c2c ;
+}
+.barraLateral {
+    background: #2c2c2c;
+}  */
 
 * { 
     margin: 0; 
@@ -278,9 +296,8 @@ body {
     gap: 1rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
-    background-color: var(--cinza-200);
+    background-color: var(--fundo-botao);
     border-radius: 16px;
-    
 }
 
 .botaoAba {
@@ -289,7 +306,7 @@ body {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--cinza-700);
+    color: var(--texto-p);
     cursor: pointer;
     border-radius: 8px;
 }
@@ -385,13 +402,13 @@ body {
 }
 
 .tabela th {
-    background-color: var(--cinza-200);
+    background-color: var(--th);
     font-weight: 500;
     color: var(--cinza-700);
 }
 
 .tabela tr {
-    background-color: var(--cinza-100);
+    background-color: var(--tr);
 }
 
 tr td:first-child {
