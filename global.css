@@ -79,7 +79,7 @@
     --barra-lateral: #3A1F7D;
 }
 
-: {
+.dark {
     --background: #121212 ;
     --cartoes: #232323 ;
     --borda: #000000 ;
