@@ -190,6 +190,18 @@ body::-webkit-scrollbar {
     display: block;
 }
 
+.conteudoAbas {
+    display: none;
+    border-radius: 16px;
+    background-color: var(--cartoes);
+    border: var(--borda);
+    box-shadow: var(--sombra);
+}
+
+.conteudoAbas.ativo {
+    display: block;
+}  
+
 .cabecalhoRelatorio {
     display: flex;
     justify-content: space-between;
@@ -480,6 +492,10 @@ thead tr th:first-child {
   margin-bottom: 0.5rem;
 }
 
+.cartaoTexto.colum {
+  display: block;
+}
+
 .cartaoTexto label {
   font-size: 0.9rem;
   font-weight: 500;
@@ -489,21 +505,21 @@ thead tr th:first-child {
   font-size: 0.7rem;
 }
 
-  .botaoSalvar {
+.botaoSalvar {
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
-  }
+}
 
-  .botaoSalvar button {
+.botaoSalvar button {
   background: var(--fundo-botao);
   border: none;
   padding: 0.5rem 2rem;
   border-radius: 8px;
   font-size: 0.75rem;
   cursor: pointer;
-  }
+}
 
-  .botaoSalvar button:hover {
+.botaoSalvar button:hover {
   background: #2e1e90;
-  }
+}

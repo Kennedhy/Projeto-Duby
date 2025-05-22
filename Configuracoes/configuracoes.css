@@ -1,42 +1,8 @@
 .abasRelatorio {
-    display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    background-color: var(--cinza-200);
-    border-radius: 16px;
     width: 80%;
 }
 
-.botaoAba {
-    background: none;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--cinza-700);
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.botaoAba:hover {
-    background-color: var(--cinza-100);
-}
-
-.botaoAba.ativo {
-    background-color: var(--primario);
-    color: white;
-    padding: 0.7rem;
-}
-
-.conteudoAbas {
-    display: none;
-}
-
-.conteudoAbas.ativo {
-    display: block;
-}  
 
 .planos-container {
   display: flex;
