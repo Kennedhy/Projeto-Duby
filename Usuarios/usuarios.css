@@ -23,20 +23,15 @@
   .analista { background: rgba(76, 175, 80, 0.30); color: #197C1D;}
   .operador { background: rgba(251, 140, 0, 0.30); color: #BA4B00;}
 
-.barraLateralDireita {
-    background: #fafafa;
-    border: 1px solid #F0F0F0;
-    box-shadow: 0px 4px 30px 0px rgba(54, 41, 183, 0.07);
-    padding: 1rem;
+.cartao {
     height: 100%;
-    width: 310px;
-    border-radius: 12px;
+    width: 340px;
 }
 
 .perfilUsuario {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .avatarPerfil {
@@ -69,7 +64,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16.5px;
 }
 
 #permissao{

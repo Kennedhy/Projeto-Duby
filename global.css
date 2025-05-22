@@ -416,7 +416,7 @@ thead tr th:first-child {
 
 /* cartao  */
 
-.cartoes {
+.cartoesGap {
   display: flex;
   flex-direction: column;
   gap: 1rem;
