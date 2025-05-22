@@ -257,7 +257,7 @@ body {
 .tabela th {
     background-color: var(--th);
     font-weight: 500;
-    color: var(--cinza-700);
+    color: var(--texto);
 }
 
 .tabela tr {
