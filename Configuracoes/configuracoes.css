@@ -293,6 +293,76 @@ button:hover {
     
 }
 
+.fundo-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.fundo-modal.escondido {
+  display: none;
+}
+
+.janela-modal {
+  background: white;
+  padding: 1.6rem;
+  border-radius: 12px;
+  max-width: 550px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+.grupo-campos {
+  display: flex;
+  gap: 2rem;
+}
+
+.campo {
+  flex: 1;
+}
+
+.janela-modal label {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.janela-modal input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.botao-principal {
+  background-color: #412884;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.botao-secundario {
+  background-color: #aaa;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
 .cartao1 {
   background: rgba(217, 217, 217, 0.50);
   border-radius: 10px;
