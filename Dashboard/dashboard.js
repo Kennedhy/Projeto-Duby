@@ -803,7 +803,7 @@ function inicializarGraficosPagamentos() {
                 labels: ['Fornecedores', 'Funcionários', 'Impostos', 'Outros'],
                 datasets: [{
                     data: [35, 25, 30, 10],
-                    backgroundColor: ['#322871', '#4CAF50', '#ffcb00','#4338CA' ],
+                    backgroundColor: ['#12283F', '#322871', '#89eb88', '#ddede0' ],
                     borderWidth: 0
                 }]
             },
@@ -851,21 +851,21 @@ function inicializarOutrosGraficosPagamentos() {
                     {
                         label: 'Fornecedores',
                         data: [4200, 4800, 5300, 4900, 4100, 4700, 5200, 5500, 5000, 4800, 5100, 5800],
-                        backgroundColor: '#322871',
+                        backgroundColor: '#412884',
                         borderRadius: 4,
                         barThickness: 15
                     },
                     {
                         label: 'Funcionários',
                         data: [2800, 2800, 2800, 2800, 2800, 2800, 3000, 3000, 3000, 3000, 3000, 3200],
-                        backgroundColor: '#73ba60',
+                        backgroundColor: '#89eb88',
                         borderRadius: 4,
                         barThickness: 15
                     },
                     {
                         label: 'Impostos',
                         data: [1500, 1600, 2400, 2000, 1400, 1900, 2000, 2200, 2100, 1900, 2000, 2500],
-                        backgroundColor: '#ffcb00',
+                        backgroundColor: '#262756',
                         borderRadius: 4,
                         barThickness: 15
                     }
@@ -928,26 +928,20 @@ function inicializarOutrosGraficosPagamentos() {
                     {
                         label: 'Transferência',
                         data: [5500, 6000, 6500, 6000, 5300, 6000, 6500, 7000, 6500, 6000, 6500, 7500],
-                        backgroundColor: '#312E81',
-                        borderRadius: {
-                            topLeft: 4,
-                            topRight: 4,
-                            bottomLeft: 0,
-                            bottomRight: 0
-                        },
+                        backgroundColor: '#262756',
                         barPercentage: 0.6
                     },
                     {
                         label: 'Boleto',
                         data: [2000, 2200, 2500, 2200, 2000, 2400, 2700, 2800, 2500, 2300, 2600, 2800],
-                        backgroundColor: '#818CF8',
+                        backgroundColor: '#89eb88',
                         borderRadius: 0,
                         barPercentage: 0.6
                     },
                     {
                         label: 'Outros',
                         data: [1000, 1000, 1500, 1500, 1000, 1000, 1000, 1300, 1200, 1400, 1000, 1200],
-                        backgroundColor: '#C7D2FE',
+                        backgroundColor: '#ddede0',
                         borderRadius: {
                             topLeft: 0,
                             topRight: 0,
