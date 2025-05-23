@@ -677,14 +677,14 @@ function inicializarGraficos() {
                     {
                         label: 'Mastercard',
                         data: [5300, 6400, 7300, 6000, 5300, 7200, 7300, 8400, 7300, 7000, 7300, 8400],
-                        backgroundColor: '#262756',
+                        backgroundColor: '#89eb88',
                         borderRadius: 0,
                         barPercentage: 0.6
                     },
                     {
                         label: 'Outras',
                         data: [3000, 3600, 4700, 4000, 3700, 4800, 4700, 4600, 3700, 4000, 4700, 5600],
-                        backgroundColor: '#89eb88',
+                        backgroundColor: '#ddede0',
                         borderRadius: {
                             topLeft: 0,
                             topRight: 0,
