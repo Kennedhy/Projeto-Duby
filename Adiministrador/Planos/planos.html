@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duby</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+  <div class="conteinerPrincipal">
+    <aside class="barraLateral">
+      <div class="barraLateralCabecalho">
+        <div class="barraLateralLogo">
+          <img src="logo-duby.svg" alt="">
+        </div>
+        <div class="barraLateralPesquisa">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" placeholder="Buscar...">
+        </div>
+      </div>
+      
+      <div class="barraLateralConteudo">
+        <div class="barraLateralGrupo">
+          <h3 class="barraLateralGrupoTitulo">Administração</h3>
+          <ul class="barraLateralMenu">
+            <li class="barraLateralItem">
+              <a href="index.html" class="barraLateralBotao">
+                <i class="fa-solid fa-home"></i>
+                <span>Início</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="clientes.html" class="barraLateralBotao">
+                <i class="fa-solid fa-users"></i>
+                <span>Clientes</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="relatorios.html" class="barraLateralBotao">
+                <i class="fa-solid fa-chart-bar"></i>
+                <span>Relatórios</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="planos.html" class="barraLateralBotao ativo">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Planos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="barraLateralRodape">
+        <div class="barraLateralUsuario">
+          <div class="barraLateralAvatar">A</div>
+          <div class="barraLateralUsuarioInfo">
+            <p>Admin</p>
+            <p>admin@exemplo.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    <main class="conteudoPrincipal">
+      <div class="cabecalhoPagina">
+        <h1 class="tituloPagina">Gerenciamento de Planos</h1>
+        <button class="botao botaoPrimario" id="botaoNovoPlano">
+          <i class="fa-solid fa-plus"></i>
+          Novo Plano
+        </button>
+      </div>
+      
+      <div class="grade grade2Colunas" id="listaPlanos">
+        <div class="cartao" data-id="basic">
+          <div class="cartaoCabecalho">
+            <div class="flexEntre">
+              <div>
+                <h3 class="cartaoTitulo">Básico</h3>
+                <p class="cartaoDescricao">Plano ideal para pequenas empresas iniciando com conciliação de cartões.</p>
+              </div>
+              <div class="flexCentro">
+                <button class="botao botaoSecundario botaoIcone botaoEditar" data-id="basic">
+                  <i class="fa-solid fa-edit"></i>
+                </button>
+                <button class="botao botaoSecundario botaoIcone botaoExcluir" data-id="basic">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="cartaoConteudo">
+            <div class="precoPlanoCaixa mb4">
+              <span class="precoPlano">R$ 199,00</span>
+              <span class="cicloPlanoPequeno">/mensal</span>
+            </div>
+            <div class="listaRecursos">
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Até 5 usuários</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Até 3 adquirentes</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Até 2 contas bancárias</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Relatórios básicos</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Suporte por email</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cartaoRodape">
+            <button class="botao botaoSecundario botaoDetalhes" data-id="basic">Ver Detalhes</button>
+          </div>
+        </div>
+
+        <div class="cartao" data-id="standard">
+          <div class="cartaoCabecalho">
+            <div class="flexEntre">
+              <div>
+                <h3 class="cartaoTitulo">Padrão</h3>
+                <p class="cartaoDescricao">Plano completo para empresas em crescimento com necessidades de conciliação.</p>
+              </div>
+              <div class="flexCentro">
+                <button class="botao botaoSecundario botaoIcone botaoEditar" data-id="standard">
+                  <i class="fa-solid fa-edit"></i>
+                </button>
+                <button class="botao botaoSecundario botaoIcone botaoExcluir" data-id="standard">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="cartaoConteudo">
+            <div class="precoPlanoCaixa mb4">
+              <span class="precoPlano">R$ 299,00</span>
+              <span class="cicloPlanoPequeno">/mensal</span>
+            </div>
+            <div class="listaRecursos">
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Até 10 usuários</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Até 5 adquirentes</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Até 5 contas bancárias</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Relatórios avançados</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Suporte por email e chat</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Conciliação automática</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cartaoRodape">
+            <button class="botao botaoSecundario botaoDetalhes" data-id="standard">Ver Detalhes</button>
+          </div>
+        </div>
+
+        <div class="cartao" data-id="premium">
+          <div class="cartaoCabecalho">
+            <div class="flexEntre">
+              <div>
+                <h3 class="cartaoTitulo">Premium</h3>
+                <p class="cartaoDescricao">Solução completa para empresas que precisam de recursos avançados de conciliação.</p>
+              </div>
+              <div class="flexCentro">
+                <button class="botao botaoSecundario botaoIcone botaoEditar" data-id="premium">
+                  <i class="fa-solid fa-edit"></i>
+                </button>
+                <button class="botao botaoSecundario botaoIcone botaoExcluir" data-id="premium">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="cartaoConteudo">
+            <div class="precoPlanoCaixa mb4">
+              <span class="precoPlano">R$ 499,00</span>
+              <span class="cicloPlanoPequeno">/mensal</span>
+            </div>
+            <div class="listaRecursos">
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Até 20 usuários</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Adquirentes ilimitados</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Até 10 contas bancárias</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Relatórios personalizados</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Suporte por email, chat e telefone</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Conciliação automática</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>API de integração</span>
+                </div>
+              </div>
+              <div class="recursoItem">
+                <div class="flexCentro">
+                  <div class="recursoIndicador recursoIncluido"></div>
+                  <span>Suporte prioritário</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cartaoRodape">
+            <button class="botao botaoSecundario botaoDetalhes" data-id="premium">Ver Detalhes</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="js/principal.js"></script>
+  <script src="js/planos.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duby</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+  <div class="conteinerPrincipal">
+    <aside class="barraLateral">
+      <div class="barraLateralCabecalho">
+        <div class="barraLateralLogo">
+          <img src="logo-duby.svg" alt="">
+        </div>
+        <div class="barraLateralPesquisa">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" placeholder="Buscar...">
+        </div>
+      </div>
+      
+      <div class="barraLateralConteudo">
+        <div class="barraLateralGrupo">
+          <h3 class="barraLateralGrupoTitulo">Administração</h3>
+          <ul class="barraLateralMenu">
+            <li class="barraLateralItem">
+              <a href="index.html" class="barraLateralBotao">
+                <i class="fa-solid fa-home"></i>
+                <span>Início</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="clientes.html" class="barraLateralBotao ativo">
+                <i class="fa-solid fa-users"></i>
+                <span>Clientes</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="relatorios.html" class="barraLateralBotao">
+                <i class="fa-solid fa-chart-bar"></i>
+                <span>Relatórios</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="planos.html" class="barraLateralBotao">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Planos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="barraLateralRodape">
+        <div class="barraLateralUsuario">
+          <div class="barraLateralAvatar">A</div>
+          <div class="barraLateralUsuarioInfo">
+            <p>Admin</p>
+            <p>admin@exemplo.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    <main class="conteudoPrincipal">
+      <div class="cabecalhoPagina">
+        <div class="flexCentro">
+          <a href="clientes.html" class="botao botaoSecundario botaoIcone">
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <h1 class="tituloPagina">Novo Cliente</h1>
+        </div>
+      </div>
+      
+      <form id="formNovoCliente" class="mb6">
+        <div class="abas">
+          <div class="abasNavegacao">
+            <div class="abaBotao ativo" data-aba="info">Informações Básicas</div>
+            <div class="abaBotao" data-aba="contato">Contato</div>
+            <div class="abaBotao" data-aba="faturamento">Faturamento</div>
+            <div class="abaBotao" data-aba="configuracoes">Configurações</div>
+          </div>
+          
+          <div class="abaConteudo ativo" id="abaInfo">
+            <div class="cartao mb4">
+              <div class="cartaoCabecalho">
+                <h2 class="cartaoTitulo">Informações da Empresa</h2>
+                <p class="cartaoDescricao">Preencha as informações básicas do cliente.</p>
+              </div>
+              <div class="cartaoConteudo">
+                <div class="grade grade2Colunas mb4">
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="nomeEmpresa">Nome da Empresa</label>
+                    <input type="text" id="nomeEmpresa" class="campoTexto" placeholder="Nome da empresa" required>
+                  </div>
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="nomeFantasia">Nome Fantasia</label>
+                    <input type="text" id="nomeFantasia" class="campoTexto" placeholder="Nome fantasia (opcional)">
+                  </div>
+                </div>
+                
+                <div class="grade grade2Colunas mb4">
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="cnpj">CNPJ</label>
+                    <input type="text" id="cnpj" class="campoTexto" placeholder="00.000.000/0000-00" required>
+                  </div>
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="tipoEmpresa">Tipo de Empresa</label>
+                    <div class="seletor">
+                      <button type="button" id="seletorTipoEmpresa" class="seletorBotao">
+                        <span>Selecione o tipo</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                      </button>
+                      <div class="seletorOpcoes">
+                        <div class="seletorOpcao" data-value="retail">Varejo</div>
+                        <div class="seletorOpcao" data-value="food">Alimentação</div>
+                        <div class="seletorOpcao" data-value="service">Serviços</div>
+                        <div class="seletorOpcao" data-value="other">Outro</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="grupoFormulario">
+                  <label class="rotulo" for="descricao">Descrição</label>
+                  <textarea id="descricao" class="campoTexto areaTexto" placeholder="Breve descrição sobre a empresa"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="abaConteudo" id="abaContato">
+            <div class="cartao mb4">
+              <div class="cartaoCabecalho">
+                <h2 class="cartaoTitulo">Informações de Contato</h2>
+                <p class="cartaoDescricao">Adicione os dados de contato do cliente.</p>
+              </div>
+              <div class="cartaoConteudo">
+                <div class="grade grade2Colunas mb4">
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="nomeContato">Nome do Contato</label>
+                    <input type="text" id="nomeContato" class="campoTexto" placeholder="Nome completo" required>
+                  </div>
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="cargoContato">Cargo</label>
+                    <input type="text" id="cargoContato" class="campoTexto" placeholder="Cargo na empresa">
+                  </div>
+                </div>
+                
+                <div class="grade grade2Colunas mb4">
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="emailContato">Email</label>
+                    <input type="email" id="emailContato" class="campoTexto" placeholder="email@exemplo.com" required>
+                  </div>
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="telefoneContato">Telefone</label>
+                    <input type="text" id="telefoneContato" class="campoTexto" placeholder="(00) 00000-0000" required>
+                  </div>
+                </div>
+                
+                <div class="separador"></div>
+                
+                <div class="grupoFormulario mb4">
+                  <label class="rotulo" for="endereco">Endereço</label>
+                  <input type="text" id="endereco" class="campoTexto" placeholder="Endereço completo">
+                </div>
+                
+                <div class="grade grade3Colunas">
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="cidade">Cidade</label>
+                    <input type="text" id="cidade" class="campoTexto" placeholder="Cidade">
+                  </div>
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="estado">Estado</label>
+                    <input type="text" id="estado" class="campoTexto" placeholder="Estado">
+                  </div>
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="cep">CEP</label>
+                    <input type="text" id="cep" class="campoTexto" placeholder="00000-000">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="abaConteudo" id="abaFaturamento">
+            <div class="cartao mb4">
+              <div class="cartaoCabecalho">
+                <h2 class="cartaoTitulo">Informações de Faturamento</h2>
+                <p class="cartaoDescricao">Configure as informações de faturamento e plano.</p>
+              </div>
+              <div class="cartaoConteudo">
+                <div class="grade grade2Colunas mb4">
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="plano">Plano</label>
+                    <div class="seletor">
+                      <button type="button" id="seletorPlano" class="seletorBotao">
+                        <span>Selecione o plano</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                      </button>
+                      <div class="seletorOpcoes">
+                        <div class="seletorOpcao" data-value="basic">Básico</div>
+                        <div class="seletorOpcao" data-value="standard">Padrão</div>
+                        <div class="seletorOpcao" data-value="premium">Premium</div>
+                        <div class="seletorOpcao" data-value="enterprise">Empresarial</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="cicloFaturamento">Ciclo de Faturamento</label>
+                    <div class="seletor">
+                      <button type="button" id="seletorCiclo" class="seletorBotao">
+                        <span>Selecione o ciclo</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                      </button>
+                      <div class="seletorOpcoes">
+                        <div class="seletorOpcao" data-value="monthly">Mensal</div>
+                        <div class="seletorOpcao" data-value="quarterly">Trimestral</div>
+                        <div class="seletorOpcao" data-value="yearly">Anual</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="grade grade2Colunas mb4">
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="valor">Valor</label>
+                    <input type="text" id="valor" class="campoTexto" placeholder="R$ 0,00">
+                  </div>
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="desconto">Desconto (%)</label>
+                    <input type="text" id="desconto" class="campoTexto" placeholder="0%">
+                  </div>
+                </div>
+                
+                <div class="separador"></div>
+                
+                <div class="grupoFormulario">
+                  <label class="rotulo" for="metodoPagamento">Método de Pagamento</label>
+                  <div class="seletor">
+                    <button type="button" id="seletorMetodoPagamento" class="seletorBotao">
+                      <span>Selecione o método</span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="seletorOpcoes">
+                      <div class="seletorOpcao" data-value="credit-card">Cartão de Crédito</div>
+                      <div class="seletorOpcao" data-value="bank-slip">Boleto Bancário</div>
+                      <div class="seletorOpcao" data-value="bank-transfer">Transferência Bancária</div>
+                      <div class="seletorOpcao" data-value="pix">PIX</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="abaConteudo" id="abaConfiguracoes">
+            <div class="cartao mb4">
+              <div class="cartaoCabecalho">
+                <h2 class="cartaoTitulo">Configurações da Conta</h2>
+                <p class="cartaoDescricao">Configure as opções da conta do cliente.</p>
+              </div>
+              <div class="cartaoConteudo">
+                <div class="grupoFormulario mb4">
+                  <label class="rotulo" for="statusConta">Status da Conta</label>
+                  <div class="seletor">
+                    <button type="button" id="seletorStatus" class="seletorBotao">
+                      <span>Selecione o status</span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="seletorOpcoes">
+                      <div class="seletorOpcao" data-value="active">Ativo</div>
+                      <div class="seletorOpcao" data-value="pending">Pendente</div>
+                      <div class="seletorOpcao" data-value="inactive">Inativo</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="grupoFormulario mb4">
+                  <label class="rotulo" for="nivelAcesso">Nível de Acesso</label>
+                  <div class="seletor">
+                    <button type="button" id="seletorNivelAcesso" class="seletorBotao">
+                      <span>Selecione o nível</span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="seletorOpcoes">
+                      <div class="seletorOpcao" data-value="admin">Administrador</div>
+                      <div class="seletorOpcao" data-value="manager">Gerente</div>
+                      <div class="seletorOpcao" data-value="user">Usuário</div>
+                      <div class="seletorOpcao" data-value="readonly">Somente Leitura</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="grade grade2Colunas mb4">
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="maxUsuarios">Número Máximo de Usuários</label>
+                    <input type="number" id="maxUsuarios" class="campoTexto" placeholder="5">
+                  </div>
+                  <div class="grupoFormulario">
+                    <label class="rotulo" for="armazenamento">Armazenamento (GB)</label>
+                    <input type="number" id="armazenamento" class="campoTexto" placeholder="10">
+                  </div>
+                </div>
+                
+                <div class="separador"></div>
+                
+                <div class="grupoFormulario">
+                  <label class="rotulo" for="observacoes">Observações</label>
+                  <textarea id="observacoes" class="campoTexto areaTexto" placeholder="Observações adicionais sobre o cliente"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flexEntre">
+          <a href="clientes.html" class="botao botaoSecundario">Cancelar</a>
+          <button type="submit" id="botaoSalvar" class="botao botaoPrimario">Salvar Cliente</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="js/novoCliente.js"></script>
+</body>
+</html>

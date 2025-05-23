@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duby</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+  <div class="conteinerPrincipal">
+    <aside class="barraLateral">
+      <div class="barraLateralCabecalho">
+        <div class="barraLateralLogo">
+          <img src="logo-duby.svg" alt="">
+        </div>
+        <div class="barraLateralPesquisa">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" placeholder="Buscar...">
+        </div>
+      </div>
+      
+      <div class="barraLateralConteudo">
+        <div class="barraLateralGrupo">
+          <h3 class="barraLateralGrupoTitulo">Administração</h3>
+          <ul class="barraLateralMenu">
+            <li class="barraLateralItem">
+              <a href="index.html" class="barraLateralBotao">
+                <i class="fa-solid fa-home"></i>
+                <span>Início</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="clientes.html" class="barraLateralBotao ativo">
+                <i class="fa-solid fa-users"></i>
+                <span>Clientes</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="relatorios.html" class="barraLateralBotao">
+                <i class="fa-solid fa-chart-bar"></i>
+                <span>Relatórios</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="planos.html" class="barraLateralBotao">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Planos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="barraLateralRodape">
+        <div class="barraLateralUsuario">
+          <div class="barraLateralAvatar">A</div>
+          <div class="barraLateralUsuarioInfo">
+            <p>Admin</p>
+            <p>admin@exemplo.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    <main class="conteudoPrincipal">
+      <div class="cabecalhoPagina">
+        <div class="flexCentro">
+          <a href="clientes.html" class="botao botaoSecundario botaoIcone">
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <div>
+            <h1 class="tituloPagina" id="nomeCliente">Carregando...</h1>
+            <p class="textoSecundario" id="dataCliente">Cliente desde...</p>
+          </div>
+        </div>
+        <div class="flexCentro">
+          <a href="#" class="botao botaoSecundario" id="botaoEditar">
+            <i class="fa-solid fa-edit mr2"></i>
+            Editar
+          </a>
+          <button class="botao botaoPerigo" id="botaoExcluir">
+            <i class="fa-solid fa-trash mr2"></i>
+            Excluir
+          </button>
+        </div>
+      </div>
+      
+      <div class="grade grade3Colunas mb6">
+        <div class="cartao">
+          <div class="cartaoCabecalho">
+            <h3 class="cartaoTitulo">Informações da Empresa</h3>
+          </div>
+          <div class="cartaoConteudo">
+            <div class="flexCentro mb4">
+              <i class="fa-solid fa-building text-muted"></i>
+              <div>
+                <p class="textoMedio" id="nomeEmpresa">Carregando...</p>
+                <p class="textoSecundario" id="nomeFantasia">Carregando...</p>
+              </div>
+            </div>
+            
+            <div class="flexCentro mb4">
+              <i class="fa-solid fa-credit-card text-muted"></i>
+              <div>
+                <p class="textoMedio" id="cnpjEmpresa">CNPJ: Carregando...</p>
+                <p class="textoSecundario" id="tipoEmpresa">Tipo: Carregando...</p>
+              </div>
+            </div>
+            
+            <div class="flexCentro">
+              <i class="fa-solid fa-map-pin text-muted"></i>
+              <div>
+                <p class="textoMedio" id="enderecoEmpresa">Carregando...</p>
+                <p class="textoSecundario" id="cidadeEstadoEmpresa">Carregando...</p>
+              </div>
+            </div>
+          </div>
+          <div class="cartaoRodape">
+            <div id="statusEmpresa" class="badge badgeSucesso">Ativo</div>
+          </div>
+        </div>
+        
+        <div class="cartao">
+          <div class="cartaoCabecalho">
+            <h3 class="cartaoTitulo">Contato Principal</h3>
+          </div>
+          <div class="cartaoConteudo">
+            <div class="flexCentro mb4">
+              <i class="fa-solid fa-user text-muted"></i>
+              <div>
+                <p class="textoMedio" id="nomeContato">Carregando...</p>
+                <p class="textoSecundario" id="cargoContato">Carregando...</p>
+              </div>
+            </div>
+            
+            <div class="flexCentro mb4">
+              <i class="fa-solid fa-envelope text-muted"></i>
+              <div>
+                <p class="textoMedio" id="emailContato">Carregando...</p>
+              </div>
+            </div>
+            
+            <div class="flexCentro">
+              <i class="fa-solid fa-phone text-muted"></i>
+              <div>
+                <p class="textoMedio" id="telefoneContato">Carregando...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cartao">
+          <div class="cartaoCabecalho">
+            <h3 class="cartaoTitulo">Plano e Faturamento</h3>
+          </div>
+          <div class="cartaoConteudo">
+            <div class="mb4">
+              <p class="textoSecundario">Plano</p>
+              <p class="textoGrande" id="planoCliente">Carregando...</p>
+            </div>
+            
+            <div class="separador"></div>
+            
+            <div class="grade grade2Colunas mb4">
+              <div>
+                <p class="textoSecundario">Ciclo</p>
+                <p class="textoMedio" id="cicloFaturamento">Carregando...</p>
+              </div>
+              <div>
+                <p class="textoSecundario">Valor</p>
+                <p class="textoMedio" id="valorFaturamento">Carregando...</p>
+              </div>
+            </div>
+            
+            <div class="grade grade2Colunas">
+              <div>
+                <p class="textoSecundario">Método</p>
+                <p class="textoMedio" id="metodoFaturamento">Carregando...</p>
+              </div>
+              <div>
+                <p class="textoSecundario">Próximo Faturamento</p>
+                <p class="textoMedio" id="proximoFaturamento">Carregando...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="abas">
+        <div class="abasNavegacao">
+          <div class="abaBotao ativo" data-aba="usuarios">Usuários</div>
+          <div class="abaBotao" data-aba="adquirentes">Adquirentes</div>
+          <div class="abaBotao" data-aba="contas">Contas Bancárias</div>
+          <div class="abaBotao" data-aba="historico">Histórico</div>
+        </div>
+        
+        <div class="abaConteudo ativo" id="abaUsuarios">
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Usuários</h3>
+              <p class="cartaoDescricao">Usuários cadastrados para este cliente.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="tabelaResponsiva">
+                <table class="tabela">
+                  <thead class="tabelaCabecalho">
+                    <tr>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Cargo</th>
+                      <th>Último Acesso</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabelaUsuarios">
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="cartaoRodape">
+              <button class="botao botaoSecundario">Ver Todos os Usuários</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="abaConteudo" id="abaAdquirentes">
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Adquirentes</h3>
+              <p class="cartaoDescricao">Adquirentes configurados para este cliente.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="tabelaResponsiva">
+                <table class="tabela">
+                  <thead class="tabelaCabecalho">
+                    <tr>
+                      <th>Nome</th>
+                      <th>Código</th>
+                      <th>Status</th>
+                      <th>Última Atualização</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabelaAdquirentes">
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="cartaoRodape">
+              <button class="botao botaoSecundario">Ver Todos os Adquirentes</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="abaConteudo" id="abaContas">
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Contas Bancárias</h3>
+              <p class="cartaoDescricao">Contas bancárias configuradas para este cliente.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="tabelaResponsiva">
+                <table class="tabela">
+                  <thead class="tabelaCabecalho">
+                    <tr>
+                      <th>Banco</th>
+                      <th>Agência</th>
+                      <th>Conta</th>
+                      <th>Tipo</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabelaContas">
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="cartaoRodape">
+              <button class="botao botaoSecundario">Ver Todas as Contas</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="abaConteudo" id="abaHistorico">
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Histórico de Atividades</h3>
+              <p class="cartaoDescricao">Histórico de atividades recentes deste cliente.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="listaHistorico" id="listaHistorico">
+                
+              </div>
+            </div>
+            <div class="cartaoRodape">
+              <button class="botao botaoSecundario">Ver Histórico Completo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  
+  <div class="modal" id="modalExclusao">
+    <div class="modalConteudo">
+      <div class="modalCabecalho">
+        <h3 class="modalTitulo">Excluir Cliente</h3>
+        <button class="fecharModal">&times;</button>
+      </div>
+      <div class="modalCorpo">
+        <p>Tem certeza que deseja excluir este cliente? Esta ação não pode ser desfeita.</p>
+      </div>
+      <div class="modalRodape">
+        <button class="botao botaoSecundario" id="cancelarExclusao">Cancelar</button>
+        <button class="botao botaoPerigo" id="confirmarExclusao">Excluir Cliente</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/principal.js"></script>
+  <script src="js/clientesDetalhes.js"></script>
+</body>
+</html>

@@ -130,6 +130,7 @@ body {
 .cardsResumo {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 1rem;
     margin-bottom: 2rem;
 }
@@ -147,23 +148,35 @@ body {
 .card.verde {
     background-color: rgba(74, 222, 128, 0.1);
     color: #16A34A;
+
+    background-color: var(--cartoes);
+    border: var(--borda);
+    box-shadow: var(--sombra);
 }
 
 .card.vermelho {
     background-color: rgba(248, 113, 113, 0.1);
     color: #DC2626;
+
+    background-color: var(--cartoes);
+    border: var(--borda);
+    box-shadow: var(--sombra);
 }
 
 .card.azul {
     background-color: rgba(96, 165, 250, 0.1);
     color: #2563EB;
 
-    display: non;
+    display: none;
 }
 
 .card.amarelo {
     background-color: rgba(251, 191, 36, 0.1);
     color: #D97706;
+
+    background-color: var(--cartoes);
+    border: var(--borda);
+    box-shadow: var(--sombra);
 }
 
 .card.ativo {
@@ -211,7 +224,7 @@ body {
 .conteudoCard h3 {
     font-size: 0.875rem;
     font-weight: 700;
-    color: #343434;
+    color: var(--texto);
     margin-bottom: 0.25rem;
 }
 
@@ -223,7 +236,7 @@ body {
 
 .subTexto {
     font-size: 0.75rem;
-    color: #343434;
+    color: var(--texto-p);
 }
 
 .conteudoAba {

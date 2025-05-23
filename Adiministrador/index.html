@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duby</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+  <div class="conteinerPrincipal">
+    <aside class="barraLateral">
+      <div class="barraLateralCabecalho">
+        <div class="barraLateralLogo">
+          <img src="logo-duby.svg" alt="">
+        </div>
+        <div class="barraLateralPesquisa">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" placeholder="Buscar...">
+        </div>
+      </div>
+      
+      <div class="barraLateralConteudo">
+        <div class="barraLateralGrupo">
+          <h3 class="barraLateralGrupoTitulo">Administração</h3>
+          <ul class="barraLateralMenu">
+            <li class="barraLateralItem">
+              <a href="index.html" class="barraLateralBotao ativo">
+                <i class="fa-solid fa-home"></i>
+                <span>Início</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="clientes.html" class="barraLateralBotao">
+                <i class="fa-solid fa-users"></i>
+                <span>Clientes</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="relatorios.html" class="barraLateralBotao">
+                <i class="fa-solid fa-chart-bar"></i>
+                <span>Relatórios</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="planos.html" class="barraLateralBotao">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Planos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="barraLateralRodape">
+        <div class="barraLateralUsuario">
+          <div class="barraLateralAvatar">A</div>
+          <div class="barraLateralUsuarioInfo">
+            <p>Admin</p>
+            <p>admin@exemplo.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    <main class="conteudoPrincipal">
+      <div class="cabecalhoPagina">
+        <h1 class="tituloPagina">Painel Administrativo</h1>
+        <a href="clientes-novo.html" class="botao botaoPrimario">
+          <i class="fa-solid fa-plus"></i>
+          Novo Cliente
+        </a>
+      </div>
+      
+      <div class="grade grade3Colunas mb6">
+        <div class="cartao">
+          <div class="cartaoCabecalho flexEntre">
+            <h3 class="cartaoTitulo">Total de Clientes</h3>
+            <i class="fa-solid fa-users text-muted"></i>
+          </div>
+          <div class="cartaoConteudo">
+            <div class="textoGrande">127</div>
+            <p class="textoSecundario">+5 no último mês</p>
+          </div>
+          <div class="cartaoRodape">
+            <a href="clientes.html" class="botao botaoSecundario">
+              Ver todos
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="cartao">
+          <div class="cartaoCabecalho flexEntre">
+            <h3 class="cartaoTitulo">Clientes Ativos</h3>
+            <i class="fa-solid fa-users text-muted"></i>
+          </div>
+          <div class="cartaoConteudo">
+            <div class="textoGrande">98</div>
+            <p class="textoSecundario">77% do total</p>
+          </div>
+          <div class="cartaoRodape">
+            <a href="clientes.html?status=active" class="botao botaoSecundario">
+              Ver ativos
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="cartao">
+          <div class="cartaoCabecalho flexEntre">
+            <h3 class="cartaoTitulo">Receita Mensal</h3>
+            <i class="fa-solid fa-chart-line text-muted"></i>
+          </div>
+          <div class="cartaoConteudo">
+            <div class="textoGrande">R$ 45.230,00</div>
+            <p class="textoSecundario">+12% em relação ao mês anterior</p>
+          </div>
+          <div class="cartaoRodape">
+            <a href="relatorios.html" class="botao botaoSecundario">
+              Ver relatórios
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mb6">
+        <h2 class="subtituloPagina mb4">Clientes Recentes</h2>
+        <div class="cartao">
+          <div class="tabelaResponsiva">
+            <table class="tabela">
+              <thead class="tabelaCabecalho">
+                <tr>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Data de Cadastro</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tabelaLinha">
+                  <td class="tabelaCelula">Supermercado ABC</td>
+                  <td class="tabelaCelula">contato@abc.com.br</td>
+                  <td class="tabelaCelula">
+                    <span class="badge badgeSucesso">Ativo</span>
+                  </td>
+                  <td class="tabelaCelula">12/04/2023</td>
+                  <td class="tabelaCelula" style="text-align: right;">
+                    <a href="clientes-detalhes.html?id=1" class="botao botaoSecundario">Ver detalhes</a>
+                  </td>
+                </tr>
+                <tr class="tabelaLinha">
+                  <td class="tabelaCelula">Farmácia Saúde</td>
+                  <td class="tabelaCelula">admin@farmaciasaude.com.br</td>
+                  <td class="tabelaCelula">
+                    <span class="badge badgeSucesso">Ativo</span>
+                  </td>
+                  <td class="tabelaCelula">05/04/2023</td>
+                  <td class="tabelaCelula" style="text-align: right;">
+                    <a href="clientes-detalhes.html?id=2" class="botao botaoSecundario">Ver detalhes</a>
+                  </td>
+                </tr>
+                <tr class="tabelaLinha">
+                  <td class="tabelaCelula">Restaurante Sabor</td>
+                  <td class="tabelaCelula">financeiro@sabor.com.br</td>
+                  <td class="tabelaCelula">
+                    <span class="badge badgeAlerta">Pendente</span>
+                  </td>
+                  <td class="tabelaCelula">01/04/2023</td>
+                  <td class="tabelaCelula" style="text-align: right;">
+                    <a href="clientes-detalhes.html?id=3" class="botao botaoSecundario">Ver detalhes</a>
+                  </td>
+                </tr>
+                <tr class="tabelaLinha">
+                  <td class="tabelaCelula">Loja de Roupas Fashion</td>
+                  <td class="tabelaCelula">contato@fashion.com.br</td>
+                  <td class="tabelaCelula">
+                    <span class="badge badgeSucesso">Ativo</span>
+                  </td>
+                  <td class="tabelaCelula">28/03/2023</td>
+                  <td class="tabelaCelula" style="text-align: right;">
+                    <a href="clientes-detalhes.html?id=4" class="botao botaoSecundario">Ver detalhes</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/principal.js"></script>
+</body>
+</html>

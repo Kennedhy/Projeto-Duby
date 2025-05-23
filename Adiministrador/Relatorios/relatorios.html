@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duby</title>
+  <link rel="stylesheet" href="css/global.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="conteinerPrincipal">
+    <aside class="barraLateral">
+      <div class="barraLateralCabecalho">
+        <div class="barraLateralLogo">
+          <img src="logo-duby.svg" alt="">
+        </div>
+        <div class="barraLateralPesquisa">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" placeholder="Buscar...">
+        </div>
+      </div>
+      
+      <div class="barraLateralConteudo">
+        <div class="barraLateralGrupo">
+          <h3 class="barraLateralGrupoTitulo">Administração</h3>
+          <ul class="barraLateralMenu">
+            <li class="barraLateralItem">
+              <a href="index.html" class="barraLateralBotao">
+                <i class="fa-solid fa-home"></i>
+                <span>Início</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="clientes.html" class="barraLateralBotao">
+                <i class="fa-solid fa-users"></i>
+                <span>Clientes</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="relatorios.html" class="barraLateralBotao ativo">
+                <i class="fa-solid fa-chart-bar"></i>
+                <span>Relatórios</span>
+              </a>
+            </li>
+            <li class="barraLateralItem">
+              <a href="planos.html" class="barraLateralBotao">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Planos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="barraLateralRodape">
+        <div class="barraLateralUsuario">
+          <div class="barraLateralAvatar">A</div>
+          <div class="barraLateralUsuarioInfo">
+            <p>Admin</p>
+            <p>admin@exemplo.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    <main class="conteudoPrincipal">
+      <div class="cabecalhoPagina">
+        <h1 class="tituloPagina">Relatórios</h1>
+        <button class="botao botaoSecundario">
+          <i class="fa-solid fa-download"></i>
+          Exportar Dados
+        </button>
+      </div>
+      
+      <div class="cartao mb6">
+        <div class="cartaoCabecalho">
+          <h3 class="cartaoTitulo">Filtros</h3>
+          <p class="cartaoDescricao">Personalize os relatórios de acordo com suas necessidades.</p>
+        </div>
+        <div class="cartaoConteudo">
+          <div class="grade grade3Colunas">
+            <div class="grupoFormulario">
+              <label class="rotulo" for="tipoRelatorio">Tipo de Relatório</label>
+              <div class="seletor">
+                <button type="button" id="seletorTipoRelatorio" class="seletorBotao">
+                  <span>Clientes</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="seletorOpcoes">
+                  <div class="seletorOpcao" data-value="clients">Clientes</div>
+                  <div class="seletorOpcao" data-value="revenue">Receita</div>
+                  <div class="seletorOpcao" data-value="plans">Planos</div>
+                  <div class="seletorOpcao" data-value="usage">Uso do Sistema</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="grupoFormulario">
+              <label class="rotulo" for="periodoRelatorio">Período</label>
+              <div class="seletor">
+                <button type="button" id="seletorPeriodo" class="seletorBotao">
+                  <span>Último Mês</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="seletorOpcoes">
+                  <div class="seletorOpcao" data-value="week">Última Semana</div>
+                  <div class="seletorOpcao" data-value="month">Último Mês</div>
+                  <div class="seletorOpcao" data-value="quarter">Último Trimestre</div>
+                  <div class="seletorOpcao" data-value="year">Último Ano</div>
+                  <div class="seletorOpcao" data-value="custom">Personalizado</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="grupoFormulario" id="periodoPersonalizado" style="display: none;">
+              <div class="grade grade2Colunas">
+                <div class="grupoFormulario">
+                  <label class="rotulo" for="dataInicial">Data Inicial</label>
+                  <input type="date" id="dataInicial" class="campoTexto">
+                </div>
+                <div class="grupoFormulario">
+                  <label class="rotulo" for="dataFinal">Data Final</label>
+                  <input type="date" id="dataFinal" class="campoTexto">
+                </div>
+              </div>
+            </div>
+            
+            <div class="grupoFormulario">
+              <label class="rotulo">&nbsp;</label>
+              <button class="botao botaoPrimario" id="aplicarFiltros">
+                <i class="fa-solid fa-filter"></i>
+                Aplicar Filtros
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="abas">
+        <div class="abasNavegacao">
+          <div class="abaBotao ativo" data-aba="visaoGeral">Visão Geral</div>
+          <div class="abaBotao" data-aba="clientes">Clientes</div>
+          <div class="abaBotao" data-aba="receita">Receita</div>
+          <div class="abaBotao" data-aba="planos">Planos</div>
+        </div>
+        
+        <div class="abaConteudo ativo" id="abaVisaoGeral">
+          <div class="grade grade3Colunas mb4">
+            <div class="cartao">
+              <div class="cartaoCabecalho flexEntre">
+                <h3 class="cartaoTitulo">Total de Clientes</h3>
+                <i class="fa-solid fa-chart-bar text-muted"></i>
+              </div>
+              <div class="cartaoConteudo">
+                <div class="textoGrande">127</div>
+                <p class="textoSecundario">+5 no último mês</p>
+                <div class="graficoContainer mt4">
+                  <canvas id="graficoClientes" class="grafico"></canvas>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cartao">
+              <div class="cartaoCabecalho flexEntre">
+                <h3 class="cartaoTitulo">Receita Mensal</h3>
+                <i class="fa-solid fa-chart-line text-muted"></i>
+              </div>
+              <div class="cartaoConteudo">
+                <div class="textoGrande">R$ 45.230,00</div>
+                <p class="textoSecundario">+12% em relação ao mês anterior</p>
+                <div class="graficoContainer mt4">
+                  <canvas id="graficoReceita" class="grafico"></canvas>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cartao">
+              <div class="cartaoCabecalho flexEntre">
+                <h3 class="cartaoTitulo">Distribuição de Planos</h3>
+                <i class="fa-solid fa-chart-pie text-muted"></i>
+              </div>
+              <div class="cartaoConteudo">
+                <div class="textoGrande">4 Planos</div>
+                <p class="textoSecundario">Premium é o mais popular</p>
+                <div class="graficoContainer mt4">
+                  <canvas id="graficoPlanos" class="grafico"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Resumo de Desempenho</h3>
+              <p class="cartaoDescricao">Visão geral do desempenho do sistema nos últimos 30 dias.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="graficoContainer">
+                <canvas id="graficoDesempenho" class="grafico graficoGrande"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="abaConteudo" id="abaClientes">
+          <div class="cartao mb4">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Crescimento de Clientes</h3>
+              <p class="cartaoDescricao">Análise do crescimento de clientes ao longo do tempo.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="graficoContainer">
+                <canvas id="graficoCrescimentoClientes" class="grafico graficoGrande"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cartao mb4">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Clientes por Segmento</h3>
+              <p class="cartaoDescricao">Distribuição de clientes por segmento de mercado.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="grade grade2Colunas">
+                <div class="graficoContainer">
+                  <canvas id="graficoSegmentos" class="grafico"></canvas>
+                </div>
+                <div class="legendaGrafico">
+                  <div class="legendaItem">
+                    <div class="legendaCor" style="background-color: var(--cor-destaque);"></div>
+                    <div class="legendaTexto">Varejo</div>
+                    <div class="legendaValor">42%</div>
+                  </div>
+                  <div class="legendaItem">
+                    <div class="legendaCor" style="background-color: #22c55e;"></div>
+                    <div class="legendaTexto">Alimentação</div>
+                    <div class="legendaValor">28%</div>
+                  </div>
+                  <div class="legendaItem">
+                    <div class="legendaCor" style="background-color: #f59e0b;"></div>
+                    <div class="legendaTexto">Serviços</div>
+                    <div class="legendaValor">18%</div>
+                  </div>
+                  <div class="legendaItem">
+                    <div class="legendaCor" style="background-color: #3b82f6;"></div>
+                    <div class="legendaTexto">Outros</div>
+                    <div class="legendaValor">12%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Status dos Clientes</h3>
+              <p class="cartaoDescricao">Distribuição de clientes por status.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="tabelaResponsiva">
+                <table class="tabela">
+                  <thead class="tabelaCabecalho">
+                    <tr>
+                      <th>Status</th>
+                      <th>Quantidade</th>
+                      <th>Percentual</th>
+                      <th>Variação</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="tabelaLinha">
+                      <td class="tabelaCelula">Ativos</td>
+                      <td class="tabelaCelula">98</td>
+                      <td class="tabelaCelula">77%</td>
+                      <td class="tabelaCelula textoSucesso">+5%</td>
+                    </tr>
+                    <tr class="tabelaLinha">
+                      <td class="tabelaCelula">Pendentes</td>
+                      <td class="tabelaCelula">15</td>
+                      <td class="tabelaCelula">12%</td>
+                      <td class="tabelaCelula textoAlerta">-2%</td>
+                    </tr>
+                    <tr class="tabelaLinha">
+                      <td class="tabelaCelula">Inativos</td>
+                      <td class="tabelaCelula">14</td>
+                      <td class="tabelaCelula">11%</td>
+                      <td class="tabelaCelula textoErro">-3%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="abaConteudo" id="abaReceita">
+          <div class="cartao mb4">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Receita Mensal</h3>
+              <p class="cartaoDescricao">Análise da receita mensal ao longo do tempo.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="graficoContainer">
+                <canvas id="graficoReceitaMensal" class="grafico graficoGrande"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="grade grade2Colunas mb4">
+            <div class="cartao">
+              <div class="cartaoCabecalho">
+                <h3 class="cartaoTitulo">Receita por Plano</h3>
+                <p class="cartaoDescricao">Distribuição da receita por plano.</p>
+              </div>
+              <div class="cartaoConteudo">
+                <div class="graficoContainer">
+                  <canvas id="graficoReceitaPlano" class="grafico"></canvas>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cartao">
+              <div class="cartaoCabecalho">
+                <h3 class="cartaoTitulo">Receita por Método de Pagamento</h3>
+                <p class="cartaoDescricao">Distribuição da receita por método de pagamento.</p>
+              </div>
+              <div class="cartaoConteudo">
+                <div class="graficoContainer">
+                  <canvas id="graficoReceitaMetodo" class="grafico"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Previsão de Receita</h3>
+              <p class="cartaoDescricao">Previsão de receita para os próximos meses.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="graficoContainer">
+                <canvas id="graficoPrevisaoReceita" class="grafico graficoGrande"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="abaConteudo" id="abaPlanos">
+          <div class="cartao mb4">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Distribuição de Planos</h3>
+              <p class="cartaoDescricao">Análise da distribuição de clientes por plano.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="graficoContainer">
+                <canvas id="graficoDistribuicaoPlanos" class="grafico graficoGrande"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cartao mb4">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Desempenho dos Planos</h3>
+              <p class="cartaoDescricao">Análise de desempenho de cada plano.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="tabelaResponsiva">
+                <table class="tabela">
+                  <thead class="tabelaCabecalho">
+                    <tr>
+                      <th>Plano</th>
+                      <th>Clientes</th>
+                      <th>Receita Mensal</th>
+                      <th>Crescimento</th>
+                      <th>Taxa de Retenção</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="tabelaLinha">
+                      <td class="tabelaCelula">Básico</td>
+                      <td class="tabelaCelula">32</td>
+                      <td class="tabelaCelula">R$ 6.400,00</td>
+                      <td class="tabelaCelula textoSucesso">+8%</td>
+                      <td class="tabelaCelula">92%</td>
+                    </tr>
+                    <tr class="tabelaLinha">
+                      <td class="tabelaCelula">Padrão</td>
+                      <td class="tabelaCelula">45</td>
+                      <td class="tabelaCelula">R$ 13.500,00</td>
+                      <td class="tabelaCelula textoSucesso">+12%</td>
+                      <td class="tabelaCelula">95%</td>
+                    </tr>
+                    <tr class="tabelaLinha">
+                      <td class="tabelaCelula">Premium</td>
+                      <td class="tabelaCelula">38</td>
+                      <td class="tabelaCelula">R$ 18.810,00</td>
+                      <td class="tabelaCelula textoSucesso">+15%</td>
+                      <td class="tabelaCelula">97%</td>
+                    </tr>
+                    <tr class="tabelaLinha">
+                      <td class="tabelaCelula">Empresarial</td>
+                      <td class="tabelaCelula">12</td>
+                      <td class="tabelaCelula">R$ 6.520,00</td>
+                      <td class="tabelaCelula textoAlerta">+3%</td>
+                      <td class="tabelaCelula">98%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h3 class="cartaoTitulo">Conversão entre Planos</h3>
+              <p class="cartaoDescricao">Análise de conversão de clientes entre planos.</p>
+            </div>
+            <div class="cartaoConteudo">
+              <div class="graficoContainer">
+                <canvas id="graficoConversaoPlanos" class="grafico graficoGrande"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/principal.js"></script>
+  <script src="js/relatorios.js"></script>
+</body>
+</html>
