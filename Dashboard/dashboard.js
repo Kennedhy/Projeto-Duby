@@ -798,11 +798,11 @@ function inicializarGraficosPagamentos() {
     const ctxCategoriasPagamento = document.getElementById('graficoCategoriasPagamento');
     if (ctxCategoriasPagamento) {
         new Chart(ctxCategoriasPagamento.getContext('2d'), {
-            type: 'doughnut',
+            type: 'pie',
             data: {
                 labels: ['Fornecedores', 'Funcionários', 'Impostos', 'Outros'],
                 datasets: [{
-                    data: [45, 30, 20, 5],
+                    data: [35, 25, 30, 10],
                     backgroundColor: ['#322871', '#4CAF50', '#ffcb00','#4338CA' ],
                     borderWidth: 0
                 }]
@@ -833,7 +833,6 @@ function inicializarGraficosPagamentos() {
                         }
                     }
                 },
-                cutout: '70%'
             }
         });
     }
@@ -1357,12 +1356,12 @@ function inicializarGraficosDivergencias() {
     const ctxTiposDivergencias = document.getElementById('graficoTiposDivergencias');
     if (ctxTiposDivergencias) {
         new Chart(ctxTiposDivergencias.getContext('2d'), {
-            type: 'doughnut',
+            type: 'pie',
             data: {
                 labels: ['Não Recebido', 'Taxa Incorreta', 'Valor Incorreto', 'Duplicidade'],
                 datasets: [{
                     data: [45, 30, 15, 10],
-                    backgroundColor: ['#322871', '#E53935','#4CAF50',  '#4338CA'],
+                    backgroundColor: ['#12283F', '#322871','#89eb88',  '#ddede0'],
                     borderWidth: 0
                 }]
             },
@@ -1392,7 +1391,6 @@ function inicializarGraficosDivergencias() {
                         }
                     }
                 },
-                cutout: '70%'
             }
         });
     }
@@ -1462,25 +1460,25 @@ function inicializarOutrosGraficosDivergencias() {
                     {
                         label: 'Não Recebido',
                         data: [18, 15, 12, 10, 14],
-                        backgroundColor: '#322871',
+                        backgroundColor: '#12283F',
                         barPercentage: 0.7
                     },
                     {
                         label: 'Taxa Incorreta',
                         data: [12, 10, 8, 7, 9],
-                        backgroundColor: '#E53935',
+                        backgroundColor: '#322871',
                         barPercentage: 0.7
                     },
                     {
                         label: 'Valor Incorreto',
                         data: [6, 5, 4, 3, 5],
-                        backgroundColor: '#4CAF50',
+                        backgroundColor: '#89eb88',
                         barPercentage: 0.7
                     },
                     {
                         label: 'Duplicidade',
                         data: [4, 3, 2, 2, 3],
-                        backgroundColor: '#4338CA',
+                        backgroundColor: '#ddede0', 
                         barPercentage: 0.7
                     }
                 ]
