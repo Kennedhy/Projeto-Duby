@@ -114,6 +114,11 @@
     color: var(--cinza-700);
 }
 
+#btnOpenForm:hover {
+    background-color: #322871;
+
+}
+
 .overlay {
     position: fixed;
     top: 0;

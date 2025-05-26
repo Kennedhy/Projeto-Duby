@@ -1402,7 +1402,7 @@ function inicializarOutrosGraficosDivergencias() {
                 datasets: [{
                     label: 'Valor (R$)',
                     data: [18500, 15800, 26700, 22300, 16800, 24500, 19800, 17500, 21200, 18900, 23500, 27800],
-                    backgroundColor: '#322871',
+                    backgroundColor: '#412884',
                     borderRadius: 4,
                     barThickness: 25
                 }]

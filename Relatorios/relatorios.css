@@ -189,8 +189,9 @@
     font-size: 0.7rem;
     font-weight: 600;
 }
-
-
+.cartaoBotao:hover {
+    background: #322871;
+}
 
 .textoVerde {
     color: var(--corVerde);
