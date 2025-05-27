@@ -122,6 +122,127 @@ body {
     margin-top: 1rem;
 }
 
+
+
+.seletorOpcoes {
+    position: absolute;
+    top: 100%;
+    left: auto;
+    right: 0;
+    margin-top: 0.25rem;
+    background: var(--th);
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+    width: 120%;
+    padding: 0.75rem;
+}
+
+.seletorOpcoes.ativo {
+    display: block;
+}
+
+
+
+.notificacoes h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.listaNotificacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.iconeNotificacao {
+    padding: 0.6rem;
+    border-radius: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemNotificacao {
+    background-color: var(--cartoes);
+    border-radius: 8px;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-left: 4px solid transparent;
+}
+
+.iconeNotificacao.critico {
+    background-color: rgba(248, 113, 113, 0.2);
+    color: var(--perigo);
+}
+
+.iconeNotificacao.alerta {
+    background-color: rgba(251, 191, 36, 0.2);
+    color: var(--alerta);
+}
+
+.iconeNotificacao.info {
+    background-color: rgba(96, 165, 250, 0.2);
+    color: var(--primario);
+}
+
+.conteudoNotificacao h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.conteudoNotificacao p {
+    font-size: 0.75rem;
+    color: var(--cinza-700);
+}
+
+
+
+
+
+.barraNotificacao {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--th);
+    box-shadow: var(--sombra);
+    border: var(--borda);
+    border-radius: 10px;
+    position: fixed;
+    right: 1.5rem;
+    z-index: 1;
+}
+
+.iconeBarra {
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.iconeBarra:hover {
+    background-color: var(--tr);
+}
+
+.imgBarra {
+    display: flex;
+    background-color: var(--primario-claro);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.pesquisa input {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+
+
 .cabecalho h1 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -129,38 +250,74 @@ body {
 
 .cardsResumo {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 2fr;
     gap: 1rem;
     margin-bottom: 2rem;
+    padding: 1rem 0;
+    align-items: center;
 }
+
+.cardPrincipal h1 {
+    font-weight: 600;
+}
+
+.cardPrincipal h2 {
+    font-size: 1rem;
+}
+
+.cardPrincipal p {
+    font-size: 0.8rem;
+}
+
+.cardBadge {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cardBadge span {
+    background-color: rgba(74, 222, 128, 0.2);
+    color: #065F46;
+    padding: 0.2rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+
+}
+
+.cardsFundo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background-color: var(--fund);
+    box-shadow: var(--sombr);
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+
 
 .card {
     border-radius: 12px;
-    padding: 1.25rem;
+    padding: 0.7rem;
     display: flex;
     align-items: center;
     gap: 1rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    background-color: var(--cartoes);
+    box-shadow: var(--sombra);
 }
 
 .card.verde {
-    background-color: rgba(74, 222, 128, 0.1);
     color: #16A34A;
 
-    background-color: var(--cartoes);
-    border: var(--borda);
-    box-shadow: var(--sombra);
+    background-color: none;
 }
 
 .card.vermelho {
-    background-color: rgba(248, 113, 113, 0.1);
     color: #DC2626;
 
-    background-color: var(--cartoes);
-    border: var(--borda);
-    box-shadow: var(--sombra);
+    background-color: none
 }
 
 .card.azul {
@@ -171,17 +328,20 @@ body {
 }
 
 .card.amarelo {
-    background-color: rgba(251, 191, 36, 0.1);
     color: #D97706;
 
-    background-color: var(--cartoes);
-    border: var(--borda);
-    box-shadow: var(--sombra);
+    background-color: none;
 }
 
 .card.ativo {
-    box-shadow: 0 0 0 2px var(--primario);
+    scale: 1.1;
+    background-color: var(--cartoes);
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    
 }
+
 
 .iconeCard {
     width: 50px;
@@ -251,11 +411,11 @@ body {
     display: block;
 }
 
-.secaoGraficos, .secaoRelatorios, .secaoTransacoes {
+.secaoGraficos, .secaoRelatorios, .secaoTransacoes, .secaoResumo {
     margin-bottom: 2rem;
 }
 
-.secaoGraficos h2, .secaoRelatorios h2, .secaoTransacoes h2 {
+.secaoGraficos h2, .secaoRelatorios h2, .secaoTransacoes h2, .secaoResumo h2 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-top: 2rem;
@@ -310,7 +470,8 @@ body {
     margin-bottom: 1rem;
     padding: 0.5rem;
     background-color: var(--fundo-botao);
-    border-radius: 16px;
+    border-radius: 10px;
+    width: 70%;
 }
 
 .botaoAba {
@@ -501,239 +662,6 @@ thead tr th:first-child {
     color: #1E40AF;
 }
 
-.barraLateralDireita {
-    display: none;
-    background: #fafafa;
-    border: 1px solid #F0F0F0;
-    padding: 0.8rem;
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    width: var(--largura-barra-direita);
-    
-}
-
-.perfilUsuario {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
-}
-
-.avatarPerfil {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: #E9D5FF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primario);
-}
-
-.infoPerfil {
-    margin-left: 0.75rem;
-}
-
-.infoPerfil h3 {
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.infoPerfil p {
-    font-size: 0.75rem;
-    color: var(--cinza-500);
-}
-
-.barraPesquisa {
-    display: none;
-    align-items: center;
-    background-color: white;
-    border-radius: 9999px;
-    padding: 0.5rem 1rem;
-    margin-bottom: 1rem;
-}
-
-.barraPesquisa input {
-    border: none;
-    outline: none;
-    background: transparent;
-    margin-left: 0.5rem;
-    width: 100%;
-    font-size: 0.875rem;
-}
-
-.relatorioMensal, .notificacoes, .proximoVencimento, .atalhos {
-    margin-bottom: 1.5rem;
-}
-
-.relatorioMensal h3, .notificacoes h3, .proximoVencimento h3, .atalhos h3 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-}
-
-.cardsRelatorio {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-}
-
-.cardRelatorio {
-    display: flex;
-    height: 75px;
-    gap: 0.3rem;
-    align-items: center;
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 0.7rem;
-    box-shadow: 5.785px 5.785px 52.068px 0px rgba(0, 0, 0, 0.05);
-}
-
-.imgRelatorio {
-    padding: 0.4rem;
-    border-radius: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--cinza-200)
-}
-
-.imgRelatorio.verde {
-    background-color: rgba(74, 222, 128, 0.2);
-    color: #16A34A;
-}
-
-.imgRelatorio.vermelho {
-    background-color: rgba(248, 113, 113, 0.2);
-    color: #DC2626;
-}
-
-.imgRelatorio.azul  {
-    background-color: rgba(96, 165, 250, 0.2);
-    color: #2563EB;
-}
-
-.imgRelatorio.amarelo  {
-    background-color: rgba(251, 191, 36, 0.2);
-    color: #D97706;
-}
-
-.labelRelatorio {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--cinza-700);
-}
-
-.valorRelatorio {
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.porcentagemRelatorio {
-    font-size: 10px;
-    font-weight: 600;
-}
-
-.listaNotificacoes {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.iconeNotificacao {
-    padding: 0.4rem;
-    border-radius: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.itemNotificacao {
-    background-color: #fafafa;
-    box-shadow: 5.785px 5.785px 52.068px 0px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    border-left: 4px solid transparent;
-}
-
-.iconeNotificacao.critico {
-    background-color: rgba(248, 113, 113, 0.2);
-    color: var(--perigo);
-}
-
-.iconeNotificacao.alerta {
-    background-color: rgba(251, 191, 36, 0.2);
-    color: var(--alerta);
-}
-
-.iconeNotificacao.info {
-    background-color: rgba(96, 165, 250, 0.2);
-    color: var(--primario);
-}
-
-.conteudoNotificacao h4 {
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-
-.conteudoNotificacao p {
-    font-size: 0.75rem;
-    color: var(--cinza-700);
-}
-
-.cardVencimento {
-    background-color: #ffffff;
-    box-shadow: 5.785px 5.785px 52.068px 0px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    padding: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.iconeVencimento {
-    padding: 0.5rem;
-    border-radius: 50%;
-    background-color: rgba(248, 113, 113, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--perigo);
-}
-
-.tituloVencimento {
-    font-size: 0.75rem;
-    font-weight: 500;
-}
-
-.detalhesVencimento {
-    font-size: 0.75rem;
-    color: var(--cinza-500);
-}
-
-.cardsAtalhos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-}
-
-.cardAtalhos {
-    background-color: #fafafa;
-    box-shadow: 5.785px 5.785px 52.068px 0px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    padding: 1rem;
-    
-}
-
-
-
 
 .overlay {
     position: fixed;
@@ -783,135 +711,163 @@ thead tr th:first-child {
     to { opacity: 1; }
 }
 
-.slider {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .slides {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-  .slides::-webkit-scrollbar {
-    display: none;
-  }
-  .slides > div {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 100%;
-    height: 100%;
-    margin-right: 50px;
-    transform-origin: center center;
-    transform: scale(1);
-    transition: transform 0.5s;
-    position: relative;
-  }
 
 
-
-
-
-
-.cardsStatus {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.cardStatus {
-    border-radius: 12px;
-    padding: 1rem;
+.graficoComCards {
     display: flex;
     align-items: center;
+    gap: 4rem;
+}
+
+.meioGrafico {
+    position: relative;
+    width: 300px;
+    height: 250px;
+}
+
+.containerTotal {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.valorTotal {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--texto);
+}
+
+.rotuloTotal {
+    font-size: 14px;
+    color: var(--texto-p);
+}
+
+.containerCards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     gap: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.containerCards .cardStatus {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.cardStatusTexto {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cardStatusTexto h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0px;
+}
+
+.cardStatusTexto h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.cardStatusTexto p {
+    font-size: 0.75rem;
+    opacity: 0.9;
 }
 
 .cardStatus.verde {
-    background-color: rgba(74, 222, 128, 0.1);
+    background-color: #4ade80;
+    background-color: var(--cartoes);
+    box-shadow: var(--sombra);
+    border: var(--borda);
 }
-.cardStatus.verde .iconeStatus {
-    background-color: var(--sucesso);
-    color: white;
+
+.cardStatus.vermelho {
+    background-color: #F87171;
+    background-color: var(--cartoes);
+    box-shadow: var(--sombra);
+    border: var(--borda);
 }
 
 .cardStatus.amarelo {
-    background-color: rgba(251, 191, 36, 0.1);
-}
-.cardStatus.amarelo .iconeStatus {
-    background-color: var(--alerta);
-    color: white;
-}
-
-.cardStatus.azul {
-    background-color: rgba(129, 140, 248, 0.1);
-}
-.cardStatus.azul .iconeStatus {
-    background-color: var(--primario-claro);
-    color: white;
+    background-color: #FBBF24;
+    background-color: var(--cartoes);
+    box-shadow: var(--sombra);
+    border: var(--borda);
 }
 
-.iconeStatus {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.cardStatusIcone {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: #065F46;
 }
 
-.infoStatus {
-    flex: 1;
-}
-.infoStatus h4 {
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-    color: var(--cinza-700);
-}
-.valorStatus {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    color: var(--cinza-800);
-}
-.subTextoStatus {
-    font-size: 0.75rem;
-    color: var(--cinza-500);
+.cardStatus.verde .cardStatusIcone {
+    background-color: #4ade80;
+    color: white;
 }
 
-.progressoContainer {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
+.cardStatus.vermelho .cardStatusIcone {
+    background-color: #F87171;
+    color: white;
 }
-.progressoContainer h4 {
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-    color: var(--cinza-700);
+
+.cardStatus.amarelo .cardStatusIcone {
+    background-color: #FBBF24;
+    color: white;
 }
-.barraProgresso {
-    height: 8px;
-    background-color: var(--cinza-200);
-    border-radius: 4px;
-    overflow: hidden;
+
+.cartaoCalendario {
+    width: 55%;
+    border-radius: 16px;
+    background-color: var(--cartoes);
+    border: var(--borda);
+    box-shadow: var(--sombra);
 }
-.progresso {
-    height: 100%;
-    background-color: var(--primario);
-    border-radius: 4px;
-    transition: width 0.3s ease;
-}
-.legendaProgresso {
+
+.cabecalhoTabela {
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
-    color: var(--cinza-500);
-    margin-top: 0.5rem;
+    align-items: center;
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--cinza-200);
+}
+
+.cabecalhoTabela h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.calendario {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0.5rem;
+    
+}
+
+.calendario th, .calendario td {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    border-radius: 12px;
+}
+
+.calendario th {
+    background-color: var(--cartoes);
+    font-weight: 500;
+    color: var(--texto);
+}
+
+.calendario tr {
+    background-color: var(--th);
+    font-weight: 500;
+    color: var(--texto);
 }

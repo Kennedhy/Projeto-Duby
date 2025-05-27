@@ -1,176 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="consiliacao.css">
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="consiliacao.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../Assets/sidebar.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <main class="conteudoPrincipal">
-        <header class="cabecalho">
-            <h1>Conciliação</h1>
-        </header>
+      <header class="cabecalho">
+        <h1>Conciliação</h1>
+        <div class="barraNotificacao">
+          <div class="pesquisa">
+            <input type="search" name="" id="search" placeholder="search" />
+          </div>
+          <div class="iconeBarra" id="seletorCategoria">
+            <i data-lucide="bell"></i>
+          </div>
+          <div class="imgBarra"><i data-lucide="user"></i></div>
+        </div>
+      </header>
 
-        <div class="cardsResumo">
-
-            <div class="card">
-                <div class="conteudoCard">
-                    <h3>Total de Transações</h3>
-                    <p class="valor">1.258</p>
-                    <p class="subTexto">R$ 458.750,00</p>
-                </div>
-            </div>
-                        
-            <div class="card verde">
-                <div class="iconeCard verde">
-                    <i class="iconeResumo" data-lucide="check"></i>
-                </div>
-                <div class="conteudoCard">
-                    <h3>Conciliado</h3>
-                    <p class="valor">R$ 64.86%</p>
-                    <p class="subTexto">225 1.087 transações • R$ 392.350,00</p>
-                </div>
-            </div>
-
-            <div class="card azul">
-                <div class="iconeCard azul">
-                    <i class="iconeResumo" data-lucide="clock-4"></i>
-                </div>
-                <div class="conteudoCard">
-                    <h3>Pendente</h3>
-                    <p class="valor">8%</p>
-                    <p class="subTexto">98 transações • R$ 42.800,00</p>
-                </div>
-            </div>
-            <div class="card amarelo" data-tab="divergencias">
-                <div class="iconeCard amarelo">
-                    <i class="iconeResumo" data-lucide="triangle-alert"></i>
-                </div>
-                <div class="conteudoCard">
-                    <h3>Divergente</h3>
-                    <p class="valor">6%</p>
-                    <p class="subTexto">73 transações • R$ 23.600,00</p>
-                </div>
-            </div>
+      <div class="cardsResumo">
+        <div class="card">
+          <div class="conteudoCard">
+            <h3>Total de Transações</h3>
+            <p class="valor">1.258</p>
+            <p class="subTexto">R$ 458.750,00</p>
+          </div>
         </div>
 
-        <div class="filtros">
-
-            <div class="barraPesquisa">
-              <i data-lucide="search" class="pesquisaIcone"></i>
-              <input type="search" placeholder="Buscar" class="pesquisaInput">
-            </div>
-
-            <button>
-                <i data-lucide="calendar-search"></i>
-                Data
-            </button>
-
-            <button class="selecao">
-                Todos os Adquirentes
-                <i data-lucide="chevron-down"></i>
-            </button>
-
-            <button class="selecao">
-                Todos os Bancos
-                <i data-lucide="chevron-down"></i>
-            </button>
-
-            <button class="selecao">
-                Todos os Status
-                <i data-lucide="chevron-down"></i>
-            </button>
-
-            <button>
-                Filtrar
-            </button>
-
-        </div>
-        <div class="cartaoTabela">
-                <table class="tabela">
-                  <thead class="tabelaCabecalho">
-                    <tr>
-                      <th>Data</th>
-                      <th>Transação</th>
-                      <th>Adquirente</th>
-                      <th>Banco</th>
-                      <th>Esperado</th>
-                      <th>Recebido</th>
-                      <th>Diferença</th>
-                      <th>Status</th>
-                      <th>Ações</th>
-                    </tr>
-                  </thead>
-                  <tbody class="tabelaCorpo">
-                    <tr>
-                      <td>01/03/2025</td>
-                      <td>Venda #12345</td>
-                      <td>Stone</td>
-                      <td>Itau</td>
-                      <td>R$ 1.250,00</td>
-                      <td>R$ 0,00</td>
-                      <td>R$ 1.250,00</td>
-                      <td class="tag azul">Pendente</td>
-                      <td><button>Conciliar</button></td>
-                    </tr>
-                    <tr>
-                      <td>02/03/2025</td>
-                      <td>Venda #12346</td>
-                      <td>Stone</td>
-                      <td>Itau</td>
-                      <td>R$ 780,00</td>
-                      <td>R$ 702,00</td>
-                      <td>R$ 78,00</td>
-                      <td class="tag amarelo">Divergente</td>
-                      <td><button>Conciliar</button></td>
-                    </tr>
-                    <tr>
-                      <td>03/03/2025</td>
-                      <td>Venda #12347</td>
-                      <td>Stone</td>
-                      <td>Itau</td>
-                      <td>R$ 1.500,00</td>
-                      <td>R$ 1.500,00</td>
-                      <td>R$ 0,00</td>
-                      <td class="tag verde">Conciliado</td>
-                      <td><button>Conciliar</button></td>
-                    </tr>
-                    <tr>
-                      <td>04/03/2025</td>
-                      <td>Venda #12348</td>
-                      <td>Stone</td>
-                      <td>Itau</td>
-                      <td>R$ 950,00</td>
-                      <td>R$ 0,00</td>
-                      <td>R$ 950,00</td>
-                      <td class="tag azul">Pendente</td>
-                      <td><button>Conciliar</button></td>
-                    </tr>
-                    <tr>
-                      <td>05/03/2025</td>
-                      <td>Venda #12348</td>
-                      <td>Stone</td>
-                      <td>Itau</td>
-                      <td>R$ 2.300,00</td>
-                      <td>R$ 2.100,00</td>
-                      <td>R$ 200,00</td>
-                      <td class="tag amarelo">Divergente</td>
-                      <td><button>Conciliar</button></td>
-                    </tr>
-                  </tbody>
-                </table>            
+        <div class="card verde">
+          <div class="iconeCard verde">
+            <i class="iconeResumo" data-lucide="check"></i>
+          </div>
+          <div class="conteudoCard">
+            <h3>Conciliado</h3>
+            <p class="valor">86%</p>
+            <p class="subTexto">225 1.087 transações • R$ 392.350,00</p>
+          </div>
         </div>
 
+        <div class="card azul">
+          <div class="iconeCard azul">
+            <i class="iconeResumo" data-lucide="clock-4"></i>
+          </div>
+          <div class="conteudoCard">
+            <h3>Pendente</h3>
+            <p class="valor">8%</p>
+            <p class="subTexto">98 transações • R$ 42.800,00</p>
+          </div>
+        </div>
+        <div class="card amarelo" data-tab="divergencias">
+          <div class="iconeCard amarelo">
+            <i class="iconeResumo" data-lucide="triangle-alert"></i>
+          </div>
+          <div class="conteudoCard">
+            <h3>Divergente</h3>
+            <p class="valor">6%</p>
+            <p class="subTexto">73 transações • R$ 23.600,00</p>
+          </div>
+        </div>
+      </div>
 
+<div class="filtros">
+  <div class="barraPesquisa">
+    <i data-lucide="search" class="pesquisaIcone"></i>
+    <input type="search" id="pesquisaGeral" placeholder="Buscar em tudo" class="pesquisaInput" />
+  </div>
+
+  <input type="date" id="filtroData" class="filtro-data">
+
+  <select id="filtroAdquirente" class="filtro-select">
+    <option value="todos">Todos os Adquirentes</option>
+    <option value="Stone">Stone</option>
+    <option value="Cielo">Cielo</option>
+    <option value="Rede">Rede</option>
+    <option value="Getnet">Getnet</option>
+  </select>
+
+  <select id="filtroBanco" class="filtro-select">
+    <option value="todos">Todos os Bancos</option>
+    <option value="Itau">Itaú</option>
+    <option value="Bradesco">Bradesco</option>
+    <option value="Santander">Santander</option>
+    <option value="Banco do Brasil">Banco do Brasil</option>
+  </select>
+
+  <select id="filtroStatus" class="filtro-select">
+    <option value="todos">Todos os Status</option>
+    <option value="Conciliado">Conciliado</option>
+    <option value="Pendente">Pendente</option>
+    <option value="Divergente">Divergente</option>
+  </select>
+
+  <button id="btnFiltrar" class="btn-filtrar">Filtrar</button>
+  <button id="btnLimpar" class="btn-limpar">Limpar</button>
+</div>
+
+
+      <div class="cartaoTabela">
+        <table class="tabela">
+          <thead class="tabelaCabecalho">
+            <tr>
+              <th>Data</th>
+              <th>Transação</th>
+              <th>Adquirente</th>
+              <th>Banco</th>
+              <th>Esperado</th>
+              <th>Recebido</th>
+              <th>Diferença</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody class="tabelaCorpo">
+            <tr>
+              <td>01/03/2025</td>
+              <td>Venda #12345</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 1.250,00</td>
+              <td>R$ 0,00</td>
+              <td>R$ 1.250,00</td>
+              <td><span class="tag azul">Pendente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>02/03/2025</td>
+              <td>Venda #12346</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 780,00</td>
+              <td>R$ 702,00</td>
+              <td>R$ 78,00</td>
+              <td><span class="tag amarelo">Divergente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>03/03/2025</td>
+              <td>Venda #12347</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 1.500,00</td>
+              <td>R$ 1.500,00</td>
+              <td>R$ 0,00</td>
+              <td><span class="tag verde">Conciliado</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>04/03/2025</td>
+              <td>Venda #12348</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 950,00</td>
+              <td>R$ 0,00</td>
+              <td>R$ 950,00</td>
+              <td><span class="tag azul">Pendente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>05/03/2025</td>
+              <td>Venda #12348</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 2.300,00</td>
+              <td>R$ 2.100,00</td>
+              <td>R$ 200,00</td>
+              <td><span class="tag amarelo">Divergente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>06/03/2025</td>
+              <td>Venda #12349</td>
+              <td>Cielo</td>
+              <td>Bradesco</td>
+              <td>R$ 1.750,00</td>
+              <td>R$ 1.750,00</td>
+              <td>R$ 0,00</td>
+              <td><span class="tag verde">Conciliado</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>07/03/2025</td>
+              <td>Venda #12350</td>
+              <td>Rede</td>
+              <td>Santander</td>
+              <td>R$ 890,00</td>
+              <td>R$ 0,00</td>
+              <td>R$ 890,00</td>
+              <td><span class="tag azul">Pendente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>08/03/2025</td>
+              <td>Venda #12351</td>
+              <td>Getnet</td>
+              <td>Banco do Brasil</td>
+              <td>R$ 1.200,00</td>
+              <td>R$ 1.080,00</td>
+              <td>R$ 120,00</td>
+              <td><span class="tag amarelo">Divergente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>09/03/2025</td>
+              <td>Venda #12352</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 2.100,00</td>
+              <td>R$ 2.100,00</td>
+              <td>R$ 0,00</td>
+              <td><span class="tag verde">Conciliado</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>10/03/2025</td>
+              <td>Venda #12353</td>
+              <td>Cielo</td>
+              <td>Bradesco</td>
+              <td>R$ 650,00</td>
+              <td>R$ 0,00</td>
+              <td>R$ 650,00</td>
+              <td><span class="tag azul">Pendente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>11/03/2025</td>
+              <td>Venda #12354</td>
+              <td>Rede</td>
+              <td>Santander</td>
+              <td>R$ 1.450,00</td>
+              <td>R$ 1.450,00</td>
+              <td>R$ 0,00</td>
+              <td><span class="tag verde">Conciliado</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>12/03/2025</td>
+              <td>Venda #12355</td>
+              <td>Getnet</td>
+              <td>Banco do Brasil</td>
+              <td>R$ 980,00</td>
+              <td>R$ 882,00</td>
+              <td>R$ 98,00</td>
+              <td><span class="tag amarelo">Divergente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>13/03/2025</td>
+              <td>Venda #12356</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 1.750,00</td>
+              <td>R$ 0,00</td>
+              <td>R$ 1.750,00</td>
+              <td><span class="tag azul">Pendente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>14/03/2025</td>
+              <td>Venda #12357</td>
+              <td>Cielo</td>
+              <td>Bradesco</td>
+              <td>R$ 2.300,00</td>
+              <td>R$ 2.300,00</td>
+              <td>R$ 0,00</td>
+              <td><span class="tag verde">Conciliado</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>15/03/2025</td>
+              <td>Venda #12358</td>
+              <td>Rede</td>
+              <td>Santander</td>
+              <td>R$ 1.100,00</td>
+              <td>R$ 990,00</td>
+              <td>R$ 110,00</td>
+              <td><span class="tag amarelo">Divergente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>16/03/2025</td>
+              <td>Venda #12359</td>
+              <td>Getnet</td>
+              <td>Banco do Brasil</td>
+              <td>R$ 850,00</td>
+              <td>R$ 0,00</td>
+              <td>R$ 850,00</td>
+              <td><span class="tag azul">Pendente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>17/03/2025</td>
+              <td>Venda #12360</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 1.600,00</td>
+              <td>R$ 1.600,00</td>
+              <td>R$ 0,00</td>
+              <td><span class="tag verde">Conciliado</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>18/03/2025</td>
+              <td>Venda #12361</td>
+              <td>Cielo</td>
+              <td>Bradesco</td>
+              <td>R$ 1.950,00</td>
+              <td>R$ 1.755,00</td>
+              <td>R$ 195,00</td>
+              <td><span class="tag amarelo">Divergente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>19/03/2025</td>
+              <td>Venda #12362</td>
+              <td>Rede</td>
+              <td>Santander</td>
+              <td>R$ 720,00</td>
+              <td>R$ 0,00</td>
+              <td>R$ 720,00</td>
+              <td><span class="tag azul">Pendente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>20/03/2025</td>
+              <td>Venda #12363</td>
+              <td>Getnet</td>
+              <td>Banco do Brasil</td>
+              <td>R$ 1.300,00</td>
+              <td>R$ 1.300,00</td>
+              <td>R$ 0,00</td>
+              <td><span class="tag verde">Conciliado</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>21/03/2025</td>
+              <td>Venda #12364</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 2.500,00</td>
+              <td>R$ 2.250,00</td>
+              <td>R$ 250,00</td>
+              <td><span class="tag amarelo">Divergente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>22/03/2025</td>
+              <td>Venda #12365</td>
+              <td>Cielo</td>
+              <td>Bradesco</td>
+              <td>R$ 1.050,00</td>
+              <td>R$ 0,00</td>
+              <td>R$ 1.050,00</td>
+              <td><span class="tag azul">Pendente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>23/03/2025</td>
+              <td>Venda #12366</td>
+              <td>Rede</td>
+              <td>Santander</td>
+              <td>R$ 1.800,00</td>
+              <td>R$ 1.800,00</td>
+              <td>R$ 0,00</td>
+              <td><span class="tag verde">Conciliado</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>24/03/2025</td>
+              <td>Venda #12367</td>
+              <td>Getnet</td>
+              <td>Banco do Brasil</td>
+              <td>R$ 950,00</td>
+              <td>R$ 855,00</td>
+              <td>R$ 95,00</td>
+              <td><span class="tag amarelo">Divergente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+            <tr>
+              <td>25/03/2025</td>
+              <td>Venda #12368</td>
+              <td>Stone</td>
+              <td>Itau</td>
+              <td>R$ 1.400,00</td>
+              <td>R$ 0,00</td>
+              <td>R$ 1.400,00</td>
+              <td><span class="tag azul">Pendente</span></td>
+              <td><button>Conciliar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
+    <script src="consiliacao.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            lucide.createIcons();
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+      });
     </script>
-</body>
+  </body>
 </html>

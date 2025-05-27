@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             left: 8px;
             width: 230px;
             border-radius: 12px;
-            z-index: 1000;
+            z-index: 1;
         }
 
         .logo {

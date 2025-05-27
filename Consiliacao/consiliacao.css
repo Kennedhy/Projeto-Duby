@@ -1,17 +1,3 @@
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
-body {
-    font-family: 'TT Commons', sans-serif;
-    font-weight: 400;
-    background-color: #F6F6F6;
-    color: #343434;
-    line-height: 1.5;
-}
-
 .conteudoPrincipal {
     display: flex;
     flex-direction: column;
@@ -43,11 +29,11 @@ body {
 .card {
     flex: 1;
     border-radius: 10px;
-    padding: 1.25rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    background-color: #f2f2f2;
+    background-color: #f1f1f1;
 }
 
 .card.verde {
@@ -130,16 +116,40 @@ body {
     color: #343434;
 }
 
-.filtros {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #F0F0F0;
-    background: #FAFAFA;
-    box-shadow: 4px 4px 54px 0px rgba(65, 40, 132, 0.07);
-    border-radius: 8px;
-    padding: 1rem;
+
+
+
+
+.tabela {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px 0.3rem;
+    overflow: hidden;
+    padding: 0.7rem;
 }
+
+.tag {
+    padding: 0.4rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.tag.verde {
+    background-color: rgba(74, 222, 128, 0.2);
+    color: #065F46;
+}
+
+.tag.azul {
+    background-color: rgba(96, 165, 250, 0.2);
+    color: #1E40AF;
+}
+
+.tag.amarelo {
+    background-color: rgba(251, 191, 36, 0.2);
+    color: #D97706;
+}
+
 
 .selecao {
     display: flex;
@@ -152,51 +162,69 @@ body {
     border: 0px;
 }
 
-.cartaoTabela {
+.filtros {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
     border: 1px solid #F0F0F0;
-    background: #FAFAFA;
+    background: #ffffff;
     box-shadow: 4px 4px 54px 0px rgba(65, 40, 132, 0.07);
-    border-radius: 16px;
+    border-radius: 8px;
+    padding: 1rem;
 }
 
-.tabela {
+.barraPesquisa {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+.pesquisaInput {
+    border: none;
+    outline: none;
+    margin-left: 0.5rem;
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0px 0.3rem;
-    overflow: hidden;
-    padding: 0.7rem;
 }
 
-.tabelaCabecalho th {
-    background-color: #e0e1e5;
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-weight: 500;
+.filtro-data,
+.filtro-select {
+    padding: 0.5rem;
+    border: 1px solid #a4a4a4;
+    border-radius: 4px;
+    background: #ffffff;
+    font-size: 0.875rem;
+    height: 40px;
 }
 
-.tabelaCorpo td {
-    padding: 0.75rem 1rem;
-    background-color: #eeeff1;
+.btn-filtrar {
+    display: none;
+    padding: 0.5rem 1rem;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    height: 40px;
 }
 
-tr td:first-child {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+.btn-limpar {
+    padding: 0.5rem 1rem;
+    background-color: var(--primario);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    height: 40px;
 }
 
-tr td:last-child {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-thead tr th:first-child {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-}
-
-thead tr th:last-child {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
+.btn-limpar:hover {
+    background-color: var(--primario-escuro);
 }
