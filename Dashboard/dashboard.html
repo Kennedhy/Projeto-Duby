@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lucide-icons@latest/dist/umd/lucide.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../Assets/sidebar.js"></script>
 </head>
@@ -53,11 +52,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
                     </div>
 
                 </div>
@@ -167,11 +161,13 @@
                     <section class="secaoRelatorios">
                         <h2>Relatórios De Recebimentos</h2>
                         <div class="abasRelatorio">
-                            <button class="botaoAba ativo" data-relatorio="resumo">Resumo de Vendas</button>
-                            <button class="botaoAba" data-relatorio="metodo">Vendas por Método de Pagamento</button>
-                            <button class="botaoAba" data-relatorio="comparativo">Comparativo de Vendas</button>
+
+                            <button class="botaoAba ativo" data-relatorio="aba1">Resumo de Vendas</button>
+                            <button class="botaoAba" data-relatorio="aba2">Vendas por Método de Pagamento</button>
+                            <button class="botaoAba" data-relatorio="aba3">Comparativo de Vendas</button>
+
                         </div>
-                        <div class="conteudoRelatorio ativo" id="resumo">
+                        <div class="trocaDeAbas ativo" id="aba1">
                             <div class="cabecalhoRelatorio">
                                 <div>
                                     <h3>Resumo de Vendas</h3>
@@ -249,7 +245,8 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="conteudoRelatorio" id="metodo">
+
+                        <div class="trocaDeAbas" id="aba2">
                             <div class="cabecalhoRelatorio">
                                 <div>
                                     <h3>Vendas por Método de Pagamento</h3>
@@ -319,7 +316,8 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="conteudoRelatorio" id="comparativo">
+
+                        <div class="trocaDeAbas" id="aba3">
                             <div class="cabecalhoRelatorio">
                                 <div>
                                     <h3>Comparativo de Vendas</h3>
@@ -592,9 +590,6 @@
 
                 </div>
 
-                <div class="aba" id="taxas">
-                </div>
-
                 <div class="aba" id="divergencias">
                 <section class="secaoResumo">
                     <h2>Resumo</h2>
@@ -810,7 +805,7 @@
         </div>    
 
     <script src="dashboard.js"></script>
-
+    <script src="../troca-de-abas.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();

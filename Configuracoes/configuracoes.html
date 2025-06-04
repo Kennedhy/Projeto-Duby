@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="configuracoes.css">
-</head>
-<body>
-  <main class="conteudoPrincipal">
-    <header class="cabecalho">
-      <h1>Configurações</h1>
-    </header>
-    
-          <div class="abasRelatorio">
-              <button class="botaoAba ativo" data-relatorio="aba1">Dados Da Empresa</button>
-              <button class="botaoAba" data-relatorio="aba2">Planos</button>
-              <button class="botaoAba" data-relatorio="aba3">Notificações</button>
-              <button class="botaoAba" data-relatorio="aba4">Segurança</button>
-              <button class="botaoAba" data-relatorio="aba5">Integrações</button>
-          </div>
-      <div class="conteudoAbas ativo" id="aba1">
-    
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="configuracoes.css" />
+  </head>
+  <body>
+    <main class="conteudoPrincipal">
+      <header class="cabecalho">
+        <h1>Configurações</h1>
+      </header>
+
+      <div class="abasRelatorio">
+        <button class="botaoAba ativo" data-relatorio="aba1">
+          Dados Da Empresa
+        </button>
+        <button class="botaoAba" data-relatorio="aba2">Planos</button>
+        <button class="botaoAba" data-relatorio="aba3">Notificações</button>
+        <button class="botaoAba" data-relatorio="aba4">Segurança</button>
+        <button class="botaoAba" data-relatorio="aba5">Integrações</button>
+      </div>
+      <div class="trocaDeAbas ativo" id="aba1">
+
         <div class="cartao">
+
           <div class="cartaoCabecalho">
-          <h2>Informações da Empresa</h2>
-          <p>Configure as informações básicas da sua empresa que serão usadas em relatórios e documentos.</p>
+            <h2>Informações da Empresa</h2>
+            <p>Configure as informações básicas da sua empresa que serão usadas em relatórios e documentos.</p>
           </div>
-    
+
           <div class="grid">
             <div class="campos">
               <label>Nome da Empresa</label>
@@ -47,13 +50,13 @@
               <input type="text" />
             </div>
           </div>
-            <hr class="linha">
-            <div class="campos">
-                <label>Nome da Empresa</label>
-                <input type="text" />
-            </div>
+          <hr class="linha" />
+          <div class="campos">
+            <label>Nome da Empresa</label>
+            <input type="text" />
+          </div>
           <div class="grid2">
-                <div class="campos">
+            <div class="campos">
               <label>Nome da Empresa</label>
               <input type="text" />
             </div>
@@ -66,157 +69,154 @@
               <input type="text" />
             </div>
           </div>
-      <div class="botaoSalvar">
-        <button>Salvar</button>
-      </div>
-        </div>
-      </div>
-
-      <div class="conteudoAbas" id="aba2">
-        <h2>Detalhes do Plano</h2>
-        <div class="planos-container">
-  <h2>Planos de Assinatura</h2>
-  <p>Escolha o plano que melhor atende às necessidades da sua empresa</p>
-
-  <div class="planos">
-    <div class="plano">
-      <h3>Básico</h3>
-      <p class="preco">R$ 99/mês</p>
-      <p class="descricao">Para pequenas empresas que estão começando</p>
-      <ul class="listaBeneficios">
-        <li>Até 500 transações/mês</li>
-        <li>Conciliação manual</li>
-        <li>Relatórios básicos</li>
-        <li>1 usuário</li>
-        <li>Suporte por email</li>
-      </ul>
-      <button>Selecionar Plano</button>
-    </div>
-    <div class="plano">
-      <h3>Profissional</h3>
-      <p class="preco">R$ 249/mês</p>
-      <p class="descricao">Para empresas em crescimento com necessidades avançadas</p>
-      <ul class="listaBeneficios">
-        <li>Até 5.000 transações/mês</li>
-        <li>Conciliação automática</li>
-        <li>Relatórios avançados</li>
-        <li>5 usuários</li>
-        <li>Suporte prioritário</li>
-        <li>Integrações com adquirentes</li>
-      </ul>
-      <button id="atual">Plano Atual</button>
-    </div>
-    <div class="plano">
-      <h3>Empresarial</h3>
-      <p class="preco">R$ 599/mês</p>
-      <p class="descricao">Para grandes empresas com alto volume de transações</p>
-      <ul class="listaBeneficios">
-        <li>Transações ilimitadas</li>
-        <li>Conciliação automática avançada</li>
-        <li>Relatórios personalizados</li>
-        <li>Usuários ilimitados</li>
-        <li>Suporte 24/7</li>
-        <li>API completa</li>
-        <li>Integrações personalizadas</li>
-      </ul>
-      <button>Selecionar Plano</button>
-    </div>
-  </div>
-</div>
-
-<div class="detalhes-plano">
-    <div class="cartao">
-      <div class="titulo-secao">Detalhes do Plano Atual</div>
-      <p>Informações sobre seu plano atual e seu uso.</p>
-      <div class="subsecao">
-        <div class="lado-esquerdo">
-          <h4>Uso Atual</h4>
-          <div class="info">Transações: 2.450 / 5.000</div>
-          <div class="barra-container"><div class="preenchimento-barra" style="width: 49%;"></div></div>
-
-          <div class="info">Usuários: 3 / 5</div>
-          <div class="barra-container"><div class="preenchimento-barra" style="width: 60%;"></div></div>
-
-          <div class="info">Armazenamento: 2.1 GB / 5 GB</div>
-          <div class="barra-container"><div class="preenchimento-barra" style="width: 42%;"></div></div>
+          <div class="botaoSalvar">
+            <button>Salvar</button>
+          </div>
         </div>
 
-        <div class="lado-direito">
-          <h4>Informações da Assinatura</h4>
-          <div class="info"><span class="rotulo">Plano atual:</span> Profissional</div>
-          <div class="info"><span class="rotulo">Valor:</span> R$ 249/mês</div>
-          <div class="info"><span class="rotulo">Próxima cobrança:</span> 15/06/2025</div>
-          <div class="info"><span class="rotulo">Status:</span> <span class="etiqueta">Ativo</span></div>
-        </div>
-      </div>
-    </div>
-
-<h2>Detalhes dos pagamentos</h2>
-<div class="cartao">
-  <div class="detalhes-pagamentoHeader">
-  <h3>Métodos de Pagamentos</h3>
-  <button id="botao-adicionar-cartao" class="botao-adicionar">+ Adicionar Cartão</button>
-  </div>
-  
-  <!-- Overlay -->
-<div id="fundo-modal" class="fundo-modal escondido">
-  <div class="janela-modal">
-    <h2>Adicionar Cartão</h2>
-    <form id="formulario-cartao">
-      <label for="numero-cartao">Número do Cartão</label>
-      <input type="text" id="numero-cartao" class="campo-input" placeholder="Número do Cartão">
-
-      <label for="nome-titular">Nome do Titular</label>
-      <input type="text" id="nome-titular" name="nome-titular" placeholder="Nome como está no cartão" required>
-
-      <div class="grupo-campos">
-        <div class="campo">
-          <label for="validade">Validade</label>
-          <input type="text" id="validade" class="campo-input" placeholder="Validade (MM/AA)">
-        </div>
-
-        <div class="campo">
-          <label for="codigo-seguranca">CVV</label>
-          <input type="text" id="codigo-seguranca" class="campo-input" placeholder="Código de Segurança">
-        </div>
       </div>
 
-      <button type="submit" class="botao-principal">Adicionar Cartão</button>
-      <button type="button" id="botao-cancelar" class="botao-secundario">Cancelar</button>
-    </form>
-  </div>
-</div>
+      <div class="trocaDeAbas" id="aba2">
 
-  <p>Gerencie seus cartões de crédito e outros métodos de pagamento.</p>
-  <div class="metodo-pagamento" style="border-left: 8px solid #412884;">
-        <div>
-          <div><strong>Nubank •••• 4587</strong></div>
-          <div>Expira em 07/2028</div>
-        </div>
-      </div>
+        <div class="cartoesGap">
 
-      <div class="metodo-pagamento" style="border-left: 8px solid gold;">
-        <div>
-          <div><strong>Mastercard •••• 4587</strong></div>
-          <div>Expira em 09/2027</div>
-        </div>
-      </div>
+          <h2 class="secaoTitulo">Detalhes do Plano</h2>
 
-      <div class="metodo-pagamento" style="border-left: 8px solid #322871;">
-        <div>
-          <div><strong>Visa •••• 4587</strong></div>
-          <div>Expira em 08/2029</div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h2>Planos de Assinatura</h2>
+              <p>Escolha o plano que melhor atende às necessidades da sua empresa</p>
+            </div>
+            <div class="planos">
+              <div class="plano">
+                <h3>Básico</h3>
+                <p class="preco">R$ 99/mês</p>
+                <p class="descricao">
+                  Para pequenas empresas que estão começando
+                </p>
+                <ul class="listaBeneficios">
+                  <li>Até 500 transações/mês</li>
+                  <li>Conciliação manual</li>
+                  <li>Relatórios básicos</li>
+                  <li>1 usuário</li>
+                  <li>Suporte por email</li>
+                </ul>
+                <button>Selecionar Plano</button>
+              </div>
+              <div class="plano">
+                <h3>Profissional</h3>
+                <p class="preco">R$ 249/mês</p>
+                <p class="descricao">
+                  Para empresas em crescimento com necessidades avançadas
+                </p>
+                <ul class="listaBeneficios">
+                  <li>Até 5.000 transações/mês</li>
+                  <li>Conciliação automática</li>
+                  <li>Relatórios avançados</li>
+                  <li>5 usuários</li>
+                  <li>Suporte prioritário</li>
+                  <li>Integrações com adquirentes</li>
+                </ul>
+                <button id="atual">Plano Atual</button>
+              </div>
+              <div class="plano">
+                <h3>Empresarial</h3>
+                <p class="preco">R$ 599/mês</p>
+                <p class="descricao">
+                  Para grandes empresas com alto volume de transações
+                </p>
+                <ul class="listaBeneficios">
+                  <li>Transações ilimitadas</li>
+                  <li>Conciliação automática avançada</li>
+                  <li>Relatórios personalizados</li>
+                  <li>Usuários ilimitados</li>
+                  <li>Suporte 24/7</li>
+                  <li>API completa</li>
+                  <li>Integrações personalizadas</li>
+                </ul>
+                <button>Selecionar Plano</button>
+              </div>
+            </div>
+          </div>
 
+            <div class="cartao">
+              <div class="cartaoCabecalho">
+                <h2>Detalhes do Plano Atual</h2>
+                <p>Informações sobre seu plano atual e seu uso.</p>
+              </div>
+              <div class="subsecao">
+                <div class="lado-esquerdo">
+                  <h4>Uso Atual</h4>
+                  <div class="info">Transações: 2.450 / 5.000</div>
+                  <div class="barra-container">
+                    <div class="preenchimento-barra" style="width: 49%"></div>
+                  </div>
+                  <div class="info">Usuários: 3 / 5</div>
+                  <div class="barra-container">
+                    <div class="preenchimento-barra" style="width: 60%"></div>
+                  </div>
+                  <div class="info">Armazenamento: 2.1 GB / 5 GB</div>
+                  <div class="barra-container">
+                    <div class="preenchimento-barra" style="width: 42%"></div>
+                  </div>
+                </div>
+                <div class="lado-direito">
+                  <h4>Informações da Assinatura</h4>
+                  <div class="info">
+                    <span class="rotulo">Plano atual:</span> Profissional
+                  </div>
+                  <div class="info">
+                    <span class="rotulo">Valor:</span> R$ 249/mês
+                  </div>
+                  <div class="info">
+                    <span class="rotulo">Próxima cobrança:</span> 15/06/2025
+                  </div>
+                  <div class="info">
+                    <span class="rotulo">Status:</span>
+                    <span class="etiqueta">Ativo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <div class="tabela">
-            <div class="listaUsuariosHeader">
+            <h2 class="secaoTitulo">Detalhes dos pagamentos</h2>
+
+            <div class="cartao">
+              <div class="cartaoCabecalho" style="display: flex; justify-content: space-between;">
+                <div class="cartaoCabecalho">
+                  <h2>Métodos de Pagamentos</h2>
+                  <p>Gerencie seus cartões de crédito e outros métodos de pagamento.</p>
+                </div>
+                <button id="botao-adicionar-cartao" class="botao-dicionar">
+                  + Adicionar Cartão
+                </button>
+              </div>
+
+              <div class="cartaoTexto">
+                <div>
+                  <div><strong>Nubank •••• 4587</strong></div>
+                  <div>Expira em 07/2028</div>
+                </div>
+              </div>
+              <div class="cartaoTexto">
+                <div>
+                  <div><strong>Mastercard •••• 4587</strong></div>
+                  <div>Expira em 09/2027</div>
+                </div>
+              </div>
+              <div class="cartaoTexto">
+                <div>
+                  <div><strong>Visa •••• 4587</strong></div>
+                  <div>Expira em 08/2029</div>
+                </div>
+              </div>
+            </div>
+
+          <div class="cartao">
+            <div class="cartaoCabecalho">
               <h2>Histórico de Faturas</h2>
             </div>
-            <table class="tabelaUsuarios">
+            <table class="tabela">
               <thead>
                 <tr>
                   <th>Fatura</th>
@@ -232,175 +232,309 @@
                   <td>05/05/2025</td>
                   <td>Hoje, 10:30</td>
                   <td><span class="tag aberta">Em aberto</span></td>
-                  <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-  <path d="M12.5566 15.9266C12.4233 15.9266 12.2983 15.9059 12.1816 15.8646C12.065 15.8232 11.9566 15.7522 11.8566 15.6516L8.25664 12.0516C8.05664 11.8516 7.96064 11.6182 7.96864 11.3516C7.97664 11.0849 8.07264 10.8516 8.25664 10.6516C8.45664 10.4516 8.69431 10.3476 8.96964 10.3396C9.24497 10.3316 9.48231 10.4272 9.68164 10.6266L11.5566 12.5016V5.35157C11.5566 5.06823 11.6526 4.8309 11.8446 4.63957C12.0366 4.44823 12.274 4.35223 12.5566 4.35157C12.8393 4.3509 13.077 4.4469 13.2696 4.63957C13.4623 4.83223 13.558 5.06957 13.5566 5.35157V12.5016L15.4316 10.6266C15.6316 10.4266 15.8693 10.3306 16.1446 10.3386C16.42 10.3466 16.6573 10.4509 16.8566 10.6516C17.04 10.8516 17.136 11.0849 17.1446 11.3516C17.1533 11.6182 17.0573 11.8516 16.8566 12.0516L13.2566 15.6516C13.1566 15.7516 13.0483 15.8226 12.9316 15.8646C12.815 15.9066 12.69 15.9272 12.5566 15.9266ZM6.55664 20.3516C6.00664 20.3516 5.53597 20.1559 5.14464 19.7646C4.75331 19.3732 4.55731 18.9022 4.55664 18.3516V16.3516C4.55664 16.0682 4.65264 15.8309 4.84464 15.6396C5.03664 15.4482 5.27397 15.3522 5.55664 15.3516C5.83931 15.3509 6.07697 15.4469 6.26964 15.6396C6.46231 15.8322 6.55797 16.0696 6.55664 16.3516V18.3516H18.5566V16.3516C18.5566 16.0682 18.6526 15.8309 18.8446 15.6396C19.0366 15.4482 19.274 15.3522 19.5566 15.3516C19.8393 15.3509 20.077 15.4469 20.2696 15.6396C20.4623 15.8322 20.558 16.0696 20.5566 16.3516V18.3516C20.5566 18.9016 20.361 19.3726 19.9696 19.7646C19.5783 20.1566 19.1073 20.3522 18.5566 20.3516H6.55664Z" fill="black"/>
-</svg></td>
+                  <td><i data-lucide="download"></i></td>
                 </tr>
                 <tr>
                   <td>INV-2025-004</td>
                   <td>05/04/2025</td>
                   <td>Ontem, 15:45</td>
                   <td><span class="tag pago">Fatura Paga</span></td>
-                  <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-  <path d="M12.5566 15.9266C12.4233 15.9266 12.2983 15.9059 12.1816 15.8646C12.065 15.8232 11.9566 15.7522 11.8566 15.6516L8.25664 12.0516C8.05664 11.8516 7.96064 11.6182 7.96864 11.3516C7.97664 11.0849 8.07264 10.8516 8.25664 10.6516C8.45664 10.4516 8.69431 10.3476 8.96964 10.3396C9.24497 10.3316 9.48231 10.4272 9.68164 10.6266L11.5566 12.5016V5.35157C11.5566 5.06823 11.6526 4.8309 11.8446 4.63957C12.0366 4.44823 12.274 4.35223 12.5566 4.35157C12.8393 4.3509 13.077 4.4469 13.2696 4.63957C13.4623 4.83223 13.558 5.06957 13.5566 5.35157V12.5016L15.4316 10.6266C15.6316 10.4266 15.8693 10.3306 16.1446 10.3386C16.42 10.3466 16.6573 10.4509 16.8566 10.6516C17.04 10.8516 17.136 11.0849 17.1446 11.3516C17.1533 11.6182 17.0573 11.8516 16.8566 12.0516L13.2566 15.6516C13.1566 15.7516 13.0483 15.8226 12.9316 15.8646C12.815 15.9066 12.69 15.9272 12.5566 15.9266ZM6.55664 20.3516C6.00664 20.3516 5.53597 20.1559 5.14464 19.7646C4.75331 19.3732 4.55731 18.9022 4.55664 18.3516V16.3516C4.55664 16.0682 4.65264 15.8309 4.84464 15.6396C5.03664 15.4482 5.27397 15.3522 5.55664 15.3516C5.83931 15.3509 6.07697 15.4469 6.26964 15.6396C6.46231 15.8322 6.55797 16.0696 6.55664 16.3516V18.3516H18.5566V16.3516C18.5566 16.0682 18.6526 15.8309 18.8446 15.6396C19.0366 15.4482 19.274 15.3522 19.5566 15.3516C19.8393 15.3509 20.077 15.4469 20.2696 15.6396C20.4623 15.8322 20.558 16.0696 20.5566 16.3516V18.3516C20.5566 18.9016 20.361 19.3726 19.9696 19.7646C19.5783 20.1566 19.1073 20.3522 18.5566 20.3516H6.55664Z" fill="black"/>
-</svg></td>
+                  <td><i data-lucide="download"></i></td>
                 </tr>
                 <tr>
                   <td>INV-2025-003</td>
                   <td>05/03/2025</td>
                   <td>22/03/2025, 09:15</td>
                   <td><span class="tag pago">Fatura Paga</span></td>
-                  <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-  <path d="M12.5566 15.9266C12.4233 15.9266 12.2983 15.9059 12.1816 15.8646C12.065 15.8232 11.9566 15.7522 11.8566 15.6516L8.25664 12.0516C8.05664 11.8516 7.96064 11.6182 7.96864 11.3516C7.97664 11.0849 8.07264 10.8516 8.25664 10.6516C8.45664 10.4516 8.69431 10.3476 8.96964 10.3396C9.24497 10.3316 9.48231 10.4272 9.68164 10.6266L11.5566 12.5016V5.35157C11.5566 5.06823 11.6526 4.8309 11.8446 4.63957C12.0366 4.44823 12.274 4.35223 12.5566 4.35157C12.8393 4.3509 13.077 4.4469 13.2696 4.63957C13.4623 4.83223 13.558 5.06957 13.5566 5.35157V12.5016L15.4316 10.6266C15.6316 10.4266 15.8693 10.3306 16.1446 10.3386C16.42 10.3466 16.6573 10.4509 16.8566 10.6516C17.04 10.8516 17.136 11.0849 17.1446 11.3516C17.1533 11.6182 17.0573 11.8516 16.8566 12.0516L13.2566 15.6516C13.1566 15.7516 13.0483 15.8226 12.9316 15.8646C12.815 15.9066 12.69 15.9272 12.5566 15.9266ZM6.55664 20.3516C6.00664 20.3516 5.53597 20.1559 5.14464 19.7646C4.75331 19.3732 4.55731 18.9022 4.55664 18.3516V16.3516C4.55664 16.0682 4.65264 15.8309 4.84464 15.6396C5.03664 15.4482 5.27397 15.3522 5.55664 15.3516C5.83931 15.3509 6.07697 15.4469 6.26964 15.6396C6.46231 15.8322 6.55797 16.0696 6.55664 16.3516V18.3516H18.5566V16.3516C18.5566 16.0682 18.6526 15.8309 18.8446 15.6396C19.0366 15.4482 19.274 15.3522 19.5566 15.3516C19.8393 15.3509 20.077 15.4469 20.2696 15.6396C20.4623 15.8322 20.558 16.0696 20.5566 16.3516V18.3516C20.5566 18.9016 20.361 19.3726 19.9696 19.7646C19.5783 20.1566 19.1073 20.3522 18.5566 20.3516H6.55664Z" fill="black"/>
-</svg></td>
+                  <td><i data-lucide="download"></i></td>
                 </tr>
                 <tr>
                   <td>INV-2025-002</td>
                   <td>05/02/2025</td>
                   <td>15/02/2025, 14:20</td>
                   <td><span class="tag pago">Fatura Paga</span></td>
-                  <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-  <path d="M12.5566 15.9266C12.4233 15.9266 12.2983 15.9059 12.1816 15.8646C12.065 15.8232 11.9566 15.7522 11.8566 15.6516L8.25664 12.0516C8.05664 11.8516 7.96064 11.6182 7.96864 11.3516C7.97664 11.0849 8.07264 10.8516 8.25664 10.6516C8.45664 10.4516 8.69431 10.3476 8.96964 10.3396C9.24497 10.3316 9.48231 10.4272 9.68164 10.6266L11.5566 12.5016V5.35157C11.5566 5.06823 11.6526 4.8309 11.8446 4.63957C12.0366 4.44823 12.274 4.35223 12.5566 4.35157C12.8393 4.3509 13.077 4.4469 13.2696 4.63957C13.4623 4.83223 13.558 5.06957 13.5566 5.35157V12.5016L15.4316 10.6266C15.6316 10.4266 15.8693 10.3306 16.1446 10.3386C16.42 10.3466 16.6573 10.4509 16.8566 10.6516C17.04 10.8516 17.136 11.0849 17.1446 11.3516C17.1533 11.6182 17.0573 11.8516 16.8566 12.0516L13.2566 15.6516C13.1566 15.7516 13.0483 15.8226 12.9316 15.8646C12.815 15.9066 12.69 15.9272 12.5566 15.9266ZM6.55664 20.3516C6.00664 20.3516 5.53597 20.1559 5.14464 19.7646C4.75331 19.3732 4.55731 18.9022 4.55664 18.3516V16.3516C4.55664 16.0682 4.65264 15.8309 4.84464 15.6396C5.03664 15.4482 5.27397 15.3522 5.55664 15.3516C5.83931 15.3509 6.07697 15.4469 6.26964 15.6396C6.46231 15.8322 6.55797 16.0696 6.55664 16.3516V18.3516H18.5566V16.3516C18.5566 16.0682 18.6526 15.8309 18.8446 15.6396C19.0366 15.4482 19.274 15.3522 19.5566 15.3516C19.8393 15.3509 20.077 15.4469 20.2696 15.6396C20.4623 15.8322 20.558 16.0696 20.5566 16.3516V18.3516C20.5566 18.9016 20.361 19.3726 19.9696 19.7646C19.5783 20.1566 19.1073 20.3522 18.5566 20.3516H6.55664Z" fill="black"/>
-</svg></td>
+                  <td><i data-lucide="download"></i></td>
                 </tr>
               </tbody>
             </table>
           </div>
-        
-
-      </div>
-      <div class="conteudoAbas" id="aba3">
-
-    <div class="cartoesGap">
-      <div class="cartao">
-        <div class="cartaoCabecalho">
-        <h2>Notificações por E-mail</h2>
-        <p>Configure quais notificações você deseja receber por email.</p>
-        </div>
-        <div class="cartaoTexto">
-          <div>
-            <label>Relatórios Diários</label>
-            <p>Receba um resumo diário dos extratos financeiros</p>
-          </div>
-          <div class="toggle-switch active"></div>
-        </div>
-        <div class="cartaoTexto">
-          <div>
-            <label>Novas Transações</label>
-            <p>Seja notificado quando novas transações forem registradas</p>
-          </div>
-          <div class="toggle-switch active"></div>
-        </div>
-        <div class="cartaoTexto">
-          <div>
-            <label>Divergências</label>
-            <p>Seja notificado quando divergências forem detectadas</p>
-          </div>
-          <div class="toggle-switch active"></div>
-        </div>
-        <div class="cartaoTexto">
-          <div>
-            <label>Alertas de Segurança</label>
-            <p>Receba alertas sobre atividades suspeitas na sua conta</p>
-          </div>
-          <div class="toggle-switch active"></div>
         </div>
       </div>
-      <div class="cartao">
-        <div class="cartaoCabecalho">
-        <h2>Notificações no Sistema</h2>
-        <p>Configure quais notificações você deseja receber dentro do sistema.</p>
-        </div>
-        <div class="cartaoTexto">
-          <div>
-            <label>Novas Transações</label>
-            <p>Receba notificações quando novas transações forem registradas</p>
+
+      <div class="trocaDeAbas" id="aba3">
+        <div class="cartoesGap">
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h2>Notificações por E-mail</h2>
+              <p>Configure quais notificações você deseja receber por email.</p>
+            </div>
+            <div class="cartaoTexto">
+              <div>
+                <label>Relatórios Diários</label>
+                <p>Receba um resumo diário dos extratos financeiros</p>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="cartaoTexto">
+              <div>
+                <label>Novas Transações</label>
+                <p>Seja notificado quando novas transações forem registradas</p>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="cartaoTexto">
+              <div>
+                <label>Divergências</label>
+                <p>Seja notificado quando divergências forem detectadas</p>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="cartaoTexto">
+              <div>
+                <label>Alertas de Segurança</label>
+                <p>Receba alertas sobre atividades suspeitas na sua conta</p>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
           </div>
-          <div class="toggle-switch active"></div>
-        </div>
-        <div class="cartaoTexto">
-          <div>
-            <label>Divergências</label>
-            <p>Receba notificações quando divergências forem detectadas</p>
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h2>Notificações no Sistema</h2>
+              <p>
+                Configure quais notificações você deseja receber dentro do
+                sistema.
+              </p>
+            </div>
+            <div class="cartaoTexto">
+              <div>
+                <label>Novas Transações</label>
+                <p>
+                  Receba notificações quando novas transações forem registradas
+                </p>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="cartaoTexto">
+              <div>
+                <label>Divergências</label>
+                <p>Receba notificações quando divergências forem detectadas</p>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="cartaoTexto">
+              <div>
+                <label>Atividades de Usuários</label>
+                <p>Seja notificado sobre ações de outros usuários no sistema</p>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="cartaoTexto">
+              <div>
+                <label>Atualizações do Sistema</label>
+                <p>
+                  Receba notificações sobre novas funcionalidades e atualizações
+                </p>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
           </div>
-          <div class="toggle-switch active"></div>
-        </div>
-        <div class="cartaoTexto">
-          <div>
-            <label>Atividades de Usuários</label>
-            <p>Seja notificado sobre ações de outros usuários no sistema</p>
-          </div>
-          <div class="toggle-switch active"></div>
-        </div>
-        <div class="cartaoTexto">
-          <div>
-            <label>Atualizações do Sistema</label>
-            <p>Receba notificações sobre novas funcionalidades e atualizações</p>
-          </div>
-          <div class="toggle-switch active"></div>
         </div>
       </div>
-    </div>
 
-      </div>
-      <div class="conteudoAbas" id="aba4">
-
-    <div class="cartoesGap">
-      <div class="cartao">
-        <div class="cartaoCabecalho">
-        <h2>Alterar Senha</h2>
-        <p>Atualize sua senha para manter sua conta segura.</p>
-        </div>
-        <div class="grid2">
-          <div class="campos">
-            <label>Senha Atual</label>
-            <input type="password">
+      <div class="trocaDeAbas" id="aba4">
+        <div class="cartoesGap">
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h2>Alterar Senha</h2>
+              <p>Atualize sua senha para manter sua conta segura.</p>
+            </div>
+            <div class="grid2">
+              <div class="campos">
+                <label>Senha Atual</label>
+                <input type="password" />
+              </div>
+              <div class="campos">
+                <label>Nova Senha</label>
+                <input type="password" />
+              </div>
+              <div class="campos">
+                <label>Confirmar Nova Senha</label>
+                <input type="password" />
+              </div>
+            </div>
+            <div class="botaoSalvar">
+              <button>Salvar</button>
+            </div>
           </div>
-          <div class="campos">
-            <label>Nova Senha</label>
-            <input type="password">
+          <div class="cartao">
+            <div class="cartaoCabecalho">
+              <h2>Autenticação de Dois Fatores</h2>
+              <p>Adicione uma camada extra de segurança à sua conta.</p>
+            </div>
+            <div class="cartaoTexto">
+              <p>
+                Recomendamos fortemente ativar a autenticação de dois fatores
+                para aumentar a segurança da sua conta.
+              </p>
+            </div>
+            <div class="campos">
+              <label>Método de Autenticação</label>
+              <select required>
+                <option value="" disabled selected hidden></option>
+                <option value="email">Email</option>
+                <option value="sms">SMS</option>
+              </select>
+            </div>
+            <div class="botaoSalvar">
+              <button>Salvar</button>
+            </div>
           </div>
-          <div class="campos">
-            <label>Confirmar Nova Senha</label>
-            <input type="password">
-          </div>
-        </div>
-        <div class="botaoSalvar">
-          <button>Salvar</button>
         </div>
       </div>
-      <div class="cartao">
-        <div class="cartaoCabecalho">
-          <h2>Autenticação de Dois Fatores</h2>
-          <p>Adicione uma camada extra de segurança à sua conta.</p>
-        </div>
-        <div class="cartaoTexto">
-          <p>Recomendamos fortemente ativar a autenticação de dois fatores para aumentar a segurança da sua conta.</p>
-        </div>
-        <div class="campos">
-          <label>Método de Autenticação</label>
-          <select required>
-            <option value="" disabled selected hidden></option>
-            <option value="email">Email</option>
-            <option value="sms">SMS</option>
-          </select>
-        </div>
-        <div class="botaoSalvar">
-          <button>Salvar</button>
-        </div>
-      </div>
-    </div>
+
+      <div class="trocaDeAbas" id="aba5">
+
+            <div class="cartao">
+              <div class="cartaoCabecalho" style="display: flex; justify-content: space-between;">
+                <div class="cartaoCabecalho">
+                  <h2>Métodos de Pagamentos</h2>
+                  <p>Gerencie seus cartões de crédito e outros métodos de pagamento.</p>
+                </div>
+                <button id="botao-adicionar-cartao" class="botao-dicionar">
+                  + Adicionar Cartão
+                </button>
+              </div>
+
+              <div class="cartaoTexto">
+                <div>
+                  <div><strong>Nubank •••• 4587</strong></div>
+                  <div>Expira em 07/2028</div>
+                </div>
+              </div>
+              <div class="cartaoTexto">
+                <div>
+                  <div><strong>Mastercard •••• 4587</strong></div>
+                  <div>Expira em 09/2027</div>
+                </div>
+              </div>
+              <div class="cartaoTexto">
+                <div>
+                  <div><strong>Visa •••• 4587</strong></div>
+                  <div>Expira em 08/2029</div>
+                </div>
+              </div>
+            </div>
+
+                        <div class="cartao">
+              <div class="cartaoCabecalho" style="display: flex; justify-content: space-between;">
+                <div class="cartaoCabecalho">
+                  <h2>Métodos de Pagamentos</h2>
+                  <p>Gerencie seus cartões de crédito e outros métodos de pagamento.</p>
+                </div>
+                <button id="botao-adicionar-cartao" class="botao-dicionar">
+                  + Adicionar Cartão
+                </button>
+              </div>
+
+              <div class="cartaoTexto">
+                <div style="display: flex;">
+                  <div>
+                    <i data-lucide="credit-card"></i>
+                  </div>
+                  <div>
+                    <div><strong>Nubank •••• 4587</strong></div>
+                    <div>Expira em 07/2028</div>
+                  </div>
+                </div>
+                <div>
+                  <button>configurar</button>
+                  <button>excluir</button>
+                </div>
+              </div>
+
+              <div class="cartaoTexto">
+                <div>
+                  <div><strong>Mastercard •••• 4587</strong></div>
+                  <div>Expira em 09/2027</div>
+                </div>
+              </div>
+
+              <div class="cartaoTexto">
+                <div>
+                  <div><strong>Visa •••• 4587</strong></div>
+                  <div>Expira em 08/2029</div>
+                </div>
+              </div>
+            </div>
 
       </div>
 
+    </main>
 
-  </main>
+                <div id="fundo-modal" class="fundo-modal escondido">
+              <div class="janela-modal">
+                <h2>Adicionar Cartão</h2>
+                <form id="formulario-cartao">
+                  <label for="numero-cartao">Número do Cartão</label>
+                  <input
+                    type="text"
+                    id="numero-cartao"
+                    class="campo-input"
+                    placeholder="Número do Cartão"
+                  />
+
+                  <label for="nome-titular">Nome do Titular</label>
+                  <input
+                    type="text"
+                    id="nome-titular"
+                    name="nome-titular"
+                    placeholder="Nome como está no cartão"
+                    required
+                  />
+
+                  <div class="grupo-campos">
+                    <div class="campo">
+                      <label for="validade">Validade</label>
+                      <input
+                        type="text"
+                        id="validade"
+                        class="campo-input"
+                        placeholder="Validade (MM/AA)"
+                      />
+                    </div>
+
+                    <div class="campo">
+                      <label for="codigo-seguranca">CVV</label>
+                      <input
+                        type="text"
+                        id="codigo-seguranca"
+                        class="campo-input"
+                        placeholder="Código de Segurança"
+                      />
+                    </div>
+                  </div>
+
+                  <button type="submit" class="botao-principal">
+                    Adicionar Cartão
+                  </button>
+                  <button
+                    type="button"
+                    id="botao-cancelar"
+                    class="botao-secundario"
+                  >
+                    Cancelar
+                  </button>
+                </form>
+              </div>
+            </div>
+
+
     <script src="../Assets/sidebar.js"></script>
     <script src="configuracoes.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            lucide.createIcons();
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+      });
     </script>
-</body>
+  </body>
 </html>

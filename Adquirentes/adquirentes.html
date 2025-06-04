@@ -21,7 +21,7 @@
         <button class="botaoAba" data-relatorio="aba4">Importar Dados</button>
       </div>
 
-      <div class="conteudoAbas ativo" id="aba1">
+      <div class="trocaDeAbas ativo" id="aba1">
         <div class="conteudoRelatorio ativo">
                                     <div class="cabecalhoRelatorio">
                                 <div>
@@ -87,8 +87,9 @@
        </div>
       </div>
 
-    <div class="conteudoAbas" id="aba2">
-        <div class="conteudoabas ativo taxas">
+    <div class="trocaDeAbas" id="aba2">
+
+        <div class="taxas">
 
                                     <div class="cabecalhoRelatorio">
                                 <div>
@@ -96,118 +97,395 @@
                                 </div>
                             </div>
                             <div class="tabelaContainer">
-        <table class="tabela">
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Descrição</th>
-                    <th>Adquirente</th>
-                    <th>Valor</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>15/05/2023</td>
-                    <td>Pagamento recebido</td>
-                    <td>Stone</td>
-                    <td>R$ 1.250,00</td>
-                    <td>Concluído</td>
-                </tr>
-                <tr>
-                    <td>14/05/2023</td>
-                    <td>Taxa de serviço</td>
-                    <td>Cielo</td>
-                    <td>- R$ 45,00</td>
-                    <td>Concluído</td>
-                </tr>
-                <tr>
-                    <td>12/05/2023</td>
-                    <td>Pagamento recebido</td>
-                    <td>Mercado Pago</td>
-                    <td>R$ 890,00</td>
-                    <td>Concluído</td>
-                </tr>
-                <tr>
-                    <td>10/05/2023</td>
-                    <td>Estorno</td>
-                    <td>Ton</td>
-                    <td>- R$ 320,00</td>
-                    <td>Processando</td>
-                </tr>
-            </tbody>
-        </table>
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Prazo</th>
+                <th>Pix</th>
+                <th>QR code</th>
+                <th>Débito</th>
+                <th>Taxa De Liberação</th>
+                <th>Crédito À Vista</th>
+                <th>Taxa De Parcelamento</th>
+                <th>2x</th>
+                <th>3x</th>
+                <th>4x</th>
+                <th>5x</th>
+                <th>6x</th>
+                <th>7x</th>
+                <th>8x</th>
+                <th>9x</th>
+                <th>10x</th>
+                <th>11x</th>
+                <th>12x</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Na Hora</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+            <tr>
+                <td>1 Dia</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+            <tr>
+                <td>30 Dia</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+            <tr>
+                <td>Sem Antecipação</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+        </tbody>
+    </table>
                             </div>
                             
         </div>
 
-
-    </div>
-
-
-    <div class="conteudoAbas" id="aba3">
-        <div class="conteudoRelatorio ativo">
+        <div class="taxas">
 
                                     <div class="cabecalhoRelatorio">
                                 <div>
-                                    <h3>Lançamentos</h3>
-                                    <p>Últimos lançamentos dos adquirentes</p>
-                                </div>
-                                <div class="acoesRelatorio">
-                                    <button class="botaoAcao primario">
-                                        <i class="iconeTabela" data-lucide="file-down"></i>
-                                        Exportar
-                                    </button>
+                                    <h3>Comparativo de Vendas</h3>
                                 </div>
                             </div>
                             <div class="tabelaContainer">
-        <table class="tabela">
-            <thead>
-                <tr>
-                    <th>Adquirente</th>
-                    <th>Tipo de Taxa</th>
-                    <th>Valor (%)</th>
-                    <th>Valor Fixo</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Stone</td>
-                    <td>Taxa de Venda</td>
-                    <td>2,99%</td>
-                    <td>R$ 0,25</td>
-                    <td>Taxa por transação</td>
-                </tr>
-                <tr>
-                    <td>Cielo</td>
-                    <td>Taxa de Venda</td>
-                    <td>3,49%</td>
-                    <td>R$ 0,30</td>
-                    <td>Taxa por transação</td>
-                </tr>
-                <tr>
-                    <td>Mercado Pago</td>
-                    <td>Taxa de Boleto</td>
-                    <td>1,99%</td>
-                    <td>R$ 0,00</td>
-                    <td>Taxa para pagamentos com boleto</td>
-                </tr>
-                <tr>
-                    <td>Ton</td>
-                    <td>Taxa Mensal</td>
-                    <td>0,00%</td>
-                    <td>R$ 29,90</td>
-                    <td>Taxa de plano mensal</td>
-                </tr>
-            </tbody>
-        </table>
-
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Prazo</th>
+                <th>Pix</th>
+                <th>QR code</th>
+                <th>Débito</th>
+                <th>Taxa De Liberação</th>
+                <th>Crédito À Vista</th>
+                <th>Taxa De Parcelamento</th>
+                <th>2x</th>
+                <th>3x</th>
+                <th>4x</th>
+                <th>5x</th>
+                <th>6x</th>
+                <th>7x</th>
+                <th>8x</th>
+                <th>9x</th>
+                <th>10x</th>
+                <th>11x</th>
+                <th>12x</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Na Hora</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+            <tr>
+                <td>1 Dia</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+            <tr>
+                <td>30 Dia</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+            <tr>
+                <td>Sem Antecipação</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+        </tbody>
+    </table>
                             </div>
+                            
         </div>
+
+        <div class="taxas">
+
+                                    <div class="cabecalhoRelatorio">
+                                <div>
+                                    <h3>Comparativo de Vendas</h3>
+                                </div>
+                            </div>
+                            <div class="tabelaContainer">
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Prazo</th>
+                <th>Pix</th>
+                <th>QR code</th>
+                <th>Débito</th>
+                <th>Taxa De Liberação</th>
+                <th>Crédito À Vista</th>
+                <th>Taxa De Parcelamento</th>
+                <th>2x</th>
+                <th>3x</th>
+                <th>4x</th>
+                <th>5x</th>
+                <th>6x</th>
+                <th>7x</th>
+                <th>8x</th>
+                <th>9x</th>
+                <th>10x</th>
+                <th>11x</th>
+                <th>12x</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Na Hora</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+            <tr>
+                <td>1 Dia</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+            <tr>
+                <td>30 Dia</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+            <tr>
+                <td>Sem Antecipação</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>1,48%</td>
+                <td>0%</td>
+                <td>3,45%</td>
+                <td>0%</td>
+                <td>4,03%</td>
+                <td>4,57%</td>
+                <td>5,11%</td>
+                <td>5,65%</td>
+                <td>6,19%</td>
+                <td>6,73%</td>
+                <td>7,23%</td>
+                <td>7,81%</td>
+                <td>8,35%</td>
+                <td>8,89%</td>
+                <td>9,43%</td>
+            </tr>
+        </tbody>
+    </table>
+                            </div>
+                            
+        </div>
+
     </div>
 
-    <div class="conteudoAbas" id="aba4">
+
+<div class="trocaDeAbas" id="aba3">
+  <div class="conteudoRelatorio ativo">
+    <div class="cabecalhoRelatorio">
+      <div>
+        <h3>Lançamentos</h3>
+        <p>Últimos lançamentos dos adquirentes</p>
+      </div>
+      <div class="acoesRelatorio">
+        <button class="botaoAcao primario">
+          <i class="iconeTabela" data-lucide="file-down"></i>
+          Exportar
+        </button>
+      </div>
+    </div>
+
+    <div class="tabelaContainer">
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Data da Venda</th>
+            <th>Valor Bruto</th>
+            <th>Bandeira</th>
+            <th>Produto</th>
+            <th>Parcelas</th>
+            <th>Desconto MDR</th>
+            <th>Valor Líquido</th>
+            <th>Data de Vencimento</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+    <div class="trocaDeAbas" id="aba4">
         <div class="conteudoRelatorio ativo">
 
                                         <div class="cabecalhoRelatorio">
@@ -226,7 +504,8 @@
                                         <i data-lucide="upload"></i>
                                         <h2>Arraste e solte seu arquivo aqui</h2>
                                         <p>ou clique para selecionar um arquivo</p>
-                                        <button class="botaoAcao primario">Selecionar Arquivo</button>
+                                        <label for="csv" class="botaoAcao primario">Selecionar Arquivo</label>
+                                        <input type="file" id="csv" style="display: none;">
                                         <p>Formatos suportados: CSV, OFX, XLS, XLSX (máx. 10MB)</p>
                                     </div>
 
@@ -289,6 +568,7 @@
         lucide.createIcons();
       });
     </script>
-    <script src="adquirentes.js"></script>
+    <script src="../troca-de-abas.js"></script>
+    <script src="../consiliacao.js"></script>
   </body>
 </html>

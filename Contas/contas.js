@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const botoesAbas = document.querySelectorAll('.botaoAba[data-relatorio]');
-    const conteudosAbas = document.querySelectorAll('.conteudoAbas');
+    const conteudosAbas = document.querySelectorAll('.trocaDeAbas');
 
     botoesAbas.forEach(botao => {
         botao.addEventListener('click', function() {
@@ -43,3 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         conteudosRelatorios[0].classList.add('ativo');
     }
 });
+
+
+
+
