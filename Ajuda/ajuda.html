@@ -1,89 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="ajuda.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajuda</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href="ajuda.css" />
 </head>
 <body>
-        <main class="conteudoPrincipal">
-          <header class="cabecalho">
-            <h1>Ajuda</h1>
-          </header>
-    
-          <div class="abasRelatorio">
-              <button class="botaoAba ativo" data-relatorio="aba1">Perguntas Frequentes</button>
-              <button class="botaoAba" data-relatorio="aba2">Contato</button>
+  <main class="conteudoPrincipal">
+    <header class="cabecalho">
+      <h1>Ajuda</h1>
+    </header>
+  
+    <div class="abasRelatorio">
+      <button class="botaoAba ativo" data-relatorio="aba1">Perguntas Frequentes</button>
+      <button class="botaoAba" data-relatorio="aba2">Contato</button>
+    </div>
+  
+    <div class="conteudoAbas ativo" id="aba1">
+      <section class="cartao">
+        <div class="cartaoCabecalho">
+          <h2>Perguntas Frequentes</h2>
+        </div>
+
+        <details class="cartaoTexto column">
+          <summary>Como funciona a conciliação financeira?</summary>
+          <p>A conciliação financeira é o processo de comparar transações financeiras registradas...</p>
+        </details>
+        <details class="cartaoTexto column">
+          <summary>Como importar dados bancários?</summary>
+          <p>Para importar dados bancários, acesse a seção 'Contas' no menu lateral...</p>
+        </details>
+        <details class="cartaoTexto column">
+          <summary>O que significam as discrepâncias no dashboard?</summary>
+          <p>Discrepâncias são diferenças encontradas entre os valores esperados...</p>
+        </details>
+        <details class="cartaoTexto column">
+          <summary>Como resolver uma discrepância?</summary>
+          <p>Para resolver uma discrepância, clique nela no dashboard...</p>
+        </details>
+        <details class="cartaoTexto column">
+          <summary>Como adicionar um novo usuário ao sistema?</summary>
+          <p>Para adicionar um novo usuário, acesse a seção 'Usuários'...</p>
+        </details>
+        <details class="cartaoTexto column">
+          <summary>Como configurar uma nova adquirente?</summary>
+          <p>Vá até a seção 'Contas', selecione a aba 'Adquirentes' e clique em 'Adicionar Adquirente'...</p>
+        </details>
+      </section>
+      </div>
+
+    <div class="conteudoAbas" id="aba2">
+      <section class="cartao">
+        <div class="cartaoCabecalho">
+          <h2>Fale Conosco</h2>
+        </div>
+        <form class="formularioContato">
+          <div class="grupoFormulario">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
           </div>
-    
-          <div class="conteudoAbas ativo" id="aba1">
-           <section class="cartao">
-            <div class="cartaoCabecalho">
-              <h2>Perguntas Frequentes</h2>
-            </div>
-
-            <details class="cartaoTexto colum">
-              <summary>
-                Como funciona a conciliação financeira?
-              </summary>
-              <p>
-                A conciliação financeira é o processo de comparar transações financeiras registradas em diferentes sistemas para garantir que os valores estejam corretos. Nosso sistema automatiza esse processo, identificando discrepâncias e ajudando você a resolvê-las.
-              </p>
-            </details>
-            <details class="cartaoTexto colum">
-              <summary>
-                Como importar dados bancários?
-              </summary>
-              <p>
-                Para importar dados bancários, acesse a seção 'Contas' no menu lateral, selecione a conta desejada e clique no botão 'Importar Dados'. Você pode fazer upload de arquivos CSV, OFX ou extratos bancários em outros formatos.
-              </p>
-            </details>
-            <details class="cartaoTexto colum">
-              <summary>
-                O que significam as discrepâncias no dashboard?
-              </summary>
-              <p>
-                Discrepâncias são diferenças encontradas entre os valores esperados e os valores reais nas transações. Elas podem indicar erros, fraudes ou problemas de processamento. No dashboard, você pode visualizar todas as discrepâncias identificadas e tomar ações para resolvê-las.
-              </p>
-            </details>
-            <details class="cartaoTexto colum">
-              <summary>
-                Como resolver uma discrepância?
-              </summary>
-              <p>
-                Para resolver uma discrepância, clique nela no dashboard para ver os detalhes. Você pode então escolher uma das ações recomendadas ou registrar uma justificativa para a diferença. Após resolver, a discrepância será marcada como resolvida e movida para o histórico.
-              </p>
-            </details>
-            <details class="cartaoTexto colum">
-              <summary>
-                Como adicionar um novo usuário ao sistema?
-              </summary>
-              <p>
-                Para adicionar um novo usuário, acesse a seção 'Usuários' no menu lateral e clique no botão 'Adicionar Usuário'. Preencha as informações necessárias, defina as permissões apropriadas e clique em 'Salvar'.
-              </p>
-            </details>
-            <details class="cartaoTexto colum">
-              <summary>
-                Como configurar uma nova adquirente?
-              </summary>
-              <p>
-                Para configurar uma nova adquirente, vá até a seção 'Contas', selecione a aba 'Adquirentes' e clique em 'Adicionar Adquirente'. Preencha os dados solicitados, incluindo as taxas e condições de pagamento, e clique em 'Salvar'.
-              </p>
-            </details>
-
-           </section>
+          <div class="grupoFormulario">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
           </div>
-
-
-
+          <div class="grupoFormulario">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="6" placeholder="Descreva sua dúvida aqui..." required></textarea>
+          </div>
+          <button type="submit" class="botaoEnviar">Enviar</button>
+        </form>
+      </section>
+      <div class="boxContatoWrap">
+        <aside class="contatoInfo">
+          <h3 style="margin-bottom: 16px; font-size: 1.1rem;">Informações de Contato</h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 12px;"><strong>Telefone:</strong> (11) 99999-9999</li>
+            <li style="margin-bottom: 12px;"><strong>E-mail:</strong> suporte@empresa.com.br</li>
+            <li><strong>Horário de atendimento:</strong> Seg a Sex, 08h às 18h</li>
+          </ul>
+        </aside>
+      </div>
+        </div>
         </main>
-      <script src="../Assets/sidebar.js"></script>
-      <script src="ajuda.js"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
+
+  <script src="../Assets/sidebar.js"></script>
+  <script src="ajuda.js"></script>
+  <script>
+          document.addEventListener('DOMContentLoaded', function () {
             lucide.createIcons();
         });
     </script>

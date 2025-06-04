@@ -1,19 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="../global.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gráficos – Dashboard</title>
+<link rel="stylesheet" href="../global.css" />
+<link rel="stylesheet" href="graficos.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js" defer></script>
+<script src="https://unpkg.com/lucide@latest" defer></script>
+<script src="../Assets/sidebar.js" defer></script>
 </head>
 <body>
-
-    <script src="../Assets/sidebar.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            lucide.createIcons();
-        });
-    </script>
+<main class="conteudoPrincipal">
+    <header class="cabecalho">
+        <h1>Gráficos</h1>
+    </header>
+    <div class="cardsResumo">
+        <div class="card verde" data-tab="recebimentos">
+            <div class="iconeCard verde"><i data-lucide="banknote"></i></div>
+            <div class="conteudoCard">
+                <h3>Recebimentos</h3>
+                <p class="valor">R$ 64.600</p>
+                <p class="subTexto">225 Lançamentos</p>
+            </div>
+        </div>
+        <div class="card vermelho" data-tab="pagamentos">
+            <div class="iconeCard vermelho"><i data-lucide="credit-card"></i></div>
+            <div class="conteudoCard">
+                <h3>Pagamentos</h3>
+                <p class="valor">R$ 48.300</p>
+                <p class="subTexto">87 Pagamentos</p>
+            </div>
+        </div>
+        <div class="card azul" data-tab="taxas">
+            <div class="iconeCard azul"><i data-lucide="percent"></i></div>
+            <div class="conteudoCard">
+                <h3>Taxas</h3>
+                <p class="valor">3,42%</p>
+                <p class="subTexto">Média mensal</p>
+            </div>
+        </div>
+        <div class="card amarelo" data-tab="divergencias">
+            <div class="iconeCard amarelo"><i data-lucide="triangle-alert"></i></div>
+            <div class="conteudoCard">
+                <h3>Divergências</h3>
+                <p class="valor">R$ 26.700</p>
+                <p class="subTexto">42 Divergências</p>
+            </div>
+        </div>
+    </div>
+    <div class="conteudoAbas">
+        <div class="aba ativo" id="recebimentos">
+            <section class="secaoGraficos">
+                <h2>Gráficos de Recebimentos</h2>
+                <div class="containerGraficos">
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Recebimentos por Mês</h3>
+                            <p>Distribuição dos valores recebidos por mês</p>
+                        </div>
+                        <div class="grafico"><canvas id="graficoRecebimentosMes"></canvas></div>
+                    </div>
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Métodos de Pagamento</h3>
+                            <p>Distribuição dos valores por método</p>
+                        </div>
+                        <div class="grafico"><canvas id="graficoMetodosPagamento"></canvas></div>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Recebimentos Bruto x Líquido</h3>
+                        <p>Comparação dos valores brutos e líquidos por mês</p>
+                    </div>
+                    <div class="grafico"><canvas id="graficoBrutoLiquido"></canvas></div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Recebimentos por Bandeira</h3>
+                        <p>Distribuição conforme a bandeira do cartão</p>
+                    </div>
+                    <div class="grafico"><canvas id="graficoBandeiras"></canvas></div>
+                </div>
+            </section>
+            <section class="secaoRelatorios">
+                <h2>Relatórios de Recebimentos</h2>
+                <div class="conteudoRelatorio ativo" id="resumoReceb">
+                    <div class="cabecalhoRelatorio">
+                        <div>
+                            <h3>Resumo de Vendas</h3>
+                            <p>Período: Março 2025</p>
+                        </div>
+                        <div class="acoesRelatorio">
+                            <button class="botaoAcao primario"><i data-lucide="file-down"></i> Exportar</button>
+                        </div>
+                    </div>
+                    <div class="tabelaContainer">
+                        <table class="tabela">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Transações</th>
+                                    <th>Total</th>
+                                    <th>Crédito</th>
+                                    <th>Débito</th>
+                                    <th>Outros</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01/03/2025</td>
+                                    <td>45</td>
+                                    <td>R$ 12.500,00</td>
+                                    <td>R$ 7.200,00</td>
+                                    <td>R$ 3.300,00</td>
+                                    <td>R$ 1.000,00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="aba" id="pagamentos">
+            <section class="secaoGraficos">
+                <h2>Gráficos de Pagamentos</h2>
+                <div class="containerGraficos">
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Pagamentos por Mês</h3>
+                            <p>Distribuição dos valores pagos por mês</p>
+                        </div>
+                        <div class="grafico"><canvas id="graficoPagamentosMes"></canvas></div>
+                    </div>
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Métodos de Pagamento (Pagamentos)</h3>
+                            <p>Distribuição dos métodos usados nos pagamentos</p>
+                        </div>
+                        <div class="grafico"><canvas id="graficoMetodosPagamentoPag"></canvas></div>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Pagamentos Bruto x Líquido</h3>
+                        <p>Comparação entre os valores brutos e líquidos pagos por mês</p>
+                    </div>
+                    <div class="grafico"><canvas id="graficoBrutoLiquidoPag"></canvas></div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Pagamentos por Bandeira</h3>
+                        <p>Distribuição conforme a bandeira do cartão</p>
+                    </div>
+                    <div class="grafico"><canvas id="graficoBandeirasPag"></canvas></div>
+                </div>
+            </section>
+            <section class="secaoRelatorios">
+                <h2>Relatórios de Pagamentos</h2>
+                <p style="padding: 10px;">Conteúdo dos relatórios de pagamentos será disponibilizado.</p>
+            </section>
+        </div>
+        <div class="aba" id="taxas">
+            <section class="secaoGraficos">
+                <h2>Gráficos de Taxas</h2>
+                <div class="containerGraficos">
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Taxas por Mês</h3>
+                            <p>Média das taxas cobradas por mês</p>
+                        </div>
+                        <div class="grafico"><canvas id="graficoTaxasMes"></canvas></div>
+                    </div>
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Métodos de Cobrança</h3>
+                            <p>Distribuição dos métodos de cobrança utilizados</p>
+                        </div>
+                        <div class="grafico"><canvas id="graficoMetodosTaxas"></canvas></div>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Taxas Bruto x Líquido</h3>
+                        <p>Comparação dos valores brutos e líquidos aferidos</p>
+                    </div>
+                    <div class="grafico"><canvas id="graficoBrutoLiquidoTaxas"></canvas></div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Taxas por Bandeira</h3>
+                        <p>Distribuição conforme a bandeira de cartão</p>
+                    </div>
+                    <div class="grafico"><canvas id="graficoBandeirasTaxas"></canvas></div>
+                </div>
+            </section>
+            <section class="secaoRelatorios">
+                <h2>Relatórios de Taxas</h2>
+                <p style="padding: 10px;">Conteúdo dos relatórios de taxas será disponibilizado.</p>
+            </section>
+        </div>
+        <div class="aba" id="divergencias">
+            <section class="secaoGraficos">
+                <h2>Gráficos de Divergências</h2>
+                <div class="containerGraficos">
+                    <div class="cartaoGrafico larguraTotal">
+                        <div class="cabecalhoGrafico">
+                            <h3>Divergências Mensais</h3>
+                            <p>Valores e quantidades de divergências</p>
+                        </div>
+                        <div class="grafico"><canvas id="graficoDivergenciasMes"></canvas></div>
+                    </div>
+                </div>
+            </section>
+            <section class="secaoRelatorios">
+                <h2>Relatórios de Divergências</h2>
+                <p style="padding: 10px;">Conteúdo dos relatórios de divergências será disponibilizado.</p>
+            </section>
+        </div>
+    </div>
+</main>
+<script src="graficos.js" defer></script>
 </body>
 </html>
