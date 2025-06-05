@@ -189,7 +189,7 @@
       const ofx = carregar(STORAGE_OFX);
       if (ofx.length) renderOFXTable(ofx, false);
     }
-    if (path.includes("consiliacao")) {
+    if (path.includes("conciliacao")) {
       const csv = carregar(STORAGE_CSV);
       const ofx = carregar(STORAGE_OFX);
       if (csv.length && ofx.length) conciliar(csv, ofx);

@@ -14,3 +14,17 @@
     background-color: green;
     border-radius: 6px;
 }
+
+.trocaDeAbas.ativo {
+  opacity: 1;
+  height: auto;
+  overflow: hidden;
+}
+
+.cartaoTabela {
+    border-radius: 16px;
+    background-color: var(--cartoes);
+    border: var(--borda);
+    box-shadow: var(--sombra);
+    height: 100%;
+}
