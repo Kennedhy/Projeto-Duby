@@ -3,20 +3,20 @@ body {
     font-family: Arial, sans-serif;
     background: radial-gradient(circle, #F6F6F6, #E2E2E2, #E2E2E2);
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    color: #322871; /* Texto com o tema roxo */
-    flex-direction: column; /* Garante que os elementos fiquem em coluna */
+    color: #322871;
+    flex-direction: column; 
 }
 
 .container {
     display: flex;
-    flex-direction: column; /* Garante que os elementos fiquem em coluna */
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    text-align: center; /* Centraliza o texto */
-    width: 100%; /* Garante que ocupe toda a largura */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    width: 100%; 
 }
 
 .error{
@@ -27,7 +27,7 @@ body {
     
 }
 
-.error-title {
+.errorTitulo {
     font-size: 150px;
     font-weight: bold;
     margin-top: 0;
@@ -35,23 +35,23 @@ body {
 letter-spacing: -0.5px;
 }
 
-.error-message {
+.errorMsg {
     color: #322871;
 text-align: center;
 font-size: 30px;
 font-weight: bold;
-line-height: 120%; /* 57.6px */
+line-height: 120%;
 letter-spacing: 0.25px;
 }
 
-.description {
+.descricao {
     font-size: 16px;
     max-width: 400px;
     margin: 0 auto 30px auto;
     color: #666;
 }
 
-.buttons {
+.botoes {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -66,28 +66,50 @@ button {
     font-weight: bold;
 }
 
-.retry {
+#tentar {
     background-color: #322871;
     color: white;
 }
-.retry:hover {
+#tentar:hover {
     background-color: #262756;
 }
 
-.back {
+#voltar {
     background-color: #4CAF50;
     color: white;
 }
-.back:hover {
+#voltar:hover {
     background-color: #45a049;
 }
 
 .logo {
     position: fixed;
-    bottom: 0; /* logo no final da tela */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta para que fique exatamente no centro */
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
     width: 09vw; 
     margin: 0; 
 }
 
+@media (max-width: 600px) {
+    .errorTitulo {
+        font-size: 100px;
+    }
+    .errorMsg {
+        font-size: 24px;
+    }
+    .descricao {
+        font-size: 14px;
+    }
+    button {
+        font-size: 14px;
+    }
+    .logo {
+    position: fixed;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 22vw; 
+    margin: 0; 
+}
+}
