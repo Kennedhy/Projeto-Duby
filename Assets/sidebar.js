@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </a>
                         </li>
                         <li class="itemMenu">
-                            <a href="../Consiliacao/consiliacao.html" data-page="consiliacao.html">
+                            <a href="../Conciliacao/conciliacao.html" data-page="conciliacao.html">
                                 <i class="menuIcone" data-lucide="clipboard-check"></i>
                                 <span>Conciliação</span>
                             </a>
