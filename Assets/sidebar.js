@@ -197,6 +197,29 @@ document.addEventListener('DOMContentLoaded', function() {
             width: 1.2rem;
             stroke-width: 2.5px;
         }
+        @media (max-width: 600px) {
+            body {
+                margin-left: 70px;
+            }
+            .barraLateral {
+                width: 60px;
+                min-width: 60px;
+                padding: 1rem 0.3rem;
+            }
+            .logo img {
+                width: 40px;
+            }
+            .itemMenu span {
+                display: none;
+            }
+            .menuNav ul {
+                margin-top: 0.5rem;
+            }
+            .rodapeBarra {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
     `;
     
     document.head.appendChild(style);
