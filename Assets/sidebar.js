@@ -243,7 +243,6 @@ document.addEventListener('DOMContentLoaded', function() {
         body {
             font-family: 'TT Commons', sans-serif;
             margin-left: calc(230px + 8px);
-            transition: background-color 0.3s;
         }
 
         .barraLateral {

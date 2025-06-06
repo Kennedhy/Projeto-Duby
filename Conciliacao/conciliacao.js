@@ -8,21 +8,81 @@ document.addEventListener("DOMContentLoaded", function () {
     const filtroStatus = document.getElementById('filtroStatus');
     const pesquisaGeral = document.getElementById('pesquisaGeral');
     const tabelaCorpo = document.querySelector('.tabelaCorpo');
+    const cardsResumo = document.querySelector('.cardsResumo');
 
     document.getElementById('btnFiltrar').style.display = 'none';
 
-    const observer = new MutationObserver(function () {
-        if (tabelaCorpo.querySelector('tr')) {
-            atualizarOpcoesFiltros();
-            aplicarFiltros();
-        }
-    });
+    function formatData(dataStr) {
+        if (!dataStr) return "";
+        if (dataStr.includes("/")) return dataStr.split(" ")[0];
+        return `${dataStr.substring(6, 8)}/${dataStr.substring(4, 6)}/${dataStr.substring(0, 4)}`;
+    }
 
-    if (tabelaCorpo) {
-        observer.observe(tabelaCorpo, {
-            childList: true,
-            subtree: true
+    function parseFloatBR(valor) {
+        if (!valor) return 0;
+        return parseFloat(valor.replace(".", "").replace(",", "."));
+    }
+
+    function formatValor(valor) {
+        const n = parseFloat(valor);
+        return n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    }
+
+    function atualizarCardsResumo() {
+        if (!cardsResumo || !tabelaCorpo) return;
+
+        const linhasVisiveis = Array.from(tabelaCorpo.querySelectorAll('tr')).filter(tr => 
+            tr.style.display !== 'none'
+        );
+
+        const totalTransacoes = linhasVisiveis.length;
+        let totalValor = 0;
+        let conciliados = 0;
+        let pendentes = 0;
+        let divergentes = 0;
+        let valorConciliado = 0;
+        let valorPendente = 0;
+        let valorDivergente = 0;
+
+        linhasVisiveis.forEach(linha => {
+            const valorTexto = linha.cells[4].textContent.replace(/[^\d,-]/g, '').replace(',', '.');
+            const valor = parseFloat(valorTexto);
+            totalValor += valor;
+
+            const status = linha.cells[7].querySelector('.tag').textContent.trim();
+            
+            if (status === "Conciliado") {
+                conciliados++;
+                valorConciliado += valor;
+            } else if (status === "Pendente") {
+                pendentes++;
+                valorPendente += valor;
+            } else if (status === "Divergente") {
+                divergentes++;
+                valorDivergente += valor;
+            }
         });
+
+        const percentConciliado = totalTransacoes > 0 ? Math.round((conciliados / totalTransacoes) * 100) : 0;
+        const percentPendente = totalTransacoes > 0 ? Math.round((pendentes / totalTransacoes) * 100) : 0;
+        const percentDivergente = totalTransacoes > 0 ? Math.round((divergentes / totalTransacoes) * 100) : 0;
+
+        const cards = cardsResumo.querySelectorAll('.card');
+        
+        cards[0].querySelector('.valor').textContent = totalTransacoes;
+        cards[0].querySelector('.subTexto').textContent = formatValor(totalValor);
+        
+        cards[1].querySelector('.valor').textContent = `${percentConciliado}%`;
+        cards[1].querySelector('.subTexto').textContent = 
+            `${conciliados} transações • ${formatValor(valorConciliado)}`;
+        
+        cards[2].querySelector('.valor').textContent = `${percentPendente}%`;
+        cards[2].querySelector('.subTexto').textContent = 
+            `${pendentes} transações • ${formatValor(valorPendente)}`;
+        
+        cards[3].querySelector('.valor').textContent = `${percentDivergente}%`;
+        cards[3].querySelector('.subTexto').textContent = 
+            `${divergentes} transações • ${formatValor(valorDivergente)}`;
     }
 
     function atualizarOpcoesFiltros() {
@@ -105,6 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             linha.style.display = deveMostrar ? '' : 'none';
         });
+
+        atualizarCardsResumo();
     }
 
     function formatarDataParaComparacao(dataDDMMAAAA) {
@@ -136,6 +198,20 @@ document.addEventListener("DOMContentLoaded", function () {
     filtroStatus.addEventListener('change', aplicarFiltros);
     pesquisaGeral.addEventListener('input', aplicarFiltros);
     btnLimpar.addEventListener('click', limparFiltros);
+
+    const observer = new MutationObserver(function () {
+        if (tabelaCorpo.querySelector('tr')) {
+            atualizarOpcoesFiltros();
+            aplicarFiltros();
+        }
+    });
+
+    if (tabelaCorpo) {
+        observer.observe(tabelaCorpo, {
+            childList: true,
+            subtree: true
+        });
+    }
 
     if (tabelaCorpo && tabelaCorpo.querySelector('tr')) {
         atualizarOpcoesFiltros();
