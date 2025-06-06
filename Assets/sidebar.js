@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Criação do sidebar original (para desktop)
     const sidebar = document.createElement('aside');
     sidebar.className = 'barraLateral';
     
@@ -79,9 +80,108 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(sidebar);
     
+    // Criação do menu mobile (aparece apenas em telas pequenas)
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'mobile-menu-container';
+    mobileMenu.innerHTML = `
+        <button class="hamburger-btn">
+            <i class="menuIcone" data-lucide="menu"></i>
+        </button>
+        <div class="mobile-overlay">
+            <div class="mobile-content">
+                <div class="mobile-header">
+                    <button class="close-btn">
+                        <i class="menuIcone" data-lucide="x"></i>
+                    </button>
+                    <div class="mobile-user-actions">
+                        <a href="#" class="mobile-action-btn">
+                            <i class="menuIcone" data-lucide="user"></i>
+                        </a>
+                        <a href="#" class="mobile-action-btn">
+                            <i class="menuIcone" data-lucide="search"></i>
+                        </a>
+                        <a href="#" class="mobile-action-btn">
+                            <i class="menuIcone" data-lucide="bell"></i>
+                        </a>
+                    </div>
+                </div>
+                <nav class="mobile-nav">
+                    <ul>
+                        <li class="itemMenu">
+                            <a href="../Dashboard/dashboard.html" data-page="dashboard.html">
+                                <i class="menuIcone" data-lucide="layout-dashboard"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="itemMenu">
+                            <a href="../Conciliacao/conciliacao.html" data-page="conciliacao.html">
+                                <i class="menuIcone" data-lucide="clipboard-check"></i>
+                                <span>Conciliação</span>
+                            </a>
+                        </li>
+                        <li class="itemMenu">
+                            <a href="../Usuarios/usuarios.html" data-page="usuarios.html">
+                                <i class="menuIcone" data-lucide="users"></i>
+                                <span>Usuários</span>
+                            </a>
+                        </li>
+                        <li class="itemMenu">
+                            <a href="../Relatorios/relatorios.html" data-page="relatorios.html">
+                                <i class="menuIcone" data-lucide="file-text"></i>
+                                <span>Relatórios</span>
+                            </a>
+                        </li>
+                        <li class="itemMenu">
+                            <a href="../Graficos/graficos.html" data-page="graficos.html">
+                                <i class="menuIcone" data-lucide="pie-chart"></i>
+                                <span>Gráficos</span>
+                            </a>
+                        </li>
+                        <li class="itemMenu">
+                            <a href="../Contas/contas.html" data-page="contas.html">
+                                <i class="menuIcone" data-lucide="building-2"></i>
+                                <span>Contas Bancárias</span>
+                            </a>
+                        </li>
+                        <li class="itemMenu">
+                            <a href="../Adquirentes/adquirentes.html" data-page="adquirentes.html">
+                                <i class="menuIcone" data-lucide="credit-card"></i>
+                                <span>Adquirentes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-footer">
+                    <div class="itemMenu rodape">
+                        <a class="tema">
+                            <i class="menuIcone" data-lucide="moon"></i>
+                        </a>
+                    </div>
+                    <div class="itemMenu rodape">
+                        <a href="../Configuracoes/configuracoes.html" data-page="configuracoes.html">
+                            <i class="menuIcone" data-lucide="settings"></i>
+                        </a>
+                    </div>
+                    <div class="itemMenu rodape">
+                        <a href="../Ajuda/ajuda.html" data-page="ajuda.html">
+                            <i class="menuIcone" data-lucide="help-circle"></i>
+                        </a>
+                    </div>
+                    <div class="itemMenu rodape">
+                        <a href="../index.html" data-page="index.html">
+                            <i class="menuIcone" data-lucide="log-out"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(mobileMenu);
+    
+    // Função para destacar o item ativo no menu
     function highlightActiveMenuItem() {
         const currentPage = window.location.pathname.split('/').pop();
-        const menuLinks = document.querySelectorAll('.itemMenu a');
+        const menuLinks = document.querySelectorAll('.itemMenu a, .mobile-footer a');
         
         menuLinks.forEach(link => {
             const page = link.getAttribute('data-page');
@@ -95,21 +195,45 @@ document.addEventListener('DOMContentLoaded', function() {
     
     highlightActiveMenuItem();
     
+    // Tema dark/light
+    function applyTheme(isDark) {
+        document.body.classList.toggle('dark', isDark);
+        const themeColor = isDark ? '#1E1E2E' : '#6C63FF';
+        document.querySelector('.mobile-content').style.backgroundColor = themeColor;
+    }
+
     const themeButton = document.querySelector('.tema');
     if (themeButton) {
-
         const savedTheme = localStorage.getItem('theme');
+        const isDark = savedTheme === 'dark';
         
-        if (savedTheme === 'dark') {
-            document.body.classList.add('dark');
-        }
+        applyTheme(isDark);
         
         themeButton.addEventListener('click', () => {
-            const isDark = document.body.classList.toggle('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            const newIsDark = !document.body.classList.contains('dark');
+            localStorage.setItem('theme', newIsDark ? 'dark' : 'light');
+            applyTheme(newIsDark);
         });
     }
 
+    // Controle do menu mobile
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const closeBtn = document.querySelector('.close-btn');
+    const mobileOverlay = document.querySelector('.mobile-overlay');
+    
+    if (hamburgerBtn && closeBtn && mobileOverlay) {
+        hamburgerBtn.addEventListener('click', () => {
+            mobileOverlay.style.display = 'flex';
+            hamburgerBtn.style.display = 'none';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            mobileOverlay.style.display = 'none';
+            hamburgerBtn.style.display = 'block';
+        });
+    }
+
+    // Estilos
     const style = document.createElement('style');
     style.textContent = `
         * { 
@@ -121,9 +245,15 @@ document.addEventListener('DOMContentLoaded', function() {
         body {
             font-family: 'TT Commons', sans-serif;
             margin-left: calc(230px + 8px);
+            transition: background-color 0.3s;
+        }
+
+        body.dark {
+            background-color: #121212;
         }
 
         .barraLateral {
+            background-color: #6C63FF;
             color: white;
             padding: 1.5rem 0.75rem;
             display: flex;
@@ -136,6 +266,10 @@ document.addEventListener('DOMContentLoaded', function() {
             width: 230px;
             border-radius: 12px;
             z-index: 1;
+        }
+
+        body.dark .barraLateral {
+            background-color: #1E1E2E;
         }
 
         .logo {
@@ -197,27 +331,123 @@ document.addEventListener('DOMContentLoaded', function() {
             width: 1.2rem;
             stroke-width: 2.5px;
         }
+
+        /* Estilos para o menu mobile */
+        .mobile-menu-container {
+            display: none;
+        }
+
+        .hamburger-btn {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: white;
+            z-index: 1000;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            justify-content: flex-start;
+        }
+
+        .mobile-content {
+            width: 80%;
+            height: 100%;
+            background-color: #6C63FF;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark .mobile-content {
+            background-color: #1E1E2E;
+        }
+
+        .mobile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-user-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-action-btn {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .mobile-nav {
+            flex: 1;
+            overflow-y: visible;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0;
+        }
+
+        .mobile-nav .itemMenu a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px;
+            font-size: 1rem;
+            color: white;
+        }
+
+        .mobile-footer {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+
+        .mobile-footer .itemMenu {
+            margin: 0;
+        }
+
         @media (max-width: 600px) {
             body {
-                margin-left: 70px;
+                margin-left: 0;
             }
             .barraLateral {
-                width: 60px;
-                min-width: 60px;
-                padding: 1rem 0.3rem;
-            }
-            .logo img {
-                width: 40px;
-            }
-            .itemMenu span {
                 display: none;
             }
-            .menuNav ul {
-                margin-top: 0.5rem;
+            .mobile-menu-container {
+                display: block;
             }
-            .rodapeBarra {
-                flex-direction: column;
-                gap: 0.2rem;
+            .hamburger-btn {
+                display: block;
             }
         }
     `;
