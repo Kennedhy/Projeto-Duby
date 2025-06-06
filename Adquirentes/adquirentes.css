@@ -48,3 +48,110 @@
     gap: 1rem;
     margin-bottom: 1rem;
 }
+@media (max-width: 600px) {
+    .cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+    }
+    .cabecalho h1 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    } 
+    .conteudoPrincipal {
+        margin-right: 0;
+        padding: 1rem;
+    }
+    .barraNotificacao {
+        display: none;
+    }
+    .cabecalhoTabela {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cabecalhoTabela h3 {
+        margin-bottom: 0.5rem;
+    }
+    .tabela {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .tabela th, .tabela td {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+    .tabela tr {
+        font-size: 0.75rem;
+    }
+    .tabela .linhaTotal {
+        font-size: 0.875rem;
+    }
+    .tabelaContainer {
+        padding: 0;
+    }
+    .botaoAdicionar {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoAba {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoAcao {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoOverlay button {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .cabecalhoTabela {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .cabecalhoTabela h3 {
+        margin-bottom: 0;
+    }
+    .tabela {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .tabela th, .tabela td {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+    .tabela tr {
+        font-size: 0.75rem;
+    }
+    .tabela .linhaTotal {
+        font-size: 0.875rem;
+    }
+    .tabelaContainer {
+        padding: 0;
+    }
+    .botaoAdicionar {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .abasRelatorio{
+        width: 100%;
+    }
+    .botaoAba {
+        font-size: 12px;
+        padding: 1px;
+    }
+    .botaoAcao {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoOverlay button {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoAdicionar{
+        font-size: 11px;
+        font-weight: 500;
+        padding: 8px;
+    }
+}
