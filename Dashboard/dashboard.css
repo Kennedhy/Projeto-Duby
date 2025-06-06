@@ -871,3 +871,217 @@ thead tr th:first-child {
     font-weight: 500;
     color: var(--texto);
 }
+
+@media (max-width: 600px) {
+    .cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+    }
+    .cabecalho h1 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    } 
+    .conteudoPrincipal {
+        margin-right: 0;
+        padding: 1rem;
+    }
+    .barraNotificacao {
+        display: none;
+    }
+    .cardPrincipal {
+        width: 100%;
+        margin-bottom: 1rem;
+        align-self: flex-end;
+    }
+    .cardsResumo {
+        grid-template-columns: 1fr;
+    }
+    .iconeCard.vermelho, .iconeCard.verde, .iconeCard.azul, .iconeCard.amarelo {
+        display: none;
+    }
+    .iconeResumo{
+        display: none;
+    }
+    .cardsFundo .valor{
+        font-size: 16px;
+    }
+    
+
+    .containerGraficos {
+        flex-direction: column;
+    }
+
+    .containerGraficos .cartaoGrafico {
+        width: 100%;
+    }
+
+    .containerCards {
+        grid-template-columns: 1fr;
+    }
+
+    .graficoComCards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meioGrafico {
+        width: 100%;
+        height: 300px;
+    }
+    .containerTotal {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .cartaoCalendario {
+        width: 100%;
+    }
+    .cabecalhoTabela {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cabecalhoTabela h3 {
+        margin-bottom: 0.5rem;
+    }
+    .tabela {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .tabela th, .tabela td {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+    .tabela tr {
+        font-size: 0.75rem;
+    }
+    .tabela .linhaTotal {
+        font-size: 0.875rem;
+    }
+    .tabelaContainer {
+        padding: 0;
+    }
+    .botaoAdicionar {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoAba {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoAcao {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoOverlay button {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .cabecalhoGrafico h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+    .cabecalhoGrafico p {
+        font-size: 0.75rem;
+        color: var(--texto-p);
+        margin-bottom: 1rem;
+    }
+    .grafico {
+        height: 200px;
+    }
+    .cartaoGrafico {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .containerGraficos {
+        flex-direction: column;
+    }
+    .containerGraficos .cartaoGrafico {
+        width: 100%;
+    }
+    .containerCards {
+        grid-template-columns: 1fr;
+    }
+    .graficoComCards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .meioGrafico {
+        width: 100%;
+        height: 300px;
+    }
+    .containerTotal {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .containerCards {
+        grid-template-columns: 1fr;
+    }
+    .containerCards .cardStatus {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .containerCards .cardStatusIcone {
+        margin-bottom: 0.5rem;
+    }
+    .containerCards .cardStatusTexto {
+        text-align: center;
+    }
+    .cartaoCalendario {
+        width: 100%;
+    }
+    .cabecalhoTabela {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .cabecalhoTabela h3 {
+        margin-bottom: 0;
+    }
+    .tabela {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .tabela th, .tabela td {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+    .tabela tr {
+        font-size: 0.75rem;
+    }
+    .tabela .linhaTotal {
+        font-size: 0.875rem;
+    }
+    .tabelaContainer {
+        padding: 0;
+    }
+    .botaoAdicionar {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .abasRelatorio{
+        width: 100%;
+    }
+    .botaoAba {
+        font-size: 12px;
+        padding: 1px;
+    }
+    .botaoAcao {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoOverlay button {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    .botaoAdicionar{
+        font-size: 11px;
+        font-weight: 500;
+        padding: 8px;
+    }
+}
