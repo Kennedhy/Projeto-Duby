@@ -118,8 +118,12 @@ body::-webkit-scrollbar {
 
 /* Barra Lateral */
 
-.barraLateral {
+.barraLateral , .mobileCard {
   background: var(--barra-lateral);
+}
+
+.menuBtn {
+  color: var(--texto);
 }
 
 /* Barra Notificacao*/

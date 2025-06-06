@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Criação do sidebar original (para desktop)
     const sidebar = document.createElement('aside');
     sidebar.className = 'barraLateral';
     
@@ -80,16 +79,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(sidebar);
     
-    // Criação do menu mobile (aparece apenas em telas pequenas)
     const mobileMenu = document.createElement('div');
     mobileMenu.className = 'mobile-menu-container';
     mobileMenu.innerHTML = `
-        <button class="hamburger-btn">
+        <button class="menuBtn">
             <i class="menuIcone" data-lucide="menu"></i>
         </button>
-        <div class="mobile-overlay">
-            <div class="mobile-content">
-                <div class="mobile-header">
+        <div class="mobileOverlay">
+            <div class="mobileCard">
+                <div class="mobileHeader">
                     <button class="close-btn">
                         <i class="menuIcone" data-lucide="x"></i>
                     </button>
@@ -110,50 +108,50 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li class="itemMenu">
                             <a href="../Dashboard/dashboard.html" data-page="dashboard.html">
                                 <i class="menuIcone" data-lucide="layout-dashboard"></i>
-                                <span>Dashboard</span>
+                                <span class="menu-text">Dashboard</span>
                             </a>
                         </li>
                         <li class="itemMenu">
                             <a href="../Conciliacao/conciliacao.html" data-page="conciliacao.html">
                                 <i class="menuIcone" data-lucide="clipboard-check"></i>
-                                <span>Conciliação</span>
+                                <span class="menu-text">Conciliação</span>
                             </a>
                         </li>
                         <li class="itemMenu">
                             <a href="../Usuarios/usuarios.html" data-page="usuarios.html">
                                 <i class="menuIcone" data-lucide="users"></i>
-                                <span>Usuários</span>
+                                <span class="menu-text">Usuários</span>
                             </a>
                         </li>
                         <li class="itemMenu">
                             <a href="../Relatorios/relatorios.html" data-page="relatorios.html">
                                 <i class="menuIcone" data-lucide="file-text"></i>
-                                <span>Relatórios</span>
+                                <span class="menu-text">Relatórios</span>
                             </a>
                         </li>
                         <li class="itemMenu">
                             <a href="../Graficos/graficos.html" data-page="graficos.html">
                                 <i class="menuIcone" data-lucide="pie-chart"></i>
-                                <span>Gráficos</span>
+                                <span class="menu-text">Gráficos</span>
                             </a>
                         </li>
                         <li class="itemMenu">
                             <a href="../Contas/contas.html" data-page="contas.html">
                                 <i class="menuIcone" data-lucide="building-2"></i>
-                                <span>Contas Bancárias</span>
+                                <span class="menu-text">Contas Bancárias</span>
                             </a>
                         </li>
                         <li class="itemMenu">
                             <a href="../Adquirentes/adquirentes.html" data-page="adquirentes.html">
                                 <i class="menuIcone" data-lucide="credit-card"></i>
-                                <span>Adquirentes</span>
+                                <span class="menu-text">Adquirentes</span>
                             </a>
                         </li>
                     </ul>
                 </nav>
                 <div class="mobile-footer">
                     <div class="itemMenu rodape">
-                        <a class="tema">
+                        <a class="tema-mobile">
                             <i class="menuIcone" data-lucide="moon"></i>
                         </a>
                     </div>
@@ -178,7 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.body.appendChild(mobileMenu);
     
-    // Função para destacar o item ativo no menu
     function highlightActiveMenuItem() {
         const currentPage = window.location.pathname.split('/').pop();
         const menuLinks = document.querySelectorAll('.itemMenu a, .mobile-footer a');
@@ -195,45 +192,46 @@ document.addEventListener('DOMContentLoaded', function() {
     
     highlightActiveMenuItem();
     
-    // Tema dark/light
-    function applyTheme(isDark) {
-        document.body.classList.toggle('dark', isDark);
-        const themeColor = isDark ? '#1E1E2E' : '#6C63FF';
-        document.querySelector('.mobile-content').style.backgroundColor = themeColor;
+    function toggleTheme() {
+        const isDark = document.body.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
 
-    const themeButton = document.querySelector('.tema');
-    if (themeButton) {
-        const savedTheme = localStorage.getItem('theme');
-        const isDark = savedTheme === 'dark';
-        
-        applyTheme(isDark);
-        
-        themeButton.addEventListener('click', () => {
-            const newIsDark = !document.body.classList.contains('dark');
-            localStorage.setItem('theme', newIsDark ? 'dark' : 'light');
-            applyTheme(newIsDark);
-        });
+    const themeButtons = document.querySelectorAll('.tema, .tema-mobile');
+    themeButtons.forEach(button => {
+        button.addEventListener('click', toggleTheme);
+    });
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
     }
 
-    // Controle do menu mobile
-    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const hamburgerBtn = document.querySelector('.menuBtn');
     const closeBtn = document.querySelector('.close-btn');
-    const mobileOverlay = document.querySelector('.mobile-overlay');
+    const mobileOverlay = document.querySelector('.mobileOverlay');
+    
+    function openMenu() {
+        mobileOverlay.style.display = 'flex';
+        hamburgerBtn.style.display = 'none';
+    }
+    
+    function closeMenu() {
+        mobileOverlay.style.display = 'none';
+        hamburgerBtn.style.display = 'block';
+    }
     
     if (hamburgerBtn && closeBtn && mobileOverlay) {
-        hamburgerBtn.addEventListener('click', () => {
-            mobileOverlay.style.display = 'flex';
-            hamburgerBtn.style.display = 'none';
-        });
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
         
-        closeBtn.addEventListener('click', () => {
-            mobileOverlay.style.display = 'none';
-            hamburgerBtn.style.display = 'block';
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                closeMenu();
+            }
         });
     }
 
-    // Estilos
     const style = document.createElement('style');
     style.textContent = `
         * { 
@@ -248,12 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: background-color 0.3s;
         }
 
-        body.dark {
-            background-color: #121212;
-        }
-
         .barraLateral {
-            background-color: #6C63FF;
             color: white;
             padding: 1.5rem 0.75rem;
             display: flex;
@@ -266,10 +259,6 @@ document.addEventListener('DOMContentLoaded', function() {
             width: 230px;
             border-radius: 12px;
             z-index: 1;
-        }
-
-        body.dark .barraLateral {
-            background-color: #1E1E2E;
         }
 
         .logo {
@@ -333,24 +322,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         /* Estilos para o menu mobile */
+
         .mobile-menu-container {
             display: none;
         }
 
-        .hamburger-btn {
+        .menuBtn {
             display: none;
             position: fixed;
             top: 20px;
             left: 20px;
             background: none;
             border: none;
-            color: white;
             z-index: 1000;
             cursor: pointer;
             padding: 10px;
         }
 
-        .mobile-overlay {
+        .mobileOverlay {
             display: none;
             position: fixed;
             top: 0;
@@ -362,25 +351,22 @@ document.addEventListener('DOMContentLoaded', function() {
             justify-content: flex-start;
         }
 
-        .mobile-content {
+        .mobileCard {
             width: 80%;
-            height: 100%;
-            background-color: #6C63FF;
+            height: calc(100% - 16px);
             padding: 20px;
             display: flex;
             flex-direction: column;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin: 8px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
         }
 
-        body.dark .mobile-content {
-            background-color: #1E1E2E;
-        }
-
-        .mobile-header {
+        .mobileHeader {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .close-btn {
@@ -389,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
-            padding: 10px;
+            padding: 5px;
         }
 
         .mobile-user-actions {
@@ -411,17 +397,28 @@ document.addEventListener('DOMContentLoaded', function() {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             padding: 0;
         }
 
         .mobile-nav .itemMenu a {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 12px;
+            gap: 12px;
+            padding: 10px 12px;
             font-size: 1rem;
             color: white;
+            border-radius: 6px;
+        }
+
+        .menu-text {
+            display: block !important;
+            color: white !important;
+            font-size: 0.95rem !important;
+        }
+
+        .mobile-nav .itemMenu a.ativo {
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .mobile-footer {
@@ -436,6 +433,13 @@ document.addEventListener('DOMContentLoaded', function() {
             margin: 0;
         }
 
+        .mobile-footer a {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         @media (max-width: 600px) {
             body {
                 margin-left: 0;
@@ -446,7 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .mobile-menu-container {
                 display: block;
             }
-            .hamburger-btn {
+            .menuBtn {
                 display: block;
             }
         }
