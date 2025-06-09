@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         .mobileCard {
-            width: 80%;
+            width: 60%;
             height: calc(100% - 16px);
             padding: 20px;
             display: flex;

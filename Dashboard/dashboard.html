@@ -69,8 +69,6 @@
                     <p>Último mês</p>
                 </div>
 
-
-
                 <div class="cardsFundo">
                     <div class="card verde" data-tab="recebimentos">
                         <div class="iconeCard verde">
@@ -113,17 +111,21 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="conteudoAba">
                 <div class="aba ativo" id="recebimentos">
+                    
                     <section class="secaoGraficos">
                         <h2>Gráficos De Recebimentos</h2>
                         <div class="containerGraficos">
                             <div class="cartaoGrafico">
                                 <div class="cabecalhoGrafico">
                                     <h3>Recebimentos por Mês</h3>
+                                    <span class="valorGrafico">R$ 21.400</span>
                                     <p>Distribuição dos valores recebidos por mês</p>
+                                    
                                 </div>
                                 <div class="grafico">
                                     <canvas id="graficoRecebimentosMes"></canvas>
@@ -133,6 +135,7 @@
                                 <div class="cabecalhoGrafico">
                                     <h3>Métodos De Pagamento</h3>
                                     <p>Distribuição dos valores recebidos por método de pagamento</p>
+                                    <span class="valorGrafico">Crédito: 35%</span>
                                 </div>
                                 <div class="grafico">
                                     <canvas id="graficoMetodosPagamento"></canvas>
@@ -143,6 +146,7 @@
                             <div class="cabecalhoGrafico">
                                 <h3>Recebimentos Bruto X Líquido</h3>
                                 <p>Comparação entre valores brutos e líquidos por mês</p>
+                                <span class="valorGrafico">Bruto: R$ 27.500</span>
                             </div>
                             <div class="grafico">
                                 <canvas id="graficoBrutoLiquido"></canvas>
@@ -152,6 +156,7 @@
                             <div class="cabecalhoGrafico">
                                 <h3>Recebimentos por Bandeira</h3>
                                 <p>Distribuição dos recebimentos por bandeira de cartão</p>
+                                <span class="valorGrafico">Visa: R$ 13.500</span>
                             </div>
                             <div class="grafico">
                                 <canvas id="graficoBandeiras"></canvas>

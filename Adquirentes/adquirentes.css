@@ -1,12 +1,4 @@
-.abasRelatorio {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 16px;
-    width: 80%;
-}
+
 
 .botaoAba {
     background: none;
