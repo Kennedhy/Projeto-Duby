@@ -394,7 +394,7 @@ function inicializarGraficosDivergencias() {
             data: {
                 labels: ['Conciliados', 'Divergências', 'Pendentes'],
                 datasets: [{
-                    data: [80, 14, 6],
+                    data: [77, 13, 10],
                     backgroundColor: [ '#4ADE80', '#F87171', '#FBBF24' ],
                     borderColor: '#FFFFFF',
                     borderWidth: 2,

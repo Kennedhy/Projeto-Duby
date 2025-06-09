@@ -15,7 +15,7 @@ btnCancel.addEventListener('click', () => {
   overlay.style.display = 'none';
 });
 
-function adicionarUsuarioNaTabela(nome, email, funcao, permissao) {
+function adicionarUsuarioNaTabela(nome, email, funcao) {
   const tabela = document.getElementById('usuariosTabela');
   const novaLinha = document.createElement('tr');
 
@@ -38,11 +38,16 @@ function adicionarUsuarioNaTabela(nome, email, funcao, permissao) {
       classeFuncao = 'tag';
   }
 
+  // Gera data e horário do cadastro
+  const agora = new Date();
+  const data = agora.toLocaleDateString();
+  const horario = agora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
   novaLinha.innerHTML = `
     <td>${nome}</td>
     <td>${email}</td>
     <td><span class="${classeFuncao}">${funcao}</span></td>
-    <td>${permissao}</td>
+    <td>${data}, ${horario}</td>
   `;
   tabela.appendChild(novaLinha);
 
@@ -80,7 +85,7 @@ form.addEventListener('submit', function(e) {
     // Pegue os valores dos campos adicionais
     const funcao = document.getElementById('funcaoUsuario').value;
     const permissao = document.getElementById('permissaoUsuario').value;
-    adicionarUsuarioNaTabela(nome.value, email.value, funcao, permissao);
+    adicionarUsuarioNaTabela(nome.value, email.value, funcao);
 
     // Limpa o formulário e fecha o modal
     form.reset();

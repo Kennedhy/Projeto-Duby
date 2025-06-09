@@ -29,22 +29,32 @@
     height: 100%;
 }
 
-@media (max-width: 600px) {
-    .cabecalho {
+@media (max-width:600px) {
+    .conteudo {
         flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 0.5rem;
+    } 
+    .cabecalho {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        width: 100%;
     }
     .cabecalho h1 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-    } 
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
     .conteudoPrincipal {
         margin-right: 0;
         padding: 1rem;
     }
     .barraNotificacao {
         display: none;
+    }
+    .abasRelatorio {
+        width: 100%;
     }
     .cabecalhoTabela {
         flex-direction: column;

@@ -124,6 +124,10 @@
 .tabela tr:hover {
         background-color: rgb(233, 233, 234);        
     }
+
+#btnOpenForm {
+  padding: 8px;
+}    
 .overlay {
     position: fixed;
     top: 0;
