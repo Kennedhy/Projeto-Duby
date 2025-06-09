@@ -606,8 +606,21 @@ thead tr th:first-child {
 }
 
 @media (max-width: 600px) {
-            body {
-                margin-left: 70px;
+            .conteudo {
+          flex-direction: column;
+            } 
+            .cabecalho {
+                display: flex;
+                justify-content: center; 
+                align-items: center;
+                width: 100%;
+            }
+            .cabecalho h1 {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
             }
             .barraLateral {
                 width: 60px;

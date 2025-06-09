@@ -43,7 +43,7 @@
                   <th>Último Login</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="usuariosTabela">
                 <tr>
                   <td>Sid</td>
                   <td>Sid.silva@example.com</td>
@@ -88,14 +88,14 @@
                 <i data-lucide="user"></i>
             </div>
             <div class="infoPerfil">
-                <h3>Sid Silva</h3>
-                <p>Sid.silva@example.com</p>
+                <h3 id="perfilNome">Sid Silva</h3>
+                <p id="perfilEmail">Sid.silva@example.com</p>
             </div>
         </div>
 
         <div id="funcao">
         <h3>Função</h3>
-        <p><span class="tag admin">Administrador</span></p> 
+        <p id="perfilFuncao"><span class="tag admin">Administrador</span></p> 
         </div>
 
         <div id="permissao"><h3>Permissões</h3>
@@ -138,18 +138,18 @@
         <div class="modal">
           <h2>Adicionar Novo Usuário</h2>
           <p>Preencha os dados abaixo para criar um novo Usuário no sistema.</p>
-          <form class="form-grid">
+          <form class="form-grid" id="formAddUsuario">
             <div>
-              <label>Nome Completo</label>
-              <input type="text" />
+              <label for="nomeUsuario">Nome Completo</label>
+              <input type="text" id="nomeUsuario"/>
             </div>
             <div>
-              <label>E-mail</label>
-              <input type="email" />
+              <label for="emailUsuario">E-mail</label>
+              <input type="email" id="emailUsuario"/>
             </div>
             <div>
-              <label>Função</label>
-              <select>
+              <label for="funcaoUsuario">Função</label>
+              <select id="funcaoUsuario">
                 <option>Selecione uma função</option>
                 <option>Administrador</option>
                 <option>Gerente</option>
@@ -158,22 +158,22 @@
               </select>
             </div>
             <div>
-              <label>Permissões</label>
-              <select>
+              <label for="permissaoUsuario">Permissões</label>
+              <select id="permissaoUsuario">
                 <option>Selecione o nível de permissão</option>
                 <option>Básico</option>
                 <option>Avançado</option>
               </select>
             </div>
             <div>
-              <label>Senha</label>
-              <input type="password" />
+              <label for="senhaUsuario">Senha</label>
+              <input type="password" id="senhaUsuario" />
             </div>
             <div>
-              <label>Confirmar Senha</label>
-              <input type="password" />
+              <label for="confirmarSenhaUsuario">Confirmar Senha</label>
+              <input type="password" id="confirmarSenhaUsuario" />
             </div>
-            <div class="form-actions">
+              <div class="form-actions">
               <button type="button" id="btnCancel">Cancelar</button>
               <button type="submit">Adicionar Usuário</button>
             </div>

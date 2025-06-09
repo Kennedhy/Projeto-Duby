@@ -118,7 +118,12 @@
     background-color: #322871;
 
 }
-
+.tabela td {
+        cursor: pointer;        
+    }
+.tabela tr:hover {
+        background-color: rgb(233, 233, 234);        
+    }
 .overlay {
     position: fixed;
     top: 0;
@@ -265,4 +270,47 @@
 
 .cabecalhoBotao:hover {
     background-color: var(--corCinzaClaro);
+}
+
+@media (max-width:600px) {
+    .conteudo {
+        flex-direction: column;
+    } 
+    .cabecalho {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        width: 100%;
+    }
+    .cabecalhoDireita {
+        display: none;
+    }
+    .cabecalho h1 {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .cartaoTabela {
+        width: 100%;
+    }
+    .tabela {
+        width: 100%;
+        max-width: 100%;
+        font-size: 12px;         
+    }
+    .tabela th, .tabela td {
+        padding: 8px 6px;        
+    }
+    .tabela td {
+        cursor: pointer;        
+    }
+    .modal {
+        max-width: 90%;
+    }
+    .cartao {
+        width: 100%;
+        max-width: 100%;
+    }
 }
