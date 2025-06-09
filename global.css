@@ -230,6 +230,11 @@ body::-webkit-scrollbar {
     width: 80%;
 }
 
+.abasRelatorio.fr5 {
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+}
+
 .abasRelatorio.fr2 {
   grid-template-columns: repeat(2, 1fr);
   width: 30%;

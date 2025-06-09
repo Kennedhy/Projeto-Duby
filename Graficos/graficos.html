@@ -1,45 +1,254 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gráficos – Dashboard</title>
     <link rel="stylesheet" href="../global.css" />
-    <link rel="stylesheet" href="graficos.css" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"
-      defer
-    ></script>
+    <link rel="stylesheet" href="dashboard.css" /> 
+    <link rel="stylesheet" href="graficos.css" /> 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="../Assets/sidebar.js" defer></script>
-  </head>
-  <body>
+</head>
+<body>
     <main class="conteudoPrincipal">
-      <header class="cabecalho">
-        <h1>Graficos</h1>
-      </header>
+        <header class="cabecalho">
+            <h1>Gráficos e Relatórios</h1>
+        </header>
 
-      <div class="abasRelatorio fr4">
-        <button class="botaoAba ativo" data-relatorio="aba1">Recebimentos</button>
-        <button class="botaoAba" data-relatorio="aba2">Pagamentos</button>
-        <button class="botaoAba" data-relatorio="aba3">Taxas</button>
-        <button class="botaoAba" data-relatorio="aba4">Divergências</button>
-      </div>
+        <div class="abasRelatorio fr5">
+            <button class="botaoAba ativo" data-relatorio="aba1">Recebimentos</button>
+            <button class="botaoAba" data-relatorio="aba2">Pagamentos</button>
+            <button class="botaoAba" data-relatorio="aba3">Taxas</button>
+            <button class="botaoAba" data-relatorio="aba4">Divergências</button>
+            <button class="botaoAba" data-relatorio="aba5">Comparativos</button>
+        </div>
 
-      <div class="trocaDeAbas ativo" id="aba1"></div>
+        <div class="trocaDeAbas ativo" id="aba1">
+            <section class="secaoGraficos">
+                <div class="containerGraficos">
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Recebimentos por Mês</h3>
+                            <p>Total de vendas brutas em cada mês.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoRecebimentosMes"></canvas>
+                        </div>
+                    </div>
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Métodos de Pagamento</h3>
+                            <p>Percentual de vendas por método.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoMetodosPagamento"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Recebimentos Bruto X Líquido</h3>
+                        <p>Comparativo mensal entre o valor total vendido e o valor líquido após taxas.</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoBrutoLiquido"></canvas>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Recebimentos por Bandeira</h3>
+                        <p>Volume de vendas consolidado por bandeira de cartão.</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoBandeiras"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-      <div class="trocaDeAbas" id="aba2"></div>
+        <div class="trocaDeAbas" id="aba2">
+             <section class="secaoGraficos">
+                <div class="containerGraficos">
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Pagamentos por Mês</h3>
+                            <p>Total de despesas pagas em cada mês.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoPagamentosMes"></canvas>
+                        </div>
+                    </div>
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Categorias de Pagamentos</h3>
+                            <p>Distribuição das despesas por categoria.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoCategoriasPagamento"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Histórico de Pagamentos por Categoria</h3>
+                        <p>Evolução mensal dos gastos em cada categoria.</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoPagamentosCategoria"></canvas>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Pagamentos por Método</h3>
+                        <p>Volume de pagamentos por método utilizado (transferência, boleto, etc).</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoPagamentosMetodo"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-      <div class="trocaDeAbas" id="aba3"></div>
+        <div class="trocaDeAbas" id="aba3">
+             <section class="secaoGraficos">
+                <div class="containerGraficos">
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Taxa Média Efetiva por Mês</h3>
+                            <p>Variação da taxa média mensal cobrada nas transações.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoTaxaMediaMes"></canvas>
+                        </div>
+                    </div>
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Taxa Média por Bandeira</h3>
+                            <p>Comparativo da taxa média aplicada para cada bandeira.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoTaxaMediaBandeira"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Valor Total de Taxas por Adquirente</h3>
+                        <p>Soma dos valores pagos em taxas para cada adquirente.</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoTotalTaxasAdquirente"></canvas>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Total de Taxas vs. Faturamento Bruto</h3>
+                        <p>Comparativo mensal do faturamento bruto com o valor total pago em taxas.</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoTaxasVsFaturamento"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-      <div class="trocaDeAbas" id="aba4"></div>
-      
+        <div class="trocaDeAbas" id="aba4">
+            <section class="secaoGraficos">
+                <div class="containerGraficos">
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Divergências por Mês</h3>
+                            <p>Quantidade de divergências identificadas por mês.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoDivergenciasMes"></canvas>
+                        </div>
+                    </div>
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Tipos de Divergências</h3>
+                            <p>Distribuição dos tipos de divergências encontradas.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoTiposDivergencias"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Valor das Divergências por Mês</h3>
+                        <p>Impacto financeiro total das divergências a cada mês.</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoValorDivergencias"></canvas>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Divergências por Adquirente</h3>
+                        <p>Distribuição dos tipos de divergências por adquirente.</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoDivergenciasAdquirente"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="trocaDeAbas" id="aba5">
+            <section class="secaoGraficos">
+                <div class="containerGraficos">
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Faturamento Anual (Ano vs. Ano)</h3>
+                            <p>Comparativo do faturamento mensal de 2025 com 2024.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoFaturamentoAnual"></canvas>
+                        </div>
+                    </div>
+                    <div class="cartaoGrafico">
+                        <div class="cabecalhoGrafico">
+                            <h3>Comparativo de Ticket Médio</h3>
+                            <p>Evolução do valor médio por transação ao longo dos meses.</p>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="graficoTicketMedio"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Volume de Vendas por Adquirente</h3>
+                        <p>Distribuição percentual do total vendido por cada adquirente.</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoVolumeAdquirente"></canvas>
+                    </div>
+                </div>
+                <div class="cartaoGrafico larguraTotal">
+                    <div class="cabecalhoGrafico">
+                        <h3>Eficiência por Adquirente (Faturamento vs. Taxas)</h3>
+                        <p>Relação entre o que cada adquirente fatura e o quanto cobra em taxas.</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="graficoEficienciaAdquirente"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
+
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        lucide.createIcons();
-      });
+        document.addEventListener("DOMContentLoaded", function () {
+            lucide.createIcons();
+        });
     </script>
-    <script src="../troca-de-abas.js"></script>
-  </body>
+    <script src="../troca-de-abas.js"></script> 
+    <script src="graficos.js"></script> 
+</body>
 </html>
