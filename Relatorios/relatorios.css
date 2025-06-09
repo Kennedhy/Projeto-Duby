@@ -200,6 +200,7 @@
 .textoVermelho {
     color: var(--corVermelho);
 }
+
 @media (max-width:600px) {
     .conteudo {
         flex-direction: column;
