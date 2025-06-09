@@ -681,3 +681,9 @@ thead tr th:first-child {
     height: 250px;
     position: relative;
 }
+
+@media (max-width:600px) {
+      .barraNotificacao {
+        display: none;
+    }
+}
