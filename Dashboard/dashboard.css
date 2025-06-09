@@ -213,7 +213,6 @@
     background-color: var(--cartoes);
     margin-left: 1rem;
     margin-right: 1rem;
-    box-shadow: 0px 6px 24px rgba(54, 41, 183, 0.1);
 }
 
 
@@ -295,14 +294,6 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -759,17 +750,7 @@ thead tr th:first-child {
     .card.ativo {
         margin: 0;
         }
-    }
-    .card.ativo {
-        margin: 0;
-        }
-    }
-    .card.ativo {
-        margin: 0;
-        }
     .cardsFundo .valor{
-        font-size: 1rem;
-        font-size: 1rem;
         font-size: 1rem;
     }
     .containerGraficos {
