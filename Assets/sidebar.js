@@ -79,12 +79,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(sidebar);
     
+    const pageTitle = document.querySelector('h1')?.textContent || 'Página';
+    
     const mobileMenu = document.createElement('div');
     mobileMenu.className = 'mobile-menu-container';
     mobileMenu.innerHTML = `
-        <button class="menuBtn">
-            <i class="menuIcone" data-lucide="menu"></i>
-        </button>
+        <div class="mobile-header-fixed">
+            <button class="menuBtn">
+                <i class="menuIcone" data-lucide="menu"></i>
+            </button>
+            <h1 class="mobile-page-title">${pageTitle}</h1>
+            <div class="mobile-header-actions">
+                <i class="menuIcone" data-lucide="bell"></i>
+            </div>
+        </div>
         <div class="mobileOverlay">
             <div class="mobileCard">
                 <div class="mobileHeader">
@@ -233,17 +241,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     let lastScrollTop = 0;
-    const scrollThreshold = 50;
-
+    const mobileHeader = document.querySelector('.mobile-header-fixed');
+    
     window.addEventListener('scroll', function() {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
-            hamburgerBtn.style.transform = 'translateY(-100px)';
-            hamburgerBtn.style.opacity = '0';
+        if (currentScroll > lastScrollTop && currentScroll > 50) {
+            mobileHeader.style.transform = 'translateY(-100%)';
         } else {
-            hamburgerBtn.style.transform = 'translateY(0)';
-            hamburgerBtn.style.opacity = '1';
+            mobileHeader.style.transform = 'translateY(0)';
         }
         
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
@@ -337,7 +343,38 @@ document.addEventListener('DOMContentLoaded', function() {
             stroke-width: 2.5px;
         }
 
-        /* Estilos para o menu mobile */
+        .mobile-header-fixed {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            z-index: 998;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-page-title {
+            color: black;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            padding: 0 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mobile-header-actions {
+            display: flex;
+            gap: 15px;
+        }
 
         .mobile-menu-container {
             display: none;
@@ -345,16 +382,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         .menuBtn {
             display: none;
-            position: fixed;
-            top: 20px;
-            left: 20px;
             background: none;
             border: none;
-            z-index: 1000;
+            color: black;
             cursor: pointer;
-            padding: 10px;
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            opacity: 1;
+            padding: 5px;
         }
 
         .mobileOverlay {
@@ -468,8 +500,19 @@ document.addEventListener('DOMContentLoaded', function() {
             .mobile-menu-container {
                 display: block;
             }
+            .mobile-header-fixed {
+                display: flex;
+            }
             .menuBtn {
                 display: block;
+            }
+            
+            .cabecalho h1 {
+                display: none;
+            }
+            
+            .conteudoPrincipal {
+                margin-top: 10px;
             }
         }
     `;
