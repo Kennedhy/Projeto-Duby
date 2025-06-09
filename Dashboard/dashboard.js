@@ -372,8 +372,7 @@ function inicializarOutrosGraficosPagamentos() {
                     legend: { position: 'bottom', labels: { boxWidth: 8, usePointStyle: true, pointStyle: 'circle', padding: 15, font: { size: 11 } } },
                     tooltip: { callbacks: { label: (context) => `${context.dataset.label}: ${formatarValorBR(context.raw)}` } },
                     datalabels: {
-                        formatter: (value) => (value/1000).toFixed(1) + 'k',
-                        color: (context) => context.dataset.backgroundColor === '#ddede0' ? '#333' : '#fff'
+                         display: false 
                     }
                 },
                 scales: {
@@ -540,8 +539,7 @@ function inicializarOutrosGraficosDivergencias() {
                     legend: { position: 'bottom', labels: { boxWidth: 8, usePointStyle: true, pointStyle: 'circle', padding: 15, font: { size: 11 } } },
                     tooltip: { callbacks: { label: (context) => `${context.dataset.label}: ${context.raw} ocorrências` } },
                     datalabels: {
-                        formatter: (value) => value,
-                        color: (context) => context.dataset.backgroundColor === '#ddede0' ? '#333' : '#fff'
+                        display: false
                     }
                 },
                 scales: {

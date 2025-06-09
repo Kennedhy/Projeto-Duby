@@ -652,7 +652,7 @@ thead tr th:first-child {
 .cabecalhoGrafico p {
     font-size: 0.75rem;
     color: var(--texto-p);
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
 }
 
 .grafico {
@@ -660,11 +660,7 @@ thead tr th:first-child {
     position: relative;
 }
 
-.valorGrafico {
-  display: flex;
-  width: fit-content;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  font-size: 1.3rem;
-  color: var(--texto-p);
+.kennedhy {
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px ;
 }
