@@ -232,6 +232,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    let lastScrollTop = 0;
+    const scrollThreshold = 50;
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+            hamburgerBtn.style.transform = 'translateY(-100px)';
+            hamburgerBtn.style.opacity = '0';
+        } else {
+            hamburgerBtn.style.transform = 'translateY(0)';
+            hamburgerBtn.style.opacity = '1';
+        }
+        
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
     const style = document.createElement('style');
     style.textContent = `
         * { 
@@ -336,6 +353,8 @@ document.addEventListener('DOMContentLoaded', function() {
             z-index: 1000;
             cursor: pointer;
             padding: 10px;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 1;
         }
 
         .mobileOverlay {
