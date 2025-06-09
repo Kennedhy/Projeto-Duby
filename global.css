@@ -659,3 +659,8 @@ thead tr th:first-child {
     height: 250px;
     position: relative;
 }
+
+.kennedhy {
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px ;
+}

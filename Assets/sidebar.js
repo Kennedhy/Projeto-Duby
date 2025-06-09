@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 0;
             left: 0;
             right: 0;
-            
+            background-color: var(--cartoes);
             backdrop-filter: blur(10px);
             padding: 15px 20px;
             z-index: 998;
@@ -402,13 +402,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         .mobileCard {
-            width: 60%;
-            height: calc(100% - 16px);
+            width: 65%;
+            height: 100%;
             padding: 20px;
             display: flex;
             flex-direction: column;
-            border-radius: 12px;
-            margin: 8px;
+            border-bottom-right-radius: 12px;
+            border-top-right-radius: 12px ;
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
         }
 
