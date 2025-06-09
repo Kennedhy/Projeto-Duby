@@ -1,0 +1,65 @@
+/* Adicione isso ao final do arquivo global.css */
+
+@media (max-width: 600px) {
+    .conteudoPrincipal {
+        padding: 1rem;
+    }
+    
+    .cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .abasRelatorio {
+        grid-template-columns: 1fr 2fr 2fr 2fr;
+        width: 100% !important;
+        gap: 0.5rem;
+    }
+    
+    .botaoAba {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .containerGraficos {
+        flex-direction: column;
+    }
+    
+    .containerGraficos .cartaoGrafico {
+        width: 100%;
+    }
+    
+    .cartaoGrafico {
+        padding: 1rem;
+    }
+    
+    .grafico {
+        height: 200px;
+    }
+    
+    .cabecalhoGrafico h3 {
+        font-size: 0.9rem;
+    }
+    
+    .cabecalhoGrafico p {
+        font-size: 0.7rem;
+    }
+    
+    /* Ajustes específicos para os gráficos */
+    .secaoGraficos {
+        padding-bottom: 2rem;
+    }
+    
+    /* Esconde a barra de notificação no mobile (já existe no seu CSS) */
+    .barraNotificacao {
+        display: none;
+    }
+    
+    /* Ajusta o tamanho da fonte nos dados dos gráficos */
+    .chartjs-size-monitor, 
+    .chartjs-render-monitor {
+        font-size: 10px !important;
+    }
+}
