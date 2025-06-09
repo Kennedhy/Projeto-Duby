@@ -14,7 +14,7 @@
       <h1>Ajuda</h1>
     </header>
   
-    <div class="abasRelatorio">
+    <div class="abasRelatorio fr2">
       <button class="botaoAba ativo" data-relatorio="aba1">Perguntas Frequentes</button>
       <button class="botaoAba" data-relatorio="aba2">Contato</button>
     </div>
@@ -55,36 +55,41 @@
       </div>
 
     <div class="trocaDeAbas" id="aba2">
-      <section class="cartao">
-        <div class="cartaoCabecalho">
-          <h2>Fale Conosco</h2>
+
+      <div class="flex">
+        <section class="cartao">
+          <div class="cartaoCabecalho">
+            <h2>Fale Conosco</h2>
+          </div>
+          <form class="grid3">
+            <div class="campos">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+            </div>
+            <div class="campos">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+            </div>
+            <div class="campos">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" style="resize: none;" name="mensagem" rows="6" placeholder="Descreva sua dúvida aqui..." required></textarea>
+            </div>
+            <div class="botaoSalvar"><button type="submit">Enviar</button></div>
+          </form>
+        </section>
+
+        <div class="cartao">
+          <aside>
+            <h3 style="margin-bottom: 16px; font-size: 1.1rem;">Informações de Contato</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 12px;"><strong>Telefone:</strong> (11) 99999-9999</li>
+              <li style="margin-bottom: 12px;"><strong>E-mail:</strong> suporte@empresa.com.br</li>
+              <li><strong>Horário de atendimento:</strong> Seg a Sex, 08h às 18h</li>
+            </ul>
+          </aside>
         </div>
-        <form class="formularioContato">
-          <div class="grupoFormulario">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
-          </div>
-          <div class="grupoFormulario">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
-          </div>
-          <div class="grupoFormulario">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="6" placeholder="Descreva sua dúvida aqui..." required></textarea>
-          </div>
-          <button type="submit" class="botaoEnviar">Enviar</button>
-        </form>
-      </section>
-      <div class="boxContatoWrap">
-        <aside class="contatoInfo">
-          <h3 style="margin-bottom: 16px; font-size: 1.1rem;">Informações de Contato</h3>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 12px;"><strong>Telefone:</strong> (11) 99999-9999</li>
-            <li style="margin-bottom: 12px;"><strong>E-mail:</strong> suporte@empresa.com.br</li>
-            <li><strong>Horário de atendimento:</strong> Seg a Sex, 08h às 18h</li>
-          </ul>
-        </aside>
       </div>
+
         </div>
         </main>
 

@@ -1,103 +1,3 @@
-@font-face {
-    font-family: 'TT Commons';
-    src: url('/Assets/fonts/TT\ Commons\ Regular.otf') format('opentype');
-    font-weight: 400;
-}
-
-:root {
-    --primario: #412884;
-    --background: #F6F6F6;
-    --cartoes: #FAFAFA;
-    --borda: #F0F0F0;
-    --texto: #343434;
-    --texto-p: #6B7280;
-    --sombra: 0px 4px 30px rgba(54, 41, 183, 0.07);
-    --fundo-botao: #E5E7EB;
-    --fundo-input: #fff;
-    --fundo-input-focus: #eef2ff;
-}
-
-body {
-    font-family: 'TT Commons', sans-serif;
-    background-color: var(--background);
-    color: var(--texto);
-    margin: 0;
-    padding: 0;
-}
-
-.conteudoPrincipal {
-    padding: 1.5rem;
-}
-
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.abasRelatorio {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.botaoAba {
-    background-color: var(--fundo-botao);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    color: var(--texto);
-    transition: all 0.3s ease;
-}
-
-.botaoAba:hover {
-    background-color: var(--primario);
-    color: #fff;
-}
-
-.botaoAba.ativo {
-    background-color: var(--primario);
-    color: white;
-}
-
-.conteudoAbas {
-    display: none;
-}
-
-.conteudoAbas.ativo {
-    display: block;
-}
-
-.cartao {
-    background-color: var(--cartoes);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: var(--sombra);
-    max-width: 700px;
-    margin: auto;
-}
-
-.cartaoCabecalho h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.75rem;
-    color: var(--primario);
-}
-
-.cartaoTexto summary {
-    cursor: pointer;
-    font-weight: 600;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-}
-
-.cartaoTexto p {
-    margin-top: 0.5rem;
-    color: var(--texto-p);
-}
-
 .boxContatoWrap {
   display: flex;
   flex-direction: row;
@@ -109,27 +9,6 @@ body {
   padding: 32px 24px;
   margin-top: 12px;
   flex-wrap: nowrap;
-}
-
-.formularioContato {
-  flex: 1 1 320px;
-  min-width: 280px;
-  max-width: 600px;
-  margin: 0;
-  background: linear-gradient(145deg, #ffffff, #f0f0f5);
-  padding: 1.8rem 2rem;
-  border-radius: 20px;
-  box-shadow:
-    8px 8px 16px rgba(164, 174, 192, 0.25),
-    -8px -8px 16px #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: box-shadow 0.3s ease;
-}
-
-.formularioContato:hover {
-    box-shadow:
-      12px 12px 24px rgba(164, 174, 192, 0.3),
-      -12px -12px 24px #ffffff;
 }
 
 .contatoInfo {
@@ -184,38 +63,6 @@ body {
       0 0 8px 3px rgba(65, 40, 132, 0.3);
 }
 
-.botaoEnviar {
-    align-self: flex-start;
-    background: linear-gradient(90deg, #412884, #6a4cc4);
-    color: white;
-    padding: 0.8rem 2rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 14px;
-    cursor: pointer;
-    box-shadow:
-      0 4px 15px rgba(65, 40, 132, 0.4);
-    transition:
-      background 0.4s ease,
-      box-shadow 0.4s ease,
-      transform 0.2s ease;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-}
-
-.botaoEnviar:hover {
-    background: linear-gradient(90deg, #6a4cc4, #412884);
-    box-shadow:
-      0 6px 20px rgba(106, 76, 196, 0.6);
-    transform: translateY(-3px);
-}
-
-.botaoEnviar:active {
-    transform: translateY(0);
-    box-shadow:
-      0 3px 8px rgba(65, 40, 132, 0.4);
-}
 
 @media (max-width: 700px) {
   .boxContatoWrap {

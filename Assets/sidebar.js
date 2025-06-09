@@ -349,8 +349,8 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 0;
             left: 0;
             right: 0;
-            background-color: var(--cartoes);
-            backdrop-filter: blur(10px);
+            
+            backdrop-filter: blur(6px);
             padding: 15px 20px;
             z-index: 998;
             align-items: center;
