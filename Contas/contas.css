@@ -1,25 +1,4 @@
-.abasRelatorio {
-    grid-template-columns: repeat(4, 1fr);
-    width: 80%;
-}
 
-.bancocard {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.bancoIcone {
-    padding: 1.1rem;
-    background-color: green;
-    border-radius: 6px;
-}
-
-.trocaDeAbas.ativo {
-  opacity: 1;
-  height: auto;
-  overflow: hidden;
-}
 
 .cartaoTabela {
     border-radius: 16px;

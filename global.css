@@ -449,9 +449,27 @@ thead tr th:first-child {
 }
 
 .bancoIcone {
-    padding: 1.1rem;
-    background-color: green;
-    border-radius: 6px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.bancoIcone img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.cabecalhoRelatorio.stone {
+  border-bottom: 4px solid #26b570;
+}
+
+.cabecalhoRelatorio.cielo {
+  border-bottom: 4px solid #254963;
+}
+
+.cabecalhoRelatorio.merPago {
+  border-bottom: 4px solid #009ee3;
 }
 
 /* Importar Dados*/
