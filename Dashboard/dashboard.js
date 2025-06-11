@@ -761,7 +761,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 .valor-mobile {
                     flex-grow: 1;
-                    text-align: right;
+                    text-align: left;
                 }
                 
                 .status-mobile {
@@ -798,6 +798,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .rotulo-mobile {
                     font-size: 0.75rem;
                     color: var(--texto-p);
+                    font-weight: 600;
                 }
             }
             
