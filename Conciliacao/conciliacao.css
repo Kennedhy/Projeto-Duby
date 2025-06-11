@@ -152,7 +152,7 @@
     display: flex;
     align-items: center;
     background: white;
-    border: 0px solid #ddd;
+    border: 2px solid #f1f1f1;
     border-radius: 4px;
     padding: 0.4rem;
     flex-grow: 1;
@@ -162,14 +162,16 @@
 .pesquisaInput {
     border: none;
     outline: none;
+    cursor: text;
     margin-left: 0.5rem;
     width: 100%;
 }
 
 .filtro-data,
 .filtro-select {
+    cursor: pointer;
     padding: 0.2rem 1rem;
-    border: 0px solid #ddd;
+    border: 2px solid #f1f1f1;
     border-radius: 6px;
     background: #ffffff;
     font-size: 0.875rem;
@@ -199,23 +201,74 @@
     .barraNotificacao {
         display: none;
 }
-.conteudo {
-        flex-direction: column;
-    } 
+    .conteudo {
+            flex-direction: column;
+} 
     .cabecalho {
-        display: flex;
-        justify-content: center; 
-        align-items: center;
-        width: 100%;
-    }
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            width: 100%;
+}
     .cabecalhoDireita {
-        display: none;
-    }
+            display: none;
+}
     .cabecalho h1 {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+}
+    .cardsResumo {
         width: 100%;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            
     }
+    .card {
+            max-width: 25vw;
+            flex-direction: row;
+            justify-content:space-between;
+            align-items: center;
+            padding: 0.5rem;
+    }
+    .conteudoCard {
+            text-align: center;
+    }
+    .iconeCard {
+            display: none;
+    }
+    .cartaoCabecalho p {
+            display: none;
+    }
+    .filtros {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            flex-direction: row;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+    }
+    input, select {
+        width: 25vw;
+    }
+    .btn-limpar {
+        width: 25vw;
+        height: 85%;
+    }
+    .tabela {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .tabela th, .tabela td {
+        padding: 0.5rem;
+        font-size: 12px;
+        text-align: center;
+    }  
+    
+    
 }

@@ -60,9 +60,22 @@
     border-color: var(--primario);
     background-color: #f0f4ff;
     box-shadow:
-      0 0 8px 3px rgba(65, 40, 132, 0.3);
+0 0 8px 3px rgba(65, 40, 132, 0.3);
 }
 
+button[type="submit"] {
+    background-color: var(--primario);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  background-color: #422884;
+}
+button[type="submit"]:hover {
+    background-color: #312E81;
+}
 
 @media (max-width: 700px) {
   .boxContatoWrap {
@@ -75,16 +88,22 @@
   }
 }
 
-@media (max-width: 640px) {
-    .formularioContato {
-        padding: 1.5rem 1rem;
-        margin: 1rem auto 1.5rem auto;
-        border-radius: 16px;
-    }
+@media (max-width: 600px) {
 
-    .botaoEnviar {
-        width: 100%;
-        text-align: center;
-        padding: 0.9rem 0;
-    }
+ .cartaoTexto p {
+    font-size: 0.9rem;
+  }
+  .cartaoTexto h2 {
+    font-size: 1.2rem;
+  }
+  .cartaoTexto h3 {
+    font-size: 1rem;
+  }
+  .cartaoTexto h4 {
+    font-size: 0.9rem;
+  }
+  .contato {
+    display: flex;
+    flex-direction: column;
+  }
 }
