@@ -796,7 +796,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 .rotulo-mobile {
-                    font-size: 0.75rem;
+                    font-size: 0.8rem;
                     color: var(--texto-p);
                     font-weight: 600;
                 }
