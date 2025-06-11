@@ -704,4 +704,17 @@ thead tr th:first-child {
       .barraNotificacao {
         display: none;
     }
+
+        .abasRelatorio {
+        width: 100%;
+    }
+
+        .abasRelatorio.fr4 {
+        width: 100%;
+    }
+
+        .abasRelatorio.fr5 {
+          grid-template-columns: repeat(3,1fr);
+        width: 100%;
+    }
 }

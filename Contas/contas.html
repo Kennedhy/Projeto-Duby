@@ -99,76 +99,79 @@
 
                         <div class="trocaDeAbas" id="aba2">
 
-                            <div class="cartaoTabela">
-                                <div class="cabecalhoRelatorio">
-                                    <div>
-                                        <h3>Vendas por Método de Pagamento</h3>
-                                        <p>Período: Março 2025</p>
-                                    </div>
-                                    <div class="acoesRelatorio">
-                                        <button class="botaoAcao primario">
-                                            <i class="iconeTabela" data-lucide="file-down"></i>
-                                            Exportar
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="tabelaContainer">
-                                    <table class="tabela">
-                                        <thead>
-                                            <tr>
-                                                <th>Método</th>
-                                                <th>Transações</th>
-                                                <th>Valor Bruto</th>
-                                                <th>Taxa Média</th>
-                                                <th>Valor Taxa</th>
-                                                <th>Valor Líquido</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Crédito</td>
-                                                <td>145</td>
-                                                <td>R$ 45.220,00</td>
-                                                <td>3,8%</td>
-                                                <td>R$ 1.718,36</td>
-                                                <td>R$ 43.501,64</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Débito</td>
-                                                <td>65</td>
-                                                <td>R$ 12.920,00</td>
-                                                <td>2,2%</td>
-                                                <td>R$ 284,24</td>
-                                                <td>R$ 12.635,76</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pix</td>
-                                                <td>12</td>
-                                                <td>R$ 5.460,00</td>
-                                                <td>1,0%</td>
-                                                <td>R$ 54,60</td>
-                                                <td>R$ 5.405,40</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Outros</td>
-                                                <td>3</td>
-                                                <td>R$ 1.000,00</td>
-                                                <td>2,5%</td>
-                                                <td>R$ 25,00</td>
-                                                <td>R$ 975,00</td>
-                                            </tr>
-                                            <tr class="linhaTotal">
-                                                <td>Total</td>
-                                                <td>225</td>
-                                                <td>R$ 64.600,00</td>
-                                                <td>3,2%</td>
-                                                <td>R$ 2.082,20</td>
-                                                <td>R$ 62.517,80</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+    <div class="cartaoTabela">
+        <div class="cabecalhoRelatorio">
+            <div>
+                <h3>Gerenciamento de Cartões de Crédito</h3>
+                <p>Visualize e gerencie todos os seus cartões em um só lugar</p>
+            </div>
+            <div class="acoesRelatorio">
+                <button class="botaoAcao primario">
+                    <i class="iconeTabela" data-lucide="plus"></i>
+                    Adicionar Cartão
+                </button>
+            </div>
+        </div>
+        <div class="tabelaContainer">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Bandeira</th>
+                        <th>Banco</th>
+                        <th>Número</th>
+                        <th>Titular</th>
+                        <th>Vencimento</th>
+                        <th>Limite</th>
+                        <th>Fatura Atual</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bancocard"><div class="bancoIcone"><img src="https://cdn.brandfetch.io/idhem73aId/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Visa"></div>Visa</td>
+                        <td>Itaú</td>
+                        <td>**** **** **** 1234</td>
+                        <td>João Silva</td>
+                        <td>05/2026</td>
+                        <td>R$ 8.000,00</td>
+                        <td>R$ 2.450,50</td>
+                        <td><span class="status ativo">Ativo</span></td>
+                    </tr>
+                    <tr>
+                        <td class="bancocard"><div class="bancoIcone"><img src="https://cdn.brandfetch.io/idFw8DodCr/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Mastercard"></div>Mastercard</td>
+                        <td>Santander</td>
+                        <td>**** **** **** 5678</td>
+                        <td>João Silva</td>
+                        <td>11/2025</td>
+                        <td>R$ 5.000,00</td>
+                        <td>R$ 1.200,00</td>
+                        <td><span class="status ativo">Ativo</span></td>
+                    </tr>
+                    <tr>
+                        <td class="bancocard"><div class="bancoIcone"><img src="https://cdn.brandfetch.io/idhem73aId/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Visa"></div>Visa</td>
+                        <td>Banco do Brasil</td>
+                        <td>**** **** **** 9012</td>
+                        <td>João Silva</td>
+                        <td>03/2027</td>
+                        <td>R$ 10.000,00</td>
+                        <td>R$ 4.780,25</td>
+                        <td><span class="status ativo">Ativo</span></td>
+                    </tr>
+                    <tr>
+                        <td class="bancocard"><div class="bancoIcone"><img src="https://cdn.brandfetch.io/idT3-XCDJD/w/200/h/200/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Elo"></div>Elo</td>
+                        <td>Caixa</td>
+                        <td>**** **** **** 3456</td>
+                        <td>João Silva</td>
+                        <td>09/2024</td>
+                        <td>R$ 3.500,00</td>
+                        <td>R$ 0,00</td>
+                        <td><span class="status bloqueado">Bloqueado</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 
                         </div>
                         
@@ -177,13 +180,13 @@
                             <div class="cartaoTabela">
                                 <div class="cabecalhoRelatorio">
                                     <div>
-                                        <h3>Comparativo de Vendas</h3>
-                                        <p>Comparação: Fevereiro vs Março 2025</p>
+                                        <h3>Lançamentos</h3>
+                                        <p>Últimos lançamentos das contas</p>
                                     </div>
                                     <div class="acoesRelatorio">
                                         <button class="botaoAcao primario">
-                                            <i class="iconeTabela" data-lucide="file-down"></i>
-                                            Exportar
+                                            <i class="iconeTabela" data-lucide="funnel"></i>
+                                            Filtros
                                         </button>
                                     </div>
                                 </div>

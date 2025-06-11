@@ -218,11 +218,3 @@ document.addEventListener("DOMContentLoaded", function () {
         aplicarFiltros();
     }
 });
-
-
-
-
-
-
-
-
