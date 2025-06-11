@@ -21,8 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-document.getElementById('botao-adicionar-cartao').addEventListener('click', function () {
-  document.getElementById('fundo-modal').classList.remove('escondido');
+document.querySelectorAll('.botao-dicionar').forEach(botao => {
+  botao.addEventListener('click', function() {
+    document.getElementById('fundo-modal').classList.remove('escondido');
+  });
 });
 
 document.getElementById('botao-cancelar').addEventListener('click', function () {
@@ -33,11 +35,29 @@ document.getElementById('formulario-cartao').addEventListener('submit', function
   event.preventDefault();
 
   const numero = document.getElementById('numero-cartao').value;
-  const nome = document.getElementById('nome-titular').value;
   const validade = document.getElementById('validade').value;
-  const cvv = document.getElementById('codigo-seguranca').value;
 
-  console.log('Cartão adicionado:', { numero, nome, validade, cvv });
+  // Formata: •••• 1234 (só os 4 últimos dígitos)
+  const ultimos4 = numero.slice(-4);
+  const numeroFormatado = `•••• ${ultimos4}`;
+
+  // Cria a div do cartão
+  function criarDivCartao() {
+    const div = document.createElement('div');
+    div.className = 'cartao-adicionado';
+    div.innerHTML = `
+      <strong>${numeroFormatado}</strong><br>
+      Expira em: ${validade}
+    `;
+    return div;
+  }
+
+  // Adiciona nas abas Planos e Integrações, se existirem
+  const listaPlanos = document.getElementById('cartoes-lista-planos');
+  const listaIntegracoes = document.getElementById('cartoes-lista-integracoes');
+  if (listaPlanos) listaPlanos.appendChild(criarDivCartao());
+  if (listaIntegracoes) listaIntegracoes.appendChild(criarDivCartao());
+
   this.reset();
   document.getElementById('fundo-modal').classList.add('escondido');
 });

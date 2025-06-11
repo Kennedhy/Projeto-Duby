@@ -450,6 +450,13 @@ svg{
       background: #2e1e90;
       color: white;
     }
+    .cartao-adicionado {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 2px #ccc;
+}
     
     @media (max-width: 600px) {
       .conteudo {
