@@ -601,3 +601,259 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    function isMobile() {
+        return window.innerWidth <= 768; 
+    }
+
+    function transformarTabelasParaMobile() {
+        if (!isMobile()) return;
+
+        const todasTabelas = document.querySelectorAll('.tabela:not([data-mobile-transformado])');
+        
+        const tabelasParaProcessar = Array.from(todasTabelas).slice(0, 5); // Processa no máximo 5 tabelas de cada vez
+        
+        tabelasParaProcessar.forEach(tabela => {
+            tabela.setAttribute('data-mobile-transformado', 'true');
+            
+            const tabelaContainer = tabela.closest('.tabelaContainer');
+            const cabecalhoTabela = tabela.closest('.cartaoTabela')?.querySelector('.cabecalhoTabela');
+            
+            const mobileWrapper = document.createElement('div');
+            mobileWrapper.className = 'tabela-mobile-wrapper';
+            
+            const processarLinhas = () => {
+                const linhas = tabela.querySelectorAll('tbody tr');
+                let i = 0;
+                
+                const processarProximaLinha = () => {
+                    if (i >= linhas.length) return;
+                    
+                    const linha = linhas[i];
+                    i++;
+                    
+                    const celulas = linha.querySelectorAll('td');
+                    const linhaMobile = document.createElement('div');
+                    linhaMobile.className = 'linha-mobile';
+                    
+                    const cabecalhoLinha = document.createElement('div');
+                    cabecalhoLinha.className = 'cabecalho-linha-mobile';
+                    
+                    const codigo = document.createElement('div');
+                    codigo.className = 'codigo-mobile';
+                    codigo.textContent = celulas[0]?.textContent || '';
+                    
+                    const valor = document.createElement('div');
+                    valor.className = 'valor-mobile';
+                    valor.textContent = celulas[2]?.textContent || celulas[1]?.textContent || '';
+                    
+                    const status = celulas[celulas.length - 1]?.querySelector('.badge')?.cloneNode(true);
+                    if (status) {
+                        status.className = status.className.replace('badge', 'status-mobile');
+                    }
+                    
+                    cabecalhoLinha.append(codigo, valor);
+                    if (status) cabecalhoLinha.appendChild(status);
+                    
+                    const botaoExpandir = document.createElement('button');
+                    botaoExpandir.className = 'botao-expandir-mobile';
+                    botaoExpandir.innerHTML = '<i data-lucide="chevron-down"></i>';
+                    cabecalhoLinha.appendChild(botaoExpandir);
+                    
+                    linhaMobile.appendChild(cabecalhoLinha);
+                    
+                    const detalhesLinha = document.createElement('div');
+                    detalhesLinha.className = 'detalhes-linha-mobile';
+                    detalhesLinha.style.display = 'none';
+                    
+                    const cabecalhos = tabela.querySelectorAll('thead th');
+                    for (let j = 1; j < celulas.length - 1; j++) {
+                        if (j === 2) continue;
+                        
+                        const item = document.createElement('div');
+                        item.className = 'item-detalhe-mobile';
+                        
+                        const rotulo = document.createElement('span');
+                        rotulo.className = 'rotulo-mobile';
+                        rotulo.textContent = cabecalhos[j]?.textContent || '';
+                        
+                        const valorDetalhe = document.createElement('span');
+                        valorDetalhe.className = 'valor-mobile';
+                        valorDetalhe.textContent = celulas[j]?.textContent || '';
+                        
+                        item.append(rotulo, valorDetalhe);
+                        detalhesLinha.appendChild(item);
+                    }
+                    
+                    linhaMobile.appendChild(detalhesLinha);
+                    mobileWrapper.appendChild(linhaMobile);
+                    
+                    cabecalhoLinha.addEventListener('click', function() {
+                        const expandida = linhaMobile.classList.toggle('expandida');
+                        detalhesLinha.style.display = expandida ? 'grid' : 'none';
+                        botaoExpandir.innerHTML = expandida ? 
+                            '<i data-lucide="chevron-up"></i>' : 
+                            '<i data-lucide="chevron-down"></i>';
+                        
+                        if (window.lucide) {
+                            lucide.createIcons();
+                        }
+                    });
+                    
+                    requestAnimationFrame(processarProximaLinha);
+                };
+                
+                processarProximaLinha();
+            };
+            
+            setTimeout(processarLinhas, 0);
+            
+            if (cabecalhoTabela) {
+                cabecalhoTabela.insertAdjacentElement('afterend', mobileWrapper);
+            } else {
+                tabelaContainer.parentNode.insertBefore(mobileWrapper, tabelaContainer);
+            }
+            
+            tabelaContainer.classList.add('tabela-desktop');
+        });
+    }
+
+    function adicionarEstilosMobile() {
+        if (document.getElementById('estilos-tabela-mobile')) return;
+        
+        const style = document.createElement('style');
+        style.id = 'estilos-tabela-mobile';
+        style.textContent = `
+            @media (max-width: 768px) {
+                .tabela-mobile-wrapper {
+                    display: block;
+                    padding: 8px;
+                }
+                
+                .tabela-desktop {
+                    display: none !important;
+                }
+                
+                .linha-mobile {
+                    background: var(--cartoes);
+                    border-radius: 10px;
+                    margin-bottom: 12px;
+                    box-shadow: var(--sombra);
+                    border: 1px solid var(--borda);
+                }
+                
+                .cabecalho-linha-mobile {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 12px;
+                    cursor: pointer;
+                    gap: 8px;
+                }
+                
+                .codigo-mobile {
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    min-width: 80px;
+                }
+                
+                .valor-mobile {
+                    flex-grow: 1;
+                    text-align: right;
+                }
+                
+                .status-mobile {
+                    font-size: 0.75rem;
+                    padding: 4px 8px;
+                    border-radius: 12px;
+                    margin-left: 8px;
+                }
+                
+                .botao-expandir-mobile {
+                    background: none;
+                    border: none;
+                    padding: 4px;
+                    margin-left: 8px;
+                }
+                
+                .detalhes-linha-mobile {
+                    display: none;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 12px;
+                    padding: 12px;
+                    border-top: 1px solid var(--borda);
+                }
+                
+                .linha-mobile.expandida .detalhes-linha-mobile {
+                    display: grid;
+                }
+                
+                .item-detalhe-mobile {
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .rotulo-mobile {
+                    font-size: 0.75rem;
+                    color: var(--texto-p);
+                }
+            }
+            
+            @media (min-width: 769px) {
+                .tabela-mobile-wrapper {
+                    display: none !important;
+                }
+                
+                .tabela-desktop {
+                    display: table !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    function init() {
+        adicionarEstilosMobile();
+        
+        if (isMobile()) {
+            transformarTabelasParaMobile();
+            
+            const observer = new MutationObserver(function(mutations) {
+                if (!isMobile()) return;
+                
+                mutations.forEach(function(mutation) {
+                    if (mutation.addedNodes.length) {
+                        mutation.addedNodes.forEach(node => {
+                            if (node.nodeType === 1 && node.querySelector('.tabela')) {
+                                transformarTabelasParaMobile();
+                            }
+                        });
+                    }
+                });
+            });
+            
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }
+        
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                if (isMobile()) {
+                    transformarTabelasParaMobile();
+                }
+            }, 100);
+        });
+    }
+
+    setTimeout(init, 50);
+    
+    if (typeof lucide !== 'undefined') {
+        setTimeout(() => lucide.createIcons(), 300);
+    }
+});
