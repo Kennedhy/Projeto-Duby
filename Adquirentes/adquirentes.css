@@ -156,4 +156,8 @@
         font-weight: 500;
         padding: 8px;
     }
+    .bancoIcone{
+        min-width: 42px;
+        min-height: 42px;
+      }
 }
