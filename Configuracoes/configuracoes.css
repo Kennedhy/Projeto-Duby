@@ -52,20 +52,7 @@
   font-size: 1rem;
   box-sizing: border-box;
 }
-button {
-  background-color: #412884;
-  color: white;
-  border: none;
-  border-radius: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  box-shadow: 4.697px 4.697px 42.269px 0px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-}
 
-button:hover {
-  background-color: #322871;
-}
 #atual {
   background-color:#412884;
   width: 100%;
