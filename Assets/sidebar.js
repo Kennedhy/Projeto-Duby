@@ -359,7 +359,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         .mobile-page-title {
-            color: black;
             font-size: 1.1rem;
             font-weight: 500;
             margin: 0;
@@ -384,7 +383,6 @@ document.addEventListener('DOMContentLoaded', function() {
             display: none;
             background: none;
             border: none;
-            color: black;
             cursor: pointer;
             padding: 5px;
         }
