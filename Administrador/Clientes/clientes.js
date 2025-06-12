@@ -137,14 +137,14 @@ function carregarClientes(clientesFiltrados = null) {
     tr.className = 'tabelaLinha';
     
     let statusTexto = 'Ativo';
-    let statusClasse = 'badgeSucesso';
+    let statusClasse = 'badge completo';
     
     if (cliente.status === 'pending') {
       statusTexto = 'Pendente';
-      statusClasse = 'badgeAlerta';
+      statusClasse = 'badge pendente';
     } else if (cliente.status === 'inactive') {
       statusTexto = 'Inativo';
-      statusClasse = 'badgeInativo';
+      statusClasse = 'badge incompleto';
     }
     
     tr.innerHTML = `
@@ -155,8 +155,8 @@ function carregarClientes(clientesFiltrados = null) {
         <span class="badge ${statusClasse}">${statusTexto}</span>
       </td>
       <td class="tabelaCelula">${cliente.data}</td>
-      <td class="tabelaCelula" style="text-align: right;">
-        <a href="clientes-detalhes.html?id=${cliente.id}" class="botao botaoSecundario">Ver detalhes</a>
+      <td class="tabelaCelula">
+        <button class="botaoAcao secundario"><a href="clientes-detalhes.html?id=${cliente.id}">Ver detalhes</a></button>
       </td>
     `;
     
