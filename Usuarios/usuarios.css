@@ -304,9 +304,6 @@
         max-width: 100%;
         font-size: 12px;         
     }
-    .tabela th, .tabela td {
-        padding: 8px 6px;        
-    }
     .tabela td {
         cursor: pointer;        
     }

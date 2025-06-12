@@ -467,25 +467,19 @@ svg{
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 0.2rem;
-    width: 90vw;
-    max-width: 90vw;
+    width: 100vw;
+    max-width: 1000vw;
     overflow-x: auto;
-    margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
   }
   .botaoAba {
     min-width: 10vw;     
-    max-width: 20vw;
     font-size: 12px;
-    padding: 12px 16px;  
+    padding: 12px 12px;  
     margin: 0;
     text-align: center;
-    box-sizing: border-box;
     white-space: nowrap;
-    flex: 0 0 auto;
-    overflow: hidden;
+    overflow: visible;
   }
    .planos {
     display: flex;
@@ -603,8 +597,8 @@ svg{
         padding: 0;
       }
       .bancoIcone{
-        width: 42px;
-        height: 44px;
+        min-width: 40px;
+        min-height: 42px;
       }
 
     
