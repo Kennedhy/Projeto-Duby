@@ -746,7 +746,8 @@ thead tr th:first-child {
     }
 
         .abasRelatorio.fr5 {
-          grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3,1fr);
+        gap: 0.2rem;
         width: 100%;
     }
 }
