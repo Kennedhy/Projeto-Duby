@@ -620,7 +620,7 @@ thead tr th:first-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--fundo-botao);
+  background: var(--th);
   border-radius: 10px;
   padding: 0.75rem;
   margin-bottom: 0.5rem;
