@@ -636,6 +636,10 @@ thead tr th:first-child {
   font-size: 0.7rem;
 }
 
+.cartaoTexto h2 {
+  font-size: 1.1rem;
+}
+
 .botaoSalvar {
   display: flex;
   justify-content: flex-end;
