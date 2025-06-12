@@ -227,12 +227,13 @@ body::-webkit-scrollbar {
 
 .abasRelatorio.fr4 {
     grid-template-columns: repeat(4, 1fr);
-    width: 80%;
+    width: 70%;
 }
 
 .abasRelatorio.fr5 {
   grid-template-columns: repeat(5, 1fr);
-  width: 80%;
+  width: 70%;
+  gap: 0.75rem;
 }
 
 .abasRelatorio.fr2 {
@@ -430,7 +431,7 @@ thead tr th:first-child {
 .badge {
     display: inline-block;
     padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
+    border-radius: 0.3rem;
     font-size: 0.75rem;
     font-weight: 500;
 }
@@ -443,6 +444,16 @@ thead tr th:first-child {
 .badge.pendente {
     background-color: rgba(96, 165, 250, 0.2);
     color: #1E40AF;
+}
+
+.badge.incompleto {
+    background-color: rgba(251, 191, 36, 0.2);
+    color: #D97706;
+}
+
+.badge.falha {
+    background-color: rgba(248, 113, 113, 0.2);
+    color: #DC2626;
 }
 
 .bancocard {

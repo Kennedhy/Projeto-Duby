@@ -33,55 +33,61 @@
         <button class="botaoAba" data-relatorio="aba5">Integrações</button>
       </div>
       <div class="trocaDeAbas ativo" id="aba1">
-        <div class="cartao">
-          <div class="cartaoCabecalho">
-            <h2>Informações da Empresa</h2>
-            <p>
-              Configure as informações básicas da sua empresa que serão usadas
-              em relatórios e documentos.
-            </p>
+
+        <div class="cartaoTabela">
+          <div class="cabecalhoRelatorio">
+            <div>
+              <h3>Informações da Empresa</h3>
+              <p>
+                Configure as informações básicas da sua empresa que serão usadas
+                em relatórios e documentos.
+              </p>
+            </div>
           </div>
 
-          <div class="grid">
+          <div class="tabelaContainer">
+            <div class="grid">
+              <div class="campos">
+                <label>Nome Fantasia</label>
+                <input type="text" />
+              </div>
+              <div class="campos">
+                <label>Razão Social</label>
+                <input type="text" />
+              </div>
+              <div class="campos">
+                <label>CNPJ</label>
+                <input type="text" />
+              </div>
+              <div class="campos">
+                <label>Email</label>
+                <input type="email" />
+              </div>
+            </div>
+            <hr class="linha" />
             <div class="campos">
-              <label>Nome Fantasia</label>
+              <label>Telefone</label>
               <input type="text" />
             </div>
-            <div class="campos">
-              <label>Razão Social</label>
-              <input type="text" />
+            <div class="grid2">
+              <div class="campos">
+                <label>Nome do Responsável Legal</label>
+                <input type="text" />
+              </div>
+              <div class="campos">
+                <label>Endereço</label>
+                <input type="text" />
+              </div>
+              <div class="campos">
+                <label>Rede Social da Empresa</label>
+                <input type="text" />
+              </div>
             </div>
-            <div class="campos">
-              <label>CNPJ</label>
-              <input type="text" />
-            </div>
-            <div class="campos">
-              <label>Email</label>
-              <input type="email" />
+            <div class="botaoSalvar">
+              <button id="botaoSalvar">Salvar</button>
             </div>
           </div>
-          <hr class="linha" />
-          <div class="campos">
-            <label>Telefone</label>
-            <input type="text" />
-          </div>
-          <div class="grid2">
-            <div class="campos">
-              <label>Nome do Responsável Legal</label>
-              <input type="text" />
-            </div>
-            <div class="campos">
-              <label>Endereço</label>
-              <input type="text" />
-            </div>
-            <div class="campos">
-              <label>Rede Social da Empresa</label>
-              <input type="text" />
-            </div>
-          </div>
-          <div class="botaoSalvar">
-            <button id="botaoSalvar">Salvar</button>
-          </div>
+
         </div>
       </div>
 
@@ -309,131 +315,158 @@
 
       <div class="trocaDeAbas" id="aba3">
         <div class="cartoesGap">
-          <div class="cartao">
-            <div class="cartaoCabecalho">
-              <h2>Notificações por E-mail</h2>
-              <p>Configure quais notificações você deseja receber por email.</p>
-            </div>
-            <div class="cartaoTexto">
+          <div class="cartaoTabela">
+            <div class="cabecalhoRelatorio">
               <div>
-                <label>Relatórios Diários</label>
-                <p>Receba um resumo diário dos extratos financeiros</p>
+                <h3>Notificações por E-mail</h3>
+                <p>Configure quais notificações você deseja receber por email.</p>
               </div>
-              <div class="toggle-switch active"></div>
             </div>
-            <div class="cartaoTexto">
-              <div>
-                <label>Novas Transações</label>
-                <p>Seja notificado quando novas transações forem registradas</p>
+
+            <div class="tabelaContainer">
+              <div class="cartaoTexto">
+                <div>
+                  <label>Relatórios Diários</label>
+                  <p>Receba um resumo diário dos extratos financeiros</p>
+                </div>
+                <div class="toggle-switch active"></div>
               </div>
-              <div class="toggle-switch active"></div>
-            </div>
-            <div class="cartaoTexto">
-              <div>
-                <label>Divergências</label>
-                <p>Seja notificado quando divergências forem detectadas</p>
+              <div class="cartaoTexto">
+                <div>
+                  <label>Novas Transações</label>
+                  <p>Seja notificado quando novas transações forem registradas</p>
+                </div>
+                <div class="toggle-switch active"></div>
               </div>
-              <div class="toggle-switch active"></div>
-            </div>
-            <div class="cartaoTexto">
-              <div>
-                <label>Alertas de Segurança</label>
-                <p>Receba alertas sobre atividades suspeitas na sua conta</p>
+              <div class="cartaoTexto">
+                <div>
+                  <label>Divergências</label>
+                  <p>Seja notificado quando divergências forem detectadas</p>
+                </div>
+                <div class="toggle-switch active"></div>
               </div>
-              <div class="toggle-switch active"></div>
+              <div class="cartaoTexto">
+                <div>
+                  <label>Alertas de Segurança</label>
+                  <p>Receba alertas sobre atividades suspeitas na sua conta</p>
+                </div>
+                <div class="toggle-switch active"></div>
+              </div>
             </div>
+            
           </div>
-          <div class="cartao">
-            <div class="cartaoCabecalho">
-              <h2>Notificações no Sistema</h2>
-              <p>
-                Configure quais notificações você deseja receber dentro do
-                sistema.
-              </p>
-            </div>
-            <div class="cartaoTexto">
+
+          <div class="cartaoTabela">
+            <div class="cabecalhoRelatorio">
               <div>
-                <label>Novas Transações</label>
+                <h3>Notificações no Sistema</h3>
                 <p>
-                  Receba notificações quando novas transações forem registradas
+                  Configure quais notificações você deseja receber dentro do
+                  sistema.
                 </p>
               </div>
-              <div class="toggle-switch active"></div>
             </div>
-            <div class="cartaoTexto">
-              <div>
-                <label>Divergências</label>
-                <p>Receba notificações quando divergências forem detectadas</p>
+
+            <div class="tabelaContainer">
+              <div class="cartaoTexto">
+                <div>
+                  <label>Novas Transações</label>
+                  <p>
+                    Receba notificações quando novas transações forem registradas
+                  </p>
+                </div>
+                <div class="toggle-switch active"></div>
               </div>
-              <div class="toggle-switch active"></div>
-            </div>
-            <div class="cartaoTexto">
-              <div>
-                <label>Atividades de Usuários</label>
-                <p>Seja notificado sobre ações de outros usuários no sistema</p>
+              <div class="cartaoTexto">
+                <div>
+                  <label>Divergências</label>
+                  <p>Receba notificações quando divergências forem detectadas</p>
+                </div>
+                <div class="toggle-switch active"></div>
               </div>
-              <div class="toggle-switch active"></div>
-            </div>
-            <div class="cartaoTexto">
-              <div>
-                <label>Atualizações do Sistema</label>
-                <p>
-                  Receba notificações sobre novas funcionalidades e atualizações
-                </p>
+              <div class="cartaoTexto">
+                <div>
+                  <label>Atividades de Usuários</label>
+                  <p>Seja notificado sobre ações de outros usuários no sistema</p>
+                </div>
+                <div class="toggle-switch active"></div>
               </div>
-              <div class="toggle-switch active"></div>
+              <div class="cartaoTexto">
+                <div>
+                  <label>Atualizações do Sistema</label>
+                  <p>
+                    Receba notificações sobre novas funcionalidades e atualizações
+                  </p>
+                </div>
+                <div class="toggle-switch active"></div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
 
       <div class="trocaDeAbas" id="aba4">
         <div class="cartoesGap">
-          <div class="cartao">
-            <div class="cartaoCabecalho">
-              <h2>Alterar Senha</h2>
-              <p>Atualize sua senha para manter sua conta segura.</p>
-            </div>
-            <div class="grid2">
-              <div class="campos">
-                <label>Senha Atual</label>
-                <input type="password" />
-              </div>
-              <div class="campos">
-                <label>Nova Senha</label>
-                <input type="password" />
-              </div>
-              <div class="campos">
-                <label>Confirmar Nova Senha</label>
-                <input type="password" />
+
+          <div class="cartaoTabela">
+            <div class="cabecalhoRelatorio">
+              <div>
+                <h3>Alterar Senha</h3>
+                <p>Atualize sua senha para manter sua conta segura.</p>
               </div>
             </div>
-            <div class="botaoSalvar">
-              <button id="botaoSalvar">Salvar</button>
+
+            <div class="tabelaContainer">
+              <div class="grid2">
+                <div class="campos">
+                  <label>Senha Atual</label>
+                  <input type="password" />
+                </div>
+                <div class="campos">
+                  <label>Nova Senha</label>
+                  <input type="password" />
+                </div>
+                <div class="campos">
+                  <label>Confirmar Nova Senha</label>
+                  <input type="password" />
+                </div>
+              </div>
+              <div class="botaoSalvar">
+                <button id="botaoSalvar">Salvar</button>
+              </div>
             </div>
+
           </div>
-          <div class="cartao">
-            <div class="cartaoCabecalho">
-              <h2>Autenticação de Dois Fatores</h2>
-              <p>Adicione uma camada extra de segurança à sua conta.</p>
+
+          <div class="cartaoTabela">
+            <div class="cabecalhoRelatorio">
+              <div>
+                <h3>Autenticação de Dois Fatores</h3>
+                <p>Adicione uma camada extra de segurança à sua conta.</p>
+              </div>
             </div>
-            <div class="cartaoTexto">
-              <p>
-                Recomendamos fortemente ativar a autenticação de dois fatores
-                para aumentar a segurança da sua conta.
-              </p>
+
+            <div class="tabelaContainer">
+              <div class="cartaoTexto">
+                <p>
+                  Recomendamos fortemente ativar a autenticação de dois fatores
+                  para aumentar a segurança da sua conta.
+                </p>
+              </div>
+              <div class="campos">
+                <label>Método de Autenticação</label>
+                <select required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="email">Email</option>
+                  <option value="sms">SMS</option>
+                </select>
+              </div>
+              <div class="botaoSalvar">
+                <button id="botaoSalvar">Salvar</button>
+              </div>
             </div>
-            <div class="campos">
-              <label>Método de Autenticação</label>
-              <select required>
-                <option value="" disabled selected hidden></option>
-                <option value="email">Email</option>
-                <option value="sms">SMS</option>
-              </select>
-            </div>
-            <div class="botaoSalvar">
-              <button id="botaoSalvar">Salvar</button>
-            </div>
+
           </div>
         </div>
       </div>
