@@ -314,4 +314,7 @@
         width: 100%;
         max-width: 100%;
     }
+    button.botaoAcao.primario {
+        font-size: 13px;
+    }
 }

@@ -296,4 +296,9 @@
         text-overflow: ellipsis;
         box-sizing: border-box;
     }
+    .acoesRelatorio{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
 }
