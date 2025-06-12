@@ -673,6 +673,15 @@ thead tr th:first-child {
   background: #2e1e90;
 }
 
+.botaoIcone {
+  display: flex;
+  color: var(--texto);
+  background-color: var(--tr);
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 0;
+}
+
 
 /* graficos */
 
