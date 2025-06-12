@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Duby</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="CSS/global.css">
+  <link rel="stylesheet" href="../global.css">
 </head>
 <body>
   <div class="conteinerPrincipal">
@@ -66,28 +68,25 @@
     </aside>
     
     <main class="conteudoPrincipal">
-      <div class="cabecalhoPagina">
-        <h1 class="tituloPagina">Painel Administrativo</h1>
-        <a href="Clientes/clientes-novo.html" class="botao botaoPrimario">
-          <i class="fa-solid fa-plus"></i>
-          Novo Cliente
-        </a>
+
+      <div class="cabecalho">
+        <h1>Painel Administrativo</h1>
       </div>
       
-      <div class="grade grade3Colunas mb6">
+      <div class="abasRelatorio fr3">
         <div class="cartao">
           <div class="cartaoCabecalho flexEntre">
             <h3 class="cartaoTitulo">Total de Clientes</h3>
-            <i class="fa-solid fa-users text-muted"></i>
+            <i data-lucide="users"></i>
           </div>
           <div class="cartaoConteudo">
             <div class="textoGrande">127</div>
             <p class="textoSecundario">+5 no último mês</p>
           </div>
           <div class="cartaoRodape">
-            <a href="Clientes/clientes.html" class="botao botaoSecundario">
+            <a href="Clientes/clientes.html" class="botaoAcao secundario">
               Ver todos
-              <i class="fa-solid fa-arrow-up-right"></i>
+              <i data-lucide="arrow-up-right"></i>
             </a>
           </div>
         </div>
@@ -95,16 +94,16 @@
         <div class="cartao">
           <div class="cartaoCabecalho flexEntre">
             <h3 class="cartaoTitulo">Clientes Ativos</h3>
-            <i class="fa-solid fa-users text-muted"></i>
+            <i data-lucide="users"></i>
           </div>
           <div class="cartaoConteudo">
             <div class="textoGrande">98</div>
             <p class="textoSecundario">77% do total</p>
           </div>
           <div class="cartaoRodape">
-            <a href="Clientes/clientes.html" class="botao botaoSecundario">
+            <a href="Clientes/clientes.html" class="botaoAcao secundario">
               Ver ativos
-              <i class="fa-solid fa-arrow-up-right"></i>
+              <i data-lucide="arrow-up-right"></i>
             </a>
           </div>
         </div>
@@ -112,27 +111,38 @@
         <div class="cartao">
           <div class="cartaoCabecalho flexEntre">
             <h3 class="cartaoTitulo">Receita Mensal</h3>
-            <i class="fa-solid fa-chart-line text-muted"></i>
+            <i data-lucide="chart-line"></i>
           </div>
           <div class="cartaoConteudo">
             <div class="textoGrande">R$ 45.230,00</div>
             <p class="textoSecundario">+12% em relação ao mês anterior</p>
           </div>
           <div class="cartaoRodape">
-            <a href="Relatorios/relatorios.html" class="botao botaoSecundario">
+            <a href="Relatorios/relatorios.html" class="botaoAcao secundario">
               Ver relatórios
-              <i class="fa-solid fa-arrow-up-right"></i>
+              <i data-lucide="arrow-up-right"></i>
             </a>
           </div>
         </div>
       </div>
       
       <div class="mb6">
-        <h2 class="subtituloPagina mb4">Clientes Recentes</h2>
-        <div class="cartao">
-          <div class="tabelaResponsiva">
+        <h2 class="secaoTitulo">Clientes Recentes</h2>
+
+        <div class="cartaoTabela">
+          <div class="cabecalhoRelatorio">
+            <div>
+              <h3>Clientes</h3>
+              <p>Clientes adicionados recentemente</p>
+            </div>
+                    <a href="Clientes/clientes-novo.html" class="botaoAcao primario">
+          <i data-lucide="plus"></i>
+          Novo Cliente
+        </a>
+          </div>
+          <div class="tabelaContainer">
             <table class="tabela">
-              <thead class="tabelaCabecalho">
+              <thead>
                 <tr>
                   <th>Nome</th>
                   <th>Email</th>
@@ -142,48 +152,47 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="tabelaLinha">
-                  <td class="tabelaCelula">Supermercado ABC</td>
-                  <td class="tabelaCelula">contato@abc.com.br</td>
-                  <td class="tabelaCelula">
-                    <span class="badge badgeSucesso">Ativo</span>
+                <tr>
+                  <td>Supermercado ABC</td>
+                  <td>contato@abc.com.br</td>
+                  <td>
+                    <span class="badge completo">Ativo</span>
                   </td>
-                  <td class="tabelaCelula">12/04/2023</td>
-                  <td class="tabelaCelula" style="text-align: right;">
-                    <a href="Clientes/clientes-detalhes.html" class="botao botaoSecundario">Ver detalhes</a>
-                  </td>
-                </tr>
-                <tr class="tabelaLinha">
-                  <td class="tabelaCelula">Farmácia Saúde</td>
-                  <td class="tabelaCelula">admin@farmaciasaude.com.br</td>
-                  <td class="tabelaCelula">
-                    <span class="badge badgeSucesso">Ativo</span>
-                  </td>
-                  <td class="tabelaCelula">05/04/2023</td>
-                  <td class="tabelaCelula" style="text-align: right;">
-                    <a href="Clientes/clientes-detalhes.html" class="botao botaoSecundario">Ver detalhes</a>
+                  <td>12/04/2023</td>
+                  <td>
+                    <button class="botaoAcao secundario"><a href="Clientes/clientes-detalhes.html">Ver detalhes</a></button>
                   </td>
                 </tr>
-                <tr class="tabelaLinha">
-                  <td class="tabelaCelula">Restaurante Sabor</td>
-                  <td class="tabelaCelula">financeiro@sabor.com.br</td>
-                  <td class="tabelaCelula">
-                    <span class="badge badgeAlerta">Pendente</span>
+                <tr>
+                  <td>Farmácia Saúde</td>
+                  <td>admin@farmaciasaude.com.br</td>
+                  <td>
+                    <span class="badge completo">Ativo</span>
                   </td>
-                  <td class="tabelaCelula">01/04/2023</td>
-                  <td class="tabelaCelula" style="text-align: right;">
-                    <a href="Clientes/clientes-detalhes.html" class="botao botaoSecundario">Ver detalhes</a>
+                  <td>05/04/2023</td>
+                  <td>
+                    <button class="botaoAcao secundario"><a href="Clientes/clientes-detalhes.html">Ver detalhes</a></button>                  </td>
+                </tr>
+                <tr>
+                  <td>Restaurante Sabor</td>
+                  <td>financeiro@sabor.com.br</td>
+                  <td>
+                    <span class="badge pendente">Pendente</span>
+                  </td>
+                  <td>01/04/2023</td>
+                  <td>
+                    <button class="botaoAcao secundario"><a href="Clientes/clientes-detalhes.html">Ver detalhes</a></button>
                   </td>
                 </tr>
-                <tr class="tabelaLinha">
-                  <td class="tabelaCelula">Loja de Roupas Fashion</td>
-                  <td class="tabelaCelula">contato@fashion.com.br</td>
-                  <td class="tabelaCelula">
-                    <span class="badge badgeSucesso">Ativo</span>
+                <tr>
+                  <td>Loja de Roupas Fashion</td>
+                  <td>contato@fashion.com.br</td>
+                  <td>
+                    <span class="badge completo">Ativo</span>
                   </td>
-                  <td class="tabelaCelula">28/03/2023</td>
-                  <td class="tabelaCelula" style="text-align: right;">
-                    <a href="Clientes/clientes-detalhes.html" class="botao botaoSecundario">Ver detalhes</a>
+                  <td>28/03/2023</td>
+                  <td>
+                    <button class="botaoAcao secundario"><a href="Clientes/clientes-detalhes.html">Ver detalhes</a></button>
                   </td>
                 </tr>
               </tbody>
@@ -195,5 +204,10 @@
   </div>
 
   <script src="principal.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>

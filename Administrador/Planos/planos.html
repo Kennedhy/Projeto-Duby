@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Duby</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/global.css">
+  <link rel="stylesheet" href="../../global.css">
 </head>
 <body>
   <div class="conteinerPrincipal">
@@ -65,24 +65,25 @@
         </a>
       </div>
     </aside>
+
     
     <main class="conteudoPrincipal">
-      <div class="cabecalhoPagina">
-        <h1 class="tituloPagina">Gerenciamento de Planos</h1>
-        <button class="botao botaoPrimario" id="botaoNovoPlano">
+      <div class="cabecalho">
+        <h1>Gerenciamento de Planos</h1>
+        <button class="botaoAcao primario" id="botaoNovoPlano">
           <i class="fa-solid fa-plus"></i>
           Novo Plano
         </button>
       </div>
       
-      <div class="grade grade2Colunas" id="listaPlanos">
+      <div class="abasRelatorio fr3" id="listaPlanos">
         <div class="cartao" data-id="basic">
           <div class="cartaoCabecalho">
-            <div class="flexEntre">
               <div>
-                <h3 class="cartaoTitulo">Básico</h3>
-                <p class="cartaoDescricao">Plano ideal para pequenas empresas iniciando com conciliação de cartões.</p>
+                <h2>Básico</h2>
+                <p>Plano ideal para pequenas empresas iniciando com conciliação de cartões.</p>
               </div>
+
               <div class="flexCentro">
                 <button class="botao botaoSecundario botaoIcone botaoEditar" data-id="basic">
                   <i class="fa-solid fa-edit"></i>
@@ -91,8 +92,8 @@
                   <i class="fa-solid fa-trash"></i>
                 </button>
               </div>
-            </div>
           </div>
+
           <div class="cartaoConteudo">
             <div class="precoPlanoCaixa mb4">
               <span class="precoPlano">R$ 199,00</span>
@@ -132,7 +133,7 @@
             </div>
           </div>
           <div class="cartaoRodape">
-            <button class="botao botaoSecundario botaoDetalhes" data-id="basic">Ver Detalhes</button>
+            <button class="botaoAcao secundario" data-id="basic">Ver Detalhes</button>
           </div>
         </div>
 
@@ -198,7 +199,7 @@
             </div>
           </div>
           <div class="cartaoRodape">
-            <button class="botao botaoSecundario botaoDetalhes" data-id="standard">Ver Detalhes</button>
+            <button class="botaoAcao secundario" data-id="standard">Ver Detalhes</button>
           </div>
         </div>
 
@@ -276,7 +277,7 @@
             </div>
           </div>
           <div class="cartaoRodape">
-            <button class="botao botaoSecundario botaoDetalhes" data-id="premium">Ver Detalhes</button>
+            <button class="botaoAcao secundario" data-id="premium">Ver Detalhes</button>
           </div>
         </div>
       </div>

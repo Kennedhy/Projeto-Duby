@@ -1,8 +1,3 @@
-.abasRelatorio {
-    grid-template-columns: repeat(5, 1fr);
-    width: 80%;
-}
-
 .planos {
   display: flex;
   flex-wrap: nowrap;

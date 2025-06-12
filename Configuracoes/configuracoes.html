@@ -25,7 +25,7 @@
         </div>
       </header>
 
-      <div class="abasRelatorio">
+      <div class="abasRelatorio fr5">
         <button class="botaoAba ativo" data-relatorio="aba1">Dados</button>
         <button class="botaoAba" data-relatorio="aba2">Planos</button>
         <button class="botaoAba" data-relatorio="aba3">Notificações</button>
@@ -89,15 +89,9 @@
         <div class="cartoesGap">
           <h2 class="secaoTitulo">Detalhes do Plano</h2>
 
-          <div class="cartao">
-            <div class="cartaoCabecalho">
-              <h2>Planos de Assinatura</h2>
-              <p>
-                Escolha o plano que melhor atende às necessidades da sua empresa
-              </p>
-            </div>
-            <div class="planos">
-              <div class="plano" id="planoBasico">
+            <div class="abasRelatorio fr3">
+
+              <div class="cartao" id="planoBasico">
                 <h3>Básico</h3>
                 <p class="preco">R$ 99/mês</p>
                 <p class="descricao">
@@ -110,9 +104,11 @@
                   <li>1 usuário</li>
                   <li>Suporte por email</li>
                 </ul>
+                
                 <button>Selecionar Plano</button>
               </div>
-              <div class="plano">
+
+              <div class="cartao">
                 <h3>Profissional</h3>
                 <p class="preco">R$ 249/mês</p>
                 <p class="descricao">
@@ -128,7 +124,8 @@
                 </ul>
                 <button id="atual">Plano Atual</button>
               </div>
-              <div class="plano" id="planoEmpresarial">
+
+              <div class="cartao" id="planoEmpresarial">
                 <h3>Empresarial</h3>
                 <p class="preco">R$ 599/mês</p>
                 <p class="descricao">
@@ -145,8 +142,10 @@
                 </ul>
                 <button>Selecionar Plano</button>
               </div>
+
             </div>
-          </div>
+
+          
 
           <div class="cartao">
             <div class="cartaoCabecalho">
@@ -190,13 +189,10 @@
 
           <h2 class="secaoTitulo">Detalhes dos pagamentos</h2>
 
-          <div class="cartao">
-            <div
-              class="cartaoCabecalho"
-              style="display: flex; justify-content: space-between"
-            >
-              <div class="cartaoCabecalho">
-                <h2>Métodos de Pagamentos</h2>
+          <div class="cartaoTabela">
+            <div class="cabecalhoRelatorio">
+              <div>
+                <h3>Métodos de Pagamentos</h3>
                 <p>
                   Gerencie seus cartões de crédito e outros métodos de
                   pagamento.
@@ -207,73 +203,105 @@
               </button>
             </div>
 
-            <div id="cartoes-lista-planos">
-              <div class="cartaoTexto">
-                <div>
-                  <div><strong>Nubank •••• 4587</strong></div>
-                  <div>Expira em 07/2028</div>
-                </div>
-              </div>
-              <div class="cartaoTexto">
-                <div>
-                  <div><strong>Mastercard •••• 4587</strong></div>
-                  <div>Expira em 09/2027</div>
-                </div>
-              </div>
-              <div class="cartaoTexto">
-                <div>
-                  <div><strong>Visa •••• 4587</strong></div>
-                  <div>Expira em 08/2029</div>
-                </div>
-              </div>
+            <div class="tabelaContainer" id="cartoes-lista-planos">
+  <div class="cartaoTexto">
+    <div class="bancocard">
+      <div class="bancoIcone">
+        <img src="https://cdn.brandfetch.io/idhem73aId/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Banco do Brasil">
+      </div>
+      <div>
+        <h2>Visa •••• 4587</h2>
+        <p>Expira em 07/2028</p>
+      </div>
+    </div>
+    <div class="acoesRelatorio">
+      <button class="botaoAba secundario"><i data-lucide="square-pen"></i></button>
+      <button class="botaoAba secundario"><i data-lucide="trash"></i></button>
+    </div>
+  </div>
+
+    <div class="cartaoTexto">
+    <div class="bancocard">
+      <div class="bancoIcone">
+        <img src="https://cdn.brandfetch.io/idFw8DodCr/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Banco do Brasil">
+      </div>
+      <div>
+        <h2>Mastercard •••• 4587</h2>
+        <p>Expira em 09/2027</p>
+      </div>
+    </div>
+    <div class="acoesRelatorio">
+      <button class="botaoAba secundario"><i data-lucide="square-pen"></i></button>
+      <button class="botaoAba secundario"><i data-lucide="trash"></i></button>
+    </div>
+  </div>
+
+    <div class="cartaoTexto">
+    <div class="bancocard">
+      <div class="bancoIcone">
+        <img src="https://cdn.brandfetch.io/idhem73aId/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Banco do Brasil">
+      </div>
+      <div>
+        <h2>Visa •••• 4587</h2>
+        <p>Expira em 08/2029</p>
+      </div>
+    </div>
+    <div class="acoesRelatorio">
+      <button class="botaoAba secundario"><i data-lucide="square-pen"></i></button>
+      <button class="botaoAba secundario"><i data-lucide="trash"></i></button>
+    </div>
+  </div>
+
             </div>
           </div>
 
-          <div class="cartao">
-            <div class="cartaoCabecalho">
-              <h2>Histórico de Faturas</h2>
+          <div class="cartaoTabela">
+            <div class="cabecalhoRelatorio">
+              <h3>Histórico de Faturas</h3>
             </div>
-            <table class="tabela">
-              <thead>
-                <tr>
-                  <th>Fatura</th>
-                  <th>Data</th>
-                  <th>Valor</th>
-                  <th>Status</th>
-                  <th>Download</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>INV-2025-005</td>
-                  <td>05/05/2025</td>
-                  <td>Hoje, 10:30</td>
-                  <td><span class="tag aberta">Em aberto</span></td>
-                  <td><i data-lucide="download"></i></td>
-                </tr>
-                <tr>
-                  <td>INV-2025-004</td>
-                  <td>05/04/2025</td>
-                  <td>Ontem, 15:45</td>
-                  <td><span class="tag pago">Fatura Paga</span></td>
-                  <td><i data-lucide="download"></i></td>
-                </tr>
-                <tr>
-                  <td>INV-2025-003</td>
-                  <td>05/03/2025</td>
-                  <td>22/03/2025, 09:15</td>
-                  <td><span class="tag pago">Fatura Paga</span></td>
-                  <td><i data-lucide="download"></i></td>
-                </tr>
-                <tr>
-                  <td>INV-2025-002</td>
-                  <td>05/02/2025</td>
-                  <td>15/02/2025, 14:20</td>
-                  <td><span class="tag pago">Fatura Paga</span></td>
-                  <td><i data-lucide="download"></i></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="tabelaContainer">
+              <table class="tabela">
+                <thead>
+                  <tr>
+                    <th>Fatura</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                    <th>Download</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>INV-2025-005</td>
+                    <td>05/05/2025</td>
+                    <td>Hoje, 10:30</td>
+                    <td><span class="tag aberta">Em aberto</span></td>
+                    <td><i data-lucide="download"></i></td>
+                  </tr>
+                  <tr>
+                    <td>INV-2025-004</td>
+                    <td>05/04/2025</td>
+                    <td>Ontem, 15:45</td>
+                    <td><span class="tag pago">Fatura Paga</span></td>
+                    <td><i data-lucide="download"></i></td>
+                  </tr>
+                  <tr>
+                    <td>INV-2025-003</td>
+                    <td>05/03/2025</td>
+                    <td>22/03/2025, 09:15</td>
+                    <td><span class="tag pago">Fatura Paga</span></td>
+                    <td><i data-lucide="download"></i></td>
+                  </tr>
+                  <tr>
+                    <td>INV-2025-002</td>
+                    <td>05/02/2025</td>
+                    <td>15/02/2025, 14:20</td>
+                    <td><span class="tag pago">Fatura Paga</span></td>
+                    <td><i data-lucide="download"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

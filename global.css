@@ -232,12 +232,17 @@ body::-webkit-scrollbar {
 
 .abasRelatorio.fr5 {
   grid-template-columns: repeat(5, 1fr);
-  width: 100%;
+  width: 80%;
 }
 
 .abasRelatorio.fr2 {
   grid-template-columns: repeat(2, 1fr);
   width: 30%;
+}
+
+.abasRelatorio.fr3 {
+  background-color: transparent;
+  width: 100%;
 }
 
 .botaoAba {
@@ -325,9 +330,7 @@ body::-webkit-scrollbar {
 }
 
 .botaoAcao.secundario {
-    background-color: white;
-    color: var(--primario);
-    border: 1px solid var(--primario);
+    background-color: var(--fundo-botao);
 }
 
 .tabelaContainer {
@@ -703,6 +706,11 @@ thead tr th:first-child {
     height: 250px;
     position: relative;
 }
+
+/* planos */
+
+
+/* responsividade */
 
 @media (max-width:600px) {
       .barraNotificacao {
