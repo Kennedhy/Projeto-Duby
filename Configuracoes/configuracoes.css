@@ -489,7 +489,7 @@ svg{
         grid-template-columns: 1fr 1fr;
   }
   .botaoAba {
-    min-width: 80px;     
+    min-width: 10vw;     
     max-width: 20vw;
     font-size: 12px;
     padding: 12px 16px;  
@@ -499,10 +499,7 @@ svg{
     white-space: nowrap;
     flex: 0 0 auto;
     overflow: hidden;
-    
   }
-
-
    .planos {
     display: flex;
     flex-direction: row;         /* Permite quebrar para baixo se necessário */
@@ -617,6 +614,10 @@ svg{
 
       .tabelaContainer {
         padding: 0;
+      }
+      .bancoIcone{
+        width: 42px;
+        height: 44px;
       }
 
     
