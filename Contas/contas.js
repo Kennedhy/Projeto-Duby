@@ -44,6 +44,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+//abrir overlay cartão//
+document.addEventListener('DOMContentLoaded', function () {
+    lucide.createIcons();
 
+    const botaoAbrirModal = document.getElementById('abrir-modal-cartao');
+    const fundoModal = document.getElementById('fundo-modal');
+    const botaoCancelar = document.getElementById('botao-cancelar');
+
+    if (botaoAbrirModal && fundoModal && botaoCancelar) {
+      botaoAbrirModal.addEventListener('click', function () {
+        fundoModal.classList.remove('escondido');
+      });
+
+      botaoCancelar.addEventListener('click', function () {
+        fundoModal.classList.add('escondido');
+      });
+    } else {
+      console.error('Erro: Elementos do modal não encontrados.');
+    }
+  });
 
 

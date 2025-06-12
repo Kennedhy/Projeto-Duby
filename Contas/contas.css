@@ -7,6 +7,51 @@
     box-shadow: var(--sombra);
     height: 100%;
 }
+.fundo-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.fundo-modal.escondido {
+  display: none;
+}
+
+.janela-modal {
+  background: white;
+  padding: 1.6rem;
+  border-radius: 12px;
+  max-width: 550px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+.grupo-campos {
+  display: flex;
+  gap: 2rem;
+}
+
+.campo {
+  flex: 1;
+}
+
+.janela-modal label {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.janela-modal input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
 
 @media (max-width:600px) {
     .conteudo {

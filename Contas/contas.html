@@ -106,7 +106,7 @@
                 <p>Visualize e gerencie todos os seus cartões em um só lugar</p>
             </div>
             <div class="acoesRelatorio">
-                <button class="botaoAcao primario">
+                <button class="botaoAcao primario" id="abrir-modal-cartao">
                     <i class="iconeTabela" data-lucide="plus"></i>
                     Adicionar Cartão
                 </button>
@@ -286,11 +286,64 @@
                     </section>
     </main>
 
+    <div id="fundo-modal" class="fundo-modal escondido">
+      <div class="janela-modal">
+        <h2>Adicionar Cartão</h2>
+        <form id="formulario-cartao">
+          <label for="numero-cartao">Número do Cartão</label>
+          <input
+            type="text"
+            id="numero-cartao"
+            class="campo-input"
+            placeholder="Número do Cartão"
+          />
+
+          <label for="nome-titular">Nome do Titular</label>
+          <input
+            type="text"
+            id="nome-titular"
+            name="nome-titular"
+            placeholder="Nome como está no cartão"
+            required
+          />
+
+          <div class="grupo-campos">
+            <div class="campo">
+              <label for="validade">Validade</label>
+              <input
+                type="text"
+                id="validade"
+                class="campo-input"
+                placeholder="Validade (MM/AA)"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="codigo-seguranca">CVV</label>
+              <input
+                type="text"
+                id="codigo-seguranca"
+                class="campo-input"
+                placeholder="Código de Segurança"
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="botao-principal">
+            Adicionar Cartão
+          </button>
+          <button type="button" id="botao-cancelar" class="botao-secundario">
+            Cancelar
+          </button>
+        </form>
+      </div>
+    </div>
+
     <script src="../Assets/sidebar.js"></script>
     <script src="../troca-de-abas.js"></script>
     <script src="../sistema-de-conciliacao.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <script src="contas.js"></script>
+        <script>document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();
         });
     </script>
