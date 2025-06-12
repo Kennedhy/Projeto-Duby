@@ -676,7 +676,7 @@ thead tr th:first-child {
 .botaoIcone {
   display: flex;
   color: var(--texto);
-  background-color: var(--cartoes);
+  background-color: var(--tr);
   padding: 0.5rem;
   border-radius: 0.3rem;
   border: 0;
