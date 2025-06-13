@@ -75,7 +75,7 @@
   padding-bottom: 14px;
 }
 .permissao {
-  background-color: #D9D9D9;
+  background-color: var(--th);
   padding: 2px 7px;
   border-radius: 5px;
   font-size: 12px;
@@ -95,7 +95,7 @@
 }
 
 .itemNotificacao {
-    background-color: #e0e1e5;
+    background-color: var(--th);
     border-radius: 8px;
     padding: 0.5rem;
     display: flex;
@@ -111,7 +111,7 @@
 
 .conteudoNotificacao p {
     font-size: 0.75rem;
-    color: var(--cinza-700);
+    color: var(--texto-p);
 }
 
 #btnOpenForm:hover {
@@ -122,7 +122,7 @@
         cursor: pointer;        
     }
 .tabela tr:hover {
-        background-color: rgb(233, 233, 234);        
+        background-color: var(--th);     
     }
 
 #btnOpenForm {
