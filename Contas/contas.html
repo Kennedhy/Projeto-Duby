@@ -112,7 +112,7 @@
                 </button>
             </div>
         </div>
-        <div class="tabelaContainer">
+        <div class="tabelaContainer" id="cartoes-lista-contas">
             <table class="tabela">
                 <thead>
                     <tr>
@@ -168,6 +168,7 @@
                         <td><span class="status bloqueado">Bloqueado</span></td>
                     </tr>
                 </tbody>
+                <tbody id="corpo-tabela-cartoes"></tbody>
             </table>
         </div>
     </div>
@@ -294,6 +295,7 @@
           <input
             type="text"
             id="numero-cartao"
+            maxlength="16"
             class="campo-input"
             placeholder="Número do Cartão"
           />
@@ -313,6 +315,7 @@
               <input
                 type="text"
                 id="validade"
+                maxlength="5"
                 class="campo-input"
                 placeholder="Validade (MM/AA)"
               />
@@ -323,6 +326,7 @@
               <input
                 type="text"
                 id="codigo-seguranca"
+                maxlength="4"
                 class="campo-input"
                 placeholder="Código de Segurança"
               />
