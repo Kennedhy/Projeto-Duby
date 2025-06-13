@@ -95,24 +95,26 @@
 
             <div class="abasRelatorio fr3">
 
-              <div class="cartao" id="planoBasico">
-                <h3>Básico</h3>
-                <p class="preco">R$ 99/mês</p>
-                <p class="descricao">
-                  Para pequenas empresas que estão começando
-                </p>
-                <ul class="listaBeneficios">
-                  <li>Até 500 transações/mês</li>
-                  <li>Conciliação manual</li>
-                  <li>Relatórios básicos</li>
-                  <li>1 usuário</li>
-                  <li>Suporte por email</li>
-                </ul>
+              <div class="cartao" id="planoBasico" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <h3>Básico</h3>
+                  <p class="preco">R$ 99/mês</p>
+                  <p class="descricao">
+                    Para pequenas empresas que estão começando
+                  </p>
+                  <ul class="listaBeneficios">
+                    <li>Até 500 transações/mês</li>
+                    <li>Conciliação manual</li>
+                    <li>Relatórios básicos</li>
+                    <li>1 usuário</li>
+                    <li>Suporte por email</li>
+                  </ul>
+                </div>
                 
-                <button class="botaoAcao secundario">Selecionar Plano</button>
+                <div><button class="botaoAcao secundario">Selecionar Plano</button></div>
               </div>
 
-              <div class="cartao">
+              <div class="cartao" style="display: flex; flex-direction: column; justify-content: space-between;">
                 <h3>Profissional</h3>
                 <p class="preco">R$ 249/mês</p>
                 <p class="descricao">
@@ -126,10 +128,10 @@
                   <li>Suporte prioritário</li>
                   <li>Integrações com adquirentes</li>
                 </ul>
-                <button class="botaoAcao primario">Plano Atual</button>
+                <div><button class="botaoAcao primario">Plano Atual</button></div>
               </div>
 
-              <div class="cartao" id="planoEmpresarial">
+              <div class="cartao" id="planoEmpresarial" style="display: flex; flex-direction: column; justify-content: space-between;">
                 <h3>Empresarial</h3>
                 <p class="preco">R$ 599/mês</p>
                 <p class="descricao">
@@ -144,7 +146,7 @@
                   <li>API completa</li>
                   <li>Integrações personalizadas</li>
                 </ul>
-                <button class="botaoAcao secundario">Selecionar Plano</button>
+                <div><button class="botaoAcao secundario">Selecionar Plano</button></div>
               </div>
 
             </div>
@@ -280,28 +282,28 @@
                     <td>INV-2025-005</td>
                     <td>05/05/2025</td>
                     <td>Hoje, 10:30</td>
-                    <td><span class="tag aberta">Em aberto</span></td>
+                    <td><span class="badge pendente">Em aberto</span></td>
                     <td><i data-lucide="download"></i></td>
                   </tr>
                   <tr>
                     <td>INV-2025-004</td>
                     <td>05/04/2025</td>
                     <td>Ontem, 15:45</td>
-                    <td><span class="tag pago">Fatura Paga</span></td>
+                    <td><span class="badge completo">Fatura Paga</span></td>
                     <td><i data-lucide="download"></i></td>
                   </tr>
                   <tr>
                     <td>INV-2025-003</td>
                     <td>05/03/2025</td>
                     <td>22/03/2025, 09:15</td>
-                    <td><span class="tag pago">Fatura Paga</span></td>
+                    <td><span class="badge completo">Fatura Paga</span></td>
                     <td><i data-lucide="download"></i></td>
                   </tr>
                   <tr>
                     <td>INV-2025-002</td>
                     <td>05/02/2025</td>
                     <td>15/02/2025, 14:20</td>
-                    <td><span class="tag pago">Fatura Paga</span></td>
+                    <td><span class="badge completo">Fatura Paga</span></td>
                     <td><i data-lucide="download"></i></td>
                   </tr>
                 </tbody>
