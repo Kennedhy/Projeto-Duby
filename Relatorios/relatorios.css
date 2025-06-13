@@ -1,79 +1,6 @@
-:root {
-    --corPrimaria: #4b2d83;
-    --corPrimariaClara: #6a4ba5;
-    --corPrimariaEscura: #3a2266;
-    --corTextoClaro: #ffffff;
-    --corTextoEscuro: #343434;
-    --corFundo: #f8f9fa;
-    --corBorda: #e2e8f0;
-    --corCinzaClaro: #f1f5f9;
-    --corCinzaMedio: #e2e8f0;
-    --corVerde: #22c55e;
-    --corVermelho: #ef4444;
-    --sombra: 0 1px 3px rgba(0, 0, 0, 0.1);
-    --raioBorda: 0.375rem;
-}
-
-
 .oculto {
     display: none !important;
 }
-
-
-.cabecalhoDireita {
-    padding: 0.5rem;
-    background-color: #fafafa;
-    box-shadow: 4px 4px 54px 0px rgba(65, 40, 132, 0.10);
-    border-radius: 12px;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.cabecalhoBusca {
-    position: relative;
-}
-
-.cabecalhoIcone {
-    position: absolute;
-    left: 0.625rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #64748b;
-    width: 1rem;
-    height: 1rem;
-}
-
-.cabecalhoIcones {
-    width: 1.2rem;
-}
-
-.cabecalhoInput {
-    width: 220px;
-    padding: 0.5rem 0.75rem 0.5rem 2rem;
-    border: 1px solid #f0f0f0;
-    border-radius: var(--raioBorda);
-    outline: none;
-}
-
-.cabecalhoBotao {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cabecalhoBotao:hover {
-    background-color: var(--corCinzaClaro);
-}
-
-
 
 .relatorios {
     display: grid;
@@ -110,12 +37,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0.75rem;
-    border: 1.5px solid #e7e7e7;
-    background: #FAFAFA;
+    border: var(--borda);
+    background: var(--cartoes);
     box-shadow: 4px 4px 54px 0px rgba(65, 40, 132, 0.10);
     border-radius: 8px;
     cursor: pointer;
     font-weight: 500;
+    color: var(--texto);
 }
 
 .seletorOpcoes {
@@ -124,10 +52,11 @@
     left: 0;
     right: 0;
     margin-top: 0.25rem;
-    border: 1px solid #F0F0F0;
-    background: #FAFAFA;
+    color: var(--texto);
+    border: var(--borda);
+    background: var(--cartoes);
     box-shadow: 4px 4px 54px 0px rgba(65, 40, 132, 0.07);
-    border-radius: var(--raioBorda);
+    border-radius: 10px;
     z-index: 10;
     display: none;
 }
@@ -142,7 +71,7 @@
 }
 
 .seletorOpcao:hover {
-    background-color: var(--cinza-100);
+    background-color: var(--th);
 }
 
 
@@ -159,11 +88,11 @@
 }
 
 .cartao:hover {
-    background-color: var(--cinza-100);
+    background-color: var(--tr);
 }
 
 .cartaoAtivo {
-    background-color: var(--cinza-200);
+    background-color: var(--th);
 }
 
 .cartaoCabecalho h3 {
