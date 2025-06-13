@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Duby</title>
   <link rel="stylesheet" href="../CSS/global.css">
-  <link rel="stylesheet" href="../../global.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -68,14 +67,17 @@
     </aside>
     
     <main class="conteudoPrincipal">
-
-      <div class="cabecalho">
-        <h1>Relatórios</h1>
+      <div class="cabecalhoPagina">
+        <h1 class="tituloPagina">Relatórios</h1>
+        <button class="botao botaoSecundario">
+          <i class="fa-solid fa-download"></i>
+          Exportar Dados
+        </button>
       </div>
       
       <div class="cartao mb6">
         <div class="cartaoCabecalho">
-          <h3>Filtros</h3>
+          <h3 class="cartaoTitulo">Filtros</h3>
           <p class="cartaoDescricao">Personalize os relatórios de acordo com suas necessidades.</p>
         </div>
         <div class="cartaoConteudo">
@@ -138,20 +140,18 @@
       </div>
       
       <div class="abas">
-        <div class="abasRelatorio fr4">
-          <button class="botaoAba ativo" data-relatorio="aba1">Visão Geral</button>
-          <button class="botaoAba" data-relatorio="aba2">Clientes</button>
-          <button class="botaoAba" data-relatorio="aba3">Receita</button>
-          <button class="botaoAba" data-relatorio="aba4">Planos</button>
+        <div class="abasNavegacao">
+          <div class="abaBotao ativo" data-aba="visaoGeral">Visão Geral</div>
+          <div class="abaBotao" data-aba="clientes">Clientes</div>
+          <div class="abaBotao" data-aba="receita">Receita</div>
+          <div class="abaBotao" data-aba="planos">Planos</div>
         </div>
         
-        <div class="trocaDeAbas ativo" id="aba1">
-
-          <div class="containerGraficos">
-
-            <div class="cartaoGrafico">
-              <div class="cabecalhoGrafico flexB">
-                <h3>Total de Clientes</h3>
+        <div class="abaConteudo ativo" id="abaVisaoGeral">
+          <div class="grade grade3Colunas mb4">
+            <div class="cartao">
+              <div class="cartaoCabecalho flexEntre">
+                <h3 class="cartaoTitulo">Total de Clientes</h3>
                 <i class="fa-solid fa-chart-bar text-muted"></i>
               </div>
               <div class="cartaoConteudo">
@@ -163,9 +163,9 @@
               </div>
             </div>
             
-            <div class="cartaoGrafico">
-              <div class="cabecalhoGrafico flexB">
-                <h3>Receita Mensal</h3>
+            <div class="cartao">
+              <div class="cartaoCabecalho flexEntre">
+                <h3 class="cartaoTitulo">Receita Mensal</h3>
                 <i class="fa-solid fa-chart-line text-muted"></i>
               </div>
               <div class="cartaoConteudo">
@@ -177,9 +177,9 @@
               </div>
             </div>
             
-            <div class="cartaoGrafico">
-              <div class="cabecalhoGrafico flexB">
-                <h3>Distribuição de Planos</h3>
+            <div class="cartao">
+              <div class="cartaoCabecalho flexEntre">
+                <h3 class="cartaoTitulo">Distribuição de Planos</h3>
                 <i class="fa-solid fa-chart-pie text-muted"></i>
               </div>
               <div class="cartaoConteudo">
@@ -192,9 +192,9 @@
             </div>
           </div>
           
-          <div class="cartaoGrafico">
+          <div class="cartao">
             <div class="cartaoCabecalho">
-              <h3>Resumo de Desempenho</h3>
+              <h3 class="cartaoTitulo">Resumo de Desempenho</h3>
               <p class="cartaoDescricao">Visão geral do desempenho do sistema nos últimos 30 dias.</p>
             </div>
             <div class="cartaoConteudo">
@@ -205,10 +205,10 @@
           </div>
         </div>
         
-        <div class="trocaDeAbas" id="aba2">
+        <div class="abaConteudo" id="abaClientes">
           <div class="cartao mb4">
             <div class="cartaoCabecalho">
-              <h3>Crescimento de Clientes</h3>
+              <h3 class="cartaoTitulo">Crescimento de Clientes</h3>
               <p class="cartaoDescricao">Análise do crescimento de clientes ao longo do tempo.</p>
             </div>
             <div class="cartaoConteudo">
@@ -220,7 +220,7 @@
           
           <div class="cartao mb4">
             <div class="cartaoCabecalho">
-              <h3>Clientes por Segmento</h3>
+              <h3 class="cartaoTitulo">Clientes por Segmento</h3>
               <p class="cartaoDescricao">Distribuição de clientes por segmento de mercado.</p>
             </div>
             <div class="cartaoConteudo">
@@ -256,7 +256,7 @@
           
           <div class="cartao">
             <div class="cartaoCabecalho">
-              <h3>Status dos Clientes</h3>
+              <h3 class="cartaoTitulo">Status dos Clientes</h3>
               <p class="cartaoDescricao">Distribuição de clientes por status.</p>
             </div>
             <div class="cartaoConteudo">
@@ -296,10 +296,10 @@
           </div>
         </div>
         
-        <div class="trocaDeAbas" id="aba3">
+        <div class="abaConteudo" id="abaReceita">
           <div class="cartao mb4">
             <div class="cartaoCabecalho">
-              <h3>Receita Mensal</h3>
+              <h3 class="cartaoTitulo">Receita Mensal</h3>
               <p class="cartaoDescricao">Análise da receita mensal ao longo do tempo.</p>
             </div>
             <div class="cartaoConteudo">
@@ -312,7 +312,7 @@
           <div class="grade grade2Colunas mb4">
             <div class="cartao">
               <div class="cartaoCabecalho">
-                <h3>Receita por Plano</h3>
+                <h3 class="cartaoTitulo">Receita por Plano</h3>
                 <p class="cartaoDescricao">Distribuição da receita por plano.</p>
               </div>
               <div class="cartaoConteudo">
@@ -324,7 +324,7 @@
             
             <div class="cartao">
               <div class="cartaoCabecalho">
-                <h3>Receita por Método de Pagamento</h3>
+                <h3 class="cartaoTitulo">Receita por Método de Pagamento</h3>
                 <p class="cartaoDescricao">Distribuição da receita por método de pagamento.</p>
               </div>
               <div class="cartaoConteudo">
@@ -337,7 +337,7 @@
           
           <div class="cartao">
             <div class="cartaoCabecalho">
-              <h3>Previsão de Receita</h3>
+              <h3 class="cartaoTitulo">Previsão de Receita</h3>
               <p class="cartaoDescricao">Previsão de receita para os próximos meses.</p>
             </div>
             <div class="cartaoConteudo">
@@ -348,10 +348,10 @@
           </div>
         </div>
         
-        <div class="trocaDeAbas" id="aba4">
+        <div class="abaConteudo" id="abaPlanos">
           <div class="cartao mb4">
             <div class="cartaoCabecalho">
-              <h3>Distribuição de Planos</h3>
+              <h3 class="cartaoTitulo">Distribuição de Planos</h3>
               <p class="cartaoDescricao">Análise da distribuição de clientes por plano.</p>
             </div>
             <div class="cartaoConteudo">
@@ -363,7 +363,7 @@
           
           <div class="cartao mb4">
             <div class="cartaoCabecalho">
-              <h3>Desempenho dos Planos</h3>
+              <h3 class="cartaoTitulo">Desempenho dos Planos</h3>
               <p class="cartaoDescricao">Análise de desempenho de cada plano.</p>
             </div>
             <div class="cartaoConteudo">
@@ -415,7 +415,7 @@
           
           <div class="cartao">
             <div class="cartaoCabecalho">
-              <h3>Conversão entre Planos</h3>
+              <h3 class="cartaoTitulo">Conversão entre Planos</h3>
               <p class="cartaoDescricao">Análise de conversão de clientes entre planos.</p>
             </div>
             <div class="cartaoConteudo">
@@ -431,6 +431,5 @@
 
   <script src="../principal.js"></script>
   <script src="relatorios.js"></script>
-  <script src="../../troca-de-abas.js"></script>
 </body>
 </html>
