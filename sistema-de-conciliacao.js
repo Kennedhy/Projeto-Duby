@@ -85,7 +85,7 @@
           <td>${formatValor(item.recebido)}</td>
           <td>${formatValor(Math.abs(item.diferenca))}</td>
           <td><span class="tag ${getStatusCor(item.status)}">${item.status}</span></td>
-          <td><button>Conciliar</button></td>
+          <td><button class= "botaoAcao secundario">Conciliar</button></td>
         `;
         concTabelaBody.appendChild(tr);
       });

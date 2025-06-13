@@ -90,7 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
             </button>
             <h1 class="mobile-page-title">${pageTitle}</h1>
             <div class="mobile-header-actions">
-                <i class="menuIcone" data-lucide="bell"></i>
+                <button class="notification-trigger-btn">
+                    <i class="menuIcone" data-lucide="bell"></i>
+                </button>
             </div>
         </div>
         <div class="mobileOverlay">
@@ -160,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="mobile-footer">
                     <div class="itemMenu rodape">
                         <a class="tema-mobile">
-                            <i class="menuIcone" data-lucide="moon"></i>
+                             <i class="menuIcone" data-lucide="moon"></i>
                         </a>
                     </div>
                     <div class="itemMenu rodape">
@@ -183,6 +185,40 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     document.body.appendChild(mobileMenu);
+
+    const notificationOverlay = document.createElement('div');
+    notificationOverlay.className = 'notification-overlay';
+    notificationOverlay.style.display = 'none';
+    notificationOverlay.innerHTML = `
+        <div class="notification-card">
+            <div class="notification-header">
+                <h2>Notificações</h2>
+                <button class="close-notification-btn">
+                    <i class="menuIcone" data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="notification-body">
+                <ul>
+                    <li class="notification-item unread">
+                        <p><strong>Nova conciliação!</strong></p>
+                        <p>Uma nova conciliação foi realizada com sucesso.</p>
+                        <span class="notification-time">Há 5 minutos</span>
+                    </li>
+                    <li class="notification-item">
+                        <p><strong>Relatório disponível</strong></p>
+                        <p>Seu relatório mensal está pronto para download.</p>
+                        <span class="notification-time">Há 2 horas</span>
+                    </li>
+                    <li class="notification-item">
+                        <p><strong>Atualização de segurança</strong></p>
+                        <p>A sua senha foi alterada com sucesso.</p>
+                        <span class="notification-time">Ontem</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(notificationOverlay);
     
     function highlightActiveMenuItem() {
         const currentPage = window.location.pathname.split('/').pop();
@@ -203,6 +239,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleTheme() {
         const isDark = document.body.classList.toggle('dark');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+        const themeIcons = document.querySelectorAll('.tema .menuIcone, .tema-mobile .menuIcone');
+        
+        themeIcons.forEach(icon => {
+            icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+        });
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
     }
 
     const themeButtons = document.querySelectorAll('.tema, .tema-mobile');
@@ -213,6 +259,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark');
+        const themeIcons = document.querySelectorAll('.tema .menuIcone, .tema-mobile .menuIcone');
+        themeIcons.forEach(icon => icon.setAttribute('data-lucide', 'sun'));
     }
 
     const hamburgerBtn = document.querySelector('.menuBtn');
@@ -236,6 +284,25 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileOverlay.addEventListener('click', (e) => {
             if (e.target === mobileOverlay) {
                 closeMenu();
+            }
+        });
+    }
+
+    const notificationTrigger = document.querySelector('.notification-trigger-btn');
+    const closeNotificationBtn = document.querySelector('.close-notification-btn');
+
+    if (notificationTrigger && notificationOverlay && closeNotificationBtn) {
+        notificationTrigger.addEventListener('click', () => {
+            notificationOverlay.style.display = 'flex';
+        });
+
+        closeNotificationBtn.addEventListener('click', () => {
+            notificationOverlay.style.display = 'none';
+        });
+
+        notificationOverlay.addEventListener('click', (e) => {
+            if (e.target === notificationOverlay) {
+                notificationOverlay.style.display = 'none';
             }
         });
     }
@@ -512,6 +579,129 @@ document.addEventListener('DOMContentLoaded', function() {
             .conteudoPrincipal {
                 margin-top: 10px;
             }
+        }
+
+        .notification-trigger-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .notification-trigger-btn .menuIcone {
+             color: #1A1A1A;
+        }
+        
+        body.dark .notification-trigger-btn .menuIcone {
+            color: white;
+        }
+
+        .notification-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .notification-card {
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+        }
+
+        body.dark .notification-card {
+            background-color: #2c2c3e;
+            color: white;
+        }
+
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        body.dark .notification-header {
+            border-bottom: 1px solid #444;
+        }
+
+        .notification-header h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .close-notification-btn {
+            background: none;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .notification-body {
+            padding: 0;
+            overflow-y: auto;
+        }
+
+        .notification-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .notification-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        body.dark .notification-item {
+            border-bottom: 1px solid #444;
+        }
+
+        .notification-item p {
+            margin: 0 0 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .notification-item p strong {
+            font-weight: 600;
+        }
+
+        .notification-item.unread {
+            background-color: #f7f7f7;
+        }
+        
+        body.dark .notification-item.unread {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .notification-time {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        body.dark .notification-time {
+            color: #aaa;
         }
     `;
     

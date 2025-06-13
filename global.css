@@ -218,11 +218,11 @@ body::-webkit-scrollbar {
 .abasRelatorio {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 0.75rem;
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 0.4rem;
     background-color: var(--fundo-botao);
-    border-radius: 16px;
+    border-radius: 0.6rem;
 }
 
 .abasRelatorio.fr4 {
@@ -250,22 +250,24 @@ body::-webkit-scrollbar {
     background: none;
     border: none;
     padding: 0.5rem 1rem;
-    font-size: 0.875rem;
+    font-size: 0.87rem;
     font-weight: 500;
     color: var(--texto-p);
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     transition: background-color 0.2s ease;
 }
 
 .botaoAba:hover {
-    background-color: var(--cinza-100);
+    background-color: var(--tr);
 }
 
 .botaoAba.ativo {
-    background-color: var(--primario);
-    color: white;
     padding: 0.7rem;
+    font-weight: 600;
+    background-color: #594496;
+    color: #f2f2f2;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 5px rgba(89, 68, 150, 0.1);
 }
 
 /* Tabelas */
@@ -306,32 +308,6 @@ body::-webkit-scrollbar {
 .acoesRelatorio {
     display: flex;
     gap: 0.5rem;
-}
-
-.botaoAcao {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.3rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
-    border: none;
-}
-
-.iconeTabela {
-    width: 1rem;
-
-}
-
-.botaoAcao.primario {
-    background-color: var(--primario);
-    color: white;
-}
-
-.botaoAcao.secundario {
-    background-color: var(--fundo-botao);
 }
 
 .tabelaContainer {
@@ -414,20 +390,6 @@ thead tr th:first-child {
     font-weight: 600;
 }
 
-.botaoAdicionar {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.3rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
-    border: none;
-    background-color: var(--primario);
-    color: white;
-}
-
 .badge {
     display: inline-block;
     padding: 0.25rem 0.5rem;
@@ -490,35 +452,14 @@ thead tr th:first-child {
 
 .acoesImportar {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     padding: 0.3rem;
-    background-color: var(--cinza-200);
+    background-color: var(--fundo-botao);
     border-radius: 10px;
-}
-
-.botaoDados {
-    background: none;
-    border: none;
-    padding: 0.5rem 1.5rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--cinza-700);
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.botaoDados:hover {
-    background-color: var(--cinza-100);
-}
-
-.botaoDados.ativo {
-    background-color: var(--primario);
-    color: white;
 }
 
 .conteudoImportar {
     display: none;
-
 }
 
 .conteudoImportar.ativo {
@@ -529,7 +470,7 @@ thead tr th:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--cinza-200);
+    background-color: var(--th);
     margin: 1rem;
     height: 50vh;
     border-radius: 10px;
@@ -541,6 +482,28 @@ thead tr th:first-child {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+.botaoDados {
+    background: none;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--texto-p);
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.botaoDados:hover {
+    background-color: var(--tr);
+}
+
+.botaoDados.ativo {
+    font-weight: 600;
+    background-color: #594496;
+    color: #f2f2f2;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 5px rgba(89, 68, 150, 0.1);
 }
 
 /* cartao  */
@@ -660,33 +623,7 @@ thead tr th:first-child {
   font-size: 1.1rem;
 }
 
-.botaoSalvar {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1rem;
-}
 
-.botaoSalvar button {
-  background: var(--fundo-botao);
-  border: none;
-  padding: 0.5rem 2rem;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-
-.botaoSalvar button:hover {
-  background: #2e1e90;
-}
-
-.botaoIcone {
-  display: flex;
-  color: var(--texto);
-  background-color: var(--tr);
-  padding: 0.5rem;
-  border-radius: 0.3rem;
-  border: 0;
-}
 
 
 /* graficos */
@@ -733,7 +670,77 @@ thead tr th:first-child {
     position: relative;
 }
 
-/* planos */
+/* botoes */
+
+.botaoAcao {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.botaoAcao.primario {
+    background-color: #594496;
+    color: #f2f2f2;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 5px rgba(89, 68, 150, 0.1);
+}
+
+.botaoAcao.primario:hover {
+    background-color: #644fA3;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15), 0 4px 8px rgba(89, 68, 150, 0.15);
+}
+
+.botaoAcao.primario:active {
+  background-color: #514088;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); 
+}
+
+.botaoAcao.secundario {
+  background-color: #F3F4F6;
+  color: #374151;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.botaoAcao.secundario:hover {
+  background-color: #E5E7EB;
+  border-color: #D1D5DB;
+}
+
+.botaoAcao.secundario:active {
+  background-color: #D1D5DB;
+  border-color: #9CA3AF;
+}
+
+.iconeTabela {
+  display: flex;
+  stroke-width: 3;
+  width: 1rem;
+}
+
+.botaoSalvar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.botaoIcone {
+  display: flex;
+  color: var(--texto);
+  background-color: var(--tr);
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 0;
+}
+
+
+
 
 
 /* responsividade */
