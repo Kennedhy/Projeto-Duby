@@ -608,6 +608,12 @@ thead tr th:first-child {
   margin: 1rem 0;
 }
 
+.flexB {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .campos {
   display: flex;
   flex-direction: column;

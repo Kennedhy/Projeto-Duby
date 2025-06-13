@@ -218,3 +218,328 @@ document.addEventListener("DOMContentLoaded", function () {
         aplicarFiltros();
     }
 });
+
+
+
+
+
+
+// Responsividade para dispositivos móveis - Versão modificada
+(function() {
+    const MOBILE_BREAKPOINT = 768;
+    // Colunas modificadas conforme solicitado
+    const MAIN_COLUMNS = ['Transação', 'Status', 'Valor']; // Removida 'Data' e adicionado 'Valor'
+    
+    function isMobile() {
+        return window.innerWidth <= MOBILE_BREAKPOINT;
+    }
+
+    function criarLinhaMobile(linhaOriginal) {
+        const celulas = linhaOriginal.querySelectorAll('td');
+        if (celulas.length === 0) return null;
+
+        const linhaMobile = document.createElement('div');
+        linhaMobile.className = 'linha-mobile';
+
+        // Cabeçalho modificado
+        const cabecalho = document.createElement('div');
+        cabecalho.className = 'linha-mobile-cabecalho';
+        
+        // Mapeamento das células originais para as novas colunas
+        const celulasOriginais = {
+            'Transação': celulas[1]?.textContent || '', // Coluna original da Transação
+            'Status': celulas[7]?.textContent.trim() || '', // Coluna original do Status
+            'Valor': celulas[4]?.textContent || '' // Coluna original do Valor Esperado
+        };
+
+        // Adicionar células principais modificadas
+        MAIN_COLUMNS.forEach(coluna => {
+            const celula = document.createElement('div');
+            celula.className = `linha-mobile-celula ${coluna.toLowerCase()}`;
+            
+            // Formatação especial para status
+            if (coluna === 'Status') {
+                const status = celulasOriginais[coluna];
+                celula.innerHTML = `<span class="tag ${getStatusCor(status)}">${status}</span>`;
+            } 
+            // Formatação especial para valor monetário
+            else if (coluna === 'Valor') {
+                celula.innerHTML = `<span class="valor-mobile">${celulasOriginais[coluna]}</span>`;
+            } 
+            else {
+                celula.textContent = celulasOriginais[coluna];
+            }
+            
+            cabecalho.appendChild(celula);
+        });
+
+        linhaMobile.appendChild(cabecalho);
+
+        // Corpo expansível (sem alterações)
+        const corpo = document.createElement('div');
+        corpo.className = 'linha-mobile-corpo';
+
+        // Obter cabeçalhos da tabela
+        const cabecalhos = Array.from(document.querySelectorAll('.tabelaCabecalho th'))
+            .map(th => th.textContent);
+
+        // Adicionar células secundárias (incluindo a data agora no corpo)
+        celulas.forEach((celula, index) => {
+            // Pular colunas já mostradas no cabeçalho
+            if (['Transação', 'Status', 'Valor'].some(c => cabecalhos[index]?.includes(c))) return;
+
+            const grupo = document.createElement('div');
+            grupo.className = 'linha-mobile-grupo';
+
+            const rotulo = document.createElement('span');
+            rotulo.className = 'linha-mobile-rotulo';
+            rotulo.textContent = cabecalhos[index] || '';
+
+            const valor = document.createElement('span');
+            valor.className = 'linha-mobile-valor';
+            valor.textContent = celula.textContent;
+
+            if (['Esperado', 'Recebido', 'Diferença'].includes(cabecalhos[index])) {
+                valor.classList.add('destaque-monetario');
+            }
+
+            grupo.append(rotulo, valor);
+            corpo.appendChild(grupo);
+        });
+
+        linhaMobile.appendChild(corpo);
+
+        // Evento de clique modificado (sem botão de seta)
+        cabecalho.addEventListener('click', function() {
+            const estaExpandida = linhaMobile.classList.toggle('expandida');
+            corpo.style.display = estaExpandida ? 'block' : 'none';
+        });
+
+        return linhaMobile;
+    }
+
+    // Função auxiliar para cor do status
+    function getStatusCor(status) {
+        if (!status) return '';
+        status = status.trim();
+        switch (status) {
+            case "Conciliado": return "verde";
+            case "Divergente": return "amarelo";
+            case "Pendente": return "azul";
+            default: return "";
+        }
+    }
+
+    // Restante do código permanece igual (transformarTabelaParaMobile, observarTabela, adicionarEstilos, initMobile)
+    function transformarTabelaParaMobile() {
+        const tabela = document.querySelector('.tabela');
+        if (!tabela) return;
+
+        const containerMobile = document.createElement('div');
+        containerMobile.className = 'tabela-mobile-container';
+
+        const linhas = tabela.querySelectorAll('.tabelaCorpo tr');
+        linhas.forEach(linha => {
+            const linhaMobile = criarLinhaMobile(linha);
+            if (linhaMobile) {
+                containerMobile.appendChild(linhaMobile);
+            }
+        });
+
+        const cartaoTabela = document.querySelector('.cartaoTabela');
+        if (cartaoTabela) {
+            cartaoTabela.insertBefore(containerMobile, tabela);
+            tabela.classList.add('tabela-desktop');
+        }
+    }
+
+    function observarTabela() {
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.addedNodes.length && isMobile()) {
+                    const containerMobile = document.querySelector('.tabela-mobile-container');
+                    if (!containerMobile) return;
+
+                    mutation.addedNodes.forEach(node => {
+                        if (node.nodeType === 1 && node.tagName === 'TR') {
+                            const linhaMobile = criarLinhaMobile(node);
+                            if (linhaMobile) {
+                                containerMobile.appendChild(linhaMobile);
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+        const tabelaCorpo = document.querySelector('.tabelaCorpo');
+        if (tabelaCorpo) {
+            observer.observe(tabelaCorpo, {
+                childList: true,
+                subtree: false
+            });
+        }
+    }
+
+    function adicionarEstilos() {
+        if (document.getElementById('estilos-tabela-mobile')) return;
+
+        const style = document.createElement('style');
+        style.id = 'estilos-tabela-mobile';
+        style.textContent = `
+            .tabela-mobile-container {
+                display: none;
+            }
+            
+            .linha-mobile {
+                background: var(--cartoes);
+                border-radius: 8px;
+                margin-bottom: 10px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                overflow: hidden;
+            }
+            
+            .linha-mobile-cabecalho {
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                cursor: pointer;
+                gap: 10px;
+            }
+            
+            .linha-mobile-celula {
+                flex: 1;
+                font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+            }
+            
+            .linha-mobile-celula.transacao {
+                font-weight: 600;
+                min-width: 100px;
+            }
+            
+            .linha-mobile-celula.status {
+                min-width: 90px;
+                justify-content: center;
+            }
+            
+            .linha-mobile-celula.valor {
+                min-width: 80px;
+                justify-content: flex-end;
+                font-weight: 600;
+                color: var(--primario);
+            }
+            
+            .valor-mobile {
+                white-space: nowrap;
+            }
+            
+            .linha-mobile-corpo {
+                display: none;
+                padding: 12px 15px;
+                border-top: 1px solid var(--borda);
+                background-color: var(--tr);
+            }
+            
+            .linha-mobile-grupo {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 8px;
+            }
+            
+            .linha-mobile-rotulo {
+                font-size: 0.8rem;
+                color: var(--texto-p);
+            }
+            
+            .linha-mobile-valor {
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+            
+            .linha-mobile-valor.destaque-monetario {
+                font-weight: 600;
+                color: var(--primario);
+            }
+            
+            .linha-mobile.expandida .linha-mobile-corpo {
+                display: block;
+            }
+            
+            /* Tags de status */
+            .tag {
+                display: inline-block;
+                padding: 3px 8px;
+                border-radius: 12px;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+            
+            .tag.verde {
+                background-color: #e6f7e6;
+                color: #2e7d32;
+            }
+            
+            .tag.amarelo {
+                background-color: #fff8e6;
+                color: #ff8f00;
+            }
+            
+            .tag.azul {
+                background-color: #e6f3ff;
+                color: #1565c0;
+            }
+            
+            @media (max-width: ${MOBILE_BREAKPOINT}px) {
+                .tabela-mobile-container {
+                    display: block;
+                }
+                
+                .tabela-desktop {
+                    display: none;
+                }
+            }
+            
+            @media (min-width: ${MOBILE_BREAKPOINT + 1}px) {
+                .tabela-mobile-container {
+                    display: none !important;
+                }
+                
+                .tabela-desktop {
+                    display: table !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    function initMobile() {
+        adicionarEstilos();
+        
+        if (isMobile()) {
+            transformarTabelaParaMobile();
+            observarTabela();
+        }
+        
+        window.addEventListener('resize', function() {
+            if (isMobile() && !document.querySelector('.tabela-mobile-container')) {
+                transformarTabelaParaMobile();
+            }
+        });
+    }
+
+    // Modificar a função conciliar original para incluir a transformação mobile
+    const originalConciliar = window.conciliar;
+    window.conciliar = function(dadosCSV, dadosOFX) {
+        originalConciliar(dadosCSV, dadosOFX);
+        if (isMobile()) {
+            setTimeout(() => {
+                transformarTabelaParaMobile();
+            }, 100);
+        }
+    };
+
+    // Iniciar após um pequeno delay para garantir que os dados foram carregados
+    setTimeout(initMobile, 300);
+})();
