@@ -1,3 +1,19 @@
+.botaoAcao.secundario{
+  background-color: #412884;
+  color: #F0F0F0;
+  padding: 10px;
+}
+.botaoAcao.secundario:hover{
+  background-color: #322871;
+  color: #F0F0F0;
+  padding: 10px;
+}
+.cartaoTexto.column summary{
+  font-size: 18px
+}
+.cartaoTexto.column p{
+  font-size: 16px;
+}
 @media (max-width: 700px) {
   .boxContatoWrap {
     flex-direction: column;

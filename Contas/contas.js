@@ -90,7 +90,7 @@ const bandeiras = {
   visa:       { nome: "Visa",        img: "https://cdn.brandfetch.io/idhem73aId/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" },
   mastercard: { nome: "Mastercard",  img: "https://cdn.brandfetch.io/idFw8DodCr/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" },
   amex:       { nome: "Amex",        img: "https://cdn.brandfetch.io/id5WXF6Iyd/theme/dark/idAyOxP8-l.svg?c=1dxbfHSJFAPEGdCLU4o5B" },
-  hipercard:  { nome: "Hipercard",   img: "https://consultacred.com.br/wp-content/uploads/2022/06/credito-pessoal-hipercard.webp" },
+  hipercard:  { nome: "Hipercard",   img: "https://banner2.cleanpng.com/20190126/zue/kisspng-hipercard-credit-card-banco-itaucard-logo-hipercard-controle-seu-carto-android-market-da-5c4c805d60eab2.705576851548517469397.jpg" },
   elo:        { nome: "Elo",         img: "https://cdn.brandfetch.io/idT3-XCDJD/w/200/h/200/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" }
 };
 
