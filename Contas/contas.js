@@ -89,7 +89,7 @@ var tgdeveloper = {
 const bandeiras = {
   visa:       { nome: "Visa",        img: "https://cdn.brandfetch.io/idhem73aId/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" },
   mastercard: { nome: "Mastercard",  img: "https://cdn.brandfetch.io/idFw8DodCr/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" },
-  amex:  { nome: "American Express", img: "https://cdn.brandfetch.io/id5WXF6Iyd/theme/dark/idAyOxP8-l.svg?c=1dxbfHSJFAPEGdCLU4o5B" },
+  amex:       { nome: "Amex",        img: "https://cdn.brandfetch.io/id5WXF6Iyd/theme/dark/idAyOxP8-l.svg?c=1dxbfHSJFAPEGdCLU4o5B" },
   hipercard:  { nome: "Hipercard",   img: "https://consultacred.com.br/wp-content/uploads/2022/06/credito-pessoal-hipercard.webp" },
   elo:        { nome: "Elo",         img: "https://cdn.brandfetch.io/idT3-XCDJD/w/200/h/200/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" }
 };
@@ -183,15 +183,20 @@ const fatura = "R$ " + faturaValor.toLocaleString('pt-BR');
   // Cria a linha da tabela
   const tr = document.createElement('tr');
   tr.innerHTML = `
-    <td><img src="${bandeira.img}" alt="${bandeira.nome}" width="32"> ${bandeira.nome}</td>
-    <td><alt="${banco.nome}" width="32"> ${banco.nome}</td>
-    <td>${numeroFormatado}</td>
-    <td>${titular}</td>
-    <td>${validade}</td>
-    <td>${limite}</td>
-    <td>${fatura}</td>
-    <td>${status}</td>
-  `;
+  <td class="celula-bandeira">
+    <div class="bandeira-flex">
+      <img src="${bandeira.img}" alt="${bandeira.nome}" class="img-bandeira">
+      <span class="nome-bandeira">${bandeira.nome}</span>
+    </div>
+  </td>
+  <td><alt="${banco.nome}" width="32"> ${banco.nome}</td>
+  <td>${numeroFormatado}</td>
+  <td>${titular}</td>
+  <td>${validade}</td>
+  <td>${limite}</td>
+  <td>${fatura}</td>
+  <td>${status}</td>
+`;
 
   document.getElementById('corpo-tabela-cartoes').appendChild(tr);
 

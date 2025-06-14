@@ -85,6 +85,31 @@
   color: #676767;
 }
 
+
+.celula-bandeira .bandeira-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;           
+  height: 40px;        
+}
+
+.celula-bandeira .img-bandeira {
+  width: 40px;         
+  height: 40px;
+  border-radius: 5px;
+  object-fit: contain;
+  display: block;
+}
+
+.celula-bandeira .nome-bandeira {
+  font-size: 14px;     
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  height: 40px;        
+  line-height: 40px;
+}
+
 @media (max-width:640px) {
     .conteudo {
         flex-direction: column;
