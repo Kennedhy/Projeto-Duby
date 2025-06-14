@@ -1,32 +1,3 @@
-.planos {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
-  justify-content: center;
-  border-radius: 16px;
-  margin-bottom: 6px;
-}
-
-.plano {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 25vw;
-  height: 420px;
-  padding: 30px 18px 18px 18px;
-  background: #D9D9D9;
-  border-radius: 12px;
-  box-shadow: 0 0 0 1px #ccc;
-  gap: 3px;
-}
-.plano:hover {
-  box-shadow: 0 0 0 1px #412884;
-}
-.plano h3 {
-  font-size: 26px;
-  margin-bottom: -4px;
-}
-
 .preco {
   font-weight: bold;
   font-size: 20px;
@@ -42,6 +13,7 @@
   padding-left: 0; 
   margin-left: 0;  
   font-size: 16px;
+  margin-bottom: 1rem;
 }
 
 .plano button {
@@ -174,94 +146,6 @@
   border-radius: 8px;
   font-size: 1rem;
 }
-svg{
-  width: 20px;
-  height: 20px;
-}
-
-
-.cartao1 {
-  background: rgba(217, 217, 217, 0.50);
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.titulo-secao {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.listaUsuarios {
-  border-radius: 12px;
-  background: #fafafa;
-  border: 1px solid #F0F0F0;
-  box-shadow: 0px 4px 30px 0px rgba(54, 41, 183, 0.07);
-  padding: 1re;
-  flex: 1 0 0;
-}
-
-.listaUsuariosHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4.091px 3.273px 4.091px 8.999px;
-    margin-top: 10px;
-    margin-bottom: 8px;
-    
-}
-
-.listaUsuariosHeader h2 {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-  
-.tabelaUsuarios {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0px 0.3rem;
-    overflow: hidden;
-    padding: 0.75rem;
-  }
-
-
-.tag {
-    padding: 4px 6px;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 0.9em;
-  }
-   .pago {background: rgba(76, 175, 80, 0.30); color: #197C1D;}
-  .aberta { background: rgba(226, 70, 70, 0.3); color: #be000d; }
-
-  svg{
-    cursor: pointer;
-  }
-
-  .tabs {
-  background: #f0f0f0;
-  padding: 0.7rem;
-  width: 575px;
-  border-radius: 15px;
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  }
-
-  .tab {
-  background: #e2e2e2;
-  padding: 0.8rem 1.5rem;
-  border-radius: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #333;
-  }   
-
-  .tab.active {
-  background: #6b5cc2;
-  color: white;
-  }
 
 
     .toggle-switch {
@@ -295,95 +179,6 @@ svg{
     .toggle-switch.active::after {
       left: 20px;
     }
-
-
-        .tabs {
-      background: #f0f0f0;
-      padding: 0.7rem;
-      width: 850px;
-      border-radius: 15px;
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .tab {
-      padding: 0.8rem 1.5rem;
-      border-radius: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #333;
-    }
-
-    .tab.active {
-      background: #6b5cc2;
-      color: white;
-    }
-
-     .section {
-      background: #f0f0f0;
-      padding: 2rem;
-      border-radius: 15px;
-      margin-bottom: 2rem;
-    }
-
-      .section-element{
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 2rem;
-    }
-
-    .section-element button{
-      background: #6b5cc2;
-      color: white;
-      padding: 0.8rem;
-      width: 280px;
-      border-radius: 15px;
-      margin-bottom: 2rem;
-    }
-
-    .integration-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 100px;
-      padding: 1rem;
-      margin-bottom: 0.8rem;
-      border: none;
-      border-radius: 10px;
-      background: #ddd;
-      color: #333;
-    }
-
-    .integration-info{
-      display: flex;
-      flex-direction: column;
-    }
-
-    .integration-actions button{
-      display: flex;
-      gap: 10px;
-      background-color:#f0f0f0;
-      width: 100px;
-      margin: 0.8rem;
-      padding: 6px 12px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .integration-actions button:hover {
-      background: #2e1e90;
-      color: white;
-    }
-    .cartao-adicionado {
-  background: #f5f5f5;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 10px;
-  box-shadow: 0 0 2px #ccc;
-}
     
     @media (max-width: 600px) {
       .conteudo {
