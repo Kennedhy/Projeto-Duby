@@ -1,3 +1,11 @@
+#planoBasico{ display: flex;
+}
+#botaoPlanos{
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  
+}
 .preco {
   font-weight: bold;
   font-size: 20px;
