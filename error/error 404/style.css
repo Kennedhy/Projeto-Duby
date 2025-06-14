@@ -91,7 +91,7 @@ button {
     margin: 0; 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .errorTitulo {
         font-size: 100px;
     }

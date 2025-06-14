@@ -197,7 +197,7 @@
     background-color: var(--primario-escuro);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .barraNotificacao {
         display: none;
 }

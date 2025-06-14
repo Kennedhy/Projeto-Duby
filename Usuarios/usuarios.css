@@ -276,7 +276,7 @@
     background-color: var(--corCinzaClaro);
 }
 
-@media (max-width:600px) {
+@media (max-width:640px) {
     .conteudo {
         flex-direction: column;
     } 

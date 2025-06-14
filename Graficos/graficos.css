@@ -1,6 +1,6 @@
 /* Adicione isso ao final do arquivo global.css */
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .conteudoPrincipal {
         padding: 1rem;
     }
