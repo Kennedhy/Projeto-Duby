@@ -4,7 +4,17 @@
   width: 100%;
   justify-content: center;
   padding: 10px;
-  
+
+}
+#botaoSalvar{
+  background-color: #412884;
+  color: #F0F0F0;
+  padding: 10px;
+}
+#botaoSalvar:hover{
+  background-color: #322871;
+  color: #F0F0F0;
+  padding: 10px;
 }
 .preco {
   font-weight: bold;
