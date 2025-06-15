@@ -8,6 +8,9 @@
   color: #F0F0F0;
   padding: 10px;
 }
+.cartaoTexto{
+  cursor: pointer;
+}
 .cartaoTexto.column summary{
   font-size: 18px
 }
@@ -26,9 +29,15 @@
 }
 
 @media (max-width: 640px) {
+  .abasRelatorio.fr2{
+    width: 100%;
+  }
 
- .cartaoTexto p {
-    font-size: 0.9rem;
+  .cartaoTexto.column summary{
+    font-size: 16px
+  }
+  .cartaoTexto.column p{
+    font-size: 14px;
   }
   .cartaoTexto h2 {
     font-size: 1.2rem;
@@ -42,11 +51,8 @@
   .contato {
     display: flex;
     flex-direction: column;
-  }
+    gap: 1rem;
 }
 
-.contato {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
 }
+

@@ -185,34 +185,33 @@
 }
 .card.verde {
     color: #16A34A;
-
     background-color: none;
 }
 
 .card.vermelho {
     color: #DC2626;
-
     background-color: none
 }
 
 .card.azul {
     background-color: rgba(96, 165, 250, 0.1);
     color: #2563EB;
-
     display: none;
 }
 
 .card.amarelo {
     color: #D97706;
-
     background-color: none;
 }
 
 .card.ativo {
-    scale: 1.15;
+    transform: translateY(-4px);
     background-color: var(--cartoes);
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 4px;
+    margin-right: 4px;
+    box-shadow: 1px 3px 6px 0px rgba(0,0,0,0.4);
+-webkit-box-shadow: 1px 3px 6px 0px rgba(0,0,0,0.4);
+-moz-box-shadow: 1px 3px 6px 0px rgba(0,0,0,0.4);
 }
 
 

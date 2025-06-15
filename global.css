@@ -54,7 +54,7 @@
 
 :root {
     --primario: #412884;
-    --primario-escuro: #312E81;
+    --primario-escuro: #322871;
     --primario-claro: #818CF8;
     --primario-muito-claro: #C7D2FE;
     --sucesso: #4ADE80;
@@ -265,7 +265,7 @@ body::-webkit-scrollbar {
 .botaoAba.ativo {
     padding: 0.7rem;
     font-weight: 600;
-    background-color: #594496;
+    background-color: #412884;
     color: #f2f2f2;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 5px rgba(89, 68, 150, 0.1);
 }
@@ -501,7 +501,7 @@ thead tr th:first-child {
 
 .botaoDados.ativo {
     font-weight: 600;
-    background-color: #594496;
+    background-color: #412884;
     color: #f2f2f2;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 5px rgba(89, 68, 150, 0.1);
 }
@@ -686,13 +686,13 @@ thead tr th:first-child {
 }
 
 .botaoAcao.primario {
-    background-color: #594496;
+    background-color: #412884;
     color: #f2f2f2;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 5px rgba(89, 68, 150, 0.1);
 }
 
 .botaoAcao.primario:hover {
-    background-color: #644fA3;
+    background-color: #322871;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15), 0 4px 8px rgba(89, 68, 150, 0.15);
 }
 
